@@ -53,5 +53,30 @@
     "local_filename": null,
     "licensing": "URL-only research; no image downloading or texture reuse. Permission to redistribute not established.",
     "model_limits": "Precise bay counts, variable wing roof levels, compass-specific red reveal placement and garden dimensions unresolved."
+  },
+  {
+    "building": "SFU residence townhouses",
+    "source_url": "https://www.sfu.ca/students/residences/housing-options/townhouses.html",
+    "source": "Official SFU Residence and Housing",
+    "retrieved": "2026-10-16",
+    "floor_plan_urls": [
+      "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_townhouses/Chilcotin_Townhouses_Floor_Plan.pdf",
+      "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_townhouses/Cowichan_Townhouses_Floor_Plan.pdf",
+      "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_townhouses/Kelowna_Townhouses_Floor_Plan.pdf",
+      "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_townhouses/Kimberly_Townhouses_Floor_Plan.pdf",
+      "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_townhouses/Kitimat_Townhouses_Floor_Plan.pdf",
+      "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_townhouses/Pentiction_Townhouses_Floor_Plan.pdf",
+      "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_townhouses/Qualicum_Townhouses_Floor_Plan.pdf",
+      "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_townhouses/Quesnel_Townhouses_Floor_Plan.pdf",
+      "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_townhouses/Squamish_Townhouses_Floor_Plan.pdf"
+    ],
+    "observations": [
+      "Four-bedroom townhouse units, three levels in official plan text",
+      "Nine named blocks; SFU page states96 total townhouses and11 units per building, which do not arithmetically agree; exact counts require per-block plans",
+      "Laundry across complex, not within each townhouse"
+    ],
+    "limitations": "All nine ground-floor drawings visually inspected; Chilcotin upper floors also inspected. World orientation, dimensions and laundry function of common rooms unresolved. Plans label01-99 while webpage states96 total.",
+    "licensing": "URL-only; no redistribution permission asserted",
+    "plan_review": "See data/townhouse_plan_observations.json"
   }
 ]

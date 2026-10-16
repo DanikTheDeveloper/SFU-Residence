@@ -55,7 +55,8 @@ func run() -> void:
 	# Use an unobstructed part of Field 4 edge for reproducible movement checks.
 	player.position=Geo.point([-25,110],0.3)
 	player.velocity=Vector3.ZERO
-	player.pivot.rotation=Vector3(-0.16,0,0)
+	player.pivot.rotation=Vector3.ZERO
+	player.camera.rotation.x=-0.16
 	await frames(30)
 	var start: Vector3=player.position
 	Input.action_press("move_forward")
@@ -91,12 +92,18 @@ func run() -> void:
 		motion.relative=Vector2(40,0)
 		motion.screen_relative=motion.relative
 		Input.parse_input_event(motion)
+	Input.flush_buffered_events()
 	check("Mouse input crosses 360 degrees through dispatcher",absf(player.total_look_yaw-turn_start)>TAU)
 	turn_start=player.total_look_yaw
 	for i in 120: player.apply_look(Vector2(-40,0))
 	check("Mouse turns 360 degrees in reverse",absf(player.total_look_yaw-turn_start)>TAU)
 	player.apply_look(Vector2(0,10000))
-	check("Pitch remains bounded without restricting yaw",absf(player.pivot.rotation.x)<=1.451)
+	check("Pitch remains bounded without restricting yaw",absf(player.camera.rotation.x)<=1.451 and absf(player.pivot.rotation.x)<0.001)
+	var stable:=true
+	for step in 240:
+		player.apply_look(Vector2(25,-20 if step<120 else 20))
+		stable=stable and player.camera.global_basis.y.dot(Vector3.UP)>0.1 and absf(player.pivot.rotation.x)<0.001 and absf(player.camera.rotation.y)<0.001
+	check("Pitch extremes preserve upright camera during full turns",stable)
 	# Approach a known long Hamilton edge, then keep walking into it.
 	var data: Dictionary=world.registry[7]
 	var door:=Geo.point(data.entrance)
@@ -189,12 +196,16 @@ func verify_families() -> void:
 			counts.append(probe.get_node("TownhouseGlass").multimesh.instance_count)
 			probe.free()
 		check(data.id+" townhouse master edit propagates",counts[0]!=counts[1],str(counts))
-		town.bay_width=3.5
+		town.bay_width=5.2
 	check("Exactly nine original townhouse blocks",count==9)
 	var mch:=world.get_node("Buildings/MCH")
 	check("McTaggart uses distinct renewed-envelope master",mch.get_meta("family_master")==preload("res://scripts/McTaggartExterior.gd").MASTER_ID)
 	check("McTaggart retains four-floor registry",mch.get_meta("floor_count")==4)
 	check("McTaggart facade batching",mch.get_node("McTaggartBronze").multimesh.instance_count>100 and mch.get_node("McTaggartGlass").multimesh.instance_count>20)
+	var courtyard:=world.get_node("Buildings/CYR")
+	check("Courtyard uses distinct precast master",courtyard.get_meta("family_master")==preload("res://scripts/CourtyardExterior.gd").MASTER_ID)
+	check("Courtyard preserves eleven-floor registry",courtyard.get_meta("floor_count")==11)
+	check("Courtyard uses ribbed panels and recessed glazing",courtyard.get_node("CourtyardRibbed").multimesh.instance_count>50 and courtyard.get_node("CourtyardGlass").multimesh.instance_count>50)
 
 func run_routes() -> void:
 	var routes: Array=JSON.parse_string(FileAccess.get_file_as_string("res://data/test_routes.json"))

@@ -1,0 +1,257 @@
+[
+  {
+    "osm_id": "653815607",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        263.447,
+        157.752
+      ],
+      [
+        267.603,
+        161.889
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "653815607",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        267.603,
+        161.889
+      ],
+      [
+        283.729,
+        174.965
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "821940982",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        -63.276,
+        5.093
+      ],
+      [
+        -66.105,
+        4.359
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "821940982",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        -66.105,
+        4.359
+      ],
+      [
+        -70.849,
+        3.102
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "821940984",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        -222.52,
+        121.358
+      ],
+      [
+        -218.981,
+        108.76
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "821940994",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        -115.888,
+        125.862
+      ],
+      [
+        -110.005,
+        115.309
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "1062757720",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        93.887,
+        75.39
+      ],
+      [
+        95.106,
+        70.131
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "1062757722",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        95.585,
+        80.75
+      ],
+      [
+        96.68,
+        76.002
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "1062757726",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        -53.78,
+        -40.208
+      ],
+      [
+        -50.436,
+        -39.496
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "1159715861",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        37.633,
+        25.586
+      ],
+      [
+        29.146,
+        62.002
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "1159756808",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        166.687,
+        79.983
+      ],
+      [
+        163.024,
+        79.126
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "1159756810",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        94.729,
+        53.474
+      ],
+      [
+        93.764,
+        57.499
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "1159756810",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        93.764,
+        57.499
+      ],
+      [
+        92.625,
+        62.269
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "1159793611",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        112.856,
+        8.273
+      ],
+      [
+        110.252,
+        19.715
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  },
+  {
+    "osm_id": "1159793612",
+    "name": "Walkway",
+    "kind": "path",
+    "width": 2.6,
+    "points": [
+      [
+        40.636,
+        -8.44
+      ],
+      [
+        38.105,
+        2.824
+      ]
+    ],
+    "confidence": "OSM centerline; ESTIMATED width and elevation"
+  }
+]

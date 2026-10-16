@@ -12,3 +12,6 @@ reference_photos/**/*.tiff
 **/.env
 **/*secret*
 **/*token*
+
+reference_photos/**/*.avif
+reference_photos/**/*:Zone.Identifier

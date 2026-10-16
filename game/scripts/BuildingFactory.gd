@@ -84,6 +84,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	if data.type in ["modern_tower","north_tower"]:
 		body_mat=preload("res://scripts/FacadeKit.gd").material("reveal")
 	if data.id=="MCH": body_mat=preload("res://scripts/McTaggartExterior.gd").brick_material()
+	if data.id=="CYR": body_mat=preload("res://scripts/CourtyardExterior.gd").material("reveal")
 	var wall_mesh := Geo.mesh_from_vertices(root,walls,body_mat,true)
 	wall_mesh.name="ExteriorCollision"
 	Geo.mesh_from_vertices(root,roof,roof_mat,true).name="Roof"
@@ -100,6 +101,9 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		preload("res://scripts/McTaggartExterior.gd").build(root,data,points,base,height)
 		accent_mat=Geo.material(Color("aab0b5"))
 		glass_mat=Geo.material(Color("46575b"),0.27)
+	elif data.id=="CYR":
+		preload("res://scripts/CourtyardExterior.gd").build(root,data,points,base,height)
+		accent_mat=preload("res://scripts/CourtyardExterior.gd").material("panel")
 	else:
 		Geo.instances(root,trim,roof_mat,null,650).name="RooflineAndBands"
 		Geo.instances(root,frames,frame_mat,null,350).name="WindowFrames"
@@ -111,10 +115,11 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	var normal := (anchor-door).normalized()
 	normal.y=0
 	var door_yaw := atan2(normal.x,normal.z)
-	var door_mesh := Geo.box(root,door+Vector3.UP*1.15+normal*0.15,Vector3(2.1,2.3,0.16),glass_mat)
-	door_mesh.rotation.y=door_yaw
-	var canopy := Geo.box(root,door+Vector3.UP*2.85+normal*0.9,Vector3(3.6,0.22,2.1),accent_mat,true)
-	canopy.rotation.y=door_yaw
+	if data.type!="townhouse":
+		var door_mesh := Geo.box(root,door+Vector3.UP*1.15+normal*0.15,Vector3(2.1,2.3,0.16),glass_mat)
+		door_mesh.rotation.y=door_yaw
+		var canopy := Geo.box(root,door+Vector3.UP*2.85+normal*0.9,Vector3(3.6,0.22,2.1),accent_mat,true)
+		canopy.rotation.y=door_yaw
 	var label := Label3D.new()
 	label.name="NameSign"
 	label.text=data.name

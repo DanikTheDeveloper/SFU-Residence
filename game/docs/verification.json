@@ -441,6 +441,11 @@
       "passed": true
     },
     {
+      "check": "Pitch extremes preserve upright camera during full turns",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Character blocked by facade",
       "evidence": "",
       "passed": true
@@ -692,6 +697,21 @@
     },
     {
       "check": "McTaggart facade batching",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard uses distinct precast master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard preserves eleven-floor registry",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard uses ribbed panels and recessed glazing",
       "evidence": "",
       "passed": true
     },

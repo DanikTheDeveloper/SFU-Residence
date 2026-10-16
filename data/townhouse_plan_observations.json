@@ -1,0 +1,98 @@
+{
+  "source": "Official SFU linked block PDFs, page2 (ground floor); Chilcotin pages3/4 also inspected",
+  "inspection": "Rendered with existing bundled Poppler, no installation; temporary source copies outside project",
+  "coordinate_warning": "left/right/top/bottom describe PDF page, NOT world compass directions; no georeferencing asserted",
+  "rights": "Reference only. PDFs and rendered images not shipped with game. Official URLs in online_reference_index.json",
+  "blocks": {
+    "COW": {
+      "units": "01-11",
+      "common_rooms": [
+        "811",
+        "812",
+        "815"
+      ],
+      "plan_common_end": "right/top",
+      "notes": "Four paired longitudinal porches, left-end paired entrance, single right/bottom entrance."
+    },
+    "CHI": {
+      "units": "12-22",
+      "common_rooms": [
+        "821",
+        "822",
+        "825"
+      ],
+      "plan_common_end": "left/bottom",
+      "notes": "Four paired longitudinal porches, right-end paired entrance, single left/top entrance. Common annex absent on rendered levels2/3."
+    },
+    "KEL": {
+      "units": "23-33",
+      "common_rooms": [
+        "831",
+        "832",
+        "835"
+      ],
+      "plan_common_end": "left/bottom",
+      "notes": "Stepped longitudinal facade; mirrored paired porches and right-end paired entry."
+    },
+    "KIM": {
+      "units": "34-44",
+      "common_rooms": [
+        "841",
+        "842",
+        "845"
+      ],
+      "plan_common_end": "right/bottom",
+      "notes": "Left-end paired entrance; right edge partly clipped in source PDF rendering."
+    },
+    "KIT": {
+      "units": "45-55",
+      "common_rooms": [
+        "851",
+        "852",
+        "855"
+      ],
+      "plan_common_end": "left/bottom",
+      "notes": "Right-end paired entrance and single left/top entrance."
+    },
+    "PEN": {
+      "units": "56-66",
+      "common_rooms": [
+        "862",
+        "865",
+        "012"
+      ],
+      "plan_common_end": "left/bottom",
+      "notes": "Official filename misspells Pentiction. Labels012/865 shown in common area; exact function unconfirmed."
+    },
+    "QUA": {
+      "units": "67-77",
+      "common_rooms": [
+        "871",
+        "872",
+        "875"
+      ],
+      "plan_common_end": "right/bottom",
+      "notes": "Left-end paired entrance; rightmost edge partly clipped in source PDF."
+    },
+    "QUE": {
+      "units": "78-88",
+      "common_rooms": [
+        "881",
+        "882",
+        "885"
+      ],
+      "plan_common_end": "left/top",
+      "notes": "Right-end paired entrance; single left/bottom entrance. Common end differs from Chilcotin."
+    },
+    "SQU": {
+      "units": "89-99",
+      "common_rooms": [
+        "891",
+        "892",
+        "895"
+      ],
+      "plan_common_end": "left/top",
+      "notes": "Right-end paired entrance; single left/bottom entrance."
+    }
+  }
+}

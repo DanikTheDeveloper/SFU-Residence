@@ -1,30 +1,27 @@
-# Phase 2 status — iteration 2, 2026-10-16
+# Phase 2 status — 2026-10-16, current verified checkpoint
 
-Canonical project: `game/project.godot`. Godot 4.7.2 Standard, GDScript, Compatibility, Debian WSL2. No dependencies installed. GUI renderer verified as Mesa D3D12 NVIDIA GTX 1650.
+## Locked stack and safeguards
+Outer game/ is canonical. Godot4.7.2 Standard, GDScript, Compatibility, Debian WSL2, GTX1650. No engine/renderer changes or installed dependencies. Original19 footprints, roads and site JSON preserved exactly. Original nested runtime remains rollback;29 obsolete nested Markdown files externally backed up, hash-verified and removed.
 
-## Completed and verified
-- Migration and mandatory cleanup: 29 obsolete nested Markdown documents backed up outside the project with SHA256 verification and removed. Original nested Godot runtime retained. Inventory: `docs/PHASE1_ARCHIVE.json`.
-- Original 19 building footprints, IDs, roads and site coordinates preserved exactly.
-- Strict first person, 1.68m eye height; no third-person or gameplay overview toggle.
-- Complete 2,412-feature City of Burnaby contour cache, 2m terrain mesh and matching collision; provisional foundations preserve the hillside. See `PHASE2_TERRAIN_EVIDENCE.md`.
-- Shared East/West master, shared North master, and nine shared townhouse blocks. Townhouses include pitched roofs, siding, recessed frames, projected window bays and balcony details. Exact townhouse block identity and repeated bay placement remain approximate.
-- Concrete pedestrian surfaces, three mapped parking polygons with 83 estimated stalls, parked-car collision clearances, and fixed precinct boundary containment.
-- Townhouse details: smoke, 134 physics checks and 333 continuous-route checkpoints passed before iteration 2 camera changes.
+## Camera — confirmed by user
+Removed manual WSL pointer warping after user reported blinking. Native captured relative mouse motion, yaw-only pivot and pitch-only camera now support full turns without mixed-axis feedback. Accumulated-event tests explicitly flush queued input.144 runtime checks pass, including full turns and upright camera at pitch limits. User tested latest gameplay and replied: “Full turns work; no blinking.” Keep this input implementation stable.
 
-## Iteration 2 work
-- Mouse input moved to `_input`; unrestricted yaw, bounded pitch, physical relative motion. WSLg confined hidden pointer recenters to avoid screen-edge capture limits. Event-dispatch tests cross 360 degrees both ways. Native X11 test recorded 8.095 radians of rotation (over a full turn). Human physical-mouse feel still needs user confirmation.
-- Terrain: constrained diffusion from immutable `data/terrain_sources/iteration1_grid.json`, adjustable `data/terrain_smoothing.json`, smooth ground normals. Source heights, datum, foundation metadata and broad hillside preserved; no vertical exaggeration multiplier.
-- Initial filtered checkpoint passes smoke, 137 physics checks, all 333 route checkpoints and data/backup invariants. Eye-level townhouse and modern-courtyard screenshots inspected.
-- Final threshold refinement passed smoke, 137 physics checks and all 333 route checkpoints. All 19 entrance samples equal their existing foundation pad levels; durable validator covers these contacts.
-- East/West appearance protected by `data/east_west_preservation.json` hashes of the approved facade master and shared kit, plus original pad metadata. No remodel or recolor.
+## Terrain — verified
+160 constrained diffusion passes, no vertical scaling; original source/datum/pad heights retained. All19 threshold levels pinned. Smooth ground normals. All333 continuous route checkpoints and376 terrain/collision parity samples pass. Townhouse95th-percentile sampled slope reduced46.1% to22.2%. Broad hillside retained. Exact civil grades/retaining walls still provisional.
 
-## Remaining work
-- Terrain/camera/townhouse checkpoint saved as `730cc77`; final eye-level captures inspected.
-- McTaggart-Cowan distinct 2025 renewed-envelope master implemented: charcoal procedural brick, bronze window surrounds, pale metal fascia, glazed connector and framed entrance. URL-only contractor provenance saved in `data/online_reference_index.json` and corresponding photo folder. Smoke, 140 physics checks and all333 route checkpoints pass; final entrance cleanup rechecked with140 checks and GUI capture. Bay/connector dimensions and four-storey uniform massing remain approximate.
-- Next: Courtyard distinct facade from architect gallery, then remaining unique buildings and environmental polish.
-- Hamilton supplied image identity remains uncertain; Dining photos depict older hall, insufficient for 2022 expansion. Courtyard and Shell need further specific reference work.
-- Terrain 2014 predates redevelopment; modern pad levels and absolute vertical datum unresolved. Retaining walls/stairs and exact landscape grading still approximate. No unverified elevations presented as survey measurements.
-- Performance varies by viewpoint; prior eye-level captures roughly 24–73 FPS. Repeat uncontended capture after final terrain work; no formal GTX1650 benchmark claim.
+## Architecture — verified current state
+- East/West: user-approved facade master and shared material kit unchanged; hashes protected. Do not remodel/recolor.
+- North: shared facade exists; newly supplied photos reveal open ground passage and more entrance/corner details. Not yet remodeled; explicit later task in PHASE2_TOWNHOUSE_DETAIL_PLAN.md.
+- Townhouses: shared blue-siding house modules with individual red doors, paired mirrored porches, white posts/eaves, masonry base, projected middle windows and upper balconies. Removed obsolete generic block entrance/canopy. Smoke,144 runtime checks,333 route checkpoints and human-eye-level captures pass. Detailed frontage: game/docs/screenshots/view_7.png. Exact11-unit positioning and low common annexes still unresolved in world coordinates.
+- McTaggart-Cowan: distinct renewed-envelope model, verified contractor reference; charcoal brick, bronze windows and grey fascia/connector. Geometric details estimated.
+- Courtyard: distinct ribbed precast facade, architect reference; eleven-floor uniform massing remains a known mismatch with lower wings. Final entrance cleared of repeated facade piers; verified launch/capture.
+- Hamilton: new photo has readable Hamilton Hall sign, resolving prior identity doubt. Detailed model pending.
 
-Run: `bash scripts/run_game.sh`. Full regression: `bash scripts/verify_game.sh`; family metadata: `python3 scripts/validate_families.py`.
-No actual low-usage warning received. Continue useful exterior work; five-hour interval is a usage reset, not a deadline.
+## Research and next work
+Prioritize user photos. All nine official townhouse ground-floor drawings visually reviewed; Chilcotin upper floors also reviewed with existing bundled Poppler. Plans show11 numbered houses per block, common-room end variants and paired porches; current SFU webpage total96 conflicts with plan numbering01-99. Do not invent operational count. All source URLs, observations and limitations saved in data/townhouse_plan_observations.json, data/online_reference_index.json and PHASE2_TOWNHOUSE_DETAIL_PLAN.md. User photos are reference-only and not shipped as textures.
+
+Next: refine townhouse bay returns/materials/porch contact, then georeference common annex/unit layouts. Later: North open passage geometry AND collision, Hamilton unique model, remaining buildings after specific-photo review. No interiors/NPC/API code.
+
+Run: bash scripts/run_game.sh. Full check: bash scripts/verify_game.sh. Automatic capture windows are labeled controls-disabled; use normal launcher for gameplay. Capture performance is viewpoint/resolution dependent, not a formal benchmark.
+
+Latest account snapshot after user continuation:49% five-hour usage,86% weekly; previous90% snapshot belonged to earlier reset window. No predicted remaining time. Continue useful work with saved checkpoints.

@@ -1,145 +1,149 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 WORLD_READY buildings=19 paths=398 renderer=gl_compatibility
-PASS 19 scene buildings 
-PASS Compatibility selected 
-PASS Interior boundary ray degeneracy regression 
-PASS Exterior remains outside boundary 
-PASS PJH anchor outside 
-PASS PJH ground 
-PASS PJH stable player 
+PASS 19 scene buildings
+PASS Compatibility selected
+PASS Interior boundary ray degeneracy regression
+PASS Exterior remains outside boundary
+PASS PJH anchor outside
+PASS PJH ground
+PASS PJH stable player
 PASS PJH solid facade edges 26/26
-PASS BRH anchor outside 
-PASS BRH ground 
-PASS BRH stable player 
+PASS BRH anchor outside
+PASS BRH ground
+PASS BRH stable player
 PASS BRH solid facade edges 28/28
-PASS SBH anchor outside 
-PASS SBH ground 
-PASS SBH stable player 
+PASS SBH anchor outside
+PASS SBH ground
+PASS SBH stable player
 PASS SBH solid facade edges 28/28
-PASS EAT anchor outside 
-PASS EAT ground 
-PASS EAT stable player 
+PASS EAT anchor outside
+PASS EAT ground
+PASS EAT stable player
 PASS EAT solid facade edges 17/17
-PASS WET anchor outside 
-PASS WET ground 
-PASS WET stable player 
+PASS WET anchor outside
+PASS WET ground
+PASS WET stable player
 PASS WET solid facade edges 17/17
-PASS CYR anchor outside 
-PASS CYR ground 
-PASS CYR stable player 
+PASS CYR anchor outside
+PASS CYR ground
+PASS CYR stable player
 PASS CYR solid facade edges 18/18
-PASS MCH anchor outside 
-PASS MCH ground 
-PASS MCH stable player 
+PASS MCH anchor outside
+PASS MCH ground
+PASS MCH stable player
 PASS MCH solid facade edges 20/20
-PASS HAM anchor outside 
-PASS HAM ground 
-PASS HAM stable player 
+PASS HAM anchor outside
+PASS HAM ground
+PASS HAM stable player
 PASS HAM solid facade edges 8/8
-PASS SHR anchor outside 
-PASS SHR ground 
-PASS SHR stable player 
+PASS SHR anchor outside
+PASS SHR ground
+PASS SHR stable player
 PASS SHR solid facade edges 9/9
-PASS DC anchor outside 
-PASS DC ground 
-PASS DC stable player 
+PASS DC anchor outside
+PASS DC ground
+PASS DC stable player
 PASS DC solid facade edges 22/22
-PASS COW anchor outside 
-PASS COW ground 
-PASS COW stable player 
+PASS COW anchor outside
+PASS COW ground
+PASS COW stable player
 PASS COW solid facade edges 13/13
-PASS CHI anchor outside 
-PASS CHI ground 
-PASS CHI stable player 
+PASS CHI anchor outside
+PASS CHI ground
+PASS CHI stable player
 PASS CHI solid facade edges 13/13
-PASS KEL anchor outside 
-PASS KEL ground 
-PASS KEL stable player 
+PASS KEL anchor outside
+PASS KEL ground
+PASS KEL stable player
 PASS KEL solid facade edges 13/13
-PASS KIM anchor outside 
-PASS KIM ground 
-PASS KIM stable player 
+PASS KIM anchor outside
+PASS KIM ground
+PASS KIM stable player
 PASS KIM solid facade edges 13/13
-PASS KIT anchor outside 
-PASS KIT ground 
-PASS KIT stable player 
+PASS KIT anchor outside
+PASS KIT ground
+PASS KIT stable player
 PASS KIT solid facade edges 13/13
-PASS PEN anchor outside 
-PASS PEN ground 
-PASS PEN stable player 
+PASS PEN anchor outside
+PASS PEN ground
+PASS PEN stable player
 PASS PEN solid facade edges 13/13
-PASS QUA anchor outside 
-PASS QUA ground 
-PASS QUA stable player 
+PASS QUA anchor outside
+PASS QUA ground
+PASS QUA stable player
 PASS QUA solid facade edges 13/13
-PASS QUE anchor outside 
-PASS QUE ground 
-PASS QUE stable player 
+PASS QUE anchor outside
+PASS QUE ground
+PASS QUE stable player
 PASS QUE solid facade edges 13/13
-PASS SQU anchor outside 
-PASS SQU ground 
-PASS SQU stable player 
+PASS SQU anchor outside
+PASS SQU ground
+PASS SQU stable player
 PASS SQU solid facade edges 13/13
 PASS W movement metres=4.131715
-PASS Sprint faster 
-PASS Jump rises 
-PASS Jump lands 
-PASS Mouse look 
-PASS Mouse input crosses 360 degrees through dispatcher 
-PASS Mouse turns 360 degrees in reverse 
-PASS Pitch remains bounded without restricting yaw 
-PASS Character blocked by facade 
-PASS First person fixed eye height 
-PASS First person camera centered in collider 
+PASS Sprint faster
+PASS Jump rises
+PASS Jump lands
+PASS Mouse look
+PASS Mouse input crosses 360 degrees through dispatcher
+PASS Mouse turns 360 degrees in reverse
+PASS Pitch remains bounded without restricting yaw
+PASS Pitch extremes preserve upright camera during full turns
+PASS Character blocked by facade
+PASS First person fixed eye height
+PASS First person camera centered in collider
 PLAYER_RESET reason=fall position=(30.92525, -50.0, 42.3527)
-PASS Fall recovery 
-PASS EAT shared modern master 
-PASS EAT independent floors 
+PASS Fall recovery
+PASS EAT shared modern master
+PASS EAT independent floors
 PASS EAT shared master edit propagates [518, 364]
-PASS WET shared modern master 
-PASS WET independent floors 
+PASS WET shared modern master
+PASS WET independent floors
 PASS WET shared master edit propagates [576, 424]
-PASS PJH distinct North master 
-PASS PJH eight floors 
+PASS PJH distinct North master
+PASS PJH eight floors
 PASS PJH North master edit propagates [472, 376]
-PASS BRH distinct North master 
-PASS BRH eight floors 
+PASS BRH distinct North master
+PASS BRH eight floors
 PASS BRH North master edit propagates [464, 376]
-PASS SBH distinct North master 
-PASS SBH eight floors 
+PASS SBH distinct North master
+PASS SBH eight floors
 PASS SBH North master edit propagates [464, 376]
 PASS Parking stalls arranged in mapped polygons 83
-PASS COW shared townhouse master 
-PASS COW pitched roof generated 
+PASS COW shared townhouse master
+PASS COW pitched roof generated
 PASS COW townhouse master edit propagates [102, 72]
-PASS CHI shared townhouse master 
-PASS CHI pitched roof generated 
+PASS CHI shared townhouse master
+PASS CHI pitched roof generated
 PASS CHI townhouse master edit propagates [102, 72]
-PASS KEL shared townhouse master 
-PASS KEL pitched roof generated 
+PASS KEL shared townhouse master
+PASS KEL pitched roof generated
 PASS KEL townhouse master edit propagates [102, 72]
-PASS KIM shared townhouse master 
-PASS KIM pitched roof generated 
+PASS KIM shared townhouse master
+PASS KIM pitched roof generated
 PASS KIM townhouse master edit propagates [102, 72]
-PASS KIT shared townhouse master 
-PASS KIT pitched roof generated 
+PASS KIT shared townhouse master
+PASS KIT pitched roof generated
 PASS KIT townhouse master edit propagates [102, 72]
-PASS PEN shared townhouse master 
-PASS PEN pitched roof generated 
+PASS PEN shared townhouse master
+PASS PEN pitched roof generated
 PASS PEN townhouse master edit propagates [102, 72]
-PASS QUA shared townhouse master 
-PASS QUA pitched roof generated 
+PASS QUA shared townhouse master
+PASS QUA pitched roof generated
 PASS QUA townhouse master edit propagates [102, 72]
-PASS QUE shared townhouse master 
-PASS QUE pitched roof generated 
+PASS QUE shared townhouse master
+PASS QUE pitched roof generated
 PASS QUE townhouse master edit propagates [102, 72]
-PASS SQU shared townhouse master 
-PASS SQU pitched roof generated 
+PASS SQU shared townhouse master
+PASS SQU pitched roof generated
 PASS SQU townhouse master edit propagates [102, 72]
-PASS Exactly nine original townhouse blocks 
-PASS McTaggart uses distinct renewed-envelope master 
-PASS McTaggart retains four-floor registry 
-PASS McTaggart facade batching 
+PASS Exactly nine original townhouse blocks
+PASS McTaggart uses distinct renewed-envelope master
+PASS McTaggart retains four-floor registry
+PASS McTaggart facade batching
+PASS Courtyard uses distinct precast master
+PASS Courtyard preserves eleven-floor registry
+PASS Courtyard uses ribbed panels and recessed glazing
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=140 failures=0
+VERIFICATION_COMPLETE checks=144 failures=0
