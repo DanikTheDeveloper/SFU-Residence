@@ -62,6 +62,8 @@ func run() -> void:
 		var start: Vector3=passage.start-passage.axis*0.8
 		var end: Vector3=passage.end+passage.axis*0.8
 		check(id+" passage clear at eye level",ray(start+Vector3.UP*1.68,end+Vector3.UP*1.68).is_empty())
+		var column: Vector3=passage.start+passage.side*4.0+passage.axis*0.3+Vector3.UP*1.4
+		check(id+" undercroft column is solid",not ray(column-passage.side,column+passage.side).is_empty())
 		var mid: Vector3=(start+end)*0.5
 		check(id+" passage has overhead collision",not ray(mid+Vector3.UP*1.68,mid+Vector3.UP*3.5).is_empty())
 		player.position=start+Vector3.UP*0.3

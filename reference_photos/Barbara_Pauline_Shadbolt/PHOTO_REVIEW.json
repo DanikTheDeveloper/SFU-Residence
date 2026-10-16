@@ -1,0 +1,104 @@
+{
+  "review_date": "2026-10-16",
+  "photos": [
+    {
+      "local_filename": "1752684841514.jpg",
+      "sha256": "730bac397a61d32df2bf82ef5f80c244faee6e92c6faf2c2ccaf96623c85abb6",
+      "observations": "Tall side-wing narrow window slots; deep concrete fins; broad blank end wall; corner glazing; horizontal formwork; projecting roof slab. Exact tower unknown.",
+      "building_id": null,
+      "identity_confidence": "family visually confirmed; instance unconfirmed",
+      "date": null,
+      "source": "User-selected local photo",
+      "licensing": "Reference-only; do not redistribute pixels as game assets",
+      "source_url": null
+    },
+    {
+      "local_filename": "Untitled.jpg",
+      "sha256": "98adb1a9133a778a2a02579ea8f95b591048d706461b6478e83394d8c3ee0cf7",
+      "observations": "Promenade between North buildings, narrow vertical glazing and concrete fins, red service doors; dark screened stair face on farther building. Exact tower unknown.",
+      "building_id": null,
+      "identity_confidence": "family visually confirmed; instance unconfirmed",
+      "date": null,
+      "source": "User-selected local photo",
+      "licensing": "Reference-only; do not redistribute pixels as game assets",
+      "source_url": null
+    },
+    {
+      "local_filename": "PWL-SFU-Residences-Phase-1-1001.jpg",
+      "sha256": "1308d672c215843c15734e515ee5b36fe294175d4c491b8cc8865b040f0edad3",
+      "observations": "Readable Jack Shadbolt House sign identifies SBH. Paired narrow white-framed room windows separated by broad concrete panels, projecting lounge at left, entrance below; outdoor stairs and handrails in foreground.",
+      "building_id": "SBH",
+      "identity_confidence": "readable building sign",
+      "date": null,
+      "source": "User-selected local photo",
+      "licensing": "Reference-only; do not redistribute pixels as game assets",
+      "source_url": null
+    },
+    {
+      "local_filename": "PWL-SFU-Residences-Phase-1-1011.jpg",
+      "sha256": "bc3defbf213124c5ca32d8b861a45b313216cbc26989e74aec30aa788426c3f3",
+      "observations": "Dark stair-core screen with horizontal fine pattern, narrow glazed corner strip, concrete frame and red service door. Individual tower unresolved.",
+      "building_id": null,
+      "identity_confidence": "family visually confirmed; instance unconfirmed",
+      "date": null,
+      "source": "User-selected local photo",
+      "licensing": "Reference-only; do not redistribute pixels as game assets",
+      "source_url": null
+    },
+    {
+      "local_filename": "SFU-Residence-Dining-Hall-6-scaled.jpg",
+      "sha256": "c5c33a3af48d0446c18150818837cb25508f25525c9ec43bde462b3bb3bf501a",
+      "observations": "Despite filename, image visibly shows North-family courtyard facade. Broad central ground-level columned undercroft, left-end projected lounge stack, narrow room windows and white lower panels; right side-wing glazed ground floor. Exact building/date unknown.",
+      "building_id": null,
+      "identity_confidence": "family visually confirmed; instance unconfirmed",
+      "date": null,
+      "source": "User-selected local photo",
+      "licensing": "Reference-only; do not redistribute pixels as game assets",
+      "source_url": null
+    },
+    {
+      "local_filename": "Photo-03-1024x672.jpg",
+      "sha256": "68db58722e0055e700d3a64088a1062f1ecbac77f68ea81db1076c9eed0bce50",
+      "observations": "Multiple North towers, concrete structure, glazed stair/lounges and ground openings; historical landscaping.",
+      "building_id": null,
+      "identity_confidence": "family visually confirmed; instance unconfirmed",
+      "date": null,
+      "source": "User-selected local photo",
+      "licensing": "Reference-only; do not redistribute pixels as game assets",
+      "source_url": null
+    },
+    {
+      "local_filename": "1790722544125.jpg",
+      "sha256": "26a166478a563cff586d8ea3dc908c2e4054824a085d53a447dcebcf823673cf",
+      "observations": "Courtyard-facing projecting lounge stack, white framed windows, concrete panels/fins and dark stair core.",
+      "building_id": null,
+      "identity_confidence": "family visually confirmed; instance unconfirmed",
+      "date": null,
+      "source": "User-selected local photo",
+      "licensing": "Reference-only; do not redistribute pixels as game assets",
+      "source_url": null
+    },
+    {
+      "local_filename": "1636047123915.jpg",
+      "sha256": "1584343cc9ec1e38c23a720023e9665bdda37b9efa3dd5bf6040d8ececc2f263",
+      "observations": "Small courtyard overview; broad central opening beneath elevated room wing, projecting lounge glazing.",
+      "building_id": null,
+      "identity_confidence": "family visually confirmed; instance unconfirmed",
+      "date": null,
+      "source": "User-selected local photo",
+      "licensing": "Reference-only; do not redistribute pixels as game assets",
+      "source_url": null
+    },
+    {
+      "local_filename": "images.jpeg",
+      "sha256": "d0695ad2434c3342a7ba4f087d07c378f8b9a86b116f5d3a77c67802f3d28395",
+      "observations": "Eye-level promenade; open undercroft, concrete piers and dark screened stair core.",
+      "building_id": null,
+      "identity_confidence": "family visually confirmed; instance unconfirmed",
+      "date": null,
+      "source": "User-selected local photo",
+      "licensing": "Reference-only; do not redistribute pixels as game assets",
+      "source_url": null
+    }
+  ]
+}

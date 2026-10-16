@@ -1,25 +1,27 @@
-# North Tower refinement — 2026-10-16
+# North Tower refinement — current 2026-10-16 checkpoint
 
-User accepts current townhouse appearance; switch current priority to Barbara Rae, Pauline Jewett and Shadbolt. Townhouse exact house numbering/common-annex mapping remains deferred, not finished. East/West and camera are frozen.
+## User direction and reference review
+User accepts townhouses; focus on Barbara Rae, Pauline Jewett and Shadbolt. E/W, camera, terrain and original geography remain protected. All nine local images reviewed individually; searchable observations, SHA256, identity confidence and rights in reference_photos/Barbara_Pauline_Shadbolt/PHOTO_REVIEW.json. No supplied photo pixels are shipped as textures.
 
-## Evidence reviewed
-- `reference_photos/Barbara_Pauline_Shadbolt/1790722544125.jpg`: tall white-framed windows, broad concrete wall panels, horizontal slabs, projected glazed lounge stack, dark stair-core face. Individual tower identity unresolved.
-- `Photo-03-1024x672.jpg`: multiple family buildings, open ground-level undercroft with concrete supports; historic landscaping, date unknown.
-- `1636047123915.jpg`: small courtyard view showing ground opening beneath side wing, glazed lounge stack and pale concrete.
-- `images.jpeg`: eye-level open undercroft, dark stairwell face, concrete columns and paving. Exact individual tower not identified.
-User-selected images are visual references only, not redistributed textures.
+PWL-SFU-Residences-Phase-1-1001.jpg has readable Jack Shadbolt House sign, confirming SBH. Other images confirm the family but not exact instance. SFU-Residence-Dining-Hall-6-scaled.jpg actually depicts the North courtyard facade despite its filename: central columned ground opening, projected lounge at one end, narrow room windows/white lower panels, broad concrete panels, glazed side-wing ground floor.1752684841514.jpg shows narrow side-wing glazing, deep concrete fins, broad end wall and roof overhang. Untitled.jpg and PWL1011 show screened stair cores and red service doors. Dates unconfirmed.
 
-## Current implementation
-One NorthTowerExterior master for all three. Broader concrete panels, narrower room windows and projecting lounge bay. Exterior passage helper clips lower wall triangles/collision, removes facade modules from opening, adds solid side walls and soffit. No building interiors. Footprints, entrances, foundation and roof heights unchanged.
+## Implemented shared model
+- Corrected the earlier narrow side-wing tunnel: broad24m central courtyard undercroft with four solid support piers, ceiling, concrete paving and actual openings through visible/collision walls. This supersedes the42%-along-side-wing estimate in checkpoint2b4e178.
+- Narrower room windows separated by broad concrete panels, white lower panels, projecting end lounge stack with glazed returns/deeper slabs.
+- Separate dark screened stair-core end treatment with narrow white-framed glazing. Generic repeated room windows removed from those faces.
+- North-only cached procedural concrete/formwork and screen materials, batched via existing geometry infrastructure. Shared FacadeKit and E/W hashes unchanged.
+- Framed closed double entry doors, central mullion, transom and handles; solid concrete canopy. Geographic entrance thresholds retained. No interiors.
 
-Passage width3.6m, clear height2.9m and location42% along east inner wing edge are ESTIMATES. Photos establish the feature, not surveyed dimensions or exact per-building location. Axis follows registered footprint and exits the opposite wall. Lounge stack location is an estimated common module. Do not call these survey-verified. Dark stair core and exact entrance compositions remain next detailed work.
+## Evidence versus estimates
+Photos establish architectural features, not survey dimensions.24m undercroft width,2.9m clearance, column locations/size, rear exit configuration and screened end assignment remain estimated shared reconstruction. Stair-core handedness can differ; do not label both end faces in every instance individually photo-verified. Ground glazing/columns around lounges and side wings are incomplete. Entry placement still follows original registry; photo sign location has not been georeferenced to move it. Roof/foundation/floor counts unchanged. Red service doors, precise parapets/top-floor fins, stairs, curved courtyard paving and detailed landscaping remain pending.
 
-Validation: smoke and153 physics checks passed, including clear eye-level rays, overhead collision and player capsule traversals in all three passages. All333 existing walking checkpoints passed. East/West protected hashes, foundation levels and original geography passed.8 architectural families validate. Logs: /tmp/north-verification.log and game/docs/phase2_tests/. Existing diagnostic script ran from retained nested scripts/; Godot4.7.2 and Debian13 verified, no installs; glxinfo absent in current PATH. GUI confirms D3D12 GTX1650 OpenGL Compatibility.
+## Validation
+Full smoke/physics/routes after relocating opening:153 checks and333 walking checkpoints passed. Added column collision checks and door details: final smoke and156 physics checks passed, architectural-family/runtime validators passed. Canopy bounds retained; no route geometry changes after full route pass. Logs /tmp/north-courtyard-verification.log, /tmp/north-final-smoke.log, /tmp/north-final-physics.log. Native GPU visual capture pending; view8 is courtyard undercroft, view9 is stair-core/entry end. Final outcome recorded in STATUS/HANDOFF.
 
-Eye-level view4 and passage view8 inspected: opening visibly runs through building. First capture exposed grass beneath passage; final cosmetic paving follows existing terrain triangles and leaves collision untouched. Concrete is still too uniform/clean compared with reference, and side-wall passage resembles a tunnel rather than the photographed wider columned undercroft. This is a functional first increment, NOT a completed photo match. Exact column/open-side configuration must be resolved next. Do not claim all visible undercroft geometry is reproduced.
+## Next concrete steps
+1. Inspect courtyard and end captures against the reviewed images. Correct obvious render defects before checkpoint.
+2. Map photographed stair-core handedness and lounge/entrance locations per tower; avoid silently treating family identity as facade-orientation proof.
+3. Improve top-floor fins/parapets and ground-level glazing. Add evidenced red service-door modules only after locating faces.
+4. Resolve courtyard stair/paving placement without altering original path coordinates or terrain wholesale. Keep156 runtime checks and333 route checkpoints passing.
 
-## Next concrete step
-Compare courtyard-side footprint edges with user photos and establish a per-instance passage/column override record. Refine enclosed side walls into the evidenced columned undercroft only where outside circulation is confirmed; keep closed residential space sealed. Retain passage traversal tests. Then reproduce dark stair-core face and white-framed glazed lounge returns, followed by mapped entrance framing. Do not change floors, geographic footprints or approved E/W assets. Townhouses remain visually accepted; common annexes deferred.
-
-Final GUI capture includes terrain-following passage paving; completion recorded in STATUS/HANDOFF after inspection. Measured FPS is camera-dependent, not a formal benchmark or60FPS guarantee.
-
+Townhouse common-annex/unit mapping and Hamilton detailed model remain deferred. Do not change approved townhouse appearance or East/West. Preserve user-confirmed native mouse capture.

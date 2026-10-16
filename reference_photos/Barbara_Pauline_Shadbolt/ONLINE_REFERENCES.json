@@ -1,0 +1,29 @@
+[
+  {
+    "building_id": "BRH",
+    "source_url": "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_towers/BRH_Towers_Floor_Plan.pdf",
+    "reviewed_pdf_page": 2,
+    "orientation": "Plan top explicitly faces north parking",
+    "observations": "Central courtyard lounge projection; five room bays each side. Projecting end stair on west side of U-shaped plan.",
+    "limitations": "Level2 drawing only; no ground undercroft plan; artist approximate. SBH PDF stops at7, others8; retain existing8-level registry pending resolution.",
+    "license": "SFU copyright; reference only. PDFs kept in private Windows Temp, not game."
+  },
+  {
+    "building_id": "PJH",
+    "source_url": "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_towers/Pauline_Jewett_House_Towers_Floor_Plan.pdf",
+    "reviewed_pdf_page": 2,
+    "orientation": "Plan top explicitly faces north parking",
+    "observations": "Central courtyard lounge projection; five room bays each side. Projecting end stair on east side of U-shaped plan.",
+    "limitations": "Level2 drawing only; no ground undercroft plan; artist approximate. SBH PDF stops at7, others8; retain existing8-level registry pending resolution.",
+    "license": "SFU copyright; reference only. PDFs kept in private Windows Temp, not game."
+  },
+  {
+    "building_id": "SBH",
+    "source_url": "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/the_towers/Shadbolt_House_Towers_Floor_Plan.pdf",
+    "reviewed_pdf_page": 2,
+    "orientation": "Plan top explicitly faces north parking",
+    "observations": "Central courtyard lounge projection; five room bays each side. Projecting end stair on west side of U-shaped plan.",
+    "limitations": "Level2 drawing only; no ground undercroft plan; artist approximate. SBH PDF stops at7, others8; retain existing8-level registry pending resolution.",
+    "license": "SFU copyright; reference only. PDFs kept in private Windows Temp, not game."
+  }
+]

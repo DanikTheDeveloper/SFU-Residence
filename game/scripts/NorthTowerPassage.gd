@@ -2,15 +2,16 @@ extends RefCounted
 # Photo-supported exterior passage; exact survey dimensions remain estimated.
 const Geo=preload("res://scripts/Geometry.gd")
 const CLEAR_HEIGHT=2.9
-const WIDTH=3.6
+const WIDTH=24.0
 
 static func layout(data: Dictionary, base: float) -> Dictionary:
 	var p: Array=data.footprint
-	var junction:=Vector3(p[20][0],base,p[20][1])
-	var wing_end:=Vector3(p[19][0],base,p[19][1])
-	var side: Vector3=(wing_end-junction).normalized()
+	# Central courtyard bar, not the side wing: established by the user's full courtyard photo.
+	var west:=Vector3(p[21][0],base,p[21][1])
+	var east:=Vector3(p[20][0],base,p[20][1])
+	var side: Vector3=(east-west).normalized()
 	var axis:=Vector3(side.z,0,-side.x)
-	var start:=junction.lerp(wing_end,0.42)
+	var start: Vector3=(west+east)*0.5
 	var distance:=20.0
 	# Find the opposite exterior face, preserving the registered footprint.
 	for i in p.size():
@@ -62,6 +63,12 @@ static func build(root: Node3D,data: Dictionary,base: float,material: Material) 
 		var wall:=Geo.box(root,mid+plan.side*sign_value*(WIDTH*0.5+0.1)+Vector3.UP*CLEAR_HEIGHT*0.5,Vector3(plan.length, CLEAR_HEIGHT,0.2),material,true)
 		wall.name="PassageSideWall"
 		wall.rotation.y=yaw
+	# Broad undercroft supported by piers; central pedestrian lane stays clear.
+	for offset in [-4.0,4.0]:
+		for depth in [0.3,plan.length-0.3]:
+			var column:=Geo.box(root,plan.start+plan.side*offset+plan.axis*depth+Vector3.UP*CLEAR_HEIGHT*0.5,Vector3(0.75,CLEAR_HEIGHT,0.75),material,true)
+			column.name="UndercroftColumn"
+			column.rotation.y=yaw
 	var ceiling:=Geo.box(root,mid+Vector3.UP*(CLEAR_HEIGHT+0.12),Vector3(plan.length,0.24,WIDTH),material,true)
 	ceiling.name="PassageSoffit"
 	ceiling.rotation.y=yaw

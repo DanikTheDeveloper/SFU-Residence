@@ -52,7 +52,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -226,14 +226,15 @@ func capture_views() -> void:
 			views.append([eye,door+Vector3.UP*(9 if building.id=="CYR" else 4.5)])
 	var north: Node3D=get_node("Buildings/BRH")
 	var passage: Dictionary=north.get_meta("exterior_passage")
-	views.append([passage.start-passage.axis*4.0+Vector3.UP*1.68,passage.end+Vector3.UP*1.68])
+	views.append([passage.start-passage.axis*12.0+Vector3.UP*1.68,passage.start+Vector3.UP*6.0])
+	views.append([Geo.point([91.75513,38.2138],1.68),Geo.point([92.683,34.237],1.5)])
 	add_child(capture)
 	capture.far=1200
 	capture.fov=72
 	capture.current=true
 	DirAccess.make_dir_recursive_absolute("res://docs/screenshots")
 	var measurements: Array=[]
-	for i in views.size():
+	for i in range(8 if "--capture-north" in OS.get_cmdline_user_args() else 0,views.size()):
 		capture.position=views[i][0]
 		capture.look_at(views[i][1])
 		for frame in 50: await get_tree().process_frame
@@ -262,7 +263,7 @@ func capture_views() -> void:
 	for frame in 40: await get_tree().process_frame
 	await RenderingServer.frame_post_draw
 	get_viewport().get_texture().get_image().save_png("res://docs/screenshots/player_view.png")
-	var report:=FileAccess.open("res://docs/performance.json",FileAccess.WRITE)
+	var report:=FileAccess.open("res://docs/performance_north.json" if "--capture-north" in OS.get_cmdline_user_args() else "res://docs/performance.json",FileAccess.WRITE)
 	report.store_string(JSON.stringify({"device":RenderingServer.get_video_adapter_name(),"renderer":RenderingServer.get_current_rendering_method(),"resolution":[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y],"tier":"medium","samples":measurements},"  "))
 	print("CAPTURE_COMPLETE fps=",Engine.get_frames_per_second()," draws=",Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
 	get_tree().quit()
