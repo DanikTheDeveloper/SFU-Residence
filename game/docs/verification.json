@@ -1,0 +1,440 @@
+{
+  "checks": [
+    {
+      "check": "19 scene buildings",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Compatibility selected",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH solid facade edges",
+      "evidence": "26/26",
+      "passed": true
+    },
+    {
+      "check": "BRH anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH solid facade edges",
+      "evidence": "28/28",
+      "passed": true
+    },
+    {
+      "check": "SBH anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH solid facade edges",
+      "evidence": "28/28",
+      "passed": true
+    },
+    {
+      "check": "EAT anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "EAT ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "EAT stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "EAT solid facade edges",
+      "evidence": "17/17",
+      "passed": true
+    },
+    {
+      "check": "WET anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "WET ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "WET stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "WET solid facade edges",
+      "evidence": "17/17",
+      "passed": true
+    },
+    {
+      "check": "CYR anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "CYR ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "CYR stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "CYR solid facade edges",
+      "evidence": "18/18",
+      "passed": true
+    },
+    {
+      "check": "MCH anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "MCH ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "MCH stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "MCH solid facade edges",
+      "evidence": "20/20",
+      "passed": true
+    },
+    {
+      "check": "HAM anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "HAM ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "HAM stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "HAM solid facade edges",
+      "evidence": "8/8",
+      "passed": true
+    },
+    {
+      "check": "SHR anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SHR ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SHR stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SHR solid facade edges",
+      "evidence": "9/9",
+      "passed": true
+    },
+    {
+      "check": "DC anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "DC ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "DC stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "DC solid facade edges",
+      "evidence": "22/22",
+      "passed": true
+    },
+    {
+      "check": "COW anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "COW ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "COW stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "COW solid facade edges",
+      "evidence": "13/13",
+      "passed": true
+    },
+    {
+      "check": "CHI anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "CHI ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "CHI stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "CHI solid facade edges",
+      "evidence": "13/13",
+      "passed": true
+    },
+    {
+      "check": "KEL anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KEL ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KEL stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KEL solid facade edges",
+      "evidence": "13/13",
+      "passed": true
+    },
+    {
+      "check": "KIM anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KIM ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KIM stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KIM solid facade edges",
+      "evidence": "13/13",
+      "passed": true
+    },
+    {
+      "check": "KIT anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KIT ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KIT stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KIT solid facade edges",
+      "evidence": "13/13",
+      "passed": true
+    },
+    {
+      "check": "PEN anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PEN ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PEN stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PEN solid facade edges",
+      "evidence": "13/13",
+      "passed": true
+    },
+    {
+      "check": "QUA anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "QUA ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "QUA stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "QUA solid facade edges",
+      "evidence": "13/13",
+      "passed": true
+    },
+    {
+      "check": "QUE anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "QUE ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "QUE stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "QUE solid facade edges",
+      "evidence": "13/13",
+      "passed": true
+    },
+    {
+      "check": "SQU anchor outside",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SQU ground",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SQU stable player",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SQU solid facade edges",
+      "evidence": "13/13",
+      "passed": true
+    },
+    {
+      "check": "W movement",
+      "evidence": "metres=4.131221",
+      "passed": true
+    },
+    {
+      "check": "Sprint faster",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Jump rises",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Jump lands",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Mouse look",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Character blocked by facade",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "First person fixed eye height",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "First person camera centered in collider",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Fall recovery",
+      "evidence": "",
+      "passed": true
+    }
+  ],
+  "failures": 0
+}

@@ -1,0 +1,12 @@
+building_id,architecture_family,confirmed_building_name,photos_count,geometry_verified,entrance_verified,shared_template_applied,instance_override_verified,grade_verified,quality_level,photo_ids,open_issues,next_action
+East_Tower,modern_east_west,East Tower,0,NO,NO,NO,NO,NO,L0,,Need current facade views,One pilot shared template
+West_Tower,modern_east_west,West Tower,0,NO,NO,NO,NO,NO,L0,,Confirm SFU 8 floors; survey base and roof with East,Use same family after pilot
+Barbara_Rae_House,north_towers,Barbara Rae House,0,NO,NO,NO,NO,NO,L0,,Need direct entry/face photos,Future North Tower family
+Pauline_Jewett_House,north_towers,Pauline Jewett House,0,NO,NO,NO,NO,NO,L0,,Need direct entry/face photos,Future North Tower family
+Shadbolt_House,north_towers,Shadbolt House,0,NO,NO,NO,NO,NO,L0,,Need direct entry/face photos,Future North Tower family
+Townhouses,townhouses,Townhouse blocks existing Phase1 stable IDs,0,NO,NO,NO,NO,NO,L0,,Need variants and terrain review,Build one block archetype and instantiate existing blocks
+Hamilton_Hall,hamilton_hall,Hamilton Hall,0,NO,NO,NO,NO,NO,L0,,Need photos,Distinct family
+Dining_Commons,dining_commons,Dining Commons,0,NO,NO,NO,NO,NO,L0,,Need photos,Distinct family
+Courtyard_Residence,courtyard_residence,Courtyard Residence,0,NO,NO,NO,NO,NO,L0,,Need photos,Distinct family
+Shell_House,shell_house,Shell House,0,NO,NO,NO,NO,NO,L0,,Need photos,Distinct family
+McTaggart_Cowan_Hall,mctaggart_cowan_hall,McTaggart-Cowan Hall,0,NO,NO,NO,NO,NO,L0,,Need photos,Distinct family

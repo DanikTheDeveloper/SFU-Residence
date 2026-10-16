@@ -1,0 +1,18 @@
+# 06 — Pilot ARCHITECTURAL FAMILY: modern East/West Towers
+
+## New efficiency policy
+The user reports the two modern towers look essentially the same in overall facade design. **Model the exterior master ONCE**, then instantiate/configure BOTH, subject to photo evidence. Do not expend two full independent facade-modeling passes. They differ in SFU-documented floor count: East = 7, West = 8 storeys. **User observes aligned world-space roofs despite sloped terrain**: derive and check `foundation_world_y + local_roof_height` for each tower; do NOT place foundations at identical Y or fake equal heights by changing floor count. User's more specific West-higher/one-floor-shorter recollection conflicts with official counts; record as unresolved until supported by terrain data/current photos. See `docs/PHASE2_21_ROOFLINE_GRADE_AND_SOURCE_CONFLICT.md`. Both have first two storeys containing amenity space, so podium features and additional floor rhythm may matter. Do not duplicate the East's entrance, foundations or particular color if those are not verified at West. Modern towers are architecturally separate from **North Towers**, which share their own later archetype.
+
+## Photo evidence gate
+Use `reference_photos/East_West_Towers/`; filenames start `East_Tower__` or `West_Tower__`. Pick the instance with best current exterior + entrance coverage as representative, generally East. If no relevant photos, first-person/terrain/parking takes precedence, create flexible facade master but label exact materials, door placements and colors as UNKNOWN, not PHOTO_MATCHED. Before applying shared elements to sibling, compare at least one current view where possible. Differences are exceptions, not a second standalone remodel.
+
+## Implementation details
+1. Keep Phase1 footprint placements/world XZ and stable IDs, preserve original geometry until alternate mesh confirmed working.
+2. Author one `ModernTowerExterior` (GDScript parametrized generator or one PackedScene with configured inherited instance): floor count, dimensions, podium levels, outer bay repeats, corner treatment, real color zones, glazing, frame depth, roof shape, per-instance entrance face/offset, local grade and name signage; all named metadata in `data/architecture_instances.csv`.
+3. Repeated windows: recessed glass plane, frames/mullions/shadows, slab trim and shared mesh resources, not flat pasted squares. Select low-overdraw materials good under Godot Compatibility on GTX 1650.
+4. Validate representative facade from photos, then instantiate sibling with 7 vs 8 storeys and independently verified ground-level door, slab count, dimensions. Compute/record the absolute roof Y values and compare against user-reported aligned roofline, with measured foundation heights and variable podium levels; do not distort the scale or set Y without evidence. Do NOT mirror or rotate entrance blindly; if unknown, note approximate.
+5. Compare screenshot(s) at first-person eye-level with matching source photo viewpoint; log family common elements and unique instance overrides; ensure both colliders and approach paths remain walkable.
+6. Reusing shared family geometry is the goal. Don't prematurely polish all buildings or choose photorealistic third-party stock assets unconnected to SFU.
+
+## Group pipeline follows
+Once this family is convincing: create ONE different `NorthTowerExterior` archetype for Barbara Rae, Pauline Jewett and Shadbolt; ONE `TownhouseBlockExterior` for existing townhouse blocks; uniquely model Dining Commons, Courtyard, Shell, Hamilton, McTaggart. See `docs/PHASE2_18_SHARED_ARCHETYPE_PIPELINE.md` for exact source/instance split and testing requirements.

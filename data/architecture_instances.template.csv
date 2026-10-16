@@ -1,0 +1,12 @@
+building_id,family_id,source_photo_folder,existing_scene_node_path,world_x,world_z,world_rotation_y_deg,foundation_y,floor_count,footprint_dimensions,entrance_face,entrance_offset,variant_id,photo_evidence_ids,confidence,status,notes
+East_Tower,modern_east_west,East_West_Towers,,,,,,7,,,,,UNKNOWN,NOT_STARTED,West differs by storey count,SFU 7 floors; compare absolute roof with West using sourced foundation grade
+West_Tower,modern_east_west,East_West_Towers,,,,,,8,,,,,UNKNOWN,NOT_STARTED,East differs by storey count,SFU 8 floors; roofline may align East via site grade; grade direction unverified
+Barbara_Rae_House,north_towers,Barbara_Pauline_Shadbolt,,,,,,8,,,,,UNKNOWN,NOT_STARTED,Entrances distinct until verified,
+Pauline_Jewett_House,north_towers,Barbara_Pauline_Shadbolt,,,,,,8,,,,,UNKNOWN,NOT_STARTED,Entrances distinct until verified,
+Shadbolt_House,north_towers,Barbara_Pauline_Shadbolt,,,,,,8,,,,,UNKNOWN,NOT_STARTED,Entrances distinct until verified,
+Townhouse_block_01,townhouses,Townhouses,,,,,,,,,,,UNKNOWN,TEMPLATE_ONLY,Replace with actual stable Phase1 ID; do not create phantom duplicate,
+Hamilton_Hall,hamilton_hall,Hamilton_Hall,,,,,,,,,,,UNKNOWN,NOT_STARTED,,
+Dining_Commons,dining_commons,Dining_Commons,,,,,,,,,,,UNKNOWN,NOT_STARTED,,
+Courtyard_Residence,courtyard_residence,Courtyard_Residence,,,,,,,,,,,UNKNOWN,NOT_STARTED,,
+Shell_House,shell_house,Shell_House,,,,,,,,,,,UNKNOWN,NOT_STARTED,,
+McTaggart_Cowan_Hall,mctaggart_cowan_hall,McTaggart_Cowan_Hall,,,,,,,,,,,UNKNOWN,NOT_STARTED,,

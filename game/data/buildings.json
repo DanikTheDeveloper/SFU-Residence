@@ -1,0 +1,2198 @@
+[
+  {
+    "id": "PJH",
+    "name": "Pauline Jewett House",
+    "floors": 8,
+    "floors_confidence": "VERIFIED_SOURCE_WITH_NORTH_TOWERS_CONFLICT",
+    "type": "north_tower",
+    "footprint_lonlat": null,
+    "height_m": 24.8,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        -25.091,
+        -18.825
+      ],
+      [
+        -17.982,
+        -17.157
+      ],
+      [
+        -17.692,
+        -18.247
+      ],
+      [
+        -9.35,
+        -16.29
+      ],
+      [
+        -9.64,
+        -15.2
+      ],
+      [
+        -1.444,
+        -13.277
+      ],
+      [
+        -0.936,
+        -15.4
+      ],
+      [
+        8.567,
+        -13.177
+      ],
+      [
+        8.059,
+        -11.053
+      ],
+      [
+        16.329,
+        -9.107
+      ],
+      [
+        16.546,
+        -10.197
+      ],
+      [
+        24.308,
+        -8.373
+      ],
+      [
+        24.09,
+        -7.283
+      ],
+      [
+        31.199,
+        -5.615
+      ],
+      [
+        30.329,
+        -1.99
+      ],
+      [
+        29.168,
+        2.891
+      ],
+      [
+        25.541,
+        18.258
+      ],
+      [
+        15.458,
+        15.901
+      ],
+      [
+        16.038,
+        13.688
+      ],
+      [
+        14.225,
+        13.266
+      ],
+      [
+        16.909,
+        1.712
+      ],
+      [
+        -15.734,
+        -5.96
+      ],
+      [
+        -18.418,
+        5.593
+      ],
+      [
+        -19.941,
+        5.237
+      ],
+      [
+        -20.449,
+        7.45
+      ],
+      [
+        -30.677,
+        5.048
+      ]
+    ],
+    "osm_id": "102388632",
+    "source_tags": {
+      "building": "dormitory",
+      "building:levels": "8",
+      "name": "Pauline Jewett House",
+      "roof:shape": "flat",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388632",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "aaa99b",
+        "a77b3f"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.1,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      3.438923076923077,
+      -3.7733461538461537
+    ],
+    "entrance": [
+      20.4995,
+      17.0795
+    ],
+    "outdoor_anchor": [
+      19.502837686927492,
+      21.352356066108648
+    ]
+  },
+  {
+    "id": "BRH",
+    "name": "Barbara Rae House",
+    "floors": 8,
+    "floors_confidence": "VERIFIED_SOURCE_WITH_NORTH_TOWERS_CONFLICT",
+    "type": "north_tower",
+    "footprint_lonlat": null,
+    "height_m": 24.8,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        47.092,
+        -1.679
+      ],
+      [
+        54.201,
+        -0.011
+      ],
+      [
+        54.419,
+        -1.09
+      ],
+      [
+        62.761,
+        0.867
+      ],
+      [
+        62.543,
+        1.957
+      ],
+      [
+        70.667,
+        3.881
+      ],
+      [
+        71.175,
+        1.746
+      ],
+      [
+        80.678,
+        3.981
+      ],
+      [
+        80.17,
+        6.105
+      ],
+      [
+        88.439,
+        8.051
+      ],
+      [
+        88.73,
+        6.961
+      ],
+      [
+        96.491,
+        8.784
+      ],
+      [
+        96.201,
+        9.863
+      ],
+      [
+        103.31,
+        11.531
+      ],
+      [
+        102.381,
+        15.656
+      ],
+      [
+        101.221,
+        20.538
+      ],
+      [
+        97.724,
+        35.416
+      ],
+      [
+        87.642,
+        33.058
+      ],
+      [
+        88.149,
+        30.845
+      ],
+      [
+        86.336,
+        30.423
+      ],
+      [
+        89.092,
+        18.87
+      ],
+      [
+        56.377,
+        11.197
+      ],
+      [
+        53.693,
+        22.75
+      ],
+      [
+        52.17,
+        22.395
+      ],
+      [
+        51.662,
+        24.607
+      ],
+      [
+        41.434,
+        22.206
+      ],
+      [
+        45.134,
+        6.538
+      ],
+      [
+        46.294,
+        1.657
+      ]
+    ],
+    "osm_id": "102388639",
+    "source_tags": {
+      "building": "dormitory",
+      "building:levels": "8",
+      "name": "Barbara Rae House",
+      "roof:shape": "flat",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388639",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "aaa99b",
+        "a77b3f"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.1,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      73.4352142857143,
+      12.753678571428571
+    ],
+    "entrance": [
+      92.68299999999999,
+      34.236999999999995
+    ],
+    "outdoor_anchor": [
+      91.75513015836994,
+      38.21380345077364
+    ]
+  },
+  {
+    "id": "SBH",
+    "name": "Shadbolt House",
+    "floors": 8,
+    "floors_confidence": "VERIFIED_SOURCE_WITH_NORTH_TOWERS_CONFLICT",
+    "type": "north_tower",
+    "footprint_lonlat": null,
+    "height_m": 24.8,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        119.015,
+        15.189
+      ],
+      [
+        126.123,
+        16.857
+      ],
+      [
+        126.341,
+        15.779
+      ],
+      [
+        134.683,
+        17.736
+      ],
+      [
+        134.465,
+        18.814
+      ],
+      [
+        142.662,
+        20.738
+      ],
+      [
+        143.17,
+        18.614
+      ],
+      [
+        152.673,
+        20.849
+      ],
+      [
+        152.165,
+        22.973
+      ],
+      [
+        160.434,
+        24.919
+      ],
+      [
+        160.652,
+        23.829
+      ],
+      [
+        168.414,
+        25.642
+      ],
+      [
+        168.124,
+        26.731
+      ],
+      [
+        175.232,
+        28.399
+      ],
+      [
+        174.507,
+        31.724
+      ],
+      [
+        173.346,
+        36.605
+      ],
+      [
+        169.647,
+        52.284
+      ],
+      [
+        159.564,
+        49.915
+      ],
+      [
+        160.072,
+        47.714
+      ],
+      [
+        158.331,
+        47.291
+      ],
+      [
+        161.015,
+        35.738
+      ],
+      [
+        128.372,
+        28.066
+      ],
+      [
+        125.616,
+        39.608
+      ],
+      [
+        124.165,
+        39.263
+      ],
+      [
+        123.585,
+        41.476
+      ],
+      [
+        113.429,
+        39.074
+      ],
+      [
+        117.005,
+        24.163
+      ],
+      [
+        118.093,
+        19.292
+      ]
+    ],
+    "osm_id": "102388635",
+    "source_tags": {
+      "building": "dormitory",
+      "building:levels": "8",
+      "name": "Shadbolt House",
+      "roof:shape": "flat",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388635",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "aaa99b",
+        "a77b3f"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.1,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      145.3892857142857,
+      29.617214285714287
+    ],
+    "entrance": [
+      118.507,
+      40.275
+    ],
+    "outdoor_anchor": [
+      117.5818297575641,
+      44.23992544565186
+    ]
+  },
+  {
+    "id": "EAT",
+    "name": "East Tower",
+    "floors": 7,
+    "floors_confidence": "VERIFIED",
+    "type": "modern_tower",
+    "footprint_lonlat": null,
+    "height_m": 21.7,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        166.658,
+        62.925
+      ],
+      [
+        163.024,
+        79.126
+      ],
+      [
+        160.159,
+        91.747
+      ],
+      [
+        136.431,
+        86.087
+      ],
+      [
+        136.076,
+        87.711
+      ],
+      [
+        124.252,
+        84.842
+      ],
+      [
+        124.702,
+        83.018
+      ],
+      [
+        104.376,
+        78.081
+      ],
+      [
+        110.854,
+        49.927
+      ],
+      [
+        126.486,
+        53.518
+      ],
+      [
+        122.366,
+        71.209
+      ],
+      [
+        126.892,
+        72.232
+      ],
+      [
+        127.349,
+        70.142
+      ],
+      [
+        139.608,
+        73.055
+      ],
+      [
+        139.217,
+        74.945
+      ],
+      [
+        146.92,
+        76.769
+      ],
+      [
+        150.75,
+        59.3
+      ]
+    ],
+    "osm_id": "980707207",
+    "source_tags": {
+      "building": "dormitory",
+      "building:levels": "7",
+      "name": "East Tower",
+      "roof:shape": "flat"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/980707207",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8e5741",
+        "b4754a"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.1,
+      "roof": "flat OSM tag or neutral estimated flat roof",
+      "source": "https://dialogdesign.ca/projects/simon-fraser-university-phase-1-student-residence/ ; brick/copper from text, exact allocation ESTIMATED"
+    },
+    "centroid": [
+      135.65411764705883,
+      73.802
+    ],
+    "entrance": [
+      130.164,
+      86.2765
+    ],
+    "outdoor_anchor": [
+      129.53184610372588,
+      89.12298138840359
+    ]
+  },
+  {
+    "id": "WET",
+    "name": "West Tower",
+    "floors": 8,
+    "floors_confidence": "VERIFIED",
+    "type": "modern_tower",
+    "footprint_lonlat": null,
+    "height_m": 24.8,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        38.576,
+        32.569
+      ],
+      [
+        31.99,
+        61.102
+      ],
+      [
+        55.732,
+        66.739
+      ],
+      [
+        55.246,
+        68.585
+      ],
+      [
+        67.708,
+        71.554
+      ],
+      [
+        68.158,
+        69.608
+      ],
+      [
+        88.403,
+        74.345
+      ],
+      [
+        91.377,
+        61.969
+      ],
+      [
+        95.157,
+        46.046
+      ],
+      [
+        79.198,
+        42.354
+      ],
+      [
+        75.223,
+        59.578
+      ],
+      [
+        70.979,
+        58.566
+      ],
+      [
+        71.422,
+        56.765
+      ],
+      [
+        58.764,
+        53.718
+      ],
+      [
+        58.234,
+        55.597
+      ],
+      [
+        51.053,
+        53.852
+      ],
+      [
+        55.296,
+        36.416
+      ]
+    ],
+    "osm_id": "980707206",
+    "source_tags": {
+      "building": "dormitory",
+      "building:levels": "8",
+      "name": "West Tower",
+      "roof:shape": "flat"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/980707206",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8e5741",
+        "b4754a"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.1,
+      "roof": "flat OSM tag or neutral estimated flat roof",
+      "source": "https://dialogdesign.ca/projects/simon-fraser-university-phase-1-student-residence/ ; brick/copper from text, exact allocation ESTIMATED"
+    },
+    "centroid": [
+      65.44211764705882,
+      57.021352941176474
+    ],
+    "entrance": [
+      35.283,
+      46.835499999999996
+    ],
+    "outdoor_anchor": [
+      32.8147231780321,
+      46.26025106030201
+    ]
+  },
+  {
+    "id": "CYR",
+    "name": "Courtyard Residence",
+    "floors": 11,
+    "floors_confidence": "VERIFIED",
+    "type": "modern_residence",
+    "footprint_lonlat": null,
+    "height_m": 34.1,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        301.16,
+        -46.068
+      ],
+      [
+        296.916,
+        -29.778
+      ],
+      [
+        331.866,
+        -20.905
+      ],
+      [
+        328.899,
+        -8.829
+      ],
+      [
+        300.565,
+        -15.345
+      ],
+      [
+        300.855,
+        -16.835
+      ],
+      [
+        260.48,
+        -25.719
+      ],
+      [
+        257.934,
+        -12.754
+      ],
+      [
+        296.394,
+        -3.736
+      ],
+      [
+        295.553,
+        -0.267
+      ],
+      [
+        342.884,
+        10.63
+      ],
+      [
+        346.025,
+        -3.758
+      ],
+      [
+        346.41,
+        -5.671
+      ],
+      [
+        338.452,
+        -7.628
+      ],
+      [
+        339.091,
+        -10.319
+      ],
+      [
+        341.013,
+        -18.948
+      ],
+      [
+        344.415,
+        -18.136
+      ],
+      [
+        347.715,
+        -34.393
+      ]
+    ],
+    "osm_id": "1035487348",
+    "source_tags": {
+      "building": "dormitory",
+      "name": "Courtyard Residence"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/1035487348",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "c4c4b9",
+        "926444"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.1,
+      "roof": "flat OSM tag or neutral estimated flat roof",
+      "source": "https://dialogdesign.ca/projects/simon-fraser-university-phase-2-student-residence/ ; precast/vertical glazing from text, exact pattern ESTIMATED"
+    },
+    "centroid": [
+      317.5903888888889,
+      -14.914388888888888
+    ],
+    "entrance": [
+      277.164,
+      -8.245
+    ],
+    "outdoor_anchor": [
+      276.03980323404494,
+      -3.435753919715502
+    ]
+  },
+  {
+    "id": "MCH",
+    "name": "McTaggart-Cowan Hall",
+    "floors": 4,
+    "floors_confidence": "VERIFIED",
+    "type": "lowrise_hall",
+    "footprint_lonlat": null,
+    "height_m": 12.4,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        144.316,
+        114.064
+      ],
+      [
+        182.283,
+        122.982
+      ],
+      [
+        180.281,
+        131.51
+      ],
+      [
+        218.357,
+        140.461
+      ],
+      [
+        217.392,
+        144.553
+      ],
+      [
+        220.656,
+        145.321
+      ],
+      [
+        218.995,
+        152.393
+      ],
+      [
+        215.731,
+        151.625
+      ],
+      [
+        214.846,
+        155.384
+      ],
+      [
+        176.77,
+        146.433
+      ],
+      [
+        178.801,
+        137.782
+      ],
+      [
+        140.842,
+        128.864
+      ],
+      [
+        142.764,
+        120.691
+      ],
+      [
+        110.129,
+        113.019
+      ],
+      [
+        111.057,
+        109.082
+      ],
+      [
+        109.077,
+        108.615
+      ],
+      [
+        110.752,
+        101.465
+      ],
+      [
+        112.733,
+        101.932
+      ],
+      [
+        113.654,
+        98.018
+      ],
+      [
+        146.289,
+        105.691
+      ]
+    ],
+    "osm_id": "102388641",
+    "source_tags": {
+      "building": "dormitory",
+      "building:levels": "4",
+      "name": "McTaggart-Cowan Hall",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388641",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "aaa391",
+        "625d50"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.1,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      163.28625,
+      126.49425000000001
+    ],
+    "entrance": [
+      129.9715,
+      101.8545
+    ],
+    "outdoor_anchor": [
+      131.61345788878367,
+      94.97789829277704
+    ]
+  },
+  {
+    "id": "HAM",
+    "name": "Hamilton Hall",
+    "floors": 4,
+    "floors_confidence": "VERIFIED",
+    "type": "lowrise_hall",
+    "footprint_lonlat": null,
+    "height_m": 12.4,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        28.21,
+        52.317
+      ],
+      [
+        -35.501,
+        37.706
+      ],
+      [
+        -30.938,
+        18.214
+      ],
+      [
+        -6.855,
+        23.985
+      ],
+      [
+        -6.253,
+        21.739
+      ],
+      [
+        8.944,
+        25.508
+      ],
+      [
+        8.393,
+        28.244
+      ],
+      [
+        32.664,
+        33.87
+      ]
+    ],
+    "osm_id": "102388631",
+    "source_tags": {
+      "building": "dormitory",
+      "building:levels": "4",
+      "name": "Hamilton Hall",
+      "roof:shape": "flat",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388631",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "aaa391",
+        "625d50"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.1,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      -0.16699999999999915,
+      30.197875
+    ],
+    "entrance": [
+      30.437,
+      43.0935
+    ],
+    "outdoor_anchor": [
+      33.392240916670694,
+      43.782239281079306
+    ]
+  },
+  {
+    "id": "SHR",
+    "name": "Shell House",
+    "floors": 4,
+    "floors_confidence": "UNKNOWN",
+    "type": "lowrise_hall",
+    "footprint_lonlat": null,
+    "height_m": 12.4,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        266.0,
+        112.607
+      ],
+      [
+        259.98,
+        138.249
+      ],
+      [
+        246.248,
+        135.024
+      ],
+      [
+        252.53,
+        108.293
+      ],
+      [
+        255.533,
+        109.004
+      ],
+      [
+        260.103,
+        89.49
+      ],
+      [
+        267.219,
+        59.278
+      ],
+      [
+        281.901,
+        62.736
+      ],
+      [
+        269.961,
+        113.541
+      ]
+    ],
+    "osm_id": "102388883",
+    "source_tags": {
+      "building": "dormitory",
+      "building:levels": "4",
+      "name": "Shell House",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388883",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "aaa391",
+        "625d50"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.1,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      262.1638888888889,
+      103.13577777777778
+    ],
+    "entrance": [
+      253.114,
+      136.6365
+    ],
+    "outdoor_anchor": [
+      250.80832724005936,
+      145.07970091276516
+    ]
+  },
+  {
+    "id": "DC",
+    "name": "Dining Commons",
+    "floors": 3,
+    "floors_confidence": "VERIFIED DIALOG project text; OSM says 2, unresolved split-level form",
+    "type": "dining",
+    "footprint_lonlat": null,
+    "height_m": 11.100000000000001,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        186.236,
+        34.404
+      ],
+      [
+        187.687,
+        28.755
+      ],
+      [
+        182.9,
+        27.799
+      ],
+      [
+        189.065,
+        2.602
+      ],
+      [
+        227.946,
+        11.864
+      ],
+      [
+        229.615,
+        5.271
+      ],
+      [
+        248.04,
+        9.763
+      ],
+      [
+        246.582,
+        16.09
+      ],
+      [
+        249.875,
+        16.924
+      ],
+      [
+        243.753,
+        42.332
+      ],
+      [
+        241.352,
+        41.82
+      ],
+      [
+        241.228,
+        42.621
+      ],
+      [
+        235.505,
+        67.818
+      ],
+      [
+        214.81,
+        62.836
+      ],
+      [
+        215.593,
+        59.623
+      ],
+      [
+        197.407,
+        55.219
+      ],
+      [
+        198.133,
+        52.106
+      ],
+      [
+        195.014,
+        51.361
+      ],
+      [
+        194.724,
+        52.495
+      ],
+      [
+        188.732,
+        51.083
+      ],
+      [
+        182.61,
+        49.649
+      ],
+      [
+        185.076,
+        39.285
+      ],
+      [
+        185.562,
+        37.284
+      ]
+    ],
+    "osm_id": "102388637",
+    "source_tags": {
+      "amenity": "restaurant",
+      "building": "yes",
+      "building:levels": "2",
+      "name": "Dining Commons",
+      "opening_hours": "Mo-Su,PH 00:00-24:00",
+      "roof:shape": "flat",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388637",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "b7ae98",
+        "805938"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.1,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      211.62804347826085,
+      37.348
+    ],
+    "entrance": [
+      238.3665,
+      55.2195
+    ],
+    "outdoor_anchor": [
+      241.90697461615434,
+      55.95541037824682
+    ]
+  },
+  {
+    "id": "COW",
+    "name": "Cowichan",
+    "floors": 3,
+    "floors_confidence": "VERIFIED",
+    "type": "townhouse",
+    "footprint_lonlat": null,
+    "height_m": 9.3,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        -59.525,
+        -21.527
+      ],
+      [
+        -65.183,
+        -23.173
+      ],
+      [
+        -65.459,
+        -22.239
+      ],
+      [
+        -75.266,
+        -25.074
+      ],
+      [
+        -75.593,
+        -23.963
+      ],
+      [
+        -86.256,
+        -27.043
+      ],
+      [
+        -85.661,
+        -29.1
+      ],
+      [
+        -92.444,
+        -31.057
+      ],
+      [
+        -88.788,
+        -43.7
+      ],
+      [
+        -82.767,
+        -41.954
+      ],
+      [
+        -82.441,
+        -43.077
+      ],
+      [
+        -71.777,
+        -39.997
+      ],
+      [
+        -71.581,
+        -40.664
+      ],
+      [
+        -61.042,
+        -37.617
+      ],
+      [
+        -61.23,
+        -36.939
+      ],
+      [
+        -55.543,
+        -35.293
+      ]
+    ],
+    "osm_id": "102388881",
+    "source_tags": {
+      "building": "residential",
+      "building:levels": "3",
+      "name": "Cowichan Residence",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388881",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8b9a93",
+        "4d6559"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.7,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      -73.78475,
+      -32.6510625
+    ],
+    "entrance": [
+      -70.36250000000001,
+      -23.6565
+    ],
+    "outdoor_anchor": [
+      -71.00760782047567,
+      -20.998293059078044
+    ]
+  },
+  {
+    "id": "CHI",
+    "name": "Chilcotin",
+    "floors": 3,
+    "floors_confidence": "VERIFIED",
+    "type": "townhouse",
+    "footprint_lonlat": null,
+    "height_m": 9.3,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        -68.767,
+        14.177
+      ],
+      [
+        -70.392,
+        19.837
+      ],
+      [
+        -69.456,
+        20.104
+      ],
+      [
+        -72.278,
+        29.923
+      ],
+      [
+        -71.161,
+        30.245
+      ],
+      [
+        -74.222,
+        40.909
+      ],
+      [
+        -76.275,
+        40.319
+      ],
+      [
+        -78.226,
+        47.113
+      ],
+      [
+        -90.87,
+        43.477
+      ],
+      [
+        -89.143,
+        37.462
+      ],
+      [
+        -90.267,
+        37.139
+      ],
+      [
+        -87.199,
+        26.464
+      ],
+      [
+        -87.874,
+        26.264
+      ],
+      [
+        -84.842,
+        15.723
+      ],
+      [
+        -84.174,
+        15.912
+      ],
+      [
+        -82.535,
+        10.219
+      ]
+    ],
+    "osm_id": "102388885",
+    "source_tags": {
+      "building": "residential",
+      "building:levels": "3",
+      "name": "Chilcotin Residence",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388885",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8b9a93",
+        "4d6559"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.7,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      -79.8550625,
+      28.4554375
+    ],
+    "entrance": [
+      -77.2505,
+      43.716
+    ],
+    "outdoor_anchor": [
+      -74.46975189124687,
+      44.40990202344117
+    ]
+  },
+  {
+    "id": "KEL",
+    "name": "Kelowna",
+    "floors": 3,
+    "floors_confidence": "VERIFIED",
+    "type": "townhouse",
+    "footprint_lonlat": null,
+    "height_m": 9.3,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        -109.244,
+        -15.89
+      ],
+      [
+        -103.499,
+        -14.578
+      ],
+      [
+        -103.281,
+        -15.523
+      ],
+      [
+        -93.329,
+        -13.243
+      ],
+      [
+        -93.06,
+        -14.378
+      ],
+      [
+        -82.245,
+        -11.898
+      ],
+      [
+        -82.723,
+        -9.819
+      ],
+      [
+        -75.839,
+        -8.24
+      ],
+      [
+        -78.777,
+        4.592
+      ],
+      [
+        -84.885,
+        3.191
+      ],
+      [
+        -85.146,
+        4.325
+      ],
+      [
+        -95.976,
+        1.846
+      ],
+      [
+        -96.129,
+        2.524
+      ],
+      [
+        -106.828,
+        0.078
+      ],
+      [
+        -106.669,
+        -0.6
+      ],
+      [
+        -112.443,
+        -1.924
+      ]
+    ],
+    "osm_id": "32894614",
+    "source_tags": {
+      "building": "residential",
+      "building:levels": "3",
+      "name": "Kelowna Residence",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/32894614",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8b9a93",
+        "4d6559"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.7,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      -94.3795625,
+      -5.5960625
+    ],
+    "entrance": [
+      -110.8435,
+      -8.907
+    ],
+    "outdoor_anchor": [
+      -113.32386904584179,
+      -9.61783908957483
+    ]
+  },
+  {
+    "id": "KIM",
+    "name": "Kimberley",
+    "floors": 3,
+    "floors_confidence": "VERIFIED",
+    "type": "townhouse",
+    "footprint_lonlat": null,
+    "height_m": 9.3,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        -118.289,
+        6.472
+      ],
+      [
+        -123.998,
+        5.015
+      ],
+      [
+        -124.237,
+        5.96
+      ],
+      [
+        -134.139,
+        3.436
+      ],
+      [
+        -134.429,
+        4.57
+      ],
+      [
+        -145.179,
+        1.824
+      ],
+      [
+        -144.657,
+        -0.245
+      ],
+      [
+        -151.505,
+        -1.99
+      ],
+      [
+        -148.255,
+        -14.733
+      ],
+      [
+        -142.184,
+        -13.188
+      ],
+      [
+        -141.893,
+        -14.322
+      ],
+      [
+        -131.129,
+        -11.587
+      ],
+      [
+        -130.962,
+        -12.265
+      ],
+      [
+        -120.32,
+        -9.552
+      ],
+      [
+        -120.494,
+        -8.873
+      ],
+      [
+        -114.757,
+        -7.417
+      ]
+    ],
+    "osm_id": "102388878",
+    "source_tags": {
+      "building": "residential",
+      "building:levels": "3",
+      "name": "Kimberley Residence",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388878",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8b9a93",
+        "4d6559"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.7,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      -132.9016875,
+      -4.1809375
+    ],
+    "entrance": [
+      -145.21949999999998,
+      -13.9605
+    ],
+    "outdoor_anchor": [
+      -144.6278655123025,
+      -16.505053254199908
+    ]
+  },
+  {
+    "id": "KIT",
+    "name": "Kitimat",
+    "floors": 3,
+    "floors_confidence": "VERIFIED",
+    "type": "townhouse",
+    "footprint_lonlat": null,
+    "height_m": 9.3,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        -116.693,
+        19.07
+      ],
+      [
+        -118.318,
+        24.741
+      ],
+      [
+        -117.39,
+        25.008
+      ],
+      [
+        -120.204,
+        34.826
+      ],
+      [
+        -119.087,
+        35.149
+      ],
+      [
+        -122.148,
+        45.812
+      ],
+      [
+        -124.201,
+        45.223
+      ],
+      [
+        -126.152,
+        52.017
+      ],
+      [
+        -138.803,
+        48.381
+      ],
+      [
+        -137.07,
+        42.354
+      ],
+      [
+        -138.194,
+        42.032
+      ],
+      [
+        -135.133,
+        31.357
+      ],
+      [
+        -135.8,
+        31.168
+      ],
+      [
+        -132.775,
+        20.616
+      ],
+      [
+        -132.101,
+        20.816
+      ],
+      [
+        -130.469,
+        15.123
+      ]
+    ],
+    "osm_id": "102388877",
+    "source_tags": {
+      "building": "residential",
+      "building:levels": "3",
+      "name": "Kitimat Residence",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388877",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8b9a93",
+        "4d6559"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.7,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      -127.783625,
+      33.3558125
+    ],
+    "entrance": [
+      -134.28750000000002,
+      25.892
+    ],
+    "outdoor_anchor": [
+      -138.29207669610292,
+      24.79800064767784
+    ]
+  },
+  {
+    "id": "PEN",
+    "name": "Penticton",
+    "floors": 3,
+    "floors_confidence": "VERIFIED",
+    "type": "townhouse",
+    "footprint_lonlat": null,
+    "height_m": 9.3,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        -186.657,
+        41.387
+      ],
+      [
+        -180.912,
+        42.699
+      ],
+      [
+        -180.695,
+        41.754
+      ],
+      [
+        -170.742,
+        44.033
+      ],
+      [
+        -170.481,
+        42.91
+      ],
+      [
+        -159.658,
+        45.39
+      ],
+      [
+        -160.137,
+        47.469
+      ],
+      [
+        -153.253,
+        49.048
+      ],
+      [
+        -156.191,
+        61.869
+      ],
+      [
+        -162.299,
+        60.468
+      ],
+      [
+        -162.567,
+        61.613
+      ],
+      [
+        -173.39,
+        59.133
+      ],
+      [
+        -173.542,
+        59.812
+      ],
+      [
+        -184.242,
+        57.354
+      ],
+      [
+        -184.082,
+        56.676
+      ],
+      [
+        -189.863,
+        55.353
+      ]
+    ],
+    "osm_id": "102388884",
+    "source_tags": {
+      "building": "residential",
+      "building:levels": "3",
+      "name": "Penticton Residence",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388884",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8b9a93",
+        "4d6559"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.7,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      -171.7944375,
+      51.6855
+    ],
+    "entrance": [
+      -178.892,
+      58.583
+    ],
+    "outdoor_anchor": [
+      -179.49930114471846,
+      61.0622691387396
+    ]
+  },
+  {
+    "id": "QUA",
+    "name": "Qualicum",
+    "floors": 3,
+    "floors_confidence": "VERIFIED",
+    "type": "townhouse",
+    "footprint_lonlat": null,
+    "height_m": 9.3,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        -192.627,
+        52.095
+      ],
+      [
+        -198.358,
+        50.883
+      ],
+      [
+        -198.575,
+        51.839
+      ],
+      [
+        -208.586,
+        49.726
+      ],
+      [
+        -208.803,
+        50.861
+      ],
+      [
+        -219.684,
+        48.559
+      ],
+      [
+        -219.249,
+        46.479
+      ],
+      [
+        -226.14,
+        45.012
+      ],
+      [
+        -223.456,
+        32.135
+      ],
+      [
+        -217.29,
+        33.436
+      ],
+      [
+        -217.073,
+        32.291
+      ],
+      [
+        -206.192,
+        34.582
+      ],
+      [
+        -206.047,
+        33.903
+      ],
+      [
+        -195.311,
+        36.172
+      ],
+      [
+        -195.456,
+        36.85
+      ],
+      [
+        -189.653,
+        38.084
+      ]
+    ],
+    "osm_id": "102388880",
+    "source_tags": {
+      "building": "residential",
+      "building:levels": "3",
+      "name": "Qualicum Residence",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388880",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8b9a93",
+        "4d6559"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.7,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      -207.65625,
+      42.0566875
+    ],
+    "entrance": [
+      -224.798,
+      38.573499999999996
+    ],
+    "outdoor_anchor": [
+      -227.45585663569523,
+      38.08101904757901
+    ]
+  },
+  {
+    "id": "QUE",
+    "name": "Quesnel",
+    "floors": 3,
+    "floors_confidence": "VERIFIED",
+    "type": "townhouse",
+    "footprint_lonlat": null,
+    "height_m": 9.3,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        -250.267,
+        76.691
+      ],
+      [
+        -249.179,
+        70.909
+      ],
+      [
+        -250.122,
+        70.72
+      ],
+      [
+        -248.163,
+        60.69
+      ],
+      [
+        -249.324,
+        60.468
+      ],
+      [
+        -247.22,
+        49.582
+      ],
+      [
+        -245.116,
+        49.993
+      ],
+      [
+        -243.738,
+        43.055
+      ],
+      [
+        -230.826,
+        45.568
+      ],
+      [
+        -232.059,
+        51.717
+      ],
+      [
+        -230.899,
+        51.95
+      ],
+      [
+        -233.002,
+        62.847
+      ],
+      [
+        -232.349,
+        62.981
+      ],
+      [
+        -234.381,
+        73.756
+      ],
+      [
+        -235.106,
+        73.622
+      ],
+      [
+        -236.267,
+        79.438
+      ]
+    ],
+    "osm_id": "102388879",
+    "source_tags": {
+      "building": "residential",
+      "building:levels": "3",
+      "name": "Quesnel Residence",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388879",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8b9a93",
+        "4d6559"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.7,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      -240.501125,
+      61.4991875
+    ],
+    "entrance": [
+      -243.267,
+      78.06450000000001
+    ],
+    "outdoor_anchor": [
+      -243.74310800849327,
+      80.71750228073154
+    ]
+  },
+  {
+    "id": "SQU",
+    "name": "Squamish",
+    "floors": 3,
+    "floors_confidence": "VERIFIED",
+    "type": "townhouse",
+    "footprint_lonlat": null,
+    "height_m": 9.3,
+    "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+    "footprint": [
+      [
+        -216.942,
+        106.692
+      ],
+      [
+        -222.709,
+        105.468
+      ],
+      [
+        -222.912,
+        106.425
+      ],
+      [
+        -232.901,
+        104.312
+      ],
+      [
+        -233.147,
+        105.446
+      ],
+      [
+        -244.006,
+        103.156
+      ],
+      [
+        -243.564,
+        101.065
+      ],
+      [
+        -250.477,
+        99.608
+      ],
+      [
+        -247.75,
+        86.732
+      ],
+      [
+        -241.62,
+        88.022
+      ],
+      [
+        -241.381,
+        86.877
+      ],
+      [
+        -230.514,
+        89.178
+      ],
+      [
+        -230.369,
+        88.489
+      ],
+      [
+        -219.633,
+        90.768
+      ],
+      [
+        -219.778,
+        91.447
+      ],
+      [
+        -213.983,
+        92.67
+      ]
+    ],
+    "osm_id": "102388882",
+    "source_tags": {
+      "building": "residential",
+      "building:levels": "3",
+      "name": "Squamish Residence",
+      "source": "Bing"
+    },
+    "geometry_source": "https://www.openstreetmap.org/way/102388882",
+    "license": "ODbL-1.0",
+    "npc_spawn_anchors": [],
+    "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+    "facade": {
+      "palette": [
+        "8b9a93",
+        "4d6559"
+      ],
+      "confidence": "ESTIMATED original modular interpretation",
+      "bay_m": 3.7,
+      "roof": "flat OSM tag or neutral estimated flat roof"
+    },
+    "centroid": [
+      -231.980375,
+      96.6471875
+    ],
+    "entrance": [
+      -247.0205,
+      100.3365
+    ],
+    "outdoor_anchor": [
+      -249.831,
+      102.055
+    ]
+  }
+]

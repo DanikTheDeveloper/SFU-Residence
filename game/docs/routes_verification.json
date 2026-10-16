@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "check": "Walk loop [\"WET\", \"HAM\", \"COW\", \"CHI\", \"KEL\", \"KIM\", \"KIT\", \"PEN\", \"QUA\", \"QUE\", \"SQU\", \"WET\"]",
+      "evidence": "150/150 checkpoints",
+      "passed": true
+    },
+    {
+      "check": "Walk loop [\"WET\", \"PJH\", \"BRH\", \"SBH\", \"DC\", \"CYR\", \"SHR\", \"EAT\", \"WET\"]",
+      "evidence": "140/140 checkpoints",
+      "passed": true
+    },
+    {
+      "check": "Walk loop [\"WET\", \"EAT\", \"MCH\", \"HAM\", \"WET\"]",
+      "evidence": "43/43 checkpoints",
+      "passed": true
+    }
+  ],
+  "failures": 0
+}

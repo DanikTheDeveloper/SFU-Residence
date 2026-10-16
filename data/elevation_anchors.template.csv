@@ -1,0 +1,6 @@
+anchor_id,world_x_m,world_z_m,relative_elevation_m,source_id,confidence,notes
+townhouses_zone,,,,,UNKNOWN,Need actual relative height relative to dining
+dining_area,,,,,UNKNOWN,Need survey/contour or photo evidence
+parking_area,,,,,UNKNOWN,Needs grade match
+west_tower_entrance,,,,,UNKNOWN,Grounded entrance altitude needed
+east_tower_entrance,,,,,UNKNOWN,Grounded entrance altitude needed

@@ -1,0 +1,147 @@
+[
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/AGENTS.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/AGENTS.md",
+    "sha256": "f4f488d170dd59224f9491994b6ea95a39f3e76af7f294607320ad9ae3e3bacd"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/CODEX_TASK_PROMPT.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/CODEX_TASK_PROMPT.md",
+    "sha256": "0a67f931374d2fdfaf3872a209df3a5b804ee11b395e19be72840b55f66394df"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/QUICK_START_RU.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/QUICK_START_RU.md",
+    "sha256": "e6b4caa32f48b5e1f4eb90d6e3cb60dffc24a189cf1bec44acccb44f53028cd6"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/README.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/README.md",
+    "sha256": "1b3f8e7d3d82aae84ae19b16aeb39b8527d674ca28cf739d209a7f0c3041c5cd"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/references/README.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/references/README.md",
+    "sha256": "8b9984dc7193cab16745bc0f3cc10362e39b2048ce4bbce49b5fa44ee51c6bd2"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/04_GEOMETRY_AND_COORDINATES.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/04_GEOMETRY_AND_COORDINATES.md",
+    "sha256": "6c2c09c9ce0b827f44c93ccc1e4316c54cb2d27bb3d6048f678ce285128f9f90"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/07_FIVE_HOUR_PLAN.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/07_FIVE_HOUR_PLAN.md",
+    "sha256": "a49772057a50f2e12346570db3d327ba35d5b21c84a0db4939eeabb1b03b1b90"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/10_SOURCE_LOG_TEMPLATE.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/10_SOURCE_LOG_TEMPLATE.md",
+    "sha256": "caec6a36c1164f7227e07ddce5890c16738409a9e41da820c32f8a78cbd058a2"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/05_VISUAL_QUALITY.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/05_VISUAL_QUALITY.md",
+    "sha256": "808492d7f1bd5d65213d8ae4fe747778db6a57d07bda87ab873ca32d9873ef2b"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/08_VALIDATION.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/08_VALIDATION.md",
+    "sha256": "a73c793b2c8653264d7fa215de9c50d14c9c194319430c882f2e60396136630e"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/15_GODOT_COMPATIBILITY_RECIPE.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/15_GODOT_COMPATIBILITY_RECIPE.md",
+    "sha256": "4a105e449fc16980ad9a0760e9322926cf0a56214b7d952d1ba87cb570e945cf"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/09_FUTURE_NPCS_AND_ONLINE_API.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/09_FUTURE_NPCS_AND_ONLINE_API.md",
+    "sha256": "6465f06d79360170231398f603bf30f88ced4cb3432bcedead1dc4c6e83c9234"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/06_GODOT_TECHNICAL_DESIGN.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/06_GODOT_TECHNICAL_DESIGN.md",
+    "sha256": "54953fc25ef31ed34e1d85cc224a7eb51491f2b9f5e4f3ca8047d02d1a04cb9e"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/13_WSL2_ENVIRONMENT.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/13_WSL2_ENVIRONMENT.md",
+    "sha256": "0ba72e042517c135ce40fbc79274f22e9f19ad43dca1673b9dab8e06460bd015"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/16_WSLG_GPU_TROUBLESHOOTING.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/16_WSLG_GPU_TROUBLESHOOTING.md",
+    "sha256": "d3937c6c1299f8af13a59a34e6525d185be6c4911ff46268827700a990f9aa94"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/19_QA_ACCEPTANCE_AND_HANDOFF.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/19_QA_ACCEPTANCE_AND_HANDOFF.md",
+    "sha256": "0d98426836379fdad59ebc0b82d903c910952f58fea2ff838b135c8323f84199"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/11_NEXT_SESSION_HANDOFF.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/11_NEXT_SESSION_HANDOFF.md",
+    "sha256": "47b7256dc490d76a7a80efa42b42e8830a92661b71aba2d805d77907bf9763a9"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/12_OSM_DATA_WORKFLOW.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/12_OSM_DATA_WORKFLOW.md",
+    "sha256": "612c8375b38dbaba30d30c0e2ef097b7d2fc116c42f86bdf07b7c401948bcac5"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/18_FUTURE_ONLINE_API_SECURITY_WSL.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/18_FUTURE_ONLINE_API_SECURITY_WSL.md",
+    "sha256": "2fd53b5ecf9be6a7be252c7318b7e0662a98ab6ea9765263bcc276c822844a2b"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/17_FIVE_HOUR_WSL2_EXECUTION.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/17_FIVE_HOUR_WSL2_EXECUTION.md",
+    "sha256": "b661353ad3ef5fd431325ba9dd596cfce5f99600b13954d90b9728f97f62d80a"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/03_BUILDING_REGISTER.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/03_BUILDING_REGISTER.md",
+    "sha256": "ff564b2e9ac5d910f137075b4697723d3aa78828b7f91606d1a7fbb2b6faccc1"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/14_SETUP_AND_INSTALL.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/14_SETUP_AND_INSTALL.md",
+    "sha256": "7f7c4bb331dc4b50cde644ad5b2244e1716d08e8bfc2e8541a6009c70930ef3a"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/01_SCOPE_AND_DELIVERABLES.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/01_SCOPE_AND_DELIVERABLES.md",
+    "sha256": "dff9160f9430cc32706b2244b5ad389eefe22e3dc2e11ecb6ddb9ca811d81649"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/02_REFERENCES_AND_PROVENANCE.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/02_REFERENCES_AND_PROVENANCE.md",
+    "sha256": "a0e1346e446fb233777aa630a0fb37d4050cab2cc353ba5e21390aba7c6936e0"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/20_EXTERNAL_REFERENCES.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/docs/20_EXTERNAL_REFERENCES.md",
+    "sha256": "a2b66dc7d68798be9833b506181d96aaee398b3377a0ca0e07795bb5583d2c5d"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/game/README.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/game/README.md",
+    "sha256": "dcd5063b53f62e4a994995a952d541ce85049120a4149532299d73b347a531f0"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/data/README.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/data/README.md",
+    "sha256": "114fc89a5721277f30cd9b5c4be7e3628aefe15ccfb2c0e5a2e0a48c99266503"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/game/docs/STATUS.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/game/docs/STATUS.md",
+    "sha256": "193aa9e08633c6a628b2397c3fddd66f0748137df5e0626eaa5b81461073939f"
+  },
+  {
+    "source": "SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/game/docs/NEXT_STEPS.md",
+    "backup": "/home/danik/Backups/SFU-Residence-Phase1-docs-20261016/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI/game/docs/NEXT_STEPS.md",
+    "sha256": "30ad875bac01f7d0572a5d2292674f582c334590766e15622a73248d4989d780"
+  }
+]

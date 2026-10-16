@@ -1,0 +1,157 @@
+{
+  "schema_version": 2,
+  "source_policy": "Family appearance and roofline alignment are user observations; floor counts are from SFU official housing/building records. Retain per-building door locations, foundations, rotations, actual geometry and terrain. Roof alignment must be verified using terrain and photos; do not force a roof height by moving/floating foundations or silently swapping confirmed storey counts.",
+  "family_definitions": [
+    {
+      "family_id": "modern_east_west",
+      "family_scene_suggestion": "ModernTowerExterior.tscn",
+      "photo_folder": "East_West_Towers",
+      "instances": [
+        {
+          "id": "East_Tower",
+          "name": "East Tower",
+          "floor_count": 7
+        },
+        {
+          "id": "West_Tower",
+          "name": "West Tower",
+          "floor_count": 8
+        }
+      ],
+      "shared": "one photo-matched exterior architecture model, identical characteristic exterior modules, window rhythm, color/material family and roofline treatment when supported by photos",
+      "unique": "building stable ID, actual XZ, rotation, East 7/West 8 storeys per SFU, foundation/grade, entrance position/signage, podium geometry or verified exceptions",
+      "roof_alignment": {
+        "user_report": "East and West rooflines appear aligned in world elevation although ground levels differ",
+        "status": "USER_REPORTED_NOT_SURVEYED",
+        "target": "align absolute visible roofline Y if site evidence supports it; no arbitrary building stretching",
+        "rule": "roof_world_y = local_foundation_world_y + measured_above_grade_roof_height",
+        "floor_count_authority": "https://www.sfu.ca/students/residences/housing-options/east-west-towers.html",
+        "confirmed_storeys": {
+          "East_Tower": 7,
+          "West_Tower": 8
+        },
+        "grade_direction_caveat": "User says West is on higher ground and one floor shorter, but official SFU counts West as one floor taller. For equal storey heights and coincident roofs, East foundation would be higher than West. Do not assume either grade direction until surveyed terrain is checked.",
+        "roof_target_world_y_m": null,
+        "roof_alignment_tolerance_m": null,
+        "source_evidence_required": [
+          "photographs with identified tower/roofline",
+          "licensed survey/DEM/contours for foundations",
+          "documented podium and storey dimensions"
+        ]
+      }
+    },
+    {
+      "family_id": "north_towers",
+      "family_scene_suggestion": "NorthTowerExterior.tscn",
+      "photo_folder": "Barbara_Pauline_Shadbolt",
+      "instances": [
+        {
+          "id": "Barbara_Rae_House",
+          "name": "Barbara Rae House",
+          "photo_folder": "Barbara_Pauline_Shadbolt",
+          "floor_count": 8
+        },
+        {
+          "id": "Pauline_Jewett_House",
+          "name": "Pauline Jewett House",
+          "photo_folder": "Barbara_Pauline_Shadbolt",
+          "floor_count": 8
+        },
+        {
+          "id": "Shadbolt_House",
+          "name": "Shadbolt House",
+          "photo_folder": "Barbara_Pauline_Shadbolt",
+          "floor_count": 8
+        }
+      ],
+      "shared": "one architectural master for Barbara Rae, Pauline Jewett and Shadbolt; all three use this combined photo family folder, and per-building variants only with direct evidence",
+      "unique": "actual stable ID, XZ/rotation, site grade, entry positions, signage, any observed instance-specific facade exceptions",
+      "floor_count_source": "https://www.sfu.ca/students/residences/moving-in/insurance.html"
+    },
+    {
+      "family_id": "townhouses",
+      "family_scene_suggestion": "TownhouseBlockExterior.tscn",
+      "photo_folder": "Townhouses",
+      "instances": "ALL_EXISTING_TOWNHOUSE_BLOCKS_FROM_PHASE1",
+      "expected_count_reference_only": 9,
+      "shared": "repeatable townhouse building shell/windows/materials/roof details when photo-verified",
+      "unique": "actual block dimensions, varying configuration if observed, transform/rotation, grade, access door side and circulation"
+    },
+    {
+      "family_id": "hamilton_hall",
+      "family_scene_suggestion": "HamiltonHallExterior.tscn",
+      "photo_folder": "Hamilton_Hall",
+      "instances": [
+        {
+          "id": "Hamilton_Hall",
+          "name": "Hamilton Hall"
+        }
+      ],
+      "shared": "none assumed",
+      "unique": "all verified architecture"
+    },
+    {
+      "family_id": "dining_commons",
+      "family_scene_suggestion": "DiningCommonsExterior.tscn",
+      "photo_folder": "Dining_Commons",
+      "instances": [
+        {
+          "id": "Dining_Commons",
+          "name": "Dining Commons"
+        }
+      ],
+      "shared": "none assumed",
+      "unique": "all verified architecture"
+    },
+    {
+      "family_id": "courtyard_residence",
+      "family_scene_suggestion": "CourtyardResidenceExterior.tscn",
+      "photo_folder": "Courtyard_Residence",
+      "instances": [
+        {
+          "id": "Courtyard_Residence",
+          "name": "Courtyard Residence"
+        }
+      ],
+      "shared": "none assumed",
+      "unique": "all verified architecture"
+    },
+    {
+      "family_id": "shell_house",
+      "family_scene_suggestion": "ShellHouseExterior.tscn",
+      "photo_folder": "Shell_House",
+      "instances": [
+        {
+          "id": "Shell_House",
+          "name": "Shell House"
+        }
+      ],
+      "shared": "none assumed",
+      "unique": "all verified architecture"
+    },
+    {
+      "family_id": "mctaggart_cowan_hall",
+      "family_scene_suggestion": "McTaggartCowanHallExterior.tscn",
+      "photo_folder": "McTaggart_Cowan_Hall",
+      "instances": [
+        {
+          "id": "McTaggart_Cowan_Hall",
+          "name": "McTaggart-Cowan Hall"
+        }
+      ],
+      "shared": "none assumed",
+      "unique": "all verified architecture"
+    }
+  ],
+  "do_not_assume": [
+    "An identical-looking tower has an identical entrance orientation",
+    "East and West have the same number of floors",
+    "North Towers are copies of modern East/West towers",
+    "Every townhouse building has an identical slope, orientation or dimensions",
+    "A photo of one building proves colors of another without checking",
+    "Old Google aerial imagery depicts the new modern towers",
+    "The user-reported West-higher/one-floor-fewer arrangement overrides documented East seven and West eight storeys",
+    "Roofline alignment can be simulated by changing tower floor counts, arbitrary Y offsets, or distorting floor heights",
+    "All North Towers need separate modeling passes or separate photo directories"
+  ]
+}

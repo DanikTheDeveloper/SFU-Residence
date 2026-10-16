@@ -1,0 +1,35 @@
+32894614 [-95.3, -6.2] {'building': 'residential', 'building:levels': '3', 'name': 'Kelowna Residence', 'source': 'Bing'}
+85774878 [-271.2, -28.9] {'building': 'yes', 'content': 'water', 'man_made': 'storage_tank', 'name': 'Centennial Reservoir', 'operator': 'City of Burnaby'}
+102359672 [374.4, 105.4] {'building': 'yes', 'building:levels': '6', 'leisure': 'sports_centre', 'name': 'Lorne Davies Complex', 'short_name': 'LDC', 'sport': 'fitness;basketball;swimming;volleyball;climbing;futsal;badminton', 'start_date': '1965'}
+102359676 [319.9, 35.2] {'access': 'private', 'amenity': 'parking', 'building': 'parking', 'building:levels': '4', 'name': 'West Mall Visitor Parkade', 'parking': 'multi-storey', 'source': 'Bing', 'surface': 'paved', 'url': 'http://www.sfu.ca/security/Parking/visitor.html'}
+102388630 [108.2, 19.1] {'building': 'roof', 'layer': '1', 'source': 'Bing'}
+102388631 [3.0, 32.7] {'building': 'dormitory', 'building:levels': '4', 'name': 'Hamilton Hall', 'roof:shape': 'flat', 'source': 'Bing'}
+102388632 [2.4, -4.3] {'building': 'dormitory', 'building:levels': '8', 'name': 'Pauline Jewett House', 'roof:shape': 'flat', 'source': 'Bing'}
+102388635 [144.5, 29.1] {'building': 'dormitory', 'building:levels': '8', 'name': 'Shadbolt House', 'roof:shape': 'flat', 'source': 'Bing'}
+102388636 [36.3, 1.4] {'building': 'roof', 'layer': '1', 'source': 'Bing'}
+102388637 [210.6, 37.2] {'amenity': 'restaurant', 'building': 'yes', 'building:levels': '2', 'name': 'Dining Commons', 'opening_hours': 'Mo-Su,PH 00:00-24:00', 'roof:shape': 'flat', 'source': 'Bing'}
+102388638 [179.9, 35.2] {'building': 'roof', 'layer': '1', 'source': 'Bing'}
+102388639 [72.5, 12.3] {'building': 'dormitory', 'building:levels': '8', 'name': 'Barbara Rae House', 'roof:shape': 'flat', 'source': 'Bing'}
+102388641 [162.4, 125.9] {'building': 'dormitory', 'building:levels': '4', 'name': 'McTaggart-Cowan Hall', 'source': 'Bing'}
+102388877 [-127.1, 32.5] {'building': 'residential', 'building:levels': '3', 'name': 'Kitimat Residence', 'source': 'Bing'}
+102388878 [-132.0, -3.6] {'building': 'residential', 'building:levels': '3', 'name': 'Kimberley Residence', 'source': 'Bing'}
+102388879 [-241.1, 62.4] {'building': 'residential', 'building:levels': '3', 'name': 'Quesnel Residence', 'source': 'Bing'}
+102388880 [-206.8, 42.6] {'building': 'residential', 'building:levels': '3', 'name': 'Qualicum Residence', 'source': 'Bing'}
+102388881 [-72.9, -32.0] {'building': 'residential', 'building:levels': '3', 'name': 'Cowichan Residence', 'source': 'Bing'}
+102388882 [-231.1, 97.2] {'building': 'residential', 'building:levels': '3', 'name': 'Squamish Residence', 'source': 'Bing'}
+102388883 [262.5, 104.1] {'building': 'dormitory', 'building:levels': '4', 'name': 'Shell House', 'source': 'Bing'}
+102388884 [-172.7, 51.1] {'building': 'residential', 'building:levels': '3', 'name': 'Penticton Residence', 'source': 'Bing'}
+102388885 [-79.2, 27.6] {'building': 'residential', 'building:levels': '3', 'name': 'Chilcotin Residence', 'source': 'Bing'}
+479635179 [173.4, -39.8] {'addr:unit': '3', 'building': 'yes', 'name': 'Childcare Centre Building 3'}
+661676609 [255.2, -48.5] {'addr:unit': '4', 'building': 'yes', 'building:levels': '2', 'name': 'Childcare Centre Building 4'}
+980707206 [63.9, 55.7] {'building': 'dormitory', 'building:levels': '8', 'name': 'West Tower', 'roof:shape': 'flat'}
+980707207 [137.4, 73.2] {'building': 'dormitory', 'building:levels': '7', 'name': 'East Tower', 'roof:shape': 'flat'}
+1035482635 [84.2, 129.7] {'amenity': 'toilets', 'building': 'yes', 'toilets:disposal': 'flush'}
+1035487347 [233.8, -82.0] {'building': 'service', 'industrial': 'gas', 'landuse': 'industrial', 'operator': 'FortisBC'}
+1035487348 [316.7, -16.6] {'building': 'dormitory', 'name': 'Courtyard Residence'}
+1035571293 [216.3, -32.7] {'addr:unit': '1', 'building': 'yes', 'name': 'Childcare Centre Building 1'}
+1035571294 [200.7, -60.7] {'addr:unit': '2', 'building': 'yes', 'building:levels': '2', 'name': 'Childcare Centre Building 2'}
+1091325204 [108.9, 134.9] {'building': 'roof', 'layer': '1'}
+1091325205 [78.0, 153.8] {'building': 'roof', 'layer': '1'}
+1469569057 [-41.7, -99.1] {'amenity': 'shelter', 'bin': 'yes', 'building': 'yes', 'check_date': '2026-01-21', 'lit': 'yes', 'lockable': 'no', 'shelter_type': 'public_transport'}
+IMPORTED 19 buildings 398 path segments 3 parking polygons

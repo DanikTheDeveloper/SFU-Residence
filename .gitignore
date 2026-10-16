@@ -1,3 +1,14 @@
+# Phase-2 new root (don't accidentally publish private user photos or cached Godot imports)
 **/.godot/
-**/*.tmp
 **/__pycache__/
+**/.DS_Store
+reference_photos/**/*.jpg
+reference_photos/**/*.jpeg
+reference_photos/**/*.png
+reference_photos/**/*.webp
+reference_photos/**/*.heic
+reference_photos/**/*.tif
+reference_photos/**/*.tiff
+**/.env
+**/*secret*
+**/*token*

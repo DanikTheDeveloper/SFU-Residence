@@ -1,0 +1,85 @@
+extends CanvasLayer
+var title: Label
+var detail: Label
+var help: PanelContainer
+var world: Node3D
+var location_index := 0
+
+func _ready() -> void:
+	world=get_parent()
+	var panel := PanelContainer.new()
+	panel.position=Vector2(24,24)
+	add_child(panel)
+	var style := StyleBoxFlat.new()
+	style.bg_color=Color(0.045,0.075,0.09,0.92)
+	style.content_margin_left=18
+	style.content_margin_right=18
+	style.content_margin_top=12
+	style.content_margin_bottom=12
+	style.border_width_left=3
+	style.border_color=Color("c46a47")
+	panel.add_theme_stylebox_override("panel",style)
+	var stack := VBoxContainer.new()
+	panel.add_child(stack)
+	var eyebrow := Label.new()
+	eyebrow.text="SFU / BURNABY RESIDENCES"
+	eyebrow.add_theme_font_size_override("font_size",14)
+	eyebrow.modulate=Color("d7b591")
+	stack.add_child(eyebrow)
+	title=Label.new()
+	title.add_theme_font_size_override("font_size",23)
+	stack.add_child(title)
+	detail=Label.new()
+	detail.add_theme_font_size_override("font_size",13)
+	stack.add_child(detail)
+	var footer := Label.new()
+	add_child(footer)
+	footer.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
+	footer.position=Vector2(24,650)
+	footer.text="WASD walk · Mouse look · Shift run · Space jump · F1 help\n© OpenStreetMap contributors · ODbL · Exterior study / estimated architectural detail"
+	footer.add_theme_font_size_override("font_size",14)
+	footer.add_theme_color_override("font_shadow_color",Color.BLACK)
+	footer.add_theme_constant_override("shadow_offset_x",1)
+	footer.add_theme_constant_override("shadow_offset_y",1)
+	help=PanelContainer.new()
+	help.position=Vector2(24,150)
+	help.add_theme_stylebox_override("panel",style)
+	add_child(help)
+	var instructions := Label.new()
+	instructions.text="EXPLORE THE PRECINCT\n\nW A S D  —  move     Shift  —  run\nMouse  —  look     Space  —  jump\nEsc  —  release pointer     Click  —  resume\nR  —  return to Residence Lane\nTab  —  building names\nN  —  visit next building (19 locations)\nF2  —  low / medium graphics\n[ / ]  —  mouse sensitivity\nF1  —  close this guide\n\nAll buildings are closed exterior models.\nHedges mark this study's playable boundary."
+	instructions.add_theme_font_size_override("font_size",16)
+	help.add_child(instructions)
+	help.visible=false
+
+func _process(_delta: float) -> void:
+	if not world.player: return
+	var nearest := "Residence Lane"
+	var distance := INF
+	for data in world.registry:
+		var d: float=Vector2(world.player.position.x,world.player.position.z).distance_to(Vector2(data.centroid[0],data.centroid[1]))
+		if d<distance:
+			distance=d
+			nearest=data.name
+	title.text="Precinct overview" if world.map_mode else nearest
+	var heading: float=fposmod(-rad_to_deg(world.player.pivot.rotation.y),360)
+	detail.text="%s  ·  %s  ·  %d FPS  ·  F2 graphics"%["N ↑" if world.map_mode else "Heading %03d°"%int(heading),"LOW" if world.low_quality else "MEDIUM",Engine.get_frames_per_second()]
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("help"): help.visible=not help.visible
+	if event.is_action_pressed("next_location"):
+		var data: Dictionary=world.registry[location_index]
+		world.player.position=world.Geo.point(data.outdoor_anchor,0.25)
+		world.player.velocity=Vector3.ZERO
+		var target := Vector3(data.centroid[0],0,data.centroid[1])
+		var direction: Vector3=target-world.player.position
+		world.player.pivot.rotation.y=atan2(-direction.x,-direction.z)
+		location_index=(location_index+1)%world.registry.size()
+	if event is InputEventKey and event.pressed:
+		if event.keycode==KEY_BRACKETLEFT: world.player.sensitivity=maxf(0.0005,world.player.sensitivity-0.00025)
+		if event.keycode==KEY_BRACKETRIGHT: world.player.sensitivity=minf(0.008,world.player.sensitivity+0.00025)
+
+func run_verification() -> void:
+	var verifier:=Node.new()
+	verifier.set_script(preload("res://scripts/WorldVerification.gd"))
+	world.add_child(verifier)
+	verifier.run()

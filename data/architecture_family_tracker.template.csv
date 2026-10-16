@@ -1,0 +1,9 @@
+family_id,photos_available,shared_facade_verified,shared_materials_verified,pilot_instance,shared_scene_status,other_instances_instantiated,exceptions_logged,quality_level,notes
+modern_east_west,0,NO,NO,East_Tower,NOT_STARTED,NO,NO,L0,SFU East 7 and West 8; user reports matching roofline; grade must be sourced
+north_towers,0,NO,NO,Barbara_Rae_House,NOT_STARTED,NO,NO,L0,Do not assume all entrances are on same face
+townhouses,0,NO,NO,REAL_PHASE1_ID,NOT_STARTED,NO,NO,L0,Use existing house list; approximately nine blocks per SFU directory
+hamilton_hall,0,NO,NO,Hamilton_Hall,NOT_STARTED,NO,NO,L0,Distinct architectural family
+dining_commons,0,NO,NO,Dining_Commons,NOT_STARTED,NO,NO,L0,Distinct architectural family
+courtyard_residence,0,NO,NO,Courtyard_Residence,NOT_STARTED,NO,NO,L0,Distinct architectural family
+shell_house,0,NO,NO,Shell_House,NOT_STARTED,NO,NO,L0,Distinct architectural family
+mctaggart_cowan_hall,0,NO,NO,McTaggart_Cowan_Hall,NOT_STARTED,NO,NO,L0,Distinct architectural family

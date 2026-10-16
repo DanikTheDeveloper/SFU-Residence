@@ -1,0 +1,26 @@
+{
+  "_note": "Illustrative material categories only. NOT verified SFU colours or surfaces. Compare with photos before applying.",
+  "materials": [
+    {
+      "id": "concrete_walk",
+      "type": "pedestrian_concrete",
+      "roughness": 0.83,
+      "albedo_hex_example": "#8C8B87",
+      "confidence": "PLACEHOLDER"
+    },
+    {
+      "id": "asphalt_vehicle",
+      "type": "vehicle_road_marked",
+      "roughness": 0.91,
+      "albedo_hex_example": "#48494A",
+      "confidence": "PLACEHOLDER"
+    },
+    {
+      "id": "concrete_plaza",
+      "type": "plaza_concrete",
+      "roughness": 0.88,
+      "albedo_hex_example": "#989590",
+      "confidence": "PLACEHOLDER"
+    }
+  ]
+}

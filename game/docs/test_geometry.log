@@ -1,0 +1,3 @@
+PASS 19 unique OSM footprints; nine townhouses; coordinate signs/scale; valid areas/heights; 398 segments.
+PASS all 19 anchors connected on a 2m clearance grid (33268/33268 cells).
+PASS three closed precinct itineraries generated.

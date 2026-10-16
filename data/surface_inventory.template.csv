@@ -1,0 +1,5 @@
+surface_id,existing_geometry_id,new_semantic_type,material_photo_or_source_id,markings_confidence,terrain_snap_required,notes
+perimeter_vehicle_road,,vehicle_road_marked,,UNKNOWN,yes,Mark lanes only if evidence
+residence_lane,,pedestrian_concrete,,UNKNOWN,yes,Not a striped road by default
+parking_area,,parking_lot,,UNKNOWN,yes,Lot polygon not two road strips
+pedestrian_plaza,,plaza_concrete,,UNKNOWN,yes,Original concrete/paving

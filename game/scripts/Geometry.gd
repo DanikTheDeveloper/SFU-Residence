@@ -1,0 +1,94 @@
+extends RefCounted
+
+static func elevation(x: float, z: float) -> float:
+	return x * 0.005 - z * 0.025
+
+static func point(p: Array, offset: float = 0.0) -> Vector3:
+	return Vector3(p[0], elevation(p[0], p[1]) + offset, p[1])
+
+static func material(color: Color, roughness: float = 0.85) -> StandardMaterial3D:
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = color
+	mat.roughness = roughness
+	return mat
+
+static func box(parent: Node3D, pos: Vector3, size: Vector3, mat: Material, solid: bool = false) -> MeshInstance3D:
+	var node := MeshInstance3D.new()
+	var mesh := BoxMesh.new()
+	mesh.size = size
+	node.mesh = mesh
+	node.material_override = mat
+	parent.add_child(node)
+	node.position = pos
+	if solid: node.create_trimesh_collision()
+	return node
+
+static func mesh_from_vertices(parent: Node3D, vertices: PackedVector3Array, mat: Material, solid: bool = false) -> MeshInstance3D:
+	var st := SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	for i in range(0,vertices.size(),3):
+		st.set_normal((vertices[i+1]-vertices[i]).cross(vertices[i+2]-vertices[i]).normalized())
+		for j in [0,2,1]:
+			st.set_uv(Vector2(vertices[i+j].x+vertices[i+j].z,vertices[i+j].y))
+			st.add_vertex(vertices[i+j])
+	var node := MeshInstance3D.new()
+	node.mesh = st.commit()
+	node.material_override = mat
+	parent.add_child(node)
+	if solid: node.create_trimesh_collision()
+	return node
+
+static func merge_surfaces(parent: Node3D) -> void:
+	var batches: Dictionary={}
+	for child in parent.get_children():
+		if not child is MeshInstance3D: continue
+		var key: Material=child.material_override
+		if not batches.has(key):
+			var st := SurfaceTool.new()
+			st.begin(Mesh.PRIMITIVE_TRIANGLES)
+			batches[key]=st
+		batches[key].append_from(child.mesh,0,child.transform)
+		parent.remove_child(child)
+		child.queue_free()
+	for mat in batches:
+		var node := MeshInstance3D.new()
+		node.mesh=batches[mat].commit()
+		node.material_override=mat
+		node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		parent.add_child(node)
+
+static func polygon(parent: Node3D, points: Array, mat: Material, offset: float = 0.05) -> MeshInstance3D:
+	var poly := PackedVector2Array()
+	for p in points: poly.append(Vector2(p[0],p[1]))
+	var indices := Geometry2D.triangulate_polygon(poly)
+	var verts := PackedVector3Array()
+	for i in range(0,indices.size(),3):
+		var a := point(points[indices[i]],offset)
+		var b := point(points[indices[i+1]],offset)
+		var c := point(points[indices[i+2]],offset)
+		if (b-a).cross(c-a).y < 0: verts.append_array([a,c,b])
+		else: verts.append_array([a,b,c])
+	return mesh_from_vertices(parent,verts,mat)
+
+static func strip(parent: Node3D, a: Vector3, b: Vector3, width: float, mat: Material, offset: float = 0.035) -> void:
+	var side := Vector3(-(b-a).z,0,(b-a).x).normalized()*width*0.5
+	var points: Array = []
+	for p in [a+side,b+side,b-side,a-side]: points.append([p.x,p.z])
+	polygon(parent,points,mat,offset)
+
+static func instances(parent: Node3D, transforms: Array[Transform3D], mat: Material, mesh: Mesh = null, distance: float = 260.0) -> MultiMeshInstance3D:
+	var multi := MultiMesh.new()
+	multi.transform_format = MultiMesh.TRANSFORM_3D
+	multi.mesh = mesh if mesh != null else BoxMesh.new()
+	multi.instance_count = transforms.size()
+	for i in transforms.size(): multi.set_instance_transform(i,transforms[i])
+	var node := MultiMeshInstance3D.new()
+	node.multimesh = multi
+	node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	node.material_override = mat
+	node.visibility_range_end = distance
+	parent.add_child(node)
+	return node
+
+static func transform(pos: Vector3, size: Vector3, yaw: float = 0.0) -> Transform3D:
+	return Transform3D(Basis(Vector3.UP,yaw).scaled_local(size),pos)
