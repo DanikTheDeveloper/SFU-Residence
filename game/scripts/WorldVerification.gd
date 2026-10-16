@@ -20,6 +20,7 @@ func run() -> void:
 		await run_routes()
 		return
 	await frames(5)
+	check("Pauline Jewett entrance label uses footprint not neighboring centroid",world.get_node("UI").nearest_building_name(Vector2(19.57,21.05))=="Pauline Jewett House")
 	check("19 scene buildings",world.get_node("Buildings").get_child_count()==19)
 	check("Compatibility selected",RenderingServer.get_current_rendering_method()=="gl_compatibility")
 	check("Interior boundary ray degeneracy regression",Geo.contains_point(Vector2(-216.3434,62),world.boundary))

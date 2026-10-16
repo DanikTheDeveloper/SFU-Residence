@@ -4,9 +4,14 @@ const Kit=preload("res://scripts/FacadeKit.gd")
 static var cache: Dictionary={}
 
 static func material(key: String) -> Material:
-	if key not in ["concrete","stair_screen"]: return Kit.material(key)
+	if key not in ["concrete","stair_screen","glass","blind","paving"]: return Kit.material(key)
 	if cache.has(key): return cache[key]
-	var mat:=Geo.material(Color("b4b1a5") if key=="concrete" else Color("535654"),0.94)
+	if key=="glass":
+		var glazing:=Geo.material(Color("60777e"),0.32)
+		glazing.metallic_specular=0.55
+		cache[key]=glazing
+		return glazing
+	var mat:=Geo.material(Color("b4b1a5") if key=="concrete" else (Color("b8c0ba") if key=="blind" else (Color("b9b7ad") if key=="paving" else Color("535654"))),0.94)
 	var pixels:=Image.create(128,128,false,Image.FORMAT_RGB8)
 	var rng:=RandomNumberGenerator.new()
 	rng.seed=4387
@@ -16,7 +21,7 @@ static func material(key: String) -> Material:
 			if key=="concrete":
 				shade-=0.035 if y%16==0 else 0.0
 				shade-=0.055 if x%64==10 and y%32==8 else 0.0
-			else:
+			elif key!="paving":
 				shade-=0.14 if y%4==0 else 0.0
 			pixels.set_pixel(x,y,Color(shade,shade,shade))
 	mat.albedo_texture=ImageTexture.create_from_image(pixels)

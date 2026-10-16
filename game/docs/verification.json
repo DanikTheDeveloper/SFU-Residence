@@ -1,6 +1,11 @@
 {
   "checks": [
     {
+      "check": "Pauline Jewett entrance label uses footprint not neighboring centroid",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "19 scene buildings",
       "evidence": "",
       "passed": true

@@ -85,4 +85,11 @@ static func build(root: Node3D,data: Dictionary,base: float,material: Material) 
 	var paving: Array=[]
 	for corner in [plan.start-plan.axis*0.4-plan.side*WIDTH*0.5,plan.end+plan.axis*0.4-plan.side*WIDTH*0.5,plan.end+plan.axis*0.4+plan.side*WIDTH*0.5,plan.start-plan.axis*0.4+plan.side*WIDTH*0.5]:
 		paving.append([corner.x,corner.z])
-	Geo.polygon(root,paving,material,0.025).name="PassagePaving"
+	Geo.polygon(root,paving,preload("res://scripts/NorthTowerMaterials.gd").material("paving"),0.025).name="PassagePaving"
+
+	# Courtyard-side concrete apron shown in the wide reference photo.
+	# Visual surface only: follows the original terrain and leaves routes unchanged.
+	var apron: Array=[]
+	for corner in [plan.start-plan.side*16.0-plan.axis*3.0,plan.start+plan.side*16.0-plan.axis*3.0,plan.start+plan.side*16.0-plan.axis*0.4,plan.start-plan.side*16.0-plan.axis*0.4]:
+		apron.append([corner.x,corner.z])
+	Geo.polygon(root,apron,preload("res://scripts/NorthTowerMaterials.gd").material("paving"),0.027).name="CourtyardApron"

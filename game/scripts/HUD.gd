@@ -53,18 +53,29 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if not world.player: return
-	var nearest := "Residence Lane"
-	var distance := INF
 	var active_camera:=get_viewport().get_camera_3d()
 	var observer: Vector3=active_camera.global_position if active_camera else world.player.global_position
-	for data in world.registry:
-		var d: float=Vector2(observer.x,observer.z).distance_to(Vector2(data.centroid[0],data.centroid[1]))
-		if d<distance:
-			distance=d
-			nearest=data.name
+	var nearest:=nearest_building_name(Vector2(observer.x,observer.z))
 	title.text="Precinct overview" if world.map_mode else nearest
 	var heading: float=fposmod(-rad_to_deg(active_camera.global_rotation.y if active_camera else world.player.pivot.rotation.y),360)
 	detail.text="%s  ·  %s  ·  %d FPS  ·  F2 graphics"%["N ↑" if world.map_mode else "Heading %03d°"%int(heading),"LOW" if world.low_quality else "MEDIUM",Engine.get_frames_per_second()]
+
+func nearest_building_name(observer: Vector2) -> String:
+	# A long U-shaped tower's centroid can be farther away than a neighboring hall.
+	# Measure the actual footprint so a person at its door sees the right name.
+	var nearest: String="Residence Lane"
+	var distance: float=INF
+	for data in world.registry:
+		var polygon:=PackedVector2Array()
+		for vertex in data.footprint: polygon.append(Vector2(vertex[0],vertex[1]))
+		var d: float=0.0 if world.Geo.contains_point(observer,polygon) else INF
+		if d>0:
+			for i in polygon.size():
+				d=minf(d,observer.distance_to(Geometry2D.get_closest_point_to_segment(observer,polygon[i],polygon[(i+1)%polygon.size()])))
+		if d<distance:
+			distance=d
+			nearest=data.name
+	return nearest
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("help"): help.visible=not help.visible

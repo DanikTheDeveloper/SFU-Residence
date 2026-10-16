@@ -1,6 +1,7 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 WORLD_READY buildings=19 paths=398 renderer=gl_compatibility
+PASS Pauline Jewett entrance label uses footprint not neighboring centroid
 PASS 19 scene buildings
 PASS Compatibility selected
 PASS Interior boundary ray degeneracy regression
@@ -167,4 +168,4 @@ PASS Courtyard uses distinct precast master
 PASS Courtyard preserves eleven-floor registry
 PASS Courtyard uses ribbed panels and recessed glazing
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=165 failures=0
+VERIFICATION_COMPLETE checks=166 failures=0

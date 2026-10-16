@@ -133,6 +133,16 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	label.modulate=Color("f4eee0")
 	root.add_child(label)
 	label.position=door+Vector3.UP*3.35+normal*0.27
+	if data.type=="north_tower":
+		# Dark lettering on a concrete sign band, as shown in the identified SBH photo.
+		# The registry entrance is retained until its exact photo position is mapped.
+		var plaque:=Geo.box(root,door+Vector3.UP*3.2+normal*0.45,Vector3(4.5,0.48,0.12),preload("res://scripts/NorthTowerMaterials.gd").material("concrete"))
+		plaque.rotation.y=door_yaw
+		label.position=door+Vector3.UP*3.2+normal*0.53
+		label.modulate=Color("29312f")
+		label.outline_size=0
+		label.font_size=32
+		label.pixel_size=0.009
 	if data.id=="MCH": label.position=door+Vector3.UP*2.88+normal*2.0
 	label.rotation.y=door_yaw
 	var debug := Label3D.new()

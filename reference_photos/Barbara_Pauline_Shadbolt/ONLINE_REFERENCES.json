@@ -25,5 +25,15 @@
     "observations": "Central courtyard lounge projection; five room bays each side. Projecting end stair on west side of U-shaped plan.",
     "limitations": "Level2 drawing only; no ground undercroft plan; artist approximate. SBH PDF stops at7, others8; retain existing8-level registry pending resolution.",
     "license": "SFU copyright; reference only. PDFs kept in private Windows Temp, not game."
+  },
+  {
+    "building_id": "North family",
+    "source_url": "https://dysarchitecture.com/projects/sfu-residences-%2B-dining-hall/",
+    "source": "DYS Architecture, project with DA Architects; photographs credited Andrew Latreille",
+    "review_date": "2026-10-16",
+    "observations": "Project text confirms three eight-storey cast-in-place concrete towers. Gallery close-up shows glazed stair corner with small metal clamp plates, fine metal screens and formed concrete. Dining photographs are separate building references, not North facades.",
+    "local_filename": null,
+    "license": "Copyright DYS/photographer; browser reference only, no image downloaded or redistributed.",
+    "confidence": "Exact project confirmed by architect; individual tower in detail unconfirmed."
   }
 ]

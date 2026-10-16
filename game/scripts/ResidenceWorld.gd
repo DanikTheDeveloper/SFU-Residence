@@ -228,6 +228,10 @@ func capture_views() -> void:
 	var passage: Dictionary=north.get_meta("exterior_passage")
 	views.append([passage.start-passage.axis*12.0+Vector3.UP*1.68,passage.start+Vector3.UP*6.0])
 	views.append([Geo.point([91.75513,38.2138],1.68),Geo.point([92.683,34.237],1.5)])
+	for id in ["PJH","SBH"]:
+		var entry_data: Dictionary=get_node("Buildings/"+id).get_meta("building")
+		views.append([Geo.point(entry_data.outdoor_anchor,1.68),Geo.point(entry_data.entrance,1.5)])
+	views.append([passage.start+passage.side*8.0+passage.axis*(passage.length*0.4)+Vector3.UP*1.68,passage.end+passage.side*8.0+Vector3.UP*1.68])
 	add_child(capture)
 	capture.far=1200
 	capture.fov=72

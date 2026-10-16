@@ -32,13 +32,16 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 			var stair_mid:=a+edge*0.5+Vector3.UP*height*0.5
 			var projecting_end: bool=(stair_mid-passage.start).dot(passage.side)<0
 			if data.id=="PJH": projecting_end=not projecting_end
-			var screen_key: String="stair_screen" if projecting_end else "concrete"
-			kit.part(screen_key,stair_mid+Vector3.UP*story*0.5-tangent*0.85+normal*0.18,Vector3(length-2.5,height-story,0.30),yaw)
+			var inner_sign: float=1.0 if (passage.start-stair_mid).dot(tangent)>0 else -1.0
+			var glass_along: float=length*0.5+inner_sign*(length*0.5-1.1)
+			var screen_along: float=length*0.5+inner_sign*(length*0.5-3.9)
+			if projecting_end:
+				kit.part("stair_screen",a+tangent*screen_along+Vector3.UP*(height+story)*0.5+normal*0.18,Vector3(3.6,height-story,0.30),yaw)
 			for level in int(data.floors):
-				var center:=a+tangent*(length-1.2)+Vector3.UP*((level+0.5)*story)
+				var center:=a+tangent*glass_along+Vector3.UP*((level+0.5)*story)
 				kit.window(center,tangent,normal,1.9,story-0.12,yaw,true,"white_frame")
-				if screen_key=="stair_screen":
-					kit.part("concrete",a+edge*0.5+Vector3.UP*(level*story)+normal*0.28,Vector3(length,0.15,0.65),yaw)
+				if projecting_end:
+					kit.part("concrete",a+tangent*(glass_along+screen_along)*0.5+Vector3.UP*(level*story)+normal*0.24,Vector3(5.7,0.10,0.48),yaw)
 			for position in [a,a+edge]:
 				kit.part("concrete",position+Vector3.UP*height*0.5+normal*0.4,Vector3(0.35,height,0.9),yaw)
 			kit.part("concrete",a+edge*0.5+Vector3.UP*(height+0.12),Vector3(length+0.5,0.25,1.4),yaw)
@@ -52,6 +55,7 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 		var central_lounge_width: float=5.0 if length>25 else spacing
 		var room_spacing: float=(length-central_lounge_width)/(bays-1) if length>25 else spacing
 		var narrow: bool=length<19 and length>5
+		var inner_wing: bool=length>10.8 and length<12.3 and absf(tangent.dot(passage.axis))>0.95
 		for bay in bays:
 			var lounge: bool=length>25 and bay==room_bays
 			spacing=central_lounge_width if lounge else room_spacing
@@ -67,24 +71,33 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 				# Omit ground-level modules at the real opening, including projecting fins.
 				if level==0 and absf((mid-door).dot(tangent))<spacing*0.5+1.3 and absf((mid-door).dot(normal))<0.4: continue
 				if level==0 and not lounge and Passage.interval(mid-tangent*spacing*0.5,mid+tangent*spacing*0.5,passage,0.35).x>=0: continue
+				var window_width: float=spacing*0.88 if inner_wing and level==0 else width
 				var wh: float=story-0.75 if narrow else 2.05
+				if inner_wing and level==0: wh=1.4
 				if lounge: wh=story-0.27
 				var center:=mid+Vector3.UP*((level+0.5)*story)
+				if inner_wing and level==0: center.y=base+2.05
 				if lounge: center+=normal*0.65
-				kit.window(center,tangent,normal,width,wh,yaw,true,"white_frame")
-				if not lounge:
+				kit.window(center,tangent,normal,window_width,wh,yaw,true,"white_frame")
+				# Exterior-only blind surface; repeatable variation, not verified room occupancy.
+				if not lounge and level>0 and (bay+level)%4==0:
+					kit.part("blind",center-tangent*window_width*0.16+Vector3.UP*wh*0.2+normal*0.06,Vector3(window_width*0.62,wh*0.58,0.015),yaw)
+				if not lounge and not (inner_wing and level==0):
 					kit.part("white_frame",center-Vector3.UP*(wh*0.5+0.2)+normal*0.31,Vector3(width,0.35,0.10),yaw)
-				else:
+				elif lounge:
 					# Glazed returns and deep slab edges make the lounge a real projection.
 					kit.part("white_frame",center-tangent*width*0.18+normal*0.16,Vector3(0.055,wh,0.085),yaw)
 					for sign_value in [-1,1]:
 						kit.part("glass",center+tangent*sign_value*width*0.5-normal*0.28,Vector3(0.04,wh,0.65),yaw)
 						kit.part("white_frame",center+tangent*sign_value*width*0.5-normal*0.28,Vector3(0.08,0.065,0.65),yaw)
 					kit.part("concrete",mid+Vector3.UP*(level*story)+normal*0.55,Vector3(spacing+0.18,0.20,1.35),yaw)
-				var pier: float=(spacing-width)*0.5
+				var pier: float=(spacing-window_width)*0.5
 				for side in [-1,1]:
-					kit.part("concrete",center+tangent*side*(width*0.5+pier*0.5)+normal*0.16,Vector3(pier,story,0.32),yaw)
-					kit.part("concrete",center+Vector3.UP*side*(wh*0.5+(story-wh)*0.25)+normal*0.12,Vector3(width,(story-wh)*0.5,0.24),yaw)
+					kit.part("concrete",center+tangent*side*(window_width*0.5+pier*0.5)+normal*0.16,Vector3(pier,story,0.32),yaw)
+				var lower_height: float=maxf(0.0,center.y-base-wh*0.5-level*story)
+				var upper_height: float=maxf(0.0,(level+1)*story-(center.y-base+wh*0.5))
+				kit.part("concrete",center-Vector3.UP*(wh*0.5+lower_height*0.5)+normal*0.12,Vector3(window_width,lower_height,0.24),yaw)
+				kit.part("concrete",center+Vector3.UP*(wh*0.5+upper_height*0.5)+normal*0.12,Vector3(window_width,upper_height,0.24),yaw)
 				if not narrow:
 					kit.part("concrete",mid+Vector3.UP*(level*story)+normal*0.16,Vector3(spacing,0.16,0.40),yaw)
 			var fin:=mid-tangent*spacing*0.5

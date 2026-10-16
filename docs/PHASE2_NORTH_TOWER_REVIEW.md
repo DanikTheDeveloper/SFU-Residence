@@ -28,3 +28,6 @@ Townhouse common-annex/unit mapping and Hamilton detailed model remain deferred.
 
 ## Plan revision validation
 See PHASE2_NORTH_PLAN_AUDIT.md.165 physics checks pass, including both lanes in opposite directions for all3 towers and central-core closure;333 continuous checkpoints pass. Original source geometry and protected E/W pass. Public plans have no ground floor, and full Facilities key plans require CAS authentication; no bypass attempted.
+
+## Ground frontage/detail follow-up
+Inner side wings now use wider ground-level glazing above concrete bases. Courtyard apron is terrain-following and leaves original paths unchanged. North glass tone/blind pattern and concrete screen texture are original generated materials; per-room blind positions are aesthetic estimates, not occupancy claims. End screen narrowed to3.6m beside1.9m corner glazing; remaining end wall concrete. Dark name plaques are at retained registry entrances, not claimed survey locations. HUD footprint-distance fix tested at PJH.166 checks pass; final detail captures8-12 reviewed on GTX1650 Compatibility. Architect DYS gallery confirms8 storeys and close-up glass clamps; no image assets imported.
