@@ -191,6 +191,10 @@ func verify_families() -> void:
 		check(data.id+" townhouse master edit propagates",counts[0]!=counts[1],str(counts))
 		town.bay_width=3.5
 	check("Exactly nine original townhouse blocks",count==9)
+	var mch:=world.get_node("Buildings/MCH")
+	check("McTaggart uses distinct renewed-envelope master",mch.get_meta("family_master")==preload("res://scripts/McTaggartExterior.gd").MASTER_ID)
+	check("McTaggart retains four-floor registry",mch.get_meta("floor_count")==4)
+	check("McTaggart facade batching",mch.get_node("McTaggartBronze").multimesh.instance_count>100 and mch.get_node("McTaggartGlass").multimesh.instance_count>20)
 
 func run_routes() -> void:
 	var routes: Array=JSON.parse_string(FileAccess.get_file_as_string("res://data/test_routes.json"))

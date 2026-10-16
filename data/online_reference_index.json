@@ -1,0 +1,57 @@
+[
+  {
+    "building": "McTaggart-Cowan Hall",
+    "building_id": "MCH",
+    "source_url": "https://www.scottconstructiongroup.com/our-projects/mctaggart-cowan-hall-residences-envelope-renewal/",
+    "source": "Scott Construction, renewal contractor",
+    "retrieved": "2026-10-16",
+    "photograph_date": "Unknown; gallery describes project completed August 2025",
+    "viewpoint": "Entrance courtyard; compass orientation unresolved",
+    "observations": [
+      "Charcoal brick envelope",
+      "Tall narrow bronze window surrounds with low horizontal operable-light division",
+      "Pale grey roof fascia",
+      "Glazed central connector with grey horizontal panels and canopy",
+      "External stairs descending to entrance, metal handrails"
+    ],
+    "identity_confidence": "HIGH: contractor names exact SFU Burnaby project; image visually matches supplied MCH photograph",
+    "local_filename": null,
+    "licensing": "All rights reserved; URL-only reference. No image downloaded, redistributed or used as texture.",
+    "model_limits": "Bay spacing, compass-specific window omissions and connector extent estimated. Original four-floor registry retained; photograph shows three exposed levels at courtyard grade."
+  },
+  {
+    "building": "Dining Commons",
+    "building_id": "DC",
+    "source_url": "https://dialogdesign.ca/projects/simon-fraser-university-dining-commons/",
+    "source": "DIALOG, project architect",
+    "retrieved": "2026-10-16",
+    "photograph_date": "Unknown",
+    "viewpoint": "Gallery not yet visually inspected",
+    "observations": [],
+    "identity_confidence": "Project identified by official architect; individual image assessment pending",
+    "local_filename": null,
+    "licensing": "No reuse permission established; URL reference only"
+  },
+  {
+    "building": "Courtyard Residence",
+    "building_id": "CYR",
+    "source_url": "https://dialogdesign.ca/projects/simon-fraser-university-phase-2-student-residence/",
+    "source": "DIALOG, project architect",
+    "retrieved": "2026-10-16",
+    "photograph_date": "Unknown; project completion 2023",
+    "viewpoint": "Gallery views 5 sensory garden, 6 upper facade close-up, 7 covered courtyard; compass orientation unresolved",
+    "observations": [
+      "Pale vertically ribbed precast panels",
+      "Dark recessed vertical window strips",
+      "Red side reveals visible on upper facade",
+      "Dark horizontal bands separating paired-storey panel zones",
+      "Broad ground-level glazing",
+      "Pale ribbed canopy soffit and rectangular concrete columns",
+      "Grey rectangular pavers, low planters and turquoise seating in garden"
+    ],
+    "identity_confidence": "HIGH: architect explicitly identifies Courtyard Residence; material and fenestration agree with user-supplied photo",
+    "local_filename": null,
+    "licensing": "URL-only research; no image downloading or texture reuse. Permission to redistribute not established.",
+    "model_limits": "Precise bay counts, variable wing roof levels, compass-specific red reveal placement and garden dimensions unresolved."
+  }
+]

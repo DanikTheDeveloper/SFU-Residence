@@ -19,8 +19,9 @@ Canonical project: `game/project.godot`. Godot 4.7.2 Standard, GDScript, Compati
 - East/West appearance protected by `data/east_west_preservation.json` hashes of the approved facade master and shared kit, plus original pad metadata. No remodel or recolor.
 
 ## Remaining work
-- Finish final GUI capture and save checkpoint; then unique-building improvement.
-- Improve unique buildings incrementally. McTaggart-Cowan current contractor gallery verified visually; renewed charcoal brick, bronze window surrounds, pale metal fascia and entrance connector. Official completion August 2025. Record URL evidence before implementing.
+- Terrain/camera/townhouse checkpoint saved as `730cc77`; final eye-level captures inspected.
+- McTaggart-Cowan distinct 2025 renewed-envelope master implemented: charcoal procedural brick, bronze window surrounds, pale metal fascia, glazed connector and framed entrance. URL-only contractor provenance saved in `data/online_reference_index.json` and corresponding photo folder. Smoke, 140 physics checks and all333 route checkpoints pass; final entrance cleanup rechecked with140 checks and GUI capture. Bay/connector dimensions and four-storey uniform massing remain approximate.
+- Next: Courtyard distinct facade from architect gallery, then remaining unique buildings and environmental polish.
 - Hamilton supplied image identity remains uncertain; Dining photos depict older hall, insufficient for 2022 expansion. Courtyard and Shell need further specific reference work.
 - Terrain 2014 predates redevelopment; modern pad levels and absolute vertical datum unresolved. Retaining walls/stairs and exact landscape grading still approximate. No unverified elevations presented as survey measurements.
 - Performance varies by viewpoint; prior eye-level captures roughly 24–73 FPS. Repeat uncontended capture after final terrain work; no formal GTX1650 benchmark claim.

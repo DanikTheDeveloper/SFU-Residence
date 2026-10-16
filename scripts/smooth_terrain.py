@@ -10,6 +10,15 @@ buildings = json.loads((ROOT / 'game/data/buildings.json').read_text())
 w, h, step = grid['width'], grid['depth'], grid['step']
 values = grid['heights'][:]
 fixed = {}
+assert 1 <= config['iterations'] <= 1000
+assert 0 < config['relaxation'] <= 1
+margin = float(config['fixed_pad_margin_m'])
+assert 0 <= margin <= 10
+
+def pin(index, height):
+    if index in fixed and abs(fixed[index]-height) > .001:
+        raise ValueError('Conflicting foundation constraints: reduce pad margin; do not overwrite a neighboring pad.')
+    fixed[index] = height
 
 def distance_to_polygon(x, z, poly):
     inside = False
@@ -26,11 +35,11 @@ def distance_to_polygon(x, z, poly):
 for b in buildings:
     poly = b['footprint']
     xs, zs = [p[0] for p in poly], [p[1] for p in poly]
-    for j in range(max(0, int((min(zs)-3-grid['origin_z'])/step)), min(h, int((max(zs)+3-grid['origin_z'])/step)+1)):
-        for i in range(max(0, int((min(xs)-3-grid['origin_x'])/step)), min(w, int((max(xs)+3-grid['origin_x'])/step)+1)):
+    for j in range(max(0, math.floor((min(zs)-margin-grid['origin_z'])/step)), min(h, math.ceil((max(zs)+margin-grid['origin_z'])/step)+1)):
+        for i in range(max(0, math.floor((min(xs)-margin-grid['origin_x'])/step)), min(w, math.ceil((max(xs)+margin-grid['origin_x'])/step)+1)):
             x, z = grid['origin_x']+i*step, grid['origin_z']+j*step
             if distance_to_polygon(x, z, poly) <= config['fixed_pad_margin_m']:
-                fixed[j*w+i] = grid['pads'][b['id']]['height']
+                pin(j*w+i, grid['pads'][b['id']]['height'])
     # Pin the four triangle-grid corners at the existing entrance, rather than
     # widening every pad into neighboring buildings at a different level.
     ex, ez = b['entrance']
@@ -38,7 +47,7 @@ for b in buildings:
     ej = math.floor((ez-grid['origin_z'])/step)
     for j in (ej, ej+1):
         for i in (ei, ei+1):
-            fixed[j*w+i] = grid['pads'][b['id']]['height']
+            pin(j*w+i, grid['pads'][b['id']]['height'])
 
 # Pinned footprint samples retain existing flat foundations; remaining samples
 # diffuse toward a smoother surface. A planar hillside is invariant to this filter.

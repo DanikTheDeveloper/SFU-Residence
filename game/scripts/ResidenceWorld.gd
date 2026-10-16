@@ -215,6 +215,14 @@ func capture_views() -> void:
 	player.enabled=false
 	var views := [[Geo.point([-180,75],1.68),Geo.point([-100,65],5)], [Geo.point([133,62],1.68),Geo.point([133,77],7)], [Geo.point([60,88],1.68),Geo.point([62,68],7)], [Geo.point([-171,145],1.68),Geo.point([-170,115],1.68)], [Geo.point([85,25],1.68),Geo.point([85,-5],8)]]
 	var capture := Camera3D.new()
+	for building in registry:
+		if building.id=="MCH":
+			var door:=Geo.point(building.entrance)
+			var direction:=Geo.point(building.outdoor_anchor)-door
+			direction.y=0
+			var eye:=door+direction.normalized()*15
+			eye.y=Geo.elevation(eye.x,eye.z)+1.68
+			views.append([eye,door+Vector3.UP*4.5])
 	add_child(capture)
 	capture.far=1200
 	capture.fov=72

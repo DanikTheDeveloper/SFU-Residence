@@ -1,0 +1,24 @@
+[
+  {
+    "building": "Courtyard Residence",
+    "building_id": "CYR",
+    "source_url": "https://dialogdesign.ca/projects/simon-fraser-university-phase-2-student-residence/",
+    "source": "DIALOG, project architect",
+    "retrieved": "2026-10-16",
+    "photograph_date": "Unknown; project completion 2023",
+    "viewpoint": "Gallery views 5 sensory garden, 6 upper facade close-up, 7 covered courtyard; compass orientation unresolved",
+    "observations": [
+      "Pale vertically ribbed precast panels",
+      "Dark recessed vertical window strips",
+      "Red side reveals visible on upper facade",
+      "Dark horizontal bands separating paired-storey panel zones",
+      "Broad ground-level glazing",
+      "Pale ribbed canopy soffit and rectangular concrete columns",
+      "Grey rectangular pavers, low planters and turquoise seating in garden"
+    ],
+    "identity_confidence": "HIGH: architect explicitly identifies Courtyard Residence; material and fenestration agree with user-supplied photo",
+    "local_filename": null,
+    "licensing": "URL-only research; no image downloading or texture reuse. Permission to redistribute not established.",
+    "model_limits": "Precise bay counts, variable wing roof levels, compass-specific red reveal placement and garden dimensions unresolved."
+  }
+]

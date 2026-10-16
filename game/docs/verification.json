@@ -681,6 +681,21 @@
       "passed": true
     },
     {
+      "check": "McTaggart uses distinct renewed-envelope master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "McTaggart retains four-floor registry",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "McTaggart facade batching",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Terrain mesh collision parity at route vertices",
       "evidence": "376/376",
       "passed": true

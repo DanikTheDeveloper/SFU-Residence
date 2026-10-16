@@ -55,13 +55,15 @@ func _process(_delta: float) -> void:
 	if not world.player: return
 	var nearest := "Residence Lane"
 	var distance := INF
+	var active_camera:=get_viewport().get_camera_3d()
+	var observer: Vector3=active_camera.global_position if active_camera else world.player.global_position
 	for data in world.registry:
-		var d: float=Vector2(world.player.position.x,world.player.position.z).distance_to(Vector2(data.centroid[0],data.centroid[1]))
+		var d: float=Vector2(observer.x,observer.z).distance_to(Vector2(data.centroid[0],data.centroid[1]))
 		if d<distance:
 			distance=d
 			nearest=data.name
 	title.text="Precinct overview" if world.map_mode else nearest
-	var heading: float=fposmod(-rad_to_deg(world.player.pivot.rotation.y),360)
+	var heading: float=fposmod(-rad_to_deg(active_camera.global_rotation.y if active_camera else world.player.pivot.rotation.y),360)
 	detail.text="%s  ·  %s  ·  %d FPS  ·  F2 graphics"%["N ↑" if world.map_mode else "Heading %03d°"%int(heading),"LOW" if world.low_quality else "MEDIUM",Engine.get_frames_per_second()]
 
 func _unhandled_input(event: InputEvent) -> void:

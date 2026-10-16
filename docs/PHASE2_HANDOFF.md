@@ -2,10 +2,10 @@
 
 Read `PHASE2_STATUS.md` for current verified scope. Outer `game/` is canonical; preserve nested rollback game and user photos.
 
-Last committed checkpoint: `6c36512` (North family, parking, boundary fix). Working tree also contains verified shared townhouse details, mouse changes and terrain smoothing. Do not discard these or recopy the nested game.
+Terrain/camera/townhouse checkpoint: `730cc77`. McTaggart-Cowan is now implemented and verified, pending checkpoint commit. Do not recopy the nested game.
 
 ## Immediate next operation
-Final terrain threshold tests passed: smoke, 137 physics checks, all 333 route checkpoints, geographic/backup/protected-tower invariants. All 19 entrance contact levels match their pad heights; validator now checks all four surrounding corners. Final GUI capture is running at `/tmp/sfu-smoothed-final-capture.log`. Inspect captures, commit, continue McTaggart-Cowan.
+McTaggart-Cowan distinct facade passes smoke, 140 runtime checks and all333 route checkpoints. Final cosmetic entrance cleanup passes140 checks; final GUI capture inspected. Save this checkpoint, then implement Courtyard facade from already researched DIALOG reference. Research index: `data/online_reference_index.json`; per-folder URL records also saved. Courtyard photo observations: pale ribbed panels, narrow recessed window strips, red upper reveals, dark paired-storey bands, full-height end glazing and glazed courtyard base. Variable wing heights visible in source but not geographically resolved; do not arbitrarily assign heights. Original registry has11 floors and remains unchanged.
 
 Current terrain script: `scripts/smooth_terrain.py`, 160 passes, relaxation .65, pad margin .35m, explicit entrance corner pins. Rejected 3m margin caused steep QUE/QUA transition; do not restore. Immutable pre-smoothing grid: `data/terrain_sources/iteration1_grid.json`. No vertical scaling; all original foundation heights retained. To rebuild: `python3 scripts/build_terrain.py` then `python3 scripts/smooth_terrain.py` then full verification.
 

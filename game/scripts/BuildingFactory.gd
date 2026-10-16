@@ -83,6 +83,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		else: roof.append_array([a,b,c])
 	if data.type in ["modern_tower","north_tower"]:
 		body_mat=preload("res://scripts/FacadeKit.gd").material("reveal")
+	if data.id=="MCH": body_mat=preload("res://scripts/McTaggartExterior.gd").brick_material()
 	var wall_mesh := Geo.mesh_from_vertices(root,walls,body_mat,true)
 	wall_mesh.name="ExteriorCollision"
 	Geo.mesh_from_vertices(root,roof,roof_mat,true).name="Roof"
@@ -95,6 +96,10 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		preload("res://scripts/TownhouseBlockExterior.gd").build(root,data,points,base,height)
 		accent_mat=preload("res://scripts/FacadeKit.gd").material("white_frame")
 		glass_mat=preload("res://scripts/FacadeKit.gd").material("orange")
+	elif data.id=="MCH":
+		preload("res://scripts/McTaggartExterior.gd").build(root,data,points,base,height)
+		accent_mat=Geo.material(Color("aab0b5"))
+		glass_mat=Geo.material(Color("46575b"),0.27)
 	else:
 		Geo.instances(root,trim,roof_mat,null,650).name="RooflineAndBands"
 		Geo.instances(root,frames,frame_mat,null,350).name="WindowFrames"
@@ -119,6 +124,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	label.modulate=Color("f4eee0")
 	root.add_child(label)
 	label.position=door+Vector3.UP*3.35+normal*0.27
+	if data.id=="MCH": label.position=door+Vector3.UP*2.88+normal*2.0
 	label.rotation.y=door_yaw
 	var debug := Label3D.new()
 	debug.name="MapLabel"

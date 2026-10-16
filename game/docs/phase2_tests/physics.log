@@ -138,5 +138,8 @@ PASS SQU shared townhouse master
 PASS SQU pitched roof generated 
 PASS SQU townhouse master edit propagates [102, 72]
 PASS Exactly nine original townhouse blocks 
+PASS McTaggart uses distinct renewed-envelope master 
+PASS McTaggart retains four-floor registry 
+PASS McTaggart facade batching 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=137 failures=0
+VERIFICATION_COMPLETE checks=140 failures=0

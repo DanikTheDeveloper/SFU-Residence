@@ -1,0 +1,22 @@
+[
+  {
+    "building": "McTaggart-Cowan Hall",
+    "building_id": "MCH",
+    "source_url": "https://www.scottconstructiongroup.com/our-projects/mctaggart-cowan-hall-residences-envelope-renewal/",
+    "source": "Scott Construction, renewal contractor",
+    "retrieved": "2026-10-16",
+    "photograph_date": "Unknown; gallery describes project completed August 2025",
+    "viewpoint": "Entrance courtyard; compass orientation unresolved",
+    "observations": [
+      "Charcoal brick envelope",
+      "Tall narrow bronze window surrounds with low horizontal operable-light division",
+      "Pale grey roof fascia",
+      "Glazed central connector with grey horizontal panels and canopy",
+      "External stairs descending to entrance, metal handrails"
+    ],
+    "identity_confidence": "HIGH: contractor names exact SFU Burnaby project; image visually matches supplied MCH photograph",
+    "local_filename": null,
+    "licensing": "All rights reserved; URL-only reference. No image downloaded, redistributed or used as texture.",
+    "model_limits": "Bay spacing, compass-specific window omissions and connector extent estimated. Original four-floor registry retained; photograph shows three exposed levels at courtyard grade."
+  }
+]
