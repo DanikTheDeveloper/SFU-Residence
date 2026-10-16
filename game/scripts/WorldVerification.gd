@@ -49,9 +49,29 @@ func run() -> void:
 			var midpoint: Vector2=(a+b)*0.5
 			var center:=Geo.point([midpoint.x,midpoint.y],1)
 			var direction:=Vector3.UP.cross(Vector3(b.x-a.x,0,b.y-a.y)).normalized()
+			if data.type=="north_tower":
+				var passage=preload("res://scripts/NorthTowerPassage.gd")
+				if passage.interval(center,center,passage.layout(data,center.y)).x>=0: continue
 			edge_count+=1
 			if not ray(center+direction*0.4,center-direction*0.4).is_empty(): edge_hits+=1
 		check(data.id+" solid facade edges",edge_count==edge_hits,"%d/%d"%[edge_hits,edge_count])
+	# Passages are exterior circulation: test both visibility and actual capsule traversal.
+	for id in ["PJH","BRH","SBH"]:
+		var building: Node3D=world.get_node("Buildings/"+id)
+		var passage: Dictionary=building.get_meta("exterior_passage")
+		var start: Vector3=passage.start-passage.axis*0.8
+		var end: Vector3=passage.end+passage.axis*0.8
+		check(id+" passage clear at eye level",ray(start+Vector3.UP*1.68,end+Vector3.UP*1.68).is_empty())
+		var mid: Vector3=(start+end)*0.5
+		check(id+" passage has overhead collision",not ray(mid+Vector3.UP*1.68,mid+Vector3.UP*3.5).is_empty())
+		player.position=start+Vector3.UP*0.3
+		player.velocity=Vector3.ZERO
+		player.pivot.rotation=Vector3(0,atan2(-passage.axis.x,-passage.axis.z),0)
+		await frames(30)
+		Input.action_press("move_forward")
+		await frames(int((passage.length+1.6)/4.5*60)+12)
+		Input.action_release("move_forward")
+		check(id+" passage capsule traversal",(player.position-start).dot(passage.axis)>passage.length+1.3 and player.is_on_floor(),str(player.position))
 	# Use an unobstructed part of Field 4 edge for reproducible movement checks.
 	player.position=Geo.point([-25,110],0.3)
 	player.velocity=Vector3.ZERO

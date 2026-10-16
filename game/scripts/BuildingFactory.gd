@@ -43,7 +43,10 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		if length < 0.05: continue
 		var outward := Vector3.UP.cross(edge).normalized()
 		var up := Vector3.UP*height
-		walls.append_array([a,b+up,b,a,a+up,b+up])
+		if data.type=="north_tower":
+			preload("res://scripts/NorthTowerPassage.gd").append_wall(walls,a,b,height,data)
+		else:
+			walls.append_array([a,b+up,b,a,a+up,b+up])
 		var yaw := -atan2(edge.z,edge.x)
 		var middle := (a+b)*0.5
 		trim.append(Geo.transform(middle+Vector3.UP*(height+0.16),Vector3(length+0.12,0.32,0.4),yaw))

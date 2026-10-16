@@ -1,8 +1,7 @@
 # Iteration 2 review — 2026-10-16
 
 ## Mouse and terrain
-- `_input` handles look before GUI consumption. Yaw has no angular cap; pitch remains bounded. WSLg uses a confined hidden pointer with recentering and relative movement. Esc releases, click recaptures; [ and ] adjust sensitivity.
-- Dispatcher tests cover full turns in both directions. Native window injection recorded8.095 radians (>360 degrees). Physical mouse feel still needs user review; no claim of a human playthrough.
+- Native captured mouse input with separate yaw/pitch replaced the rejected manual-warp approach. User confirms full turns with no blinking. Preserve current PlayerController. Earlier native-injection results belong to the rejected implementation and are not current evidence.
 - Terrain artifacts traced to short-range contour interpolation, narrow pad shoulders and flat shading. Constrained diffusion smooths localized bumps without a vertical scale factor. All19 pad levels retained; entrance triangle corners pinned. Parameters in `data/terrain_smoothing.json`; original pre-filter grid preserved.
 - Townhouse-region95th-percentile slope:46.1% to22.2%; local neighbor residual:.09675m to.020625m. Broad hillside remains. These algorithm diagnostics do not certify actual civil grades.
 
@@ -14,9 +13,9 @@
 - Online sources and rights recorded in `data/online_reference_index.json` and corresponding local photo folders. No third-party photographs downloaded or embedded as textures.
 
 ## Next priorities
-1. User review of physical360-degree mouse movement and terrain feel on WSLg.
+1. Continue North Tower detailed architecture from PHASE2_NORTH_TOWER_REVIEW.md; camera is user-confirmed fixed.
 2. Resolve Courtyard wing heights and facade orientations from current elevations/photos.
-3. Verify Hamilton photo identity; obtain current Dining expansion and Shell exterior references.
+3. Hamilton identity is confirmed by readable sign in1638917139878.jpg; obtain current Dining expansion and Shell exterior references.
 4. Model documented outdoor steps/retaining walls and improve surface/vegetation appearance. `game/data/stair_segments.json` is a source-derived15-segment candidate list, not implemented stairs.
 5. Profile dense promenade views. Compatibility GTX1650 verified; view-dependent frame rates do not constitute a formal benchmark.
 

@@ -37,7 +37,7 @@
     },
     {
       "check": "PJH solid facade edges",
-      "evidence": "26/26",
+      "evidence": "25/25",
       "passed": true
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "check": "BRH solid facade edges",
-      "evidence": "28/28",
+      "evidence": "27/27",
       "passed": true
     },
     {
@@ -77,7 +77,7 @@
     },
     {
       "check": "SBH solid facade edges",
-      "evidence": "28/28",
+      "evidence": "27/27",
       "passed": true
     },
     {
@@ -401,6 +401,51 @@
       "passed": true
     },
     {
+      "check": "PJH passage clear at eye level",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH passage has overhead collision",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH passage capsule traversal",
+      "evidence": "(27.27924, 2.592355, 9.304191)",
+      "passed": true
+    },
+    {
+      "check": "BRH passage clear at eye level",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH passage has overhead collision",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH passage capsule traversal",
+      "evidence": "(99.42673, 5.936868, 26.53348)",
+      "passed": true
+    },
+    {
+      "check": "SBH passage clear at eye level",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH passage has overhead collision",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH passage capsule traversal",
+      "evidence": "(171.3046, 6.840064, 43.31223)",
+      "passed": true
+    },
+    {
       "check": "W movement",
       "evidence": "metres=4.131715",
       "passed": true
@@ -507,7 +552,7 @@
     },
     {
       "check": "PJH North master edit propagates",
-      "evidence": "[472, 376]",
+      "evidence": "[470, 374]",
       "passed": true
     },
     {
@@ -522,7 +567,7 @@
     },
     {
       "check": "BRH North master edit propagates",
-      "evidence": "[464, 376]",
+      "evidence": "[462, 374]",
       "passed": true
     },
     {
@@ -537,7 +582,7 @@
     },
     {
       "check": "SBH North master edit propagates",
-      "evidence": "[464, 376]",
+      "evidence": "[462, 374]",
       "passed": true
     },
     {

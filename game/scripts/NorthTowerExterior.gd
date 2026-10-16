@@ -1,5 +1,6 @@
 extends RefCounted
 const Kit=preload("res://scripts/FacadeKit.gd")
+const Passage=preload("res://scripts/NorthTowerPassage.gd")
 const MASTER_ID="res://scripts/NorthTowerExterior.gd"
 static var bay_width := 3.6
 
@@ -9,6 +10,7 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 	root.set_meta("roof_world_y",base+height+0.25)
 	var kit:=Kit.new()
 	var story: float=height/int(data.floors)
+	var passage:=Passage.layout(data,base)
 	for i in points.size():
 		var a:=Vector3(points[i][0],base,points[i][1])
 		var q: Array=points[(i+1)%points.size()]
@@ -23,10 +25,16 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 		var narrow: bool=length<19 and length>5
 		for bay in bays:
 			var mid:=a+tangent*((bay+0.5)*spacing)
-			var width: float=minf(0.9,spacing*0.36) if narrow else spacing*0.72
+			var lounge: bool=length>25 and bay==bays/2
+			var width: float=minf(1.25,spacing*0.46) if narrow else spacing*0.58
+			if lounge: width=spacing-0.18
 			for level in int(data.floors):
+				# Omit ground-level modules at the real opening, including projecting fins.
+				if level==0 and Passage.interval(mid-tangent*spacing*0.5,mid+tangent*spacing*0.5,passage,0.35).x>=0: continue
 				var wh: float=story-0.38 if narrow else 2.05
+				if lounge: wh=story-0.27
 				var center:=mid+Vector3.UP*((level+0.5)*story)
+				if lounge: center+=normal*0.65
 				kit.window(center,tangent,normal,width,wh,yaw,true,"white_frame")
 				var pier: float=(spacing-width)*0.5
 				for side in [-1,1]:
@@ -34,6 +42,9 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 					kit.part("concrete",center+Vector3.UP*side*(wh*0.5+(story-wh)*0.25)+normal*0.12,Vector3(width,(story-wh)*0.5,0.24),yaw)
 				if not narrow:
 					kit.part("concrete",mid+Vector3.UP*(level*story)+normal*0.32,Vector3(spacing,0.18,0.78),yaw)
-			kit.part("concrete",mid-tangent*spacing*0.5+Vector3.UP*height*0.5+normal*0.40,Vector3(0.20,height,0.8),yaw)
+			var fin:=mid-tangent*spacing*0.5
+			var fin_bottom: float=story if Passage.interval(fin,fin,passage,0.4).x>=0 else 0.0
+			kit.part("concrete",fin+Vector3.UP*(height+fin_bottom)*0.5+normal*0.40,Vector3(0.20,height-fin_bottom,0.8),yaw)
 		kit.part("concrete",a+edge*0.5+Vector3.UP*(height+0.12)+normal*0.35,Vector3(length+0.5,0.25,1.35),yaw)
 	kit.finish(root,"North")
+	Passage.build(root,data,base,Kit.material("concrete"))

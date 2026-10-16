@@ -11,7 +11,7 @@ Removed manual WSL pointer warping after user reported blinking. Native captured
 
 ## Architecture — verified current state
 - East/West: user-approved facade master and shared material kit unchanged; hashes protected. Do not remodel/recolor.
-- North: shared facade exists; newly supplied photos reveal open ground passage and more entrance/corner details. Not yet remodeled; explicit later task in PHASE2_TOWNHOUSE_DETAIL_PLAN.md.
+- North: shared facade now has broader concrete panels, projecting lounge glazing and actual open exterior passages with side-wall/soffit collision.153 physics checks and333 route checkpoints pass. Dimensions and per-building passage positions remain estimated; see PHASE2_NORTH_TOWER_REVIEW.md.
 - Townhouses: shared blue-siding house modules with individual red doors, paired mirrored porches, white posts/eaves, masonry base, projected middle windows and upper balconies. Removed obsolete generic block entrance/canopy. Smoke,144 runtime checks,333 route checkpoints and human-eye-level captures pass. Detailed frontage: game/docs/screenshots/view_7.png. Exact11-unit positioning and low common annexes still unresolved in world coordinates.
 - McTaggart-Cowan: distinct renewed-envelope model, verified contractor reference; charcoal brick, bronze windows and grey fascia/connector. Geometric details estimated.
 - Courtyard: distinct ribbed precast facade, architect reference; eleven-floor uniform massing remains a known mismatch with lower wings. Final entrance cleared of repeated facade piers; verified launch/capture.
@@ -20,8 +20,10 @@ Removed manual WSL pointer warping after user reported blinking. Native captured
 ## Research and next work
 Prioritize user photos. All nine official townhouse ground-floor drawings visually reviewed; Chilcotin upper floors also reviewed with existing bundled Poppler. Plans show11 numbered houses per block, common-room end variants and paired porches; current SFU webpage total96 conflicts with plan numbering01-99. Do not invent operational count. All source URLs, observations and limitations saved in data/townhouse_plan_observations.json, data/online_reference_index.json and PHASE2_TOWNHOUSE_DETAIL_PLAN.md. User photos are reference-only and not shipped as textures.
 
-Next: refine townhouse bay returns/materials/porch contact, then georeference common annex/unit layouts. Later: North open passage geometry AND collision, Hamilton unique model, remaining buildings after specific-photo review. No interiors/NPC/API code.
+User accepts current townhouses and requests North next. Preserve townhouse appearance. Next: North stair-core material/glazing and evidence-backed entrance detail, then refine passage placement. Later: townhouse common-annex mapping, Hamilton unique model and remaining buildings. No interiors/NPC/API code.
 
 Run: bash scripts/run_game.sh. Full check: bash scripts/verify_game.sh. Automatic capture windows are labeled controls-disabled; use normal launcher for gameplay. Capture performance is viewpoint/resolution dependent, not a formal benchmark.
 
-Latest account snapshot after user continuation:49% five-hour usage,86% weekly; previous90% snapshot belonged to earlier reset window. No predicted remaining time. Continue useful work with saved checkpoints.
+Latest actual account snapshot:84% five-hour and91% weekly used. Finish current verified checkpoint and hand off; do not predict reset duration or automatically resume.
+
+North checkpoint visual QA: final GUI launch/capture completed without script errors; view4 facade and view8 through-passage inspected. Concrete paving follows terrain without collision changes. Full physics153/153 and route333/333 passed before the final cosmetic paving addition; final renderer launch validates that addition. No claim of fully photo-matched North architecture: columned undercroft, stair-core treatment and entrance detail remain in PHASE2_NORTH_TOWER_REVIEW.md.

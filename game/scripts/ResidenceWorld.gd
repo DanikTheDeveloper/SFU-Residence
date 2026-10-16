@@ -224,6 +224,9 @@ func capture_views() -> void:
 			var eye:=door+direction.normalized()*(25 if building.id=="CYR" else (10 if building.id=="PEN" else 15))
 			eye.y=Geo.elevation(eye.x,eye.z)+1.68
 			views.append([eye,door+Vector3.UP*(9 if building.id=="CYR" else 4.5)])
+	var north: Node3D=get_node("Buildings/BRH")
+	var passage: Dictionary=north.get_meta("exterior_passage")
+	views.append([passage.start-passage.axis*4.0+Vector3.UP*1.68,passage.end+Vector3.UP*1.68])
 	add_child(capture)
 	capture.far=1200
 	capture.fov=72
