@@ -25,8 +25,16 @@ if __name__ == '__main__':
     mapping = dict(zip(['PJH','BRH','SBH','EAT','WET','CYR','MCH','HAM','SHR','DC','COW','CHI','KEL','KIM','KIT','PEN','QUA','QUE','SQU'],
                        ['102388632','102388639','102388635','980707207','980707206','1035487348','102388641','102388631','102388883','102388637','102388881','102388885','32894614','102388878','102388877','102388884','102388880','102388879','102388882']))
     by_id = {w['osm_id']:w for w in ways}
+    def in_poly(p, polygon):
+        x,z=p; hit=False
+        for a,b in zip(polygon,polygon[1:]+polygon[:1]):
+            if (a[1]>z)!=(b[1]>z) and x<(b[0]-a[0])*(z-a[1])/(b[1]-a[1])+a[0]: hit=not hit
+        return hit
+    all_polys=[by_id[value]['points'][:-1] for value in mapping.values()]
+    def clear(p):
+        return not any(in_poly([p[0]+dx,p[1]+dz],poly) for poly in all_polys for dx,dz in [(0,0),(.7,0),(-.7,0),(0,.7),(0,-.7)])
     buildings = json.loads((ROOT/'data/buildings_seed.json').read_text())['buildings']
-    palette = {'north_tower':['c6c0aa','8a493c'], 'modern_tower':['b6bab6','9c452b'], 'modern_residence':['d5d4c8','ab392d'], 'lowrise_hall':['ada99c','625d50'], 'dining':['d8ceb5','805938'], 'townhouse':['b9b4a3','6d8074']}
+    palette = {'north_tower':['aaa99b','a77b3f'], 'modern_tower':['8e5741','b4754a'], 'modern_residence':['c4c4b9','926444'], 'lowrise_hall':['aaa391','625d50'], 'dining':['b7ae98','805938'], 'townhouse':['8b9a93','4d6559']}
     paths = []
     boundary = [[-284,20],[-155,-75],[0,-120],[220,-105],[358,-60],[355,25],[292,64],[290,175],[75,190],[-95,165],[-267,135]]
     def inside(p):
@@ -45,9 +53,14 @@ if __name__ == '__main__':
         w=by_id[mapping[b['id']]]; points=w['points'][:-1]
         b.update(footprint=points, osm_id=w['osm_id'], source_tags=w['tags'], geometry_confidence='VERIFIED_OSM_RECORD_NOT_SURVEY', geometry_source='https://www.openstreetmap.org/way/'+w['osm_id'], license='ODbL-1.0', npc_spawn_anchors=[])
         b['floors']=b['floors'] or int(w['tags'].get('building:levels',4))
+        if b['id']=='DC':
+            b['floors']=3
+            b['floors_confidence']='VERIFIED DIALOG project text; OSM says 2, unresolved split-level form'
         b['height_m']=b['floors']*(3.7 if b['type']=='dining' else 3.1)
         b['height_provenance']='ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)'
         b['facade']={'palette':palette[b['type']], 'confidence':'ESTIMATED original modular interpretation', 'bay_m':3.1 if b['type']!='townhouse' else 3.7, 'roof':'flat OSM tag or neutral estimated flat roof'}
+        if b['type']=='modern_tower': b['facade']['source']='https://dialogdesign.ca/projects/simon-fraser-university-phase-1-student-residence/ ; brick/copper from text, exact allocation ESTIMATED'
+        if b['id']=='CYR': b['facade']['source']='https://dialogdesign.ca/projects/simon-fraser-university-phase-2-student-residence/ ; precast/vertical glazing from text, exact pattern ESTIMATED'
         b['centroid']=[sum(p[i] for p in points)/len(points) for i in (0,1)]
         # Choose a long exterior edge with shortest connection to an existing path.
         choices=[]
@@ -58,7 +71,10 @@ if __name__ == '__main__':
                 u,v=path['points']; d=[v[i]-u[i] for i in (0,1)]; den=sum(q*q for q in d)
                 f=max(0,min(1,sum((mid[i]-u[i])*d[i] for i in (0,1))/max(den,.001)))
                 near=[u[i]+f*d[i] for i in (0,1)]
-                choices.append((math.dist(mid,near),mid,near))
+                distance=math.dist(mid,near)
+                if distance<2.5 or not clear(near): continue
+                if any(in_poly([mid[i]+(near[i]-mid[i])*f for i in (0,1)],points) for f in [.1,.3,.6,.9]): continue
+                choices.append((distance,mid,near))
         _,door,anchor=min(choices)
         b['entrance']=door; b['outdoor_anchor']=anchor
         paths.append({'osm_id':None,'name':b['name']+' access','kind':'path','width':3,'points':[door,anchor],'confidence':'ESTIMATED connector'})

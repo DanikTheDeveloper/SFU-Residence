@@ -1,15 +1,25 @@
-"""Build-time only. One cached OSM request, no runtime networking."""
-import json, urllib.request, urllib.parse
+"""Fetch a small licensed OSM extract at build time; runtime remains offline."""
+import argparse
+import urllib.request
+import xml.etree.ElementTree as ET
 from pathlib import Path
-root = Path(__file__).resolve().parents[1]
-query = '''[out:json][timeout:45];(way["building"](49.2785,-122.9315,49.2818,-122.9234);relation["building"](49.2785,-122.9315,49.2818,-122.9234);way["highway"](49.2785,-122.9315,49.2818,-122.9234);way["landuse"](49.2785,-122.9315,49.2818,-122.9234);way["leisure"](49.2785,-122.9315,49.2818,-122.9234);way["amenity"="parking"](49.2785,-122.9315,49.2818,-122.9234););out meta geom;'''
-target = root / 'game/data/osm_source.json'
-if not target.exists():
-    req = urllib.request.Request('https://overpass-api.de/api/interpreter?' + urllib.parse.urlencode({'data': query}), headers={'User-Agent':'SFUExteriorPrototype/1.0 (one-off research)'})
-    with urllib.request.urlopen(req, timeout=60) as response:
-        data = json.load(response)
-    target.write_text(json.dumps(data, indent=2))
-data = json.loads(target.read_text())
-for e in data['elements']:
-    if 'building' in e.get('tags', {}):
-        print(e['type'], e['id'], e['tags'])
+ROOT=Path(__file__).resolve().parents[1]
+URL='https://api.openstreetmap.org/api/0.6/map?bbox=-122.9315,49.2785,-122.9234,49.2818'
+parser=argparse.ArgumentParser()
+parser.add_argument('--refresh',action='store_true',help='Replace the cached source only after a successful fetch and XML validation')
+args=parser.parse_args()
+target=ROOT/'game/data/osm_source.osm'
+if args.refresh or not target.exists():
+    request=urllib.request.Request(URL,headers={'User-Agent':'SFUExteriorPrototype/1.0 (bounded one-off research)'})
+    with urllib.request.urlopen(request,timeout=60) as response:
+        content=response.read()
+    tree=ET.fromstring(content)
+    assert tree.tag=='osm' and tree.findall('way'), 'Invalid/empty OSM response'
+    temporary=target.with_suffix('.tmp')
+    temporary.write_bytes(content)
+    temporary.replace(target)
+    print('Fetched',URL)
+else:
+    tree=ET.parse(target).getroot()
+    print('Using cached OSM; no network request. Use --refresh explicitly to update.')
+print(len(tree.findall('way')),'ways;',len(tree.findall('node')),'nodes')

@@ -1,0 +1,34 @@
+=== SFU Residence WSL2/Godot diagnostic (read-only) ===
+Current working directory: /home/danik/GitHub/SFU Residence/SFU_Residences_Codex_WSL2_Godot472_OnlineAPI
+
+[Linux]
+Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+VERSION_ID="13"
+WSL kernel marker: yes
+/dev/dxg: present
+DISPLAY: set; WAYLAND_DISPLAY: set
+
+[Commands installed]
+  python3    /usr/bin/python3
+  git        /usr/bin/git
+  unzip      /usr/bin/unzip
+  curl       /usr/bin/curl
+  jq         MISSING (may be optional)
+  glxinfo    MISSING (may be optional)
+  blender    MISSING (may be optional)
+
+[Godot Linux binary]
+Executable: /usr/local/bin/godot
+Version: 4.7.2.stable.official.ed1daf0bf
+
+[OpenGL]
+glxinfo not installed. Install mesa-utils if a GPU diagnostic is needed.
+
+[Project folder check]
+Not under /mnt/... (good for Linux-native filesystem if on ext4).
+game/project.godot: exists
+config/name="SFU Residences | Burnaby"
+renderer/rendering_method="gl_compatibility"
+
+Diagnostic complete; nothing was installed or modified.

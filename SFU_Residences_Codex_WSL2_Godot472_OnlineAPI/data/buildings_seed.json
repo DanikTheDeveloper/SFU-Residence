@@ -1,0 +1,196 @@
+{
+  "notes": "Starter IDs and floor counts only. NO verified geometry in this JSON. Current SFU insurance source supports floor counts; North Towers 7 vs 8 conflict in marketing page; recorded here as 8 with conflict flag. These are not surveyed heights.",
+  "source_url": "https://www.sfu.ca/students/residences/moving-in/insurance.html",
+  "buildings": [
+    {
+      "id": "PJH",
+      "name": "Pauline Jewett House",
+      "floors": 8,
+      "floors_confidence": "VERIFIED_SOURCE_WITH_NORTH_TOWERS_CONFLICT",
+      "type": "north_tower",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "BRH",
+      "name": "Barbara Rae House",
+      "floors": 8,
+      "floors_confidence": "VERIFIED_SOURCE_WITH_NORTH_TOWERS_CONFLICT",
+      "type": "north_tower",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "SBH",
+      "name": "Shadbolt House",
+      "floors": 8,
+      "floors_confidence": "VERIFIED_SOURCE_WITH_NORTH_TOWERS_CONFLICT",
+      "type": "north_tower",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "EAT",
+      "name": "East Tower",
+      "floors": 7,
+      "floors_confidence": "VERIFIED",
+      "type": "modern_tower",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "WET",
+      "name": "West Tower",
+      "floors": 8,
+      "floors_confidence": "VERIFIED",
+      "type": "modern_tower",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "CYR",
+      "name": "Courtyard Residence",
+      "floors": 11,
+      "floors_confidence": "VERIFIED",
+      "type": "modern_residence",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "MCH",
+      "name": "McTaggart-Cowan Hall",
+      "floors": 4,
+      "floors_confidence": "VERIFIED",
+      "type": "lowrise_hall",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "HAM",
+      "name": "Hamilton Hall",
+      "floors": 4,
+      "floors_confidence": "VERIFIED",
+      "type": "lowrise_hall",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "SHR",
+      "name": "Shell House",
+      "floors": null,
+      "floors_confidence": "UNKNOWN",
+      "type": "lowrise_hall",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "DC",
+      "name": "Dining Commons",
+      "floors": null,
+      "floors_confidence": "UNKNOWN",
+      "type": "dining",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "COW",
+      "name": "Cowichan",
+      "floors": 3,
+      "floors_confidence": "VERIFIED",
+      "type": "townhouse",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "CHI",
+      "name": "Chilcotin",
+      "floors": 3,
+      "floors_confidence": "VERIFIED",
+      "type": "townhouse",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "KEL",
+      "name": "Kelowna",
+      "floors": 3,
+      "floors_confidence": "VERIFIED",
+      "type": "townhouse",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "KIM",
+      "name": "Kimberley",
+      "floors": 3,
+      "floors_confidence": "VERIFIED",
+      "type": "townhouse",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "KIT",
+      "name": "Kitimat",
+      "floors": 3,
+      "floors_confidence": "VERIFIED",
+      "type": "townhouse",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "PEN",
+      "name": "Penticton",
+      "floors": 3,
+      "floors_confidence": "VERIFIED",
+      "type": "townhouse",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "QUA",
+      "name": "Qualicum",
+      "floors": 3,
+      "floors_confidence": "VERIFIED",
+      "type": "townhouse",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "QUE",
+      "name": "Quesnel",
+      "floors": 3,
+      "floors_confidence": "VERIFIED",
+      "type": "townhouse",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    },
+    {
+      "id": "SQU",
+      "name": "Squamish",
+      "floors": 3,
+      "floors_confidence": "VERIFIED",
+      "type": "townhouse",
+      "footprint_lonlat": null,
+      "height_m": null,
+      "geometry_confidence": "UNKNOWN"
+    }
+  ]
+}

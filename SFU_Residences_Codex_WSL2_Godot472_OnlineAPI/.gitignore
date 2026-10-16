@@ -1,0 +1,19 @@
+# No secrets, imports, local caches or API credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.secret
+*credentials*.json
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+.idea/
+# Generated Godot cache and editor data, not actual source
+.godot/
+game/.godot/
+# Leave original source/geo datasets trackable; never commit private data.

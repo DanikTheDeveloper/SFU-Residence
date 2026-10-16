@@ -1,5 +1,6 @@
 extends RefCounted
 const Geo = preload("res://scripts/Geometry.gd")
+const Materials = preload("res://scripts/Materials.gd")
 
 static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	var root := Node3D.new()
@@ -24,10 +25,11 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	var frames: Array[Transform3D] = []
 	var panels: Array[Transform3D] = []
 	var palette: Array = data.facade.palette
-	var body_mat := Geo.material(Color(palette[0]))
+	var body_mat := Materials.facade(Color(palette[0]),data.type)
 	var accent_mat := Geo.material(Color(palette[1]))
 	var roof_mat := Geo.material(Color("555a59"))
 	var frame_mat := Geo.material(Color("d3d8d4"))
+	if data.type in ["modern_tower","modern_residence","dining"]: frame_mat=Geo.material(Color("3c4241"))
 	var glass_mat := Geo.material(Color("284653"),0.27)
 	var floors: int = data.floors
 	var story: float = height / floors
@@ -94,7 +96,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	var door_yaw := atan2(normal.x,normal.z)
 	var door_mesh := Geo.box(root,door+Vector3.UP*1.15+normal*0.15,Vector3(2.1,2.3,0.16),glass_mat)
 	door_mesh.rotation.y=door_yaw
-	var canopy := Geo.box(root,door+Vector3.UP*2.85+normal*0.9,Vector3(3.6,0.22,2.1),accent_mat)
+	var canopy := Geo.box(root,door+Vector3.UP*2.85+normal*0.9,Vector3(3.6,0.22,2.1),accent_mat,true)
 	canopy.rotation.y=door_yaw
 	var label := Label3D.new()
 	label.name="NameSign"

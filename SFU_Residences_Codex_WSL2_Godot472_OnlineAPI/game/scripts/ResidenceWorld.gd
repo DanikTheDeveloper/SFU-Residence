@@ -33,22 +33,25 @@ func _ready() -> void:
 	var concrete := Geo.material(Color("b0afa3"))
 	for area in site.parking: Geo.polygon(paths,area.points,asphalt,0.025)
 	for road in roads:
-		Geo.strip(paths,Geo.point(road.points[0]),Geo.point(road.points[1]),road.width,concrete if road.kind=="path" else asphalt)
+		if road.kind=="road": Geo.strip(paths,Geo.point(road.points[0]),Geo.point(road.points[1]),road.width+0.5,concrete,0.025)
+		Geo.strip(paths,Geo.point(road.points[0]),Geo.point(road.points[1]),road.width,concrete if road.kind=="path" else asphalt,0.045 if road.kind=="path" else 0.035)
+	Geo.merge_surfaces(paths)
 	var buildings := group_node("Buildings")
 	for data in registry: Buildings.build(buildings,data)
 	vegetation=group_node("Vegetation")
 	build_landscape()
+	preload("res://scripts/SiteDetails.gd").build(self)
 	player=PlayerScene.instantiate()
 	add_child(player)
-	player.spawn=Geo.point(registry[4].outdoor_anchor,0.25)
+	player.spawn=Geo.point([35,80],0.25)
 	player.reset()
-	player.pivot.rotation.y=0.45
+	player.pivot.rotation.y=-0.35
 	overview=Camera3D.new()
 	add_child(overview)
 	overview.position=Vector3(35,360,300)
 	overview.look_at(Vector3(35,0,30))
 	overview.projection=Camera3D.PROJECTION_ORTHOGONAL
-	overview.size=690
+	overview.size=400
 	overview.far=1200
 	var hud := CanvasLayer.new()
 	hud.name="UI"
@@ -82,27 +85,27 @@ func build_light() -> void:
 	env.sky=sky
 	env.ambient_light_source=Environment.AMBIENT_SOURCE_COLOR
 	env.ambient_light_color=Color("c7d5df")
-	env.ambient_light_energy=0.65
-	env.tonemap_mode=Environment.TONE_MAPPER_FILMIC
+	env.ambient_light_energy=0.35
+	env.tonemap_mode=Environment.TONE_MAPPER_LINEAR
 	environment.environment=env
 	lighting.add_child(environment)
 	sun=DirectionalLight3D.new()
 	lighting.add_child(sun)
 	sun.rotation_degrees=Vector3(-48,-35,0)
 	sun.light_color=Color("fff1d6")
-	sun.light_energy=1.5
+	sun.light_energy=0.75
 	sun.shadow_enabled=true
 	sun.directional_shadow_max_distance=180
 
 func build_ground() -> void:
 	var ground := group_node("Ground")
 	var verts := PackedVector3Array()
-	for x in range(-340,421,20):
-		for z in range(-180,241,20):
+	for x in range(-1200,1201,200):
+		for z in range(-1200,1201,200):
 			var a := Geo.point([x,z])
-			var b := Geo.point([x+20,z])
-			var c := Geo.point([x+20,z+20])
-			var d := Geo.point([x,z+20])
+			var b := Geo.point([x+200,z])
+			var c := Geo.point([x+200,z+200])
+			var d := Geo.point([x,z+200])
 			verts.append_array([a,c,b,a,d,c])
 	Geo.mesh_from_vertices(ground,verts,Geo.material(Color("6e8056")),true).name="Terrain"
 	var edge_mat := Geo.material(Color("425c3f"))
@@ -129,7 +132,9 @@ func build_landscape() -> void:
 		var h := rng.randf_range(5,11)
 		trunks.append(Geo.transform(pos+Vector3.UP*h*0.4,Vector3(0.3,h*0.8,0.3)))
 		if i%3==0: crowns.append(Geo.transform(pos+Vector3.UP*h*0.75,Vector3(h*0.55,h*0.55,h*0.55)))
-		else: pines.append(Geo.transform(pos+Vector3.UP*h*0.65,Vector3(h*0.6,h,h*0.6)))
+		else:
+			for layer in 3:
+				pines.append(Geo.transform(pos+Vector3.UP*h*(0.48+0.19*layer),Vector3(h*(0.62-0.14*layer),h*0.57,h*(0.62-0.14*layer))))
 		if trunks.size()>=150: break
 	Geo.instances(vegetation,trunks,Geo.material(Color("655744")),null,500)
 	var sphere := SphereMesh.new()
@@ -195,36 +200,62 @@ func _unhandled_input(event: InputEvent) -> void:
 		overview.current=map_mode
 		player.camera.current=not map_mode
 		Input.mouse_mode=Input.MOUSE_MODE_VISIBLE if map_mode else Input.MOUSE_MODE_CAPTURED
-		for label in get_tree().get_nodes_in_group("building_labels"): label.visible=map_mode
+		for label in get_tree().get_nodes_in_group("building_labels"):
+			label.visible=map_mode
+			label.pixel_size=0.12 if map_mode else 0.025
+			label.text=str(label.get_parent().name) if map_mode else label.get_parent().get_meta("building").name
 	if event.is_action_pressed("labels"):
 		for label in get_tree().get_nodes_in_group("building_labels"): label.visible=not label.visible
 	if event.is_action_pressed("quality"):
 		low_quality=not low_quality
 		sun.shadow_enabled=not low_quality
 		vegetation.visible=not low_quality
+		get_viewport().msaa_3d=Viewport.MSAA_DISABLED if low_quality else Viewport.MSAA_2X
 
 func _process(_delta: float) -> void:
 	if player and not Geometry2D.is_point_in_polygon(Vector2(player.position.x,player.position.z),boundary): player.reset()
 
 func capture_views() -> void:
-	player.enabled=false
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
+	for frame in 40: await get_tree().physics_frame
+	player.enabled=false
 	var views := [[Vector3(-120,24,100),Vector3(70,10,25)], [Vector3(55,12,115),Vector3(140,18,45)], [Vector3(270,17,70),Vector3(315,19,-20)]]
 	var capture := Camera3D.new()
 	add_child(capture)
 	capture.far=1200
 	capture.current=true
 	DirAccess.make_dir_recursive_absolute("res://docs/screenshots")
+	var measurements: Array=[]
 	for i in views.size():
 		capture.position=views[i][0]
 		capture.look_at(views[i][1])
-		for frame in 25: await get_tree().process_frame
+		for frame in 50: await get_tree().process_frame
+		var start:=Time.get_ticks_usec()
+		var frame_times: Array[float]=[]
+		for frame in 90:
+			var previous:=Time.get_ticks_usec()
+			await get_tree().process_frame
+			frame_times.append((Time.get_ticks_usec()-previous)/1000.0)
+		frame_times.sort()
+		measurements.append({"view":i,"fps_mean":90.0/((Time.get_ticks_usec()-start)/1000000.0),"frame_ms_p95":frame_times[85],"draw_calls":Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME)})
 		await RenderingServer.frame_post_draw
 		get_viewport().get_texture().get_image().save_png("res://docs/screenshots/view_%d.png"%i)
 	overview.current=true
-	for label in get_tree().get_nodes_in_group("building_labels"): label.visible=true
+	map_mode=true
+	for label in get_tree().get_nodes_in_group("building_labels"):
+		label.visible=true
+		label.text=str(label.get_parent().name)
+		label.pixel_size=0.2
 	for frame in 25: await get_tree().process_frame
 	await RenderingServer.frame_post_draw
 	get_viewport().get_texture().get_image().save_png("res://docs/screenshots/site_overview.png")
+	map_mode=false
+	for label in get_tree().get_nodes_in_group("building_labels"): label.visible=false
+	player.camera.current=true
+	for frame in 40: await get_tree().process_frame
+	await RenderingServer.frame_post_draw
+	get_viewport().get_texture().get_image().save_png("res://docs/screenshots/player_view.png")
+	var report:=FileAccess.open("res://docs/performance.json",FileAccess.WRITE)
+	report.store_string(JSON.stringify({"device":RenderingServer.get_video_adapter_name(),"renderer":RenderingServer.get_current_rendering_method(),"resolution":[1280,720],"tier":"medium","samples":measurements},"  "))
 	print("CAPTURE_COMPLETE fps=",Engine.get_frames_per_second()," draws=",Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
 	get_tree().quit()

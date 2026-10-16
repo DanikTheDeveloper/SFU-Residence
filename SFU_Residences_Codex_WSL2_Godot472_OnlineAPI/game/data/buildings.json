@@ -128,8 +128,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "c6c0aa",
-        "8a493c"
+        "aaa99b",
+        "a77b3f"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.1,
@@ -140,12 +140,12 @@
       -3.7733461538461537
     ],
     "entrance": [
-      0.5874999999999995,
-      -2.124
+      20.4995,
+      17.0795
     ],
     "outdoor_anchor": [
-      1.4382602612210391,
-      -5.758623501107887
+      19.502837686927492,
+      21.352356066108648
     ]
   },
   {
@@ -285,8 +285,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "c6c0aa",
-        "8a493c"
+        "aaa99b",
+        "a77b3f"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.1,
@@ -297,12 +297,12 @@
       12.753678571428571
     ],
     "entrance": [
-      72.7345,
-      15.0335
+      92.68299999999999,
+      34.236999999999995
     ],
     "outdoor_anchor": [
-      73.64496860063844,
-      11.144590040242615
+      91.75513015836994,
+      38.21380345077364
     ]
   },
   {
@@ -442,8 +442,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "c6c0aa",
-        "8a493c"
+        "aaa99b",
+        "a77b3f"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.1,
@@ -454,12 +454,12 @@
       29.617214285714287
     ],
     "entrance": [
-      144.6935,
-      31.902
+      118.507,
+      40.275
     ],
     "outdoor_anchor": [
-      145.60756927440048,
-      28.002424040921614
+      117.5818297575641,
+      44.23992544565186
     ]
   },
   {
@@ -554,12 +554,13 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b6bab6",
-        "9c452b"
+        "8e5741",
+        "b4754a"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.1,
-      "roof": "flat OSM tag or neutral estimated flat roof"
+      "roof": "flat OSM tag or neutral estimated flat roof",
+      "source": "https://dialogdesign.ca/projects/simon-fraser-university-phase-1-student-residence/ ; brick/copper from text, exact allocation ESTIMATED"
     },
     "centroid": [
       135.65411764705883,
@@ -666,24 +667,25 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b6bab6",
-        "9c452b"
+        "8e5741",
+        "b4754a"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.1,
-      "roof": "flat OSM tag or neutral estimated flat roof"
+      "roof": "flat OSM tag or neutral estimated flat roof",
+      "source": "https://dialogdesign.ca/projects/simon-fraser-university-phase-1-student-residence/ ; brick/copper from text, exact allocation ESTIMATED"
     },
     "centroid": [
       65.44211764705882,
       57.021352941176474
     ],
     "entrance": [
-      93.267,
-      54.0075
+      35.283,
+      46.835499999999996
     ],
     "outdoor_anchor": [
-      94.5285761323208,
-      54.30996483669306
+      32.8147231780321,
+      46.26025106030201
     ]
   },
   {
@@ -780,24 +782,25 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "d5d4c8",
-        "ab392d"
+        "c4c4b9",
+        "926444"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.1,
-      "roof": "flat OSM tag or neutral estimated flat roof"
+      "roof": "flat OSM tag or neutral estimated flat roof",
+      "source": "https://dialogdesign.ca/projects/simon-fraser-university-phase-2-student-residence/ ; precast/vertical glazing from text, exact pattern ESTIMATED"
     },
     "centroid": [
       317.5903888888889,
       -14.914388888888888
     ],
     "entrance": [
-      319.2185,
-      5.181500000000001
+      277.164,
+      -8.245
     ],
     "outdoor_anchor": [
-      318.8913315147608,
-      6.581107082032949
+      276.03980323404494,
+      -3.435753919715502
     ]
   },
   {
@@ -904,7 +907,7 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "ada99c",
+        "aaa391",
         "625d50"
       ],
       "confidence": "ESTIMATED original modular interpretation",
@@ -981,7 +984,7 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "ada99c",
+        "aaa391",
         "625d50"
       ],
       "confidence": "ESTIMATED original modular interpretation",
@@ -1061,7 +1064,7 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "ada99c",
+        "aaa391",
         "625d50"
       ],
       "confidence": "ESTIMATED original modular interpretation",
@@ -1084,11 +1087,11 @@
   {
     "id": "DC",
     "name": "Dining Commons",
-    "floors": 2,
-    "floors_confidence": "UNKNOWN",
+    "floors": 3,
+    "floors_confidence": "VERIFIED DIALOG project text; OSM says 2, unresolved split-level form",
     "type": "dining",
     "footprint_lonlat": null,
-    "height_m": 7.4,
+    "height_m": 11.100000000000001,
     "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
     "footprint": [
       [
@@ -1200,7 +1203,7 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "d8ceb5",
+        "b7ae98",
         "805938"
       ],
       "confidence": "ESTIMATED original modular interpretation",
@@ -1212,12 +1215,12 @@
       37.348
     ],
     "entrance": [
-      185.671,
-      50.366
+      238.3665,
+      55.2195
     ],
     "outdoor_anchor": [
-      185.66850636238206,
-      50.3768176636311
+      241.90697461615434,
+      55.95541037824682
     ]
   },
   {
@@ -1308,8 +1311,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b9b4a3",
-        "6d8074"
+        "8b9a93",
+        "4d6559"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.7,
@@ -1320,12 +1323,12 @@
       -32.6510625
     ],
     "entrance": [
-      -57.534,
-      -28.41
+      -70.36250000000001,
+      -23.6565
     ],
     "outdoor_anchor": [
-      -56.97397496094276,
-      -28.26028881890945
+      -71.00760782047567,
+      -20.998293059078044
     ]
   },
   {
@@ -1416,8 +1419,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b9b4a3",
-        "6d8074"
+        "8b9a93",
+        "4d6559"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.7,
@@ -1428,12 +1431,12 @@
       28.4554375
     ],
     "entrance": [
-      -72.69149999999999,
-      35.577
+      -77.2505,
+      43.716
     ],
     "outdoor_anchor": [
-      -72.29057349005808,
-      35.677046356455
+      -74.46975189124687,
+      44.40990202344117
     ]
   },
   {
@@ -1524,8 +1527,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b9b4a3",
-        "6d8074"
+        "8b9a93",
+        "4d6559"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.7,
@@ -1536,12 +1539,12 @@
       -5.5960625
     ],
     "entrance": [
-      -87.6525,
-      -13.138
+      -110.8435,
+      -8.907
     ],
     "outdoor_anchor": [
-      -87.70895098060736,
-      -12.90910221534504
+      -113.32386904584179,
+      -9.61783908957483
     ]
   },
   {
@@ -1632,8 +1635,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b9b4a3",
-        "6d8074"
+        "8b9a93",
+        "4d6559"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.7,
@@ -1644,12 +1647,12 @@
       -4.1809375
     ],
     "entrance": [
-      -116.523,
-      -0.4724999999999997
+      -145.21949999999998,
+      -13.9605
     ],
     "outdoor_anchor": [
-      -115.69119499308054,
-      -0.2631392658355498
+      -144.6278655123025,
+      -16.505053254199908
     ]
   },
   {
@@ -1740,8 +1743,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b9b4a3",
-        "6d8074"
+        "8b9a93",
+        "4d6559"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.7,
@@ -1752,12 +1755,12 @@
       33.3558125
     ],
     "entrance": [
-      -120.6175,
-      40.4805
+      -134.28750000000002,
+      25.892
     ],
     "outdoor_anchor": [
-      -120.46943115451148,
-      40.519300123190334
+      -138.29207669610292,
+      24.79800064767784
     ]
   },
   {
@@ -1848,8 +1851,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b9b4a3",
-        "6d8074"
+        "8b9a93",
+        "4d6559"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.7,
@@ -1860,12 +1863,12 @@
       51.6855
     ],
     "entrance": [
-      -188.26,
-      48.370000000000005
+      -178.892,
+      58.583
     ],
     "outdoor_anchor": [
-      -189.80699596513134,
-      48.03606087008652
+      -179.49930114471846,
+      61.0622691387396
     ]
   },
   {
@@ -1956,8 +1959,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b9b4a3",
-        "6d8074"
+        "8b9a93",
+        "4d6559"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.7,
@@ -1968,12 +1971,12 @@
       42.0566875
     ],
     "entrance": [
-      -214.24349999999998,
-      49.709999999999994
+      -224.798,
+      38.573499999999996
     ],
     "outdoor_anchor": [
-      -214.31739392103083,
-      50.032416588213934
+      -227.45585663569523,
+      38.08101904757901
     ]
   },
   {
@@ -2064,8 +2067,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b9b4a3",
-        "6d8074"
+        "8b9a93",
+        "4d6559"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.7,
@@ -2076,12 +2079,12 @@
       61.4991875
     ],
     "entrance": [
-      -233.365,
-      68.3685
+      -243.267,
+      78.06450000000001
     ],
     "outdoor_anchor": [
-      -231.72702174446852,
-      68.80638810539234
+      -243.74310800849327,
+      80.71750228073154
     ]
   },
   {
@@ -2172,8 +2175,8 @@
     "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
     "facade": {
       "palette": [
-        "b9b4a3",
-        "6d8074"
+        "8b9a93",
+        "4d6559"
       ],
       "confidence": "ESTIMATED original modular interpretation",
       "bay_m": 3.7,
@@ -2184,12 +2187,12 @@
       96.6471875
     ],
     "entrance": [
-      -238.5765,
-      104.301
+      -247.0205,
+      100.3365
     ],
     "outdoor_anchor": [
-      -238.6180232994402,
-      104.49205052762572
+      -249.831,
+      102.055
     ]
   }
 ]

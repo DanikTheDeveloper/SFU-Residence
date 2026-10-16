@@ -1,0 +1,118 @@
+Godot: 4.7.2.stable.official.ed1daf0bf (/usr/local/bin/godot)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (3 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+PASS: headless editor project import. Running 8 physics frames...
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD_READY buildings=19 paths=398 renderer=gl_compatibility
+PASS: headless run. GUI rendering/movement/performance remain unverified; test via WSLg separately.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WORLD_READY buildings=19 paths=398 renderer=gl_compatibility
+PASS 19 scene buildings 
+PASS Compatibility selected 
+PASS PJH anchor outside 
+PASS PJH ground 
+PASS PJH stable player 
+PASS PJH solid facade edges 26/26
+PASS BRH anchor outside 
+PASS BRH ground 
+PASS BRH stable player 
+PASS BRH solid facade edges 28/28
+PASS SBH anchor outside 
+PASS SBH ground 
+PASS SBH stable player 
+PASS SBH solid facade edges 28/28
+PASS EAT anchor outside 
+PASS EAT ground 
+PASS EAT stable player 
+PASS EAT solid facade edges 17/17
+PASS WET anchor outside 
+PASS WET ground 
+PASS WET stable player 
+PASS WET solid facade edges 17/17
+PASS CYR anchor outside 
+PASS CYR ground 
+PASS CYR stable player 
+PASS CYR solid facade edges 18/18
+PASS MCH anchor outside 
+PASS MCH ground 
+PASS MCH stable player 
+PASS MCH solid facade edges 20/20
+PASS HAM anchor outside 
+PASS HAM ground 
+PASS HAM stable player 
+PASS HAM solid facade edges 8/8
+PASS SHR anchor outside 
+PASS SHR ground 
+PASS SHR stable player 
+PASS SHR solid facade edges 9/9
+PASS DC anchor outside 
+PASS DC ground 
+PASS DC stable player 
+PASS DC solid facade edges 22/22
+PASS COW anchor outside 
+PASS COW ground 
+PASS COW stable player 
+PASS COW solid facade edges 13/13
+PASS CHI anchor outside 
+PASS CHI ground 
+PASS CHI stable player 
+PASS CHI solid facade edges 13/13
+PASS KEL anchor outside 
+PASS KEL ground 
+PASS KEL stable player 
+PASS KEL solid facade edges 13/13
+PASS KIM anchor outside 
+PASS KIM ground 
+PASS KIM stable player 
+PASS KIM solid facade edges 13/13
+PASS KIT anchor outside 
+PASS KIT ground 
+PASS KIT stable player 
+PASS KIT solid facade edges 13/13
+PASS PEN anchor outside 
+PASS PEN ground 
+PASS PEN stable player 
+PASS PEN solid facade edges 13/13
+PASS QUA anchor outside 
+PASS QUA ground 
+PASS QUA stable player 
+PASS QUA solid facade edges 13/13
+PASS QUE anchor outside 
+PASS QUE ground 
+PASS QUE stable player 
+PASS QUE solid facade edges 13/13
+PASS SQU anchor outside 
+PASS SQU ground 
+PASS SQU stable player 
+PASS SQU solid facade edges 13/13
+PASS W movement metres=4.131221
+PASS Sprint faster 
+PASS Jump rises 
+PASS Jump lands 
+PASS Mouse look 
+PASS Character blocked by facade 
+PASS Spring arm retracts at wall length=0.089063
+PASS Fall recovery 
+VERIFICATION_COMPLETE checks=86 failures=0

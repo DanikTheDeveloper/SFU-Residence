@@ -28,13 +28,34 @@ static func mesh_from_vertices(parent: Node3D, vertices: PackedVector3Array, mat
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
 	for i in range(0,vertices.size(),3):
 		st.set_normal((vertices[i+1]-vertices[i]).cross(vertices[i+2]-vertices[i]).normalized())
-		for j in [0,2,1]: st.add_vertex(vertices[i+j])
+		for j in [0,2,1]:
+			st.set_uv(Vector2(vertices[i+j].x+vertices[i+j].z,vertices[i+j].y))
+			st.add_vertex(vertices[i+j])
 	var node := MeshInstance3D.new()
 	node.mesh = st.commit()
 	node.material_override = mat
 	parent.add_child(node)
 	if solid: node.create_trimesh_collision()
 	return node
+
+static func merge_surfaces(parent: Node3D) -> void:
+	var batches: Dictionary={}
+	for child in parent.get_children():
+		if not child is MeshInstance3D: continue
+		var key: Material=child.material_override
+		if not batches.has(key):
+			var st := SurfaceTool.new()
+			st.begin(Mesh.PRIMITIVE_TRIANGLES)
+			batches[key]=st
+		batches[key].append_from(child.mesh,0,child.transform)
+		parent.remove_child(child)
+		child.queue_free()
+	for mat in batches:
+		var node := MeshInstance3D.new()
+		node.mesh=batches[mat].commit()
+		node.material_override=mat
+		node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		parent.add_child(node)
 
 static func polygon(parent: Node3D, points: Array, mat: Material, offset: float = 0.05) -> MeshInstance3D:
 	var poly := PackedVector2Array()
@@ -49,11 +70,11 @@ static func polygon(parent: Node3D, points: Array, mat: Material, offset: float 
 		else: verts.append_array([a,b,c])
 	return mesh_from_vertices(parent,verts,mat)
 
-static func strip(parent: Node3D, a: Vector3, b: Vector3, width: float, mat: Material) -> void:
+static func strip(parent: Node3D, a: Vector3, b: Vector3, width: float, mat: Material, offset: float = 0.035) -> void:
 	var side := Vector3(-(b-a).z,0,(b-a).x).normalized()*width*0.5
 	var points: Array = []
 	for p in [a+side,b+side,b-side,a-side]: points.append([p.x,p.z])
-	polygon(parent,points,mat,0.035)
+	polygon(parent,points,mat,offset)
 
 static func instances(parent: Node3D, transforms: Array[Transform3D], mat: Material, mesh: Mesh = null, distance: float = 260.0) -> MultiMeshInstance3D:
 	var multi := MultiMesh.new()
@@ -63,6 +84,7 @@ static func instances(parent: Node3D, transforms: Array[Transform3D], mat: Mater
 	for i in transforms.size(): multi.set_instance_transform(i,transforms[i])
 	var node := MultiMeshInstance3D.new()
 	node.multimesh = multi
+	node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	node.material_override = mat
 	node.visibility_range_end = distance
 	parent.add_child(node)

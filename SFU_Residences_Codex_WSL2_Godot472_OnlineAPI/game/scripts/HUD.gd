@@ -61,7 +61,8 @@ func _process(_delta: float) -> void:
 			distance=d
 			nearest=data.name
 	title.text="Precinct overview" if world.map_mode else nearest
-	detail.text="N ↑  ·  %s  ·  %d FPS  ·  F2 graphics"%["LOW" if world.low_quality else "MEDIUM",Engine.get_frames_per_second()]
+	var heading: float=fposmod(-rad_to_deg(world.player.pivot.rotation.y),360)
+	detail.text="%s  ·  %s  ·  %d FPS  ·  F2 graphics"%["N ↑" if world.map_mode else "Heading %03d°"%int(heading),"LOW" if world.low_quality else "MEDIUM",Engine.get_frames_per_second()]
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("help"): help.visible=not help.visible
@@ -78,5 +79,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.keycode==KEY_BRACKETRIGHT: world.player.sensitivity=minf(0.008,world.player.sensitivity+0.00025)
 
 func run_verification() -> void:
-	await get_tree().physics_frame
-	print("VERIFY_READY")
+	var verifier:=Node.new()
+	verifier.set_script(preload("res://scripts/WorldVerification.gd"))
+	world.add_child(verifier)
+	verifier.run()

@@ -1,0 +1,10 @@
+{
+  "retrieved_local_date": "2026-10-15",
+  "timezone": "America/Los_Angeles",
+  "source": "https://api.openstreetmap.org/api/0.6/map?bbox=-122.9315,49.2785,-122.9234,49.2818",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution": "OpenStreetMap contributors",
+  "transform": "scripts/import_site.py; origin latitude 49.28035 longitude -122.92769; X east, Y up, Z south; metre units",
+  "raw": "osm_source.osm",
+  "confidence": "OSM records retrieved; no survey verification; facade/terrain/height estimates detailed in docs"
+}

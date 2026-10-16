@@ -1,0 +1,29 @@
+{
+  "device": "D3D12 (NVIDIA GeForce GTX 1650)",
+  "renderer": "gl_compatibility",
+  "resolution": [
+    1280,
+    720
+  ],
+  "samples": [
+    {
+      "draw_calls": 241.0,
+      "fps_mean": 34.863302926077,
+      "frame_ms_p95": 33.836,
+      "view": 0
+    },
+    {
+      "draw_calls": 179.0,
+      "fps_mean": 43.1941394191636,
+      "frame_ms_p95": 27.609,
+      "view": 1
+    },
+    {
+      "draw_calls": 87.0,
+      "fps_mean": 71.7480781480067,
+      "frame_ms_p95": 16.979,
+      "view": 2
+    }
+  ],
+  "tier": "medium"
+}
