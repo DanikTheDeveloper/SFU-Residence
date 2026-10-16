@@ -7,21 +7,21 @@
   ],
   "samples": [
     {
-      "draw_calls": 221.0,
-      "fps_mean": 40.0236228316091,
-      "frame_ms_p95": 27.814,
+      "draw_calls": 227.0,
+      "fps_mean": 35.2543148343498,
+      "frame_ms_p95": 34.758,
       "view": 0
     },
     {
-      "draw_calls": 181.0,
-      "fps_mean": 47.2533467182813,
-      "frame_ms_p95": 24.156,
+      "draw_calls": 187.0,
+      "fps_mean": 47.0115293163897,
+      "frame_ms_p95": 27.843,
       "view": 1
     },
     {
-      "draw_calls": 92.0,
-      "fps_mean": 67.8280333261737,
-      "frame_ms_p95": 17.211,
+      "draw_calls": 94.0,
+      "fps_mean": 71.1375286032146,
+      "frame_ms_p95": 15.926,
       "view": 2
     }
   ],

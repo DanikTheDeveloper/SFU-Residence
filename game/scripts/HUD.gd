@@ -36,7 +36,7 @@ func _ready() -> void:
 	add_child(footer)
 	footer.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
 	footer.position=Vector2(24,650)
-	footer.text="WASD walk · Mouse look · Shift run · Space jump · F1 help\n© OpenStreetMap contributors · ODbL · Exterior study / estimated architectural detail"
+	footer.text="WASD walk · Mouse look · Shift run · Space jump · F1 help\n© OpenStreetMap contributors · ODbL | Terrain: City of Burnaby · Open Government Licence\nExterior study · not an official SFU product"
 	footer.add_theme_font_size_override("font_size",14)
 	footer.add_theme_color_override("font_shadow_color",Color.BLACK)
 	footer.add_theme_constant_override("shadow_offset_x",1)

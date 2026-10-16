@@ -26,9 +26,7 @@ static func build(world: Node3D) -> void:
 			sign.billboard=BaseMaterial3D.BILLBOARD_ENABLED
 			root.add_child(sign)
 			sign.position=p+Vector3.UP*2.6
-		if length<9: continue
-		for t in range(2,int(length)-2,7):
-			lines.append(Geo.transform(a.lerp(b,float(t)/length),Vector3(2.7,0.015,0.10),yaw))
+		# No centerline paint without direct marking evidence.
 	# Parking stripes / cars use the licensed lot polygons; stall placement is estimated.
 	var car_bodies: Array[Transform3D]=[]
 	var car_glass: Array[Transform3D]=[]

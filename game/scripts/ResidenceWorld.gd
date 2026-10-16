@@ -29,13 +29,7 @@ func _ready() -> void:
 	build_light()
 	build_ground()
 	var paths := group_node("Paths")
-	var asphalt := Geo.material(Color("454c50"))
-	var concrete := Geo.material(Color("b0afa3"))
-	for area in site.parking: Geo.polygon(paths,area.points,asphalt,0.025)
-	for road in roads:
-		if road.kind=="road": Geo.strip(paths,Geo.point(road.points[0]),Geo.point(road.points[1]),road.width+0.5,concrete,0.025)
-		Geo.strip(paths,Geo.point(road.points[0]),Geo.point(road.points[1]),road.width,concrete if road.kind=="path" else asphalt,0.045 if road.kind=="path" else 0.035)
-	Geo.merge_surfaces(paths)
+	preload("res://scripts/SurfaceController.gd").build(self,paths)
 	var buildings := group_node("Buildings")
 	for data in registry: Buildings.build(buildings,data)
 	vegetation=group_node("Vegetation")
@@ -209,10 +203,11 @@ func capture_views() -> void:
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
 	for frame in 40: await get_tree().physics_frame
 	player.enabled=false
-	var views := [[Vector3(-120,24,100),Vector3(70,10,25)], [Vector3(55,12,115),Vector3(140,18,45)], [Vector3(270,17,70),Vector3(315,19,-20)]]
+	var views := [[Geo.point([-180,75],1.68),Geo.point([-100,65],5)], [Geo.point([133,62],1.68),Geo.point([133,77],7)], [Geo.point([60,88],1.68),Geo.point([62,68],7)], [Geo.point([-171,145],1.68),Geo.point([-170,115],1.68)], [Geo.point([85,25],1.68),Geo.point([85,-5],8)]]
 	var capture := Camera3D.new()
 	add_child(capture)
 	capture.far=1200
+	capture.fov=72
 	capture.current=true
 	DirAccess.make_dir_recursive_absolute("res://docs/screenshots")
 	var measurements: Array=[]
@@ -227,7 +222,7 @@ func capture_views() -> void:
 			await get_tree().process_frame
 			frame_times.append((Time.get_ticks_usec()-previous)/1000.0)
 		frame_times.sort()
-		measurements.append({"view":i,"fps_mean":90.0/((Time.get_ticks_usec()-start)/1000000.0),"frame_ms_p95":frame_times[85],"draw_calls":Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME)})
+		measurements.append({"view":i,"camera_xyz":[capture.position.x,capture.position.y,capture.position.z],"look_at":[views[i][1].x,views[i][1].y,views[i][1].z],"fov":capture.fov,"eye_height_m":1.68,"fps_mean":90.0/((Time.get_ticks_usec()-start)/1000000.0),"frame_ms_p95":frame_times[85],"draw_calls":Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME)})
 		await RenderingServer.frame_post_draw
 		get_viewport().get_texture().get_image().save_png("res://docs/screenshots/view_%d.png"%i)
 	overview.current=true

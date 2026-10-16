@@ -105,6 +105,16 @@ func run() -> void:
 	player.position.y=-50
 	await frames(3)
 	check("Fall recovery",player.position.distance_to(player.spawn)<2)
+	verify_families()
+	var terrain_matches:=0
+	var terrain_samples:=0
+	for road in world.roads:
+		var p:=Geo.point(road.points[0])
+		if world.inside_building(Vector2(p.x,p.z),1): continue
+		var hit:=ray(p+Vector3.UP*0.5,p-Vector3.UP*0.5)
+		terrain_samples+=1
+		if not hit.is_empty() and absf(hit.position.y-p.y)<0.015: terrain_matches+=1
+	check("Terrain mesh collision parity at route vertices",terrain_samples==terrain_matches,"%d/%d"%[terrain_matches,terrain_samples])
 	var failures:=0
 	for result in results:
 		if not result.passed: failures+=1
@@ -112,6 +122,24 @@ func run() -> void:
 	file.store_string(JSON.stringify({"failures":failures,"checks":results},"  "))
 	print("VERIFICATION_COMPLETE checks=",results.size()," failures=",failures)
 	get_tree().quit(0 if failures==0 else 1)
+
+func verify_families() -> void:
+	var master=preload("res://scripts/ModernTowerExterior.gd")
+	for id in ["EAT","WET"]:
+		var building: Node3D=world.get_node("Buildings/"+id)
+		var data: Dictionary=building.get_meta("building")
+		check(id+" shared modern master",building.get_meta("family_master")==master.MASTER_ID)
+		check(id+" independent floors",building.get_meta("floor_count")== (7 if id=="EAT" else 8))
+		var counts: Array=[]
+		for width in [3.0,4.5]:
+			master.bay_width=width
+			var probe:=Node3D.new()
+			world.add_child(probe)
+			master.build(probe,data,data.footprint,0,data.height_m)
+			counts.append(probe.get_node("ModernGlass").multimesh.instance_count)
+			probe.free()
+		check(id+" shared master edit propagates",counts[0]!=counts[1],str(counts))
+		master.bay_width=3.0
 
 func run_routes() -> void:
 	var routes: Array=JSON.parse_string(FileAccess.get_file_as_string("res://data/test_routes.json"))

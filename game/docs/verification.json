@@ -434,6 +434,41 @@
       "check": "Fall recovery",
       "evidence": "",
       "passed": true
+    },
+    {
+      "check": "EAT shared modern master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "EAT independent floors",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "EAT shared master edit propagates",
+      "evidence": "[518, 364]",
+      "passed": true
+    },
+    {
+      "check": "WET shared modern master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "WET independent floors",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "WET shared master edit propagates",
+      "evidence": "[576, 424]",
+      "passed": true
+    },
+    {
+      "check": "Terrain mesh collision parity at route vertices",
+      "evidence": "376/376",
+      "passed": true
     }
   ],
   "failures": 0
