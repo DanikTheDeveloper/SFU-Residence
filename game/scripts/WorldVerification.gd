@@ -22,6 +22,8 @@ func run() -> void:
 	await frames(5)
 	check("19 scene buildings",world.get_node("Buildings").get_child_count()==19)
 	check("Compatibility selected",RenderingServer.get_current_rendering_method()=="gl_compatibility")
+	check("Interior boundary ray degeneracy regression",Geo.contains_point(Vector2(-216.3434,62),world.boundary))
+	check("Exterior remains outside boundary",not Geo.contains_point(Vector2(-400,62),world.boundary))
 	var player: CharacterBody3D=world.player
 	player.enabled=true
 	player.test_input=true
@@ -140,6 +142,24 @@ func verify_families() -> void:
 			probe.free()
 		check(id+" shared master edit propagates",counts[0]!=counts[1],str(counts))
 		master.bay_width=3.0
+	var north=preload("res://scripts/NorthTowerExterior.gd")
+	for id in ["PJH","BRH","SBH"]:
+		var building: Node3D=world.get_node("Buildings/"+id)
+		check(id+" distinct North master",building.get_meta("family_master")==north.MASTER_ID and north.MASTER_ID!=master.MASTER_ID)
+		check(id+" eight floors",building.get_meta("floor_count")==8)
+		var data: Dictionary=building.get_meta("building")
+		var counts: Array=[]
+		for width in [3.6,5.0]:
+			north.bay_width=width
+			var probe:=Node3D.new()
+			world.add_child(probe)
+			north.build(probe,data,data.footprint,0,data.height_m)
+			counts.append(probe.get_node("NorthGlass").multimesh.instance_count)
+			probe.free()
+		check(id+" North master edit propagates",counts[0]!=counts[1],str(counts))
+		north.bay_width=3.6
+	var parking:=world.get_node("Props/ParkingLots")
+	check("Parking stalls arranged in mapped polygons",parking.get_meta("estimated_stalls")>15,str(parking.get_meta("estimated_stalls")))
 
 func run_routes() -> void:
 	var routes: Array=JSON.parse_string(FileAccess.get_file_as_string("res://data/test_routes.json"))

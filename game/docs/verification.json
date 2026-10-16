@@ -11,6 +11,16 @@
       "passed": true
     },
     {
+      "check": "Interior boundary ray degeneracy regression",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Exterior remains outside boundary",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "PJH anchor outside",
       "evidence": "",
       "passed": true
@@ -463,6 +473,56 @@
     {
       "check": "WET shared master edit propagates",
       "evidence": "[576, 424]",
+      "passed": true
+    },
+    {
+      "check": "PJH distinct North master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH eight floors",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH North master edit propagates",
+      "evidence": "[472, 376]",
+      "passed": true
+    },
+    {
+      "check": "BRH distinct North master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH eight floors",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH North master edit propagates",
+      "evidence": "[464, 376]",
+      "passed": true
+    },
+    {
+      "check": "SBH distinct North master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH eight floors",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH North master edit propagates",
+      "evidence": "[464, 376]",
+      "passed": true
+    },
+    {
+      "check": "Parking stalls arranged in mapped polygons",
+      "evidence": "83",
       "passed": true
     },
     {

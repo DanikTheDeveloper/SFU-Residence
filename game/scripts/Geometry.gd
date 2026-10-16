@@ -1,5 +1,16 @@
 extends RefCounted
 
+static func contains_point(p: Vector2, polygon: PackedVector2Array) -> bool:
+	# Horizontal crossing avoids the engine's rare ray-through-vertex false negatives.
+	var inside:=false
+	for i in polygon.size():
+		var a:=polygon[i]
+		var b:=polygon[(i+1)%polygon.size()]
+		if p.distance_to(Geometry2D.get_closest_point_to_segment(p,a,b))<0.001: return true
+		if (a.y>p.y)!=(b.y>p.y):
+			if p.x<(b.x-a.x)*(p.y-a.y)/(b.y-a.y)+a.x: inside=not inside
+	return inside
+
 static func elevation(x: float, z: float) -> float:
 	return preload("res://scripts/TerrainController.gd").height(x,z)
 

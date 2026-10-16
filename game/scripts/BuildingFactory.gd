@@ -81,7 +81,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		var c := Vector3(poly[indices[i+2]].x,top,poly[indices[i+2]].y)
 		if (b-a).cross(c-a).y<0: roof.append_array([a,c,b])
 		else: roof.append_array([a,b,c])
-	if data.id in ["EAT","WET"]:
+	if data.type in ["modern_tower","north_tower"]:
 		body_mat=preload("res://scripts/FacadeKit.gd").material("reveal")
 	var wall_mesh := Geo.mesh_from_vertices(root,walls,body_mat,true)
 	wall_mesh.name="ExteriorCollision"
@@ -89,6 +89,8 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	if data.id in ["EAT","WET"]:
 		preload("res://scripts/ModernTowerExterior.gd").build(root,data,points,base,height)
 		accent_mat=preload("res://scripts/FacadeKit.gd").material("teal" if data.id=="EAT" else "frame")
+	elif data.type=="north_tower":
+		preload("res://scripts/NorthTowerExterior.gd").build(root,data,points,base,height)
 	else:
 		Geo.instances(root,trim,roof_mat,null,650).name="RooflineAndBands"
 		Geo.instances(root,frames,frame_mat,null,350).name="WindowFrames"

@@ -27,36 +27,7 @@ static func build(world: Node3D) -> void:
 			root.add_child(sign)
 			sign.position=p+Vector3.UP*2.6
 		# No centerline paint without direct marking evidence.
-	# Parking stripes / cars use the licensed lot polygons; stall placement is estimated.
-	var car_bodies: Array[Transform3D]=[]
-	var car_glass: Array[Transform3D]=[]
-	var wheels: Array[Transform3D]=[]
-	for area in world.site.parking:
-		var poly:=PackedVector2Array()
-		for p in area.points: poly.append(Vector2(p[0],p[1]))
-		var bounds:=Rect2(poly[0],Vector2.ZERO)
-		for p in poly: bounds=bounds.expand(p)
-		var count:=0
-		for x in range(int(bounds.position.x)+4,int(bounds.end.x)-3,6):
-			for z in range(int(bounds.position.y)+4,int(bounds.end.y)-3,7):
-				var p:=Vector2(x,z)
-				if not Geometry2D.is_point_in_polygon(p,poly) or world.inside_building(p,4): continue
-				var full_stall:=true
-				for offset in [Vector2(-2,-3),Vector2(2,3),Vector2(-2,3),Vector2(2,-3)]:
-					if not Geometry2D.is_point_in_polygon(p+offset,poly): full_stall=false
-				if not full_stall: continue
-				var pos:=Geo.point([x,z])
-				for side in [-1,1]: lines.append(Geo.transform(pos+Vector3(side*1.5,0.065,0),Vector3(0.1,0.02,5)))
-				if count%3!=0:
-					car_bodies.append(Geo.transform(pos+Vector3.UP*0.7,Vector3(1.7,0.65,3.7)))
-					car_glass.append(Geo.transform(pos+Vector3.UP*1.23,Vector3(1.5,0.6,1.9)))
-					for side in [-1,1]:
-						for end in [-1,1]: wheels.append(Geo.transform(pos+Vector3(side*0.85,0.35,end*1.2),Vector3(0.22,0.55,0.55)))
-				count+=1
-	Geo.instances(root,lines,line_mat,null,400)
-	Geo.instances(root,car_bodies,Geo.material(Color("697981")),null,250)
-	Geo.instances(root,car_glass,dark,null,250)
-	Geo.instances(root,wheels,Geo.material(Color("252928")),null,200)
+	preload("res://scripts/ParkingLot.gd").build(world,root)
 	# Original small plaza furnishings, kept clear of mapped walkways.
 	for data in world.registry:
 		var center:=Vector2(data.centroid[0],data.centroid[1])

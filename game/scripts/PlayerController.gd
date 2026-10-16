@@ -41,7 +41,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
 	if event.is_action_pressed("respawn"): reset()
 
-func reset() -> void:
+func reset(reason: String="manual") -> void:
+	if test_input: print("PLAYER_RESET reason=",reason," position=",global_position)
 	global_position=spawn
 	velocity=Vector3.ZERO
 
@@ -58,4 +59,4 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor(): velocity.y-=24*delta
 	elif Input.is_action_just_pressed("jump") and input_active(): velocity.y=7.0
 	move_and_slide()
-	if global_position.y < -40: reset()
+	if global_position.y < -40: reset("fall")

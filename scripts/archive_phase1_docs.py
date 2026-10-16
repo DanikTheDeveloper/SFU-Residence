@@ -19,6 +19,9 @@ def main():
     assert (ROOT / 'game/project.godot').is_file()
     assert not BACKUP.resolve().is_relative_to(ROOT.resolve())
     selected = [p for p in OLD.rglob('*.md') if p.name not in KEEP]
+    if not selected:
+        print('Obsolete instructions already archived; existing manifest preserved.')
+        return
     manifest = []
     for source in selected:
         target = BACKUP / source.relative_to(ROOT)

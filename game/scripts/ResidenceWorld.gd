@@ -119,7 +119,7 @@ func build_landscape() -> void:
 	rng.seed=1948
 	for i in 1600:
 		var p := Vector2(rng.randf_range(-295,360),rng.randf_range(-125,185))
-		if not Geometry2D.is_point_in_polygon(p,boundary): continue
+		if not Geo.contains_point(p,boundary): continue
 		if occupied(p,4): continue
 		if p.x>-90 and p.x<55 and p.y>70: continue
 		var pos := Geo.point([p.x,p.y])
@@ -197,7 +197,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().msaa_3d=Viewport.MSAA_DISABLED if low_quality else Viewport.MSAA_2X
 
 func _process(_delta: float) -> void:
-	if player and not Geometry2D.is_point_in_polygon(Vector2(player.position.x,player.position.z),boundary): player.reset()
+	if player and not Geo.contains_point(Vector2(player.position.x,player.position.z),boundary): player.reset("boundary")
 
 func capture_views() -> void:
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
