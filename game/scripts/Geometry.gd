@@ -1,7 +1,7 @@
 extends RefCounted
 
 static func elevation(x: float, z: float) -> float:
-	return x * 0.005 - z * 0.025
+	return preload("res://scripts/TerrainController.gd").height(x,z)
 
 static func point(p: Array, offset: float = 0.0) -> Vector3:
 	return Vector3(p[0], elevation(p[0], p[1]) + offset, p[1])
@@ -60,14 +60,25 @@ static func merge_surfaces(parent: Node3D) -> void:
 static func polygon(parent: Node3D, points: Array, mat: Material, offset: float = 0.05) -> MeshInstance3D:
 	var poly := PackedVector2Array()
 	for p in points: poly.append(Vector2(p[0],p[1]))
-	var indices := Geometry2D.triangulate_polygon(poly)
 	var verts := PackedVector3Array()
-	for i in range(0,indices.size(),3):
-		var a := point(points[indices[i]],offset)
-		var b := point(points[indices[i+1]],offset)
-		var c := point(points[indices[i+2]],offset)
-		if (b-a).cross(c-a).y < 0: verts.append_array([a,c,b])
-		else: verts.append_array([a,b,c])
+	var bounds := Rect2(poly[0],Vector2.ZERO)
+	for p in poly: bounds=bounds.expand(p)
+	# Clip pavement against the exact terrain triangles: no stretched floating strips.
+	for x in range(int(floor(bounds.position.x/2))*2,int(ceil(bounds.end.x/2))*2,2):
+		for z in range(int(floor(bounds.position.y/2))*2,int(ceil(bounds.end.y/2))*2,2):
+			var a:=Vector2(x,z)
+			var b:=Vector2(x+2,z)
+			var c:=Vector2(x+2,z+2)
+			var d:=Vector2(x,z+2)
+			for tri in [PackedVector2Array([a,b,c]),PackedVector2Array([a,c,d])]:
+				for clipped in Geometry2D.intersect_polygons(poly,tri):
+					var indices := Geometry2D.triangulate_polygon(clipped)
+					for i in range(0,indices.size(),3):
+						var va:=point([clipped[indices[i]].x,clipped[indices[i]].y],offset)
+						var vb:=point([clipped[indices[i+1]].x,clipped[indices[i+1]].y],offset)
+						var vc:=point([clipped[indices[i+2]].x,clipped[indices[i+2]].y],offset)
+						if (vb-va).cross(vc-va).y<0: verts.append_array([va,vc,vb])
+						else: verts.append_array([va,vb,vc])
 	return mesh_from_vertices(parent,verts,mat)
 
 static func strip(parent: Node3D, a: Vector3, b: Vector3, width: float, mat: Material, offset: float = 0.035) -> void:

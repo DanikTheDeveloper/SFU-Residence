@@ -12,3 +12,6 @@ Then acquire licensed Burnaby contours and integrate terrain/collision/foundatio
 
 ## Verified first-person milestone
 Fixed 1.68m eye camera, no visible avatar or gameplay overview switch. Smoke passed; physics 87/87 passed. GUI capture inspected: first-person view confirmed, GTX1650 Compatibility. Screenshots in game/docs/screenshots; runtime tests in game/docs/verification.json. Manual physical mouse interaction remains unverified; synthetic look and movement tested. Next: licensed contour acquisition and terrain.
+
+## Terrain checkpoint
+Terrain is integrated and passes smoke / 87 physics checks; GUI captures inspected. game/data/terrain_grid.json is derived from cached City contours, with estimated modern pads. scripts/build_terrain.py rebuilds offline; scripts/fetch_contours.py caches full source. TerrainController.gd interpolates the rendered triangle diagonal. Geometry.polygon clips pavement to those triangles. Original 19 XZ footprints unchanged. Continuous route test running: /tmp/sfu-terrain-routes.log. Next inspect that log, fix any grade traversal failures, then semantic surfaces.

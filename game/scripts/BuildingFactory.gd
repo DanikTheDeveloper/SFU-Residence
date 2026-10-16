@@ -14,8 +14,8 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	if Geometry2D.is_polygon_clockwise(poly):
 		points.reverse()
 		poly.reverse()
-	var base := 1000.0
-	for p in points: base = minf(base,Geo.elevation(p[0],p[1])-0.18)
+	var base: float=preload("res://scripts/TerrainController.gd").foundation(data.id)-0.10
+	root.set_meta("foundation_world_y",base)
 	var height: float = data.height_m
 	var top := base + height
 	var walls := PackedVector3Array()

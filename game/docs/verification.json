@@ -392,7 +392,7 @@
     },
     {
       "check": "W movement",
-      "evidence": "metres=4.131221",
+      "evidence": "metres=4.131607",
       "passed": true
     },
     {

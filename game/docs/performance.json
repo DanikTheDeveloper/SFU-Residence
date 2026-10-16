@@ -8,20 +8,20 @@
   "samples": [
     {
       "draw_calls": 221.0,
-      "fps_mean": 37.5366138387485,
-      "frame_ms_p95": 32.911,
+      "fps_mean": 40.0236228316091,
+      "frame_ms_p95": 27.814,
       "view": 0
     },
     {
-      "draw_calls": 179.0,
-      "fps_mean": 48.2198309948501,
-      "frame_ms_p95": 25.437,
+      "draw_calls": 181.0,
+      "fps_mean": 47.2533467182813,
+      "frame_ms_p95": 24.156,
       "view": 1
     },
     {
-      "draw_calls": 87.0,
-      "fps_mean": 60.1079538851778,
-      "frame_ms_p95": 22.709,
+      "draw_calls": 92.0,
+      "fps_mean": 67.8280333261737,
+      "frame_ms_p95": 17.211,
       "view": 2
     }
   ],

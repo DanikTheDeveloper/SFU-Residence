@@ -17,3 +17,6 @@ No actual usage warning received. Five-hour interval is usage reset, not deadlin
 
 ## Verified first-person milestone
 Fixed 1.68m eye camera, no visible avatar or gameplay overview switch. Smoke passed; physics 87/87 passed. GUI capture inspected: first-person view confirmed, GTX1650 Compatibility. Screenshots in game/docs/screenshots; runtime tests in game/docs/verification.json. Manual physical mouse interaction remains unverified; synthetic look and movement tested. Next: licensed contour acquisition and terrain.
+
+## Verified contour terrain milestone
+2,412 City of Burnaby 2014 contour features cached completely. Runtime 2m terrain grid, identical visual/physics triangle sampling, flat provisional building pads and terrain-clipped pavement. Smoke and 87 physics checks passed; GUI screenshots inspected. Continuous route test running. Roofline and modern grades remain provisional because source predates construction; see PHASE2_TERRAIN_EVIDENCE.md. First-person migration commit: f320f02. Next: route validation, semantic surfaces, modern family.

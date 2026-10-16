@@ -100,12 +100,12 @@ func build_light() -> void:
 func build_ground() -> void:
 	var ground := group_node("Ground")
 	var verts := PackedVector3Array()
-	for x in range(-1200,1201,200):
-		for z in range(-1200,1201,200):
+	for x in range(-350,400,2):
+		for z in range(-180,240,2):
 			var a := Geo.point([x,z])
-			var b := Geo.point([x+200,z])
-			var c := Geo.point([x+200,z+200])
-			var d := Geo.point([x,z+200])
+			var b := Geo.point([x+2,z])
+			var c := Geo.point([x+2,z+2])
+			var d := Geo.point([x,z+2])
 			verts.append_array([a,c,b,a,d,c])
 	Geo.mesh_from_vertices(ground,verts,Geo.material(Color("6e8056")),true).name="Terrain"
 	var edge_mat := Geo.material(Color("425c3f"))
