@@ -1,0 +1,6 @@
+{
+  "iterations": 160,
+  "relaxation": 0.65,
+  "fixed_pad_margin_m": 0.35,
+  "description": "Constrained diffusion at 2m spacing; preserve all existing pad elevations and grid boundary. No vertical scaling."
+}

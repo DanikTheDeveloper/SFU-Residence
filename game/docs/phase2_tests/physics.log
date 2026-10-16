@@ -81,15 +81,18 @@ PASS SQU anchor outside
 PASS SQU ground 
 PASS SQU stable player 
 PASS SQU solid facade edges 13/13
-PASS W movement metres=4.131607
+PASS W movement metres=4.131715
 PASS Sprint faster 
 PASS Jump rises 
 PASS Jump lands 
 PASS Mouse look 
+PASS Mouse input crosses 360 degrees through dispatcher 
+PASS Mouse turns 360 degrees in reverse 
+PASS Pitch remains bounded without restricting yaw 
 PASS Character blocked by facade 
 PASS First person fixed eye height 
 PASS First person camera centered in collider 
-PLAYER_RESET reason=fall position=(30.92524, -50.0, 42.35275)
+PLAYER_RESET reason=fall position=(30.92525, -50.0, 42.3527)
 PASS Fall recovery 
 PASS EAT shared modern master 
 PASS EAT independent floors 
@@ -107,5 +110,33 @@ PASS SBH distinct North master
 PASS SBH eight floors 
 PASS SBH North master edit propagates [464, 376]
 PASS Parking stalls arranged in mapped polygons 83
+PASS COW shared townhouse master 
+PASS COW pitched roof generated 
+PASS COW townhouse master edit propagates [102, 72]
+PASS CHI shared townhouse master 
+PASS CHI pitched roof generated 
+PASS CHI townhouse master edit propagates [102, 72]
+PASS KEL shared townhouse master 
+PASS KEL pitched roof generated 
+PASS KEL townhouse master edit propagates [102, 72]
+PASS KIM shared townhouse master 
+PASS KIM pitched roof generated 
+PASS KIM townhouse master edit propagates [102, 72]
+PASS KIT shared townhouse master 
+PASS KIT pitched roof generated 
+PASS KIT townhouse master edit propagates [102, 72]
+PASS PEN shared townhouse master 
+PASS PEN pitched roof generated 
+PASS PEN townhouse master edit propagates [102, 72]
+PASS QUA shared townhouse master 
+PASS QUA pitched roof generated 
+PASS QUA townhouse master edit propagates [102, 72]
+PASS QUE shared townhouse master 
+PASS QUE pitched roof generated 
+PASS QUE townhouse master edit propagates [102, 72]
+PASS SQU shared townhouse master 
+PASS SQU pitched roof generated 
+PASS SQU townhouse master edit propagates [102, 72]
+PASS Exactly nine original townhouse blocks 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=106 failures=0
+VERIFICATION_COMPLETE checks=137 failures=0

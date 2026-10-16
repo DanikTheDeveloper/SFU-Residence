@@ -1,0 +1,253 @@
+{
+  "files": {
+    "game/scripts/ModernTowerExterior.gd": "80e1353c5117cca054a1de195a28d0a58c66718f7551a9e9166be864697a13bc",
+    "game/scripts/FacadeKit.gd": "83f1a85f886e42e2b1cabb65ce678bb8705d3473d667b3521da198b1606c79e3"
+  },
+  "instances": {
+    "EAT": {
+      "id": "EAT",
+      "name": "East Tower",
+      "floors": 7,
+      "floors_confidence": "VERIFIED",
+      "type": "modern_tower",
+      "footprint_lonlat": null,
+      "height_m": 21.7,
+      "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+      "footprint": [
+        [
+          166.658,
+          62.925
+        ],
+        [
+          163.024,
+          79.126
+        ],
+        [
+          160.159,
+          91.747
+        ],
+        [
+          136.431,
+          86.087
+        ],
+        [
+          136.076,
+          87.711
+        ],
+        [
+          124.252,
+          84.842
+        ],
+        [
+          124.702,
+          83.018
+        ],
+        [
+          104.376,
+          78.081
+        ],
+        [
+          110.854,
+          49.927
+        ],
+        [
+          126.486,
+          53.518
+        ],
+        [
+          122.366,
+          71.209
+        ],
+        [
+          126.892,
+          72.232
+        ],
+        [
+          127.349,
+          70.142
+        ],
+        [
+          139.608,
+          73.055
+        ],
+        [
+          139.217,
+          74.945
+        ],
+        [
+          146.92,
+          76.769
+        ],
+        [
+          150.75,
+          59.3
+        ]
+      ],
+      "osm_id": "980707207",
+      "source_tags": {
+        "building": "dormitory",
+        "building:levels": "7",
+        "name": "East Tower",
+        "roof:shape": "flat"
+      },
+      "geometry_source": "https://www.openstreetmap.org/way/980707207",
+      "license": "ODbL-1.0",
+      "npc_spawn_anchors": [],
+      "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+      "facade": {
+        "palette": [
+          "8e5741",
+          "b4754a"
+        ],
+        "confidence": "ESTIMATED original modular interpretation",
+        "bay_m": 3.1,
+        "roof": "flat OSM tag or neutral estimated flat roof",
+        "source": "https://dialogdesign.ca/projects/simon-fraser-university-phase-1-student-residence/ ; brick/copper from text, exact allocation ESTIMATED"
+      },
+      "centroid": [
+        135.65411764705883,
+        73.802
+      ],
+      "entrance": [
+        130.164,
+        86.2765
+      ],
+      "outdoor_anchor": [
+        129.53184610372588,
+        89.12298138840359
+      ]
+    },
+    "WET": {
+      "id": "WET",
+      "name": "West Tower",
+      "floors": 8,
+      "floors_confidence": "VERIFIED",
+      "type": "modern_tower",
+      "footprint_lonlat": null,
+      "height_m": 24.8,
+      "geometry_confidence": "VERIFIED_OSM_RECORD_NOT_SURVEY",
+      "footprint": [
+        [
+          38.576,
+          32.569
+        ],
+        [
+          31.99,
+          61.102
+        ],
+        [
+          55.732,
+          66.739
+        ],
+        [
+          55.246,
+          68.585
+        ],
+        [
+          67.708,
+          71.554
+        ],
+        [
+          68.158,
+          69.608
+        ],
+        [
+          88.403,
+          74.345
+        ],
+        [
+          91.377,
+          61.969
+        ],
+        [
+          95.157,
+          46.046
+        ],
+        [
+          79.198,
+          42.354
+        ],
+        [
+          75.223,
+          59.578
+        ],
+        [
+          70.979,
+          58.566
+        ],
+        [
+          71.422,
+          56.765
+        ],
+        [
+          58.764,
+          53.718
+        ],
+        [
+          58.234,
+          55.597
+        ],
+        [
+          51.053,
+          53.852
+        ],
+        [
+          55.296,
+          36.416
+        ]
+      ],
+      "osm_id": "980707206",
+      "source_tags": {
+        "building": "dormitory",
+        "building:levels": "8",
+        "name": "West Tower",
+        "roof:shape": "flat"
+      },
+      "geometry_source": "https://www.openstreetmap.org/way/980707206",
+      "license": "ODbL-1.0",
+      "npc_spawn_anchors": [],
+      "height_provenance": "ESTIMATED floor-to-floor multiplied by SFU floors (Shell/Dining floors from OSM)",
+      "facade": {
+        "palette": [
+          "8e5741",
+          "b4754a"
+        ],
+        "confidence": "ESTIMATED original modular interpretation",
+        "bay_m": 3.1,
+        "roof": "flat OSM tag or neutral estimated flat roof",
+        "source": "https://dialogdesign.ca/projects/simon-fraser-university-phase-1-student-residence/ ; brick/copper from text, exact allocation ESTIMATED"
+      },
+      "centroid": [
+        65.44211764705882,
+        57.021352941176474
+      ],
+      "entrance": [
+        35.283,
+        46.835499999999996
+      ],
+      "outdoor_anchor": [
+        32.8147231780321,
+        46.26025106030201
+      ]
+    }
+  },
+  "pads": {
+    "EAT": {
+      "height": 5.376,
+      "confidence": "ESTIMATED_MODERN_GRADING",
+      "entrance_xz": [
+        130.164,
+        86.2765
+      ]
+    },
+    "WET": {
+      "height": 1.647,
+      "confidence": "ESTIMATED_MODERN_GRADING",
+      "entrance_xz": [
+        35.283,
+        46.835499999999996
+      ]
+    }
+  },
+  "reason": "User approved current East/West architecture at iteration 2 start; preserve appearance and foundation levels."
+}

@@ -1,28 +1,29 @@
-# Phase 2 — iteration 1, 2026-10-16
+# Phase 2 status — iteration 2, 2026-10-16
 
-Canonical root: `/home/danik/GitHub/SFU Residence`; game: `game/project.godot`; main scene: `res://scenes/Main.tscn`.
+Canonical project: `game/project.godot`. Godot 4.7.2 Standard, GDScript, Compatibility, Debian WSL2. No dependencies installed. GUI renderer verified as Mesa D3D12 NVIDIA GTX 1650.
 
-## Verified checkpoint: migration and obsolete-instruction cleanup
-- Promoted existing game without caches or overwriting nested rollback game.
-- Supplied outer smoke test passed; unchanged baseline physics verification: 86/86 passed.
-- GUI confirmed Godot 4.7.2 Standard, Compatibility, Mesa D3D12 NVIDIA GeForce GTX 1650. Unsupported VSync changes reported. Debian 13 / WSL2; glxinfo absent. Nothing installed.
-- 29 obsolete nested Markdown files backed up externally with SHA256 verification, then deleted. Inventory: `docs/PHASE1_ARCHIVE.json`; backup: `/home/danik/Backups/SFU-Residence-Phase1-docs-20261016`.
-- Nested runtime and legal/source records retained. Outer Phase 2 instructions alone are authoritative.
-- Geography unchanged: origin 49.28035, -122.92769; metres; +X east, -Z north; 19 buildings, 398 route segments.
+## Completed and verified
+- Migration and mandatory cleanup: 29 obsolete nested Markdown documents backed up outside the project with SHA256 verification and removed. Original nested Godot runtime retained. Inventory: `docs/PHASE1_ARCHIVE.json`.
+- Original 19 building footprints, IDs, roads and site coordinates preserved exactly.
+- Strict first person, 1.68m eye height; no third-person or gameplay overview toggle.
+- Complete 2,412-feature City of Burnaby contour cache, 2m terrain mesh and matching collision; provisional foundations preserve the hillside. See `PHASE2_TERRAIN_EVIDENCE.md`.
+- Shared East/West master, shared North master, and nine shared townhouse blocks. Townhouses include pitched roofs, siding, recessed frames, projected window bays and balcony details. Exact townhouse block identity and repeated bay placement remain approximate.
+- Concrete pedestrian surfaces, three mapped parking polygons with 83 estimated stalls, parked-car collision clearances, and fixed precinct boundary containment.
+- Townhouse details: smoke, 134 physics checks and 333 continuous-route checkpoints passed before iteration 2 camera changes.
 
-Current task: strict first person (implementation awaiting validation). Terrain remains Phase 1 estimated plane; surfaces/architecture remain approximations. Photos present, not inspected yet. Roofline conflict unresolved; East 7 / West 8 preserved.
+## Iteration 2 work
+- Mouse input moved to `_input`; unrestricted yaw, bounded pitch, physical relative motion. WSLg confined hidden pointer recenters to avoid screen-edge capture limits. Event-dispatch tests cross 360 degrees both ways. Native X11 test recorded 8.095 radians of rotation (over a full turn). Human physical-mouse feel still needs user confirmation.
+- Terrain: constrained diffusion from immutable `data/terrain_sources/iteration1_grid.json`, adjustable `data/terrain_smoothing.json`, smooth ground normals. Source heights, datum, foundation metadata and broad hillside preserved; no vertical exaggeration multiplier.
+- Initial filtered checkpoint passes smoke, 137 physics checks, all 333 route checkpoints and data/backup invariants. Eye-level townhouse and modern-courtyard screenshots inspected.
+- Final threshold refinement passed smoke, 137 physics checks and all 333 route checkpoints. All 19 entrance samples equal their existing foundation pad levels; durable validator covers these contacts.
+- East/West appearance protected by `data/east_west_preservation.json` hashes of the approved facade master and shared kit, plus original pad metadata. No remodel or recolor.
 
-Run: `bash scripts/run_game.sh`. Test: `bash scripts/smoke_test.sh`, then `godot --headless --path game -- --verify`.
-No actual usage warning received. Five-hour interval is usage reset, not deadline.
+## Remaining work
+- Finish final GUI capture and save checkpoint; then unique-building improvement.
+- Improve unique buildings incrementally. McTaggart-Cowan current contractor gallery verified visually; renewed charcoal brick, bronze window surrounds, pale metal fascia and entrance connector. Official completion August 2025. Record URL evidence before implementing.
+- Hamilton supplied image identity remains uncertain; Dining photos depict older hall, insufficient for 2022 expansion. Courtyard and Shell need further specific reference work.
+- Terrain 2014 predates redevelopment; modern pad levels and absolute vertical datum unresolved. Retaining walls/stairs and exact landscape grading still approximate. No unverified elevations presented as survey measurements.
+- Performance varies by viewpoint; prior eye-level captures roughly 24–73 FPS. Repeat uncontended capture after final terrain work; no formal GTX1650 benchmark claim.
 
-## Verified first-person milestone
-Fixed 1.68m eye camera, no visible avatar or gameplay overview switch. Smoke passed; physics 87/87 passed. GUI capture inspected: first-person view confirmed, GTX1650 Compatibility. Screenshots in game/docs/screenshots; runtime tests in game/docs/verification.json. Manual physical mouse interaction remains unverified; synthetic look and movement tested. Next: licensed contour acquisition and terrain.
-
-## Verified contour terrain milestone
-2,412 City of Burnaby 2014 contour features cached completely. Runtime 2m terrain grid, identical visual/physics triangle sampling, flat provisional building pads and terrain-clipped pavement. Smoke and 87 physics checks passed; GUI screenshots inspected. Continuous route test running. Roofline and modern grades remain provisional because source predates construction; see PHASE2_TERRAIN_EVIDENCE.md. First-person migration commit: f320f02. Next: route validation, semantic surfaces, modern family.
-
-## Verified surfaces and modern family milestone
-SurfaceController preserves route/parking XZ, makes internal Residence Lane unmarked concrete, and removes all unsupported road centerlines. ModernTowerExterior.gd is one shared East/West master using FacadeKit.gd recessed glazing, mullions, cladding/spandrels, clerestory, curtain-wall bays and parapets. EAT photo identity confirmed by entrance signage in three supplied photos; WET transfer remains provisional. Bay widths/door orientation not surveyed. Smoke passed; 94/94 runtime checks passed, including 376 terrain/collision samples and live shared-master parameter changes propagating to both towers while retaining 7/8 floors. GUI captures inspected. Local foundations EAT=5.276, WET=1.547; roof tops EAT=27.196, WET=26.567m (difference 0.629m, NOT forced). Continuous first route passes 150/150; other loops still running. Next: inspect full routes, capture eye-level QA viewpoints, refine North family.
-
-## Verified North family / parking / traversal checkpoint
-NorthTowerExterior.gd now drives all three North Towers with independent 8-floor data, concrete fins and pale mullions; identity-specific door locations remain approximate. ParkingLot.gd lays out 83 estimated stalls aligned to the three mapped polygon areas; parked-car collisions avoid mapped circulation. 106 runtime checks pass, including family propagation. All three accelerated continuous walks now pass 333/333 checkpoints. A real Godot polygon-ray degeneracy at (-216.3434,62) caused a false boundary reset; replaced only the precinct boundary check with deterministic horizontal crossings and added inside/outside regressions. bash scripts/verify_game.sh passes smoke, physics, routes and data/backup invariants. GUI North and parking captures inspected. Next: shared townhouse master (new script not integrated yet), then unique-building evidence and visual/performance polish.
+Run: `bash scripts/run_game.sh`. Full regression: `bash scripts/verify_game.sh`; family metadata: `python3 scripts/validate_families.py`.
+No actual low-usage warning received. Continue useful exterior work; five-hour interval is a usage reset, not a deadline.

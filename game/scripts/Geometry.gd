@@ -34,12 +34,16 @@ static func box(parent: Node3D, pos: Vector3, size: Vector3, mat: Material, soli
 	if solid: node.create_trimesh_collision()
 	return node
 
-static func mesh_from_vertices(parent: Node3D, vertices: PackedVector3Array, mat: Material, solid: bool = false) -> MeshInstance3D:
+static func ground_normal(p: Vector3) -> Vector3:
+	return Vector3(elevation(p.x-2,p.z)-elevation(p.x+2,p.z),4,elevation(p.x,p.z-2)-elevation(p.x,p.z+2)).normalized()
+
+static func mesh_from_vertices(parent: Node3D, vertices: PackedVector3Array, mat: Material, solid: bool = false, smooth_ground: bool=false) -> MeshInstance3D:
 	var st := SurfaceTool.new()
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
 	for i in range(0,vertices.size(),3):
 		st.set_normal((vertices[i+1]-vertices[i]).cross(vertices[i+2]-vertices[i]).normalized())
 		for j in [0,2,1]:
+			if smooth_ground: st.set_normal(ground_normal(vertices[i+j]))
 			st.set_uv(Vector2(vertices[i+j].x+vertices[i+j].z,vertices[i+j].y))
 			st.add_vertex(vertices[i+j])
 	var node := MeshInstance3D.new()
@@ -90,7 +94,7 @@ static func polygon(parent: Node3D, points: Array, mat: Material, offset: float 
 						var vc:=point([clipped[indices[i+2]].x,clipped[indices[i+2]].y],offset)
 						if (vb-va).cross(vc-va).y<0: verts.append_array([va,vc,vb])
 						else: verts.append_array([va,vb,vc])
-	return mesh_from_vertices(parent,verts,mat)
+	return mesh_from_vertices(parent,verts,mat,false,true)
 
 static func strip(parent: Node3D, a: Vector3, b: Vector3, width: float, mat: Material, offset: float = 0.035) -> void:
 	var side := Vector3(-(b-a).z,0,(b-a).x).normalized()*width*0.5

@@ -91,6 +91,10 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		accent_mat=preload("res://scripts/FacadeKit.gd").material("teal" if data.id=="EAT" else "frame")
 	elif data.type=="north_tower":
 		preload("res://scripts/NorthTowerExterior.gd").build(root,data,points,base,height)
+	elif data.type=="townhouse":
+		preload("res://scripts/TownhouseBlockExterior.gd").build(root,data,points,base,height)
+		accent_mat=preload("res://scripts/FacadeKit.gd").material("white_frame")
+		glass_mat=preload("res://scripts/FacadeKit.gd").material("orange")
 	else:
 		Geo.instances(root,trim,roof_mat,null,650).name="RooflineAndBands"
 		Geo.instances(root,frames,frame_mat,null,350).name="WindowFrames"

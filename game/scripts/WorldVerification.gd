@@ -83,8 +83,20 @@ func run() -> void:
 	var yaw_before: float=player.pivot.rotation.y
 	var mouse := InputEventMouseMotion.new()
 	mouse.relative=Vector2(50,20)
-	player._unhandled_input(mouse)
+	player._input(mouse)
 	check("Mouse look",absf(player.pivot.rotation.y-yaw_before)>0.05)
+	var turn_start: float=player.total_look_yaw
+	for i in 120:
+		var motion:=InputEventMouseMotion.new()
+		motion.relative=Vector2(40,0)
+		motion.screen_relative=motion.relative
+		Input.parse_input_event(motion)
+	check("Mouse input crosses 360 degrees through dispatcher",absf(player.total_look_yaw-turn_start)>TAU)
+	turn_start=player.total_look_yaw
+	for i in 120: player.apply_look(Vector2(-40,0))
+	check("Mouse turns 360 degrees in reverse",absf(player.total_look_yaw-turn_start)>TAU)
+	player.apply_look(Vector2(0,10000))
+	check("Pitch remains bounded without restricting yaw",absf(player.pivot.rotation.x)<=1.451)
 	# Approach a known long Hamilton edge, then keep walking into it.
 	var data: Dictionary=world.registry[7]
 	var door:=Geo.point(data.entrance)
@@ -160,6 +172,25 @@ func verify_families() -> void:
 		north.bay_width=3.6
 	var parking:=world.get_node("Props/ParkingLots")
 	check("Parking stalls arranged in mapped polygons",parking.get_meta("estimated_stalls")>15,str(parking.get_meta("estimated_stalls")))
+	var town=preload("res://scripts/TownhouseBlockExterior.gd")
+	var count:=0
+	for data in world.registry:
+		if data.type!="townhouse": continue
+		count+=1
+		var building: Node3D=world.get_node("Buildings/"+data.id)
+		check(data.id+" shared townhouse master",building.get_meta("family_master")==town.MASTER_ID)
+		check(data.id+" pitched roof generated",building.get_node("PitchedRoof").mesh.get_surface_count()==1)
+		var counts: Array=[]
+		for width in [3.5,5.0]:
+			town.bay_width=width
+			var probe:=Node3D.new()
+			world.add_child(probe)
+			town.build(probe,data,data.footprint,0,data.height_m)
+			counts.append(probe.get_node("TownhouseGlass").multimesh.instance_count)
+			probe.free()
+		check(data.id+" townhouse master edit propagates",counts[0]!=counts[1],str(counts))
+		town.bay_width=3.5
+	check("Exactly nine original townhouse blocks",count==9)
 
 func run_routes() -> void:
 	var routes: Array=JSON.parse_string(FileAccess.get_file_as_string("res://data/test_routes.json"))

@@ -54,6 +54,16 @@ func _ready() -> void:
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
 	if "--capture" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
+	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
+
+func pointer_qa() -> void:
+	DisplayServer.window_set_title("SFU Pointer QA")
+	print("POINTER_QA_READY warp=",player.pointer_warp_mode)
+	await get_tree().create_timer(20).timeout
+	var report:=FileAccess.open("res://docs/pointer_qa.json",FileAccess.WRITE)
+	report.store_string(JSON.stringify({"yaw_travel_radians":player.total_look_yaw,"warp_mode":player.pointer_warp_mode,"mouse_mode":Input.mouse_mode,"yaw":player.pivot.rotation.y},"  "))
+	print("POINTER_QA_COMPLETE yaw=",player.total_look_yaw)
+	get_tree().quit()
 
 func configure_inputs() -> void:
 	var keys := {"move_forward":KEY_W,"move_back":KEY_S,"move_left":KEY_A,"move_right":KEY_D,"sprint":KEY_SHIFT,"jump":KEY_SPACE,"release_mouse":KEY_ESCAPE,"respawn":KEY_R,"map":KEY_M,"labels":KEY_TAB,"quality":KEY_F2,"help":KEY_F1,"next_location":KEY_N}
@@ -101,7 +111,7 @@ func build_ground() -> void:
 			var c := Geo.point([x+2,z+2])
 			var d := Geo.point([x,z+2])
 			verts.append_array([a,c,b,a,d,c])
-	Geo.mesh_from_vertices(ground,verts,Geo.material(Color("6e8056")),true).name="Terrain"
+	Geo.mesh_from_vertices(ground,verts,Geo.material(Color("6e8056")),true,true).name="Terrain"
 	var edge_mat := Geo.material(Color("425c3f"))
 	for i in boundary.size():
 		var a := Geo.point([boundary[i].x,boundary[i].y])

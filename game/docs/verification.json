@@ -402,7 +402,7 @@
     },
     {
       "check": "W movement",
-      "evidence": "metres=4.131607",
+      "evidence": "metres=4.131715",
       "passed": true
     },
     {
@@ -422,6 +422,21 @@
     },
     {
       "check": "Mouse look",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Mouse input crosses 360 degrees through dispatcher",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Mouse turns 360 degrees in reverse",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Pitch remains bounded without restricting yaw",
       "evidence": "",
       "passed": true
     },
@@ -523,6 +538,146 @@
     {
       "check": "Parking stalls arranged in mapped polygons",
       "evidence": "83",
+      "passed": true
+    },
+    {
+      "check": "COW shared townhouse master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "COW pitched roof generated",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "COW townhouse master edit propagates",
+      "evidence": "[102, 72]",
+      "passed": true
+    },
+    {
+      "check": "CHI shared townhouse master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "CHI pitched roof generated",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "CHI townhouse master edit propagates",
+      "evidence": "[102, 72]",
+      "passed": true
+    },
+    {
+      "check": "KEL shared townhouse master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KEL pitched roof generated",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KEL townhouse master edit propagates",
+      "evidence": "[102, 72]",
+      "passed": true
+    },
+    {
+      "check": "KIM shared townhouse master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KIM pitched roof generated",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KIM townhouse master edit propagates",
+      "evidence": "[102, 72]",
+      "passed": true
+    },
+    {
+      "check": "KIT shared townhouse master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KIT pitched roof generated",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "KIT townhouse master edit propagates",
+      "evidence": "[102, 72]",
+      "passed": true
+    },
+    {
+      "check": "PEN shared townhouse master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PEN pitched roof generated",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PEN townhouse master edit propagates",
+      "evidence": "[102, 72]",
+      "passed": true
+    },
+    {
+      "check": "QUA shared townhouse master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "QUA pitched roof generated",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "QUA townhouse master edit propagates",
+      "evidence": "[102, 72]",
+      "passed": true
+    },
+    {
+      "check": "QUE shared townhouse master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "QUE pitched roof generated",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "QUE townhouse master edit propagates",
+      "evidence": "[102, 72]",
+      "passed": true
+    },
+    {
+      "check": "SQU shared townhouse master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SQU pitched roof generated",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SQU townhouse master edit propagates",
+      "evidence": "[102, 72]",
+      "passed": true
+    },
+    {
+      "check": "Exactly nine original townhouse blocks",
+      "evidence": "",
       "passed": true
     },
     {
