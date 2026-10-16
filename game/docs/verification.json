@@ -411,13 +411,28 @@
       "passed": true
     },
     {
+      "check": "PJH central lounge stays closed",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "PJH passage has overhead collision",
       "evidence": "",
       "passed": true
     },
     {
       "check": "PJH passage capsule traversal",
-      "evidence": "(3.822916, 2.828914, -15.59228)",
+      "evidence": "(11.60716, 3.025092, -13.75819)",
+      "passed": true
+    },
+    {
+      "check": "PJH second passage clear at eye level",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH second passage reverse capsule traversal",
+      "evidence": "(-7.657886, 2.434253, -2.600511)",
       "passed": true
     },
     {
@@ -431,13 +446,28 @@
       "passed": true
     },
     {
+      "check": "BRH central lounge stays closed",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "BRH passage has overhead collision",
       "evidence": "",
       "passed": true
     },
     {
       "check": "BRH passage capsule traversal",
-      "evidence": "(75.97301, 6.203699, 1.517211)",
+      "evidence": "(83.75822, 6.335916, 3.349234)",
+      "passed": true
+    },
+    {
+      "check": "BRH second passage clear at eye level",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH second passage reverse capsule traversal",
+      "evidence": "(64.57016, 5.816629, 14.51962)",
       "passed": true
     },
     {
@@ -451,13 +481,28 @@
       "passed": true
     },
     {
+      "check": "SBH central lounge stays closed",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "SBH passage has overhead collision",
       "evidence": "",
       "passed": true
     },
     {
       "check": "SBH passage capsule traversal",
-      "evidence": "(147.9248, 6.889053, 18.45713)",
+      "evidence": "(155.702, 7.183861, 20.31812)",
+      "passed": true
+    },
+    {
+      "check": "SBH second passage clear at eye level",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH second passage reverse capsule traversal",
+      "evidence": "(136.3848, 6.489423, 31.42642)",
       "passed": true
     },
     {
@@ -567,7 +612,7 @@
     },
     {
       "check": "PJH North master edit propagates",
-      "evidence": "[363, 282]",
+      "evidence": "[364, 285]",
       "passed": true
     },
     {
@@ -582,7 +627,7 @@
     },
     {
       "check": "BRH North master edit propagates",
-      "evidence": "[355, 282]",
+      "evidence": "[356, 285]",
       "passed": true
     },
     {
@@ -597,7 +642,7 @@
     },
     {
       "check": "SBH North master edit propagates",
-      "evidence": "[355, 282]",
+      "evidence": "[356, 285]",
       "passed": true
     },
     {

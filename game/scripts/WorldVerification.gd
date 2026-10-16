@@ -59,12 +59,13 @@ func run() -> void:
 	for id in ["PJH","BRH","SBH"]:
 		var building: Node3D=world.get_node("Buildings/"+id)
 		var passage: Dictionary=building.get_meta("exterior_passage")
-		var start: Vector3=passage.start-passage.axis*0.8
-		var end: Vector3=passage.end+passage.axis*0.8
+		var start: Vector3=passage.start-passage.axis*0.8+passage.side*8.0
+		var end: Vector3=passage.end+passage.axis*0.8+passage.side*8.0
 		check(id+" passage clear at eye level",ray(start+Vector3.UP*1.68,end+Vector3.UP*1.68).is_empty())
 		var column: Vector3=passage.start+passage.side*4.0+passage.axis*0.3+Vector3.UP*1.4
 		check(id+" undercroft column is solid",not ray(column-passage.side,column+passage.side).is_empty())
 		var mid: Vector3=(start+end)*0.5
+		check(id+" central lounge stays closed",not ray(passage.start-passage.axis+Vector3.UP*1.4,passage.end+passage.axis+Vector3.UP*1.4).is_empty())
 		check(id+" passage has overhead collision",not ray(mid+Vector3.UP*1.68,mid+Vector3.UP*3.5).is_empty())
 		player.position=start+Vector3.UP*0.3
 		player.velocity=Vector3.ZERO
@@ -74,6 +75,17 @@ func run() -> void:
 		await frames(int((passage.length+1.6)/4.5*60)+12)
 		Input.action_release("move_forward")
 		check(id+" passage capsule traversal",(player.position-start).dot(passage.axis)>passage.length+1.3 and player.is_on_floor(),str(player.position))
+		var reverse_start: Vector3=passage.end+passage.axis*0.8-passage.side*8.0
+		var reverse_end: Vector3=passage.start-passage.axis*0.8-passage.side*8.0
+		check(id+" second passage clear at eye level",ray(reverse_start+Vector3.UP*1.68,reverse_end+Vector3.UP*1.68).is_empty())
+		player.position=reverse_start+Vector3.UP*0.3
+		player.velocity=Vector3.ZERO
+		player.pivot.rotation=Vector3(0,atan2(passage.axis.x,passage.axis.z),0)
+		await frames(30)
+		Input.action_press("move_forward")
+		await frames(int((passage.length+1.6)/4.5*60)+12)
+		Input.action_release("move_forward")
+		check(id+" second passage reverse capsule traversal",(reverse_start-player.position).dot(passage.axis)>passage.length+1.3 and player.is_on_floor(),str(player.position))
 	# Use an unobstructed part of Field 4 edge for reproducible movement checks.
 	player.position=Geo.point([-25,110],0.3)
 	player.velocity=Vector3.ZERO
@@ -184,6 +196,7 @@ func verify_families() -> void:
 		check(id+" shared master edit propagates",counts[0]!=counts[1],str(counts))
 		master.bay_width=3.0
 	var north=preload("res://scripts/NorthTowerExterior.gd")
+	var saved_north_bay_width: float=north.bay_width
 	for id in ["PJH","BRH","SBH"]:
 		var building: Node3D=world.get_node("Buildings/"+id)
 		check(id+" distinct North master",building.get_meta("family_master")==north.MASTER_ID and north.MASTER_ID!=master.MASTER_ID)
@@ -198,7 +211,7 @@ func verify_families() -> void:
 			counts.append(probe.get_node("NorthGlass").multimesh.instance_count)
 			probe.free()
 		check(id+" North master edit propagates",counts[0]!=counts[1],str(counts))
-		north.bay_width=3.6
+		north.bay_width=saved_north_bay_width
 	var parking:=world.get_node("Props/ParkingLots")
 	check("Parking stalls arranged in mapped polygons",parking.get_meta("estimated_stalls")>15,str(parking.get_meta("estimated_stalls")))
 	var town=preload("res://scripts/TownhouseBlockExterior.gd")

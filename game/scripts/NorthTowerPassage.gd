@@ -3,6 +3,8 @@ extends RefCounted
 const Geo=preload("res://scripts/Geometry.gd")
 const CLEAR_HEIGHT=2.9
 const WIDTH=24.0
+const CORE_WIDTH=5.0
+const WALK_LANE=8.0
 
 static func layout(data: Dictionary, base: float) -> Dictionary:
 	var p: Array=data.footprint
@@ -69,6 +71,11 @@ static func build(root: Node3D,data: Dictionary,base: float,material: Material) 
 			var column:=Geo.box(root,plan.start+plan.side*offset+plan.axis*depth+Vector3.UP*CLEAR_HEIGHT*0.5,Vector3(0.75,CLEAR_HEIGHT,0.75),material,true)
 			column.name="UndercroftColumn"
 			column.rotation.y=yaw
+	# The lounge/entry stack is enclosed at ground level in the courtyard photographs.
+	# Keep it sealed while preserving exterior circulation on either side.
+	var core:=Geo.box(root,mid+Vector3.UP*CLEAR_HEIGHT*0.5,Vector3(plan.length,CLEAR_HEIGHT,CORE_WIDTH),material,true)
+	core.name="ClosedGroundLoungeCore"
+	core.rotation.y=yaw
 	var ceiling:=Geo.box(root,mid+Vector3.UP*(CLEAR_HEIGHT+0.12),Vector3(plan.length,0.24,WIDTH),material,true)
 	ceiling.name="PassageSoffit"
 	ceiling.rotation.y=yaw

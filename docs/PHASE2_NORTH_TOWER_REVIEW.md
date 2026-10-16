@@ -7,21 +7,24 @@ PWL-SFU-Residences-Phase-1-1001.jpg has readable Jack Shadbolt House sign, confi
 
 ## Implemented shared model
 - Corrected the earlier narrow side-wing tunnel: broad24m central courtyard undercroft with four solid support piers, ceiling, concrete paving and actual openings through visible/collision walls. This supersedes the42%-along-side-wing estimate in checkpoint2b4e178.
-- Narrower room windows separated by broad concrete panels, white lower panels, projecting end lounge stack with glazed returns/deeper slabs.
+- Narrower room windows separated by broad concrete panels, white lower panels, projecting central lounge stack with glazed returns/deeper slabs.
 - Separate dark screened stair-core end treatment with narrow white-framed glazing. Generic repeated room windows removed from those faces.
 - North-only cached procedural concrete/formwork and screen materials, batched via existing geometry infrastructure. Shared FacadeKit and E/W hashes unchanged.
 - Framed closed double entry doors, central mullion, transom and handles; solid concrete canopy. Geographic entrance thresholds retained. No interiors.
 
 ## Evidence versus estimates
-Photos establish architectural features, not survey dimensions.24m undercroft width,2.9m clearance, column locations/size, rear exit configuration and screened end assignment remain estimated shared reconstruction. Stair-core handedness can differ; do not label both end faces in every instance individually photo-verified. Ground glazing/columns around lounges and side wings are incomplete. Entry placement still follows original registry; photo sign location has not been georeferenced to move it. Roof/foundation/floor counts unchanged. Red service doors, precise parapets/top-floor fins, stairs, curved courtyard paving and detailed landscaping remain pending.
+Photos establish architectural features, not survey dimensions.24m undercroft width,2.9m clearance, column locations/size, rear exit configuration and screened end assignment remain estimated shared reconstruction. Stair-core handedness now follows the public level2 plan: projecting/screened end west for BRH/SBH and east for PJH. Screen placement remains a photo-plus-plan inference, not individually identified facade proof. Ground glazing/columns around lounges and side wings are incomplete. Entry placement still follows original registry; photo sign location has not been georeferenced to move it. Roof/foundation/floor counts unchanged. Red service doors, precise parapets/top-floor fins, stairs, curved courtyard paving and detailed landscaping remain pending.
 
 ## Validation
-Full smoke/physics/routes after relocating opening:153 checks and333 walking checkpoints passed. Added column collision checks and door details: final smoke and156 physics checks passed, architectural-family/runtime validators passed. Canopy bounds retained; no route geometry changes after full route pass. Logs /tmp/north-courtyard-verification.log, /tmp/north-final-smoke.log, /tmp/north-final-physics.log. Native GPU visual capture pending; view8 is courtyard undercroft, view9 is stair-core/entry end. Final outcome recorded in STATUS/HANDOFF.
+Full smoke/physics/routes after relocating opening:153 checks and333 walking checkpoints passed. Added column collision checks and door details: final smoke and156 physics checks passed, architectural-family/runtime validators passed. Canopy bounds retained; no route geometry changes after full route pass. Logs /tmp/north-courtyard-verification.log, /tmp/north-final-smoke.log, /tmp/north-final-physics.log. Native GPU visual captures completed for earlier courtyard refinement; latest plan revision capture completed and reviewed. View8 is courtyard undercroft; view9 is entry at the verified anchor.
 
 ## Next concrete steps
-1. Inspect courtyard and end captures against the reviewed images. Correct obvious render defects before checkpoint.
+1. Inspect latest plan-revision captures; shared central lounge now has three-part glazing, with sealed base and two flanking circulation lanes.
 2. Map photographed stair-core handedness and lounge/entrance locations per tower; avoid silently treating family identity as facade-orientation proof.
 3. Improve top-floor fins/parapets and ground-level glazing. Add evidenced red service-door modules only after locating faces.
 4. Resolve courtyard stair/paving placement without altering original path coordinates or terrain wholesale. Keep156 runtime checks and333 route checkpoints passing.
 
 Townhouse common-annex/unit mapping and Hamilton detailed model remain deferred. Do not change approved townhouse appearance or East/West. Preserve user-confirmed native mouse capture.
+
+## Plan revision validation
+See PHASE2_NORTH_PLAN_AUDIT.md.165 physics checks pass, including both lanes in opposite directions for all3 towers and central-core closure;333 continuous checkpoints pass. Original source geometry and protected E/W pass. Public plans have no ground floor, and full Facilities key plans require CAS authentication; no bypass attempted.

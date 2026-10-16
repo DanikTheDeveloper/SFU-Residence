@@ -1,35 +1,23 @@
-# Phase 2 current handoff — 2026-10-16
+# Phase 2 handoff — 2026-10-16
 
-## Resume here
-Townhouse/camera/Courtyard checkpoint is2af9346. Current North milestone adds153 passing physics checks including three passage traversals and all333 continuous route checkpoints. Read PHASE2_STATUS.md and PHASE2_TOWNHOUSE_DETAIL_PLAN.md. Do not restart migration or recopy nested game.
+Canonical /home/danik/GitHub/SFU Residence/game. Continue existing project. Current committed checkpoint033f2ca; plan-informed North revision in working tree with165 passing checks and333 route checkpoints. Do not redo migration, camera fix or townhouse modeling.
 
-Camera is user-confirmed: “Full turns work; no blinking.” Native capture and separate yaw/pitch replace rejected manual warping. Preserve this implementation.144 checks and all333 walking checkpoints pass in /tmp/sfu-townhouse-checkpoint.log; screenshots from /tmp/sfu-townhouse-checkpoint-capture.log inspected. Detailed townhouse frontage is view_7.png. Old pointer_qa.json tests the REJECTED warp version; do not use it to claim current native capture verification. Current evidence is automated checks plus explicit human feedback.
+## Current work
+User approves townhouses and asks North Towers next, using supplied photos. Nine photos indexed in reference_photos/Barbara_Pauline_Shadbolt/PHOTO_REVIEW.json. Three official housing plans reviewed visually: central lounge, five room bays each side, projected stair end west BRH/SBH and east PJH. URLs in ONLINE_REFERENCES.json; private PDF copies in Windows Temp/sfu-north-plan-review. No ground-level plan in public PDFs. Full Facilities key plans require CAS; do not bypass. Preserve8 levels despite housing marketing page7/SBH PDF missing8; see audit.
 
-## Immediate next work
-User now accepts townhouse appearance and requests Barbara/Pauline/Shadbolt next. Preserve current townhouse visuals; incomplete common annex/unit mapping stays deferred. Read PHASE2_NORTH_TOWER_REVIEW.md. Continue North stair-core facade/glazing and entrance photo study, then refine estimated passage location. Current helper cuts real exterior collision openings and adds side walls/soffit; no interiors. Do not touch East/West or user-confirmed camera. Final eye-level captures completed and reviewed, including view8 with concrete paving.
+NorthTowerExterior.gd now shares central glazing/room modules and per-instance stair handedness. NorthTowerPassage.gd makes two traversable exterior lanes around a closed ground lounge core. Overall width24m/core5m/clearance2.9m/columns are approximate. Tests prove both lanes and solid core/columns; exact ground configuration still needs photo-to-map work. NorthTowerMaterials.gd owns its materials, leaving E/W FacadeKit untouched.
 
+## Verification
+165 physics checks in /tmp/north-two-lanes.log. Full333 route checks and data preservation in /tmp/north-plan-verification.log. Last changes after physics were cosmetic lounge mullion only. Plan-revision visual capture /tmp/north-plan-capture.log completed without script errors; views8/9 reviewed. Focused captures: bash scripts/run_game.sh -- --capture-north. Outputs view8 courtyard, view9 entry, performance_north.json. Earlier view9 from94,48 was blocked by neighboring building; corrected to existing BRH outdoor anchor. Do not use rejected screenshot as facade evidence.
 
-## Research already completed — do not repeat
-All7 user townhouse images inspected. Official PDFs for all9 blocks located and ground pages visually reviewed. Chilcotin upper pages show common annex absent above ground. Temporary PDF/render copies in Windows Temp/sfu-townhouse-plan-review; not redistributed. Persistent observations/URLs in data/townhouse_plan_observations.json and online_reference_index.json. Page-left/right are not compass coordinates. Plan labels01-99 conflict with webpage96 total. Common rooms are numbered but laundry function not explicitly labelled.
+## Next concrete step
+Final views8/9 reviewed. Save this checkpoint, then improve North ground-floor glazed frontage and courtyard apron based on the supplied wide courtyard image. Resolve sign/entrance mapping before moving any registered entry. Do not invent interior circulation. Source observations/remaining estimates are in PHASE2_NORTH_TOWER_REVIEW.md and PHASE2_NORTH_PLAN_AUDIT.md.
 
-New Hamilton1638917139878.jpg has readable sign, plus1726522334676.jpg confirms four-storey siding/window composition. North Photo-03-1024x672.jpg shows open ground-level passage/columns;1790722544125.jpg shows glazed stair/lounges and concrete framing. Detailed remaining townhouse tasks are saved in townhouse plan document. Latest user steering prioritizes North after accepting townhouse appearance.
-
-## Safeguards
-East/West master and FacadeKit hashes in data/east_west_preservation.json must remain unchanged. Original registry/routes/site exact equality is tested. Terrain source+iteration1 baseline retained; rebuild build_terrain.py THEN smooth_terrain.py. Rejected3m pad margin caused QUE/QUA obstruction; accepted margin.35m plus threshold pins. External obsolete-doc backup /home/danik/Backups/SFU-Residence-Phase1-docs-20261016, manifest verifies29 records. Nested original runtime retained.
-
-## Commands
+## Safeguards / commands
 bash scripts/run_game.sh
 bash scripts/verify_game.sh
 python3 scripts/validate_families.py
-bash scripts/run_game.sh -- --capture
 
-No dependency installation. Automatic captures disable player controls and move cameras; labeled accordingly. Use normal launch to test input. Remaining generic landscape/stairs, three distinct building models, Courtyard wing heights and fine site grading are not complete. No interiors/NPC/API.
+Camera user-confirmed fixed; keep native capture/separate axes. E/W hashes protected. Townhouses visually accepted. Terrain pad/threshold heights preserved; no vertical exaggeration. Original registry/routes/site and nested rollback unchanged. Old Markdown backup /home/danik/Backups/SFU-Residence-Phase1-docs-20261016 verifies29 records. No dependencies installed, no interiors/NPC/API.
 
-Latest actual usage snapshot84% five-hour/91% weekly: finish this safe checkpoint and stop. Resume only on user instruction.
-
-North checkpoint visual QA: final GUI launch/capture completed without script errors; view4 facade and view8 through-passage inspected. Concrete paving follows terrain without collision changes. Full physics153/153 and route333/333 passed before the final cosmetic paving addition; final renderer launch validates that addition. No claim of fully photo-matched North architecture: columned undercroft, stair-core treatment and entrance detail remain in PHASE2_NORTH_TOWER_REVIEW.md.
-
-## North courtyard correction — latest continuation
-All9 user photos reviewed, SBH sign positively identified, per-photo reference index saved. Replaced estimated narrow side-wing tunnel with photo-supported broad central columned undercroft; added white lower window panels, glazed lounge returns, screened stair-core ends, North-only subtle concrete texture and framed double entrances. Exact dimensions/end handedness still estimated.156 physics checks pass;333 routes passed after opening relocation. E/W and original registry/pads protected. See PHASE2_NORTH_TOWER_REVIEW.md for current limitations and next work. Visual capture completed on Compatibility GTX1650; view8 undercroft and view9 entrance reviewed. Cosmetic panel-depth/fin corrections included. Previous instruction to pause at91% was superseded by user's explicit continuation; do not interpret old usage snapshots as current quota.
-
-Next research finding: official Level2 plans show central lounge projection and projecting stair end west for BRH/SBH, east for PJH. Current end-lounge approximation must be corrected next; keep ground undercroft layout explicitly estimated because Level1 is absent. Sources saved in North ONLINE_REFERENCES.json. Latest actual quota snapshot13% five-hour/2% weekly used confirms reset; prior91% does not apply.
+Latest actual usage snapshot13% five-hour/2% weekly after reset; obsolete91% stopping note does not apply. Continue on user's authorization and save meaningful verified milestones.

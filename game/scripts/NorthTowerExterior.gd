@@ -4,7 +4,7 @@ const Kit=preload("res://scripts/FacadeKit.gd")
 const NorthMaterials=preload("res://scripts/NorthTowerMaterials.gd")
 const Passage=preload("res://scripts/NorthTowerPassage.gd")
 const MASTER_ID="res://scripts/NorthTowerExterior.gd"
-static var bay_width := 3.6
+static var bay_width := 2.8
 
 static func build(root: Node3D, data: Dictionary, points: Array, base: float, height: float) -> void:
 	root.set_meta("family_master",MASTER_ID)
@@ -30,7 +30,9 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 		if end_face:
 			# Dark screened stair core beside a continuous narrow glazed strip.
 			var stair_mid:=a+edge*0.5+Vector3.UP*height*0.5
-			var screen_key: String="stair_screen" if (stair_mid-passage.start).dot(passage.side)<0 else "concrete"
+			var projecting_end: bool=(stair_mid-passage.start).dot(passage.side)<0
+			if data.id=="PJH": projecting_end=not projecting_end
+			var screen_key: String="stair_screen" if projecting_end else "concrete"
 			kit.part(screen_key,stair_mid+Vector3.UP*story*0.5-tangent*0.85+normal*0.18,Vector3(length-2.5,height-story,0.30),yaw)
 			for level in int(data.floors):
 				var center:=a+tangent*(length-1.2)+Vector3.UP*((level+0.5)*story)
@@ -44,18 +46,27 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 		if length<2.3:
 			kit.part("concrete",a+edge*0.5+Vector3.UP*height*0.5+normal*0.12,Vector3(length,height,0.24),yaw)
 			continue
-		var bays:=maxi(1,int(round(length/bay_width)))
+		var room_bays:=maxi(1,int(round((length-5.0)*0.5/bay_width)))
+		var bays:=room_bays*2+1 if length>25 else maxi(1,int(round(length/bay_width)))
 		var spacing:=length/bays
+		var central_lounge_width: float=5.0 if length>25 else spacing
+		var room_spacing: float=(length-central_lounge_width)/(bays-1) if length>25 else spacing
 		var narrow: bool=length<19 and length>5
 		for bay in bays:
-			var mid:=a+tangent*((bay+0.5)*spacing)
-			var lounge: bool=length>25 and (mid-Vector3(data.footprint[21][0],base,data.footprint[21][1])).length()<spacing*1.1
+			var lounge: bool=length>25 and bay==room_bays
+			spacing=central_lounge_width if lounge else room_spacing
+			var along: float=(bay+0.5)*spacing
+			if length>25:
+				if lounge: along=length*0.5
+				elif bay<room_bays: along=(bay+0.5)*room_spacing
+				else: along=room_bays*room_spacing+central_lounge_width+(bay-room_bays-0.5)*room_spacing
+			var mid:=a+tangent*along
 			var width: float=minf(1.25,spacing*0.46) if narrow else spacing*0.43
 			if lounge: width=spacing-0.18
 			for level in int(data.floors):
 				# Omit ground-level modules at the real opening, including projecting fins.
 				if level==0 and absf((mid-door).dot(tangent))<spacing*0.5+1.3 and absf((mid-door).dot(normal))<0.4: continue
-				if level==0 and Passage.interval(mid-tangent*spacing*0.5,mid+tangent*spacing*0.5,passage,0.35).x>=0: continue
+				if level==0 and not lounge and Passage.interval(mid-tangent*spacing*0.5,mid+tangent*spacing*0.5,passage,0.35).x>=0: continue
 				var wh: float=story-0.75 if narrow else 2.05
 				if lounge: wh=story-0.27
 				var center:=mid+Vector3.UP*((level+0.5)*story)
@@ -65,6 +76,7 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 					kit.part("white_frame",center-Vector3.UP*(wh*0.5+0.2)+normal*0.31,Vector3(width,0.35,0.10),yaw)
 				else:
 					# Glazed returns and deep slab edges make the lounge a real projection.
+					kit.part("white_frame",center-tangent*width*0.18+normal*0.16,Vector3(0.055,wh,0.085),yaw)
 					for sign_value in [-1,1]:
 						kit.part("glass",center+tangent*sign_value*width*0.5-normal*0.28,Vector3(0.04,wh,0.65),yaw)
 						kit.part("white_frame",center+tangent*sign_value*width*0.5-normal*0.28,Vector3(0.08,0.065,0.65),yaw)

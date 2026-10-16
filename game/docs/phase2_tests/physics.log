@@ -83,16 +83,25 @@ PASS SQU stable player
 PASS SQU solid facade edges 13/13
 PASS PJH passage clear at eye level
 PASS PJH undercroft column is solid
+PASS PJH central lounge stays closed
 PASS PJH passage has overhead collision
-PASS PJH passage capsule traversal (3.822916, 2.828914, -15.59228)
+PASS PJH passage capsule traversal (11.60716, 3.025092, -13.75819)
+PASS PJH second passage clear at eye level
+PASS PJH second passage reverse capsule traversal (-7.657886, 2.434253, -2.600511)
 PASS BRH passage clear at eye level
 PASS BRH undercroft column is solid
+PASS BRH central lounge stays closed
 PASS BRH passage has overhead collision
-PASS BRH passage capsule traversal (75.97301, 6.203699, 1.517211)
+PASS BRH passage capsule traversal (83.75822, 6.335916, 3.349234)
+PASS BRH second passage clear at eye level
+PASS BRH second passage reverse capsule traversal (64.57016, 5.816629, 14.51962)
 PASS SBH passage clear at eye level
 PASS SBH undercroft column is solid
+PASS SBH central lounge stays closed
 PASS SBH passage has overhead collision
-PASS SBH passage capsule traversal (147.9248, 6.889053, 18.45713)
+PASS SBH passage capsule traversal (155.702, 7.183861, 20.31812)
+PASS SBH second passage clear at eye level
+PASS SBH second passage reverse capsule traversal (136.3848, 6.489423, 31.42642)
 PASS W movement metres=4.131715
 PASS Sprint faster
 PASS Jump rises
@@ -115,13 +124,13 @@ PASS WET independent floors
 PASS WET shared master edit propagates [576, 424]
 PASS PJH distinct North master
 PASS PJH eight floors
-PASS PJH North master edit propagates [363, 282]
+PASS PJH North master edit propagates [364, 285]
 PASS BRH distinct North master
 PASS BRH eight floors
-PASS BRH North master edit propagates [355, 282]
+PASS BRH North master edit propagates [356, 285]
 PASS SBH distinct North master
 PASS SBH eight floors
-PASS SBH North master edit propagates [355, 282]
+PASS SBH North master edit propagates [356, 285]
 PASS Parking stalls arranged in mapped polygons 83
 PASS COW shared townhouse master
 PASS COW pitched roof generated
@@ -158,4 +167,4 @@ PASS Courtyard uses distinct precast master
 PASS Courtyard preserves eleven-floor registry
 PASS Courtyard uses ribbed panels and recessed glazing
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=156 failures=0
+VERIFICATION_COMPLETE checks=165 failures=0
