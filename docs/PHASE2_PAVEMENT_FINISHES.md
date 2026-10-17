@@ -1,0 +1,9 @@
+# Pavement finishes — 2026-10-17
+
+User photographs distinguish grey/tan paver courtyards (East Tower sign visible in 1638918934812, 1771013055311, PWL1023), fine grey townhouse paths (1752685165951/12, images2), and pale concrete bands / entrance slabs. PavementMaterials.gd provides original 256px mipmapped aggregate textures; ResidencePavers adds a warm palette. No photo pixels are shipped.
+
+SurfaceController preserves every original road/path centreline, width, parking polygon and ground collision. Pedestrian segments whose midpoint lies within 8m of townhouse footprints receive grey fine aggregate. Existing short pedestrian segments within 14m of East's entrance receive mixed grey/tan pavers, narrow pale borders and occasional transverse bands. This is a bounded material interpretation, not surveyed paving boundaries. East/West building models remain unchanged. Other concrete paths receive subtle aggregate and estimated 2m construction-joint spacing, rather than a flat untextured fill. Vehicle surfaces stay asphalt and unmarked.
+
+Known limits: exact paving extents, drainage locations, planted-bed edges, kerb ramps and construction-joint spacing need measured/site-plan evidence. No new stairs or curbs have been invented. A slight surface offset over the existing terrain avoids z-fighting; physics surface is unchanged.
+
+Verified: smoke passed; three eye-level GPU views reviewed on GTX1650 Compatibility. Close-up revealed coplanar overlap, fixed with shared world UVs and ordered visual offsets (concrete 45mm, grey paths 50mm, border 55mm, pavers 65mm, crossband 75mm). These offsets are render separation, not surveyed curb heights. Textures continue across strip overlaps. Preservation/family validators pass; physics remains the verified 180-check / 333-route baseline. See game/docs/performance_paving.json; FPS is concurrent-load, not an isolated benchmark.
