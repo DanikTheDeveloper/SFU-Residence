@@ -2,32 +2,32 @@ extends RefCounted
 # Photo-supported exterior passage; exact survey dimensions remain estimated.
 const Geo=preload("res://scripts/Geometry.gd")
 const CLEAR_HEIGHT=2.9
-const WIDTH=24.0
-const CORE_WIDTH=5.0
-const WALK_LANE=8.0
+const WIDTH=3.6
 
 static func layout(data: Dictionary, base: float) -> Dictionary:
 	var p: Array=data.footprint
-	# Central courtyard bar, not the side wing: established by the user's full courtyard photo.
 	var west:=Vector3(p[21][0],base,p[21][1])
 	var east:=Vector3(p[20][0],base,p[20][1])
+	# Legacy facade axes retained: side=east, axis=north. Travel is longitudinal.
 	var side: Vector3=(east-west).normalized()
 	var axis:=Vector3(side.z,0,-side.x)
 	var start: Vector3=(west+east)*0.5
-	var distance:=20.0
-	# Find the opposite exterior face, preserving the registered footprint.
-	for i in p.size():
-		var hit=Geometry2D.segment_intersects_segment(Vector2(start.x,start.z)+Vector2(axis.x,axis.z)*0.05,Vector2(start.x,start.z)+Vector2(axis.x,axis.z)*20,Vector2(p[i][0],p[i][1]),Vector2(p[(i+1)%p.size()][0],p[(i+1)%p.size()][1]))
-		if hit!=null:
-			distance=minf(distance,Vector2(start.x,start.z).distance_to(hit))
-	return {"start":start,"end":start+axis*distance,"axis":axis,"side":side,"length":distance,"base":base}
+	var low:=0.0
+	var high:=0.0
+	for point in p:
+		var projection: float=(Vector3(point[0],base,point[1])-start).dot(side)
+		low=minf(low,projection)
+		high=maxf(high,projection)
+	var gallery_start: Vector3=start+side*(low-0.1)+axis*1.5
+	var gallery_end: Vector3=start+side*(high+0.1)+axis*1.5
+	return {"start":start,"axis":axis,"side":side,"base":base,"gallery_start":gallery_start,"gallery_end":gallery_end,"length":high-low+0.2}
 
 static func interval(a: Vector3,b: Vector3,plan: Dictionary,margin: float=0.0) -> Vector2:
 	var lo:=0.0
 	var hi:=1.0
-	var origin: Vector3=plan.start
+	var origin: Vector3=plan.gallery_start
 	for dim in 2:
-		var axis: Vector3=plan.axis if dim==0 else plan.side
+		var axis: Vector3=plan.side if dim==0 else plan.axis
 		var low: float=-0.05-margin if dim==0 else -WIDTH*0.5-margin
 		var high: float=plan.length+0.05+margin if dim==0 else WIDTH*0.5+margin
 		var pos: float=(a-origin).dot(axis)
@@ -59,37 +59,51 @@ static func append_wall(vertices: PackedVector3Array,a: Vector3,b: Vector3,heigh
 static func build(root: Node3D,data: Dictionary,base: float,material: Material) -> void:
 	var plan:=layout(data,base)
 	root.set_meta("exterior_passage",plan)
-	var mid: Vector3=(plan.start+plan.end)*0.5
-	var yaw: float=-atan2(plan.axis.z,plan.axis.x)
+	var mid: Vector3=(plan.gallery_start+plan.gallery_end)*0.5
+	var yaw: float=-atan2(plan.side.z,plan.side.x)
+	# Closed rear boundary: exterior circulation only, no access into residential rooms.
+	var wall:=Geo.box(root,mid+plan.axis*(WIDTH*0.5+0.1)+Vector3.UP*CLEAR_HEIGHT*0.5,Vector3(plan.length,CLEAR_HEIGHT,0.2),material,true)
+	wall.name="GalleryRearWall"
+	wall.rotation.y=yaw
+	for offset in [-12.0,-2.8,2.8,12.0]:
+		var column:=Geo.box(root,plan.start+plan.side*offset-plan.axis*0.15+Vector3.UP*CLEAR_HEIGHT*0.5,Vector3(0.60,CLEAR_HEIGHT,0.60),material,true)
+		column.name="GalleryCourtyardColumn"
+		column.rotation.y=yaw
+	# Courtyard photographs show a recessed central glazed entrance behind the gallery.
+	# Closed exterior door only; exact width/depth are estimated.
+	var kit=preload("res://scripts/FacadeKit.gd").new()
+	var door_center: Vector3=mid+plan.axis*(WIDTH*0.5-0.05)+Vector3.UP*1.25
+	kit.window(door_center,plan.side,-plan.axis,2.6,2.5,yaw,true,"white_frame")
+	kit.part("white_frame",door_center-plan.axis*0.24,Vector3(0.07,2.5,0.08),yaw)
 	for sign_value in [-1,1]:
-		var wall:=Geo.box(root,mid+plan.side*sign_value*(WIDTH*0.5+0.1)+Vector3.UP*CLEAR_HEIGHT*0.5,Vector3(plan.length, CLEAR_HEIGHT,0.2),material,true)
-		wall.name="PassageSideWall"
-		wall.rotation.y=yaw
-	# Broad undercroft supported by piers; central pedestrian lane stays clear.
-	for offset in [-4.0,4.0]:
-		for depth in [0.3,plan.length-0.3]:
-			var column:=Geo.box(root,plan.start+plan.side*offset+plan.axis*depth+Vector3.UP*CLEAR_HEIGHT*0.5,Vector3(0.75,CLEAR_HEIGHT,0.75),material,true)
-			column.name="UndercroftColumn"
-			column.rotation.y=yaw
-	# The lounge/entry stack is enclosed at ground level in the courtyard photographs.
-	# Keep it sealed while preserving exterior circulation on either side.
-	var core:=Geo.box(root,mid+Vector3.UP*CLEAR_HEIGHT*0.5,Vector3(plan.length,CLEAR_HEIGHT,CORE_WIDTH),material,true)
-	core.name="ClosedGroundLoungeCore"
-	core.rotation.y=yaw
+		kit.part("white_frame",door_center+plan.side*sign_value*0.18-plan.axis*0.28,Vector3(0.035,0.45,0.045),yaw)
+	preload("res://scripts/NorthTowerMaterials.gd").finish(kit,root)
 	var ceiling:=Geo.box(root,mid+Vector3.UP*(CLEAR_HEIGHT+0.12),Vector3(plan.length,0.24,WIDTH),material,true)
-	ceiling.name="PassageSoffit"
+	ceiling.name="GallerySoffit"
 	ceiling.rotation.y=yaw
+	pave(root,plan.gallery_start,plan.gallery_end,WIDTH,"GalleryPaving")
+	pave(root,plan.start-plan.side*16-plan.axis*1.6,plan.start+plan.side*16-plan.axis*1.6,2.6,"CourtyardApron")
 
+static func pave(root: Node3D,a: Vector3,b: Vector3,width: float,title: String) -> void:
+	var tangent: Vector3=(b-a).normalized()
+	var side:=Vector3(tangent.z,0,-tangent.x).normalized()*width*0.5
+	var polygon: Array=[]
+	for corner in [a-side,b-side,b+side,a+side]: polygon.append([corner.x,corner.z])
+	Geo.polygon(root,polygon,preload("res://scripts/NorthTowerMaterials.gd").material("paving"),0.025).name=title
 
-	# Thin visual paving follows existing terrain triangles; terrain remains the collider.
-	var paving: Array=[]
-	for corner in [plan.start-plan.axis*0.4-plan.side*WIDTH*0.5,plan.end+plan.axis*0.4-plan.side*WIDTH*0.5,plan.end+plan.axis*0.4+plan.side*WIDTH*0.5,plan.start-plan.axis*0.4+plan.side*WIDTH*0.5]:
-		paving.append([corner.x,corner.z])
-	Geo.polygon(root,paving,preload("res://scripts/NorthTowerMaterials.gd").material("paving"),0.025).name="PassagePaving"
-
-	# Courtyard-side concrete apron shown in the wide reference photo.
-	# Visual surface only: follows the original terrain and leaves routes unchanged.
-	var apron: Array=[]
-	for corner in [plan.start-plan.side*16.0-plan.axis*3.0,plan.start+plan.side*16.0-plan.axis*3.0,plan.start+plan.side*16.0-plan.axis*0.4,plan.start-plan.side*16.0-plan.axis*0.4]:
-		apron.append([corner.x,corner.z])
-	Geo.polygon(root,apron,preload("res://scripts/NorthTowerMaterials.gd").material("paving"),0.027).name="CourtyardApron"
+static func connect_row(world: Node3D) -> void:
+	var root:=Node3D.new()
+	root.name="NorthGalleryConnections"
+	world.add_child(root)
+	# User confirms connected circulation. Roof spans/dimensions are estimated, not surveyed.
+	for pair in [["PJH","BRH"],["BRH","SBH"]]:
+		var left: Dictionary=world.get_node("Buildings/"+pair[0]).get_meta("exterior_passage")
+		var right: Dictionary=world.get_node("Buildings/"+pair[1]).get_meta("exterior_passage")
+		var a: Vector3=left.gallery_end
+		var b: Vector3=right.gallery_start
+		pave(root,a-left.side*0.2,b+right.side*0.2,WIDTH,"ConnectingWalkway")
+		var direction: Vector3=(b-a).normalized()
+		var cross_axis:=Vector3(direction.z,0,-direction.x).normalized()
+		var canopy:=Geo.box(root,(a+b)*0.5+Vector3.UP*(CLEAR_HEIGHT+0.12),Vector3(a.distance_to(b)+0.4,0.24,WIDTH),preload("res://scripts/NorthTowerMaterials.gd").material("concrete"),true)
+		canopy.name="EstimatedGalleryConnectionCanopy"
+		canopy.basis=Basis(direction,cross_axis.cross(direction).normalized(),cross_axis)

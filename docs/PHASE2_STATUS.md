@@ -1,23 +1,14 @@
 # Phase 2 status — 2026-10-16
 
-## Preserved working baseline
-Godot4.7.2 Standard, GDScript, Compatibility/OpenGL, Debian13 WSL2, GTX1650. Original19-building registry, site and roads unchanged; all333 route checkpoints pass. Nested Phase1 runtime retained.29 obsolete Markdown documents externally archived and deleted from nested instruction tree. No installs.
+## Current North Towers correction
+User confirmed the gallery runs LONGITUDINALLY under the long courtyard-facing wing, connecting Pauline Jewett, Barbara Rae and Shadbolt. The previous two north–south tunnels were incorrect and are superseded. The common North master now cuts an east–west ground gallery through all three existing footprints, retains a closed rear residential boundary, courtyard columns and overhead collision, and provides terrain-following paving and connecting canopy spans. No upper-floor building mass or registry coordinates were moved. Central recessed closed exterior doors follow the supplied courtyard photo. Width3.6m, clear height2.9m and connector roof spans/grades are estimated, not surveyed.
 
-Camera: native capture with separate yaw/pitch, user confirms full turns and no blinking. Do not change. Terrain: constrained smoothing and triangle-matched collision remain verified; all19 threshold levels/pad heights preserved. E/W approved master and FacadeKit hashes unchanged. Townhouses accepted visually by user; common-annex/unit mapping remains deferred.
+Verified:169 physics checks pass, including bidirectional traversal of each gallery, a continuous PJH→BRH→SBH route and reverse, rear-wall/column/ceiling collision and376/376 terrain-ray parity. All333 pre-existing continuous route checkpoints pass. Family validator8 families/10 named instances/0errors. Protected E/W master, FacadeKit,19-building registry, roads/site, terrain/pads and Phase1 rollback/archive validators pass. Final GPU capture completed on GTX1650/Compatibility at1280x720; views8 and12 inspected: courtyard doorway and longitudinal eye-level view. Performance is viewpoint-dependent; no universal60FPS claim.
 
-## North Towers — active priority
-Checkpoint033f2ca covers columned courtyard opening, concrete materials and entry frames. Latest plan-informed revision restores central lounge, fits five room bays each side, mirrors projecting stair-end treatment for PJH versus BRH/SBH, and keeps the ground lounge closed between two exterior lanes. Shared master reused by all3. White lower panels, lounge returns/mullions, upper-floor fins, North-only subtle formwork/screen textures, double-door handles/transoms. Geographic entrances/foundations/floor counts unchanged.
+The independent parking-stair prototype is disabled and archived at /home/danik/Backups/SFU-North-stair-prototype-20261016. Its exact connection to the corrected gallery requires a fresh placement audit; do not activate it based on the old transverse tunnel assumption.
 
-All9 user-selected photos individually reviewed and indexed. SBH identified from readable sign in PWL1001. Three official level2 plans visually reviewed; exact dimensions/ground opening layout remain estimated. Detailed evidence and uncertainty in PHASE2_NORTH_TOWER_REVIEW.md and PHASE2_NORTH_PLAN_AUDIT.md.
+## Preserved baseline
+Godot4.7.2 Standard, GDScript, Compatibility/OpenGL, Debian13 WSL2, GTX1650. Camera native capture/separate yaw and pitch is user-confirmed fixed: full turns, no blinking. Do not change. East/West Towers and approved townhouses unchanged. Terrain source data, smoothing, thresholds and coordinates preserved. No interiors, NPCs or online AI.
 
-Validation:166 physics checks pass, including two passage traversals per tower, solid columns and closed central lounge.333 continuous route checkpoints pass. Family/runtime preservation validators pass. Final plan-revision GPU capture completed on GTX1650 Compatibility; views8/9 inspected at eye level. No interiors/NPC/API.
-
-## Other architecture
-MCH renewed-envelope model and Courtyard precast model present; Courtyard lower-wing heights unresolved. Hamilton photo identity confirmed, detailed model pending. Dining/Shell distinct reference modeling pending. Exterior steps/paving/retaining detail remains incomplete.
-
-Next: finish North plan-revision visual checkpoint, then refine ground-level glazed frontage/courtyard paving and map sign/entrance positions from identified photos. Preserve coordinates and avoid claiming estimated ground geometry is surveyed.
-
-Most recent actual usage snapshot during this continuation:13% five-hour/2% weekly used after reset. Earlier91% weekly snapshot is obsolete. User explicitly authorized continuing; keep runnable checkpoints, heed a new actual warning if received.
-
-## Ground frontage/detail milestone
-Wider ground-floor side-wing glazing, separate paving material and courtyard apron follow source photographs without changing terrain or road coordinates. Added subtle exterior blind variation and North-only glazing tone, narrowed stair screen to a partial end assembly, and adjusted inner-corner glazing. Sign bands use dark lettering at existing mapped entries (exact photographic position remains unverified). Fixed HUD nearest-building lookup to use footprint distance: PJH door no longer says Hamilton Hall.166 physics checks pass, including this regression. Final GPU capture /tmp/north-detail-capture.log completed; views8-12 reviewed for courtyard, all3 entries and passage eye-level exit. No geometry collision changes since333-route pass. DYS architect gallery additionally confirms eight-storey towers and documents stair-glazing clamps; reference metadata saved. Next: stair-glazing clamp detail and evidence-based courtyard/site refinements, with exact curved lawn/stair placement still unresolved.
+## Next architecture
+After final North visual checkpoint: Hamilton Hall from handpicked photos. Two photos show matching grey four-storey siding/window-bay architecture, one has readable Hamilton Hall sign. The third photo (1726522313260.jpg) depicts a different modern facade and must not drive Hamilton modeling without identification. Hamilton currently still generic. Dining and Shell remain distinct-photo modeling backlog; Courtyard lower wings unresolved; MCH renewed model exists. Paving/curbs/parking stair connections need continued evidence-backed refinement.

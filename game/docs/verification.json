@@ -42,7 +42,7 @@
     },
     {
       "check": "PJH solid facade edges",
-      "evidence": "20/20",
+      "evidence": "25/25",
       "passed": true
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "check": "BRH solid facade edges",
-      "evidence": "22/22",
+      "evidence": "27/27",
       "passed": true
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "check": "SBH solid facade edges",
-      "evidence": "22/22",
+      "evidence": "27/27",
       "passed": true
     },
     {
@@ -406,108 +406,123 @@
       "passed": true
     },
     {
-      "check": "PJH passage clear at eye level",
+      "check": "PJH longitudinal gallery clear at eye level",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "PJH undercroft column is solid",
+      "check": "PJH courtyard column solid",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "PJH central lounge stays closed",
+      "check": "PJH rear residential boundary closed",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "PJH passage has overhead collision",
+      "check": "PJH gallery overhead collision",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "PJH passage capsule traversal",
-      "evidence": "(11.60716, 3.025092, -13.75819)",
+      "check": "PJH longitudinal capsule traversal false",
+      "evidence": "(30.43144, 2.877039, 3.418353)",
       "passed": true
     },
     {
-      "check": "PJH second passage clear at eye level",
+      "check": "PJH longitudinal capsule traversal true",
+      "evidence": "(-28.45388, 2.60414, -10.55848)",
+      "passed": true
+    },
+    {
+      "check": "BRH longitudinal gallery clear at eye level",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "PJH second passage reverse capsule traversal",
-      "evidence": "(-7.657886, 2.434253, -2.600511)",
-      "passed": true
-    },
-    {
-      "check": "BRH passage clear at eye level",
+      "check": "BRH courtyard column solid",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "BRH undercroft column is solid",
+      "check": "BRH rear residential boundary closed",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "BRH central lounge stays closed",
+      "check": "BRH gallery overhead collision",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "BRH passage has overhead collision",
+      "check": "BRH longitudinal capsule traversal false",
+      "evidence": "(102.6654, 6.030079, 20.58109)",
+      "passed": true
+    },
+    {
+      "check": "BRH longitudinal capsule traversal true",
+      "evidence": "(43.61199, 5.580877, 6.594115)",
+      "passed": true
+    },
+    {
+      "check": "SBH longitudinal gallery clear at eye level",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "BRH passage capsule traversal",
-      "evidence": "(83.75822, 6.335916, 3.349234)",
-      "passed": true
-    },
-    {
-      "check": "BRH second passage clear at eye level",
+      "check": "SBH courtyard column solid",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "BRH second passage reverse capsule traversal",
-      "evidence": "(64.57016, 5.816629, 14.51962)",
-      "passed": true
-    },
-    {
-      "check": "SBH passage clear at eye level",
+      "check": "SBH rear residential boundary closed",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "SBH undercroft column is solid",
+      "check": "SBH gallery overhead collision",
       "evidence": "",
       "passed": true
     },
     {
-      "check": "SBH central lounge stays closed",
-      "evidence": "",
+      "check": "SBH longitudinal capsule traversal false",
+      "evidence": "(174.2044, 7.445425, 37.36684)",
       "passed": true
     },
     {
-      "check": "SBH passage has overhead collision",
-      "evidence": "",
+      "check": "SBH longitudinal capsule traversal true",
+      "evidence": "(115.6222, 6.456358, 23.46015)",
       "passed": true
     },
     {
-      "check": "SBH passage capsule traversal",
-      "evidence": "(155.702, 7.183861, 20.31812)",
+      "check": "Continuous North row false reaches PJH",
+      "evidence": "(28.92901, 2.628873, 2.997017)",
       "passed": true
     },
     {
-      "check": "SBH second passage clear at eye level",
-      "evidence": "",
+      "check": "Continuous North row false reaches BRH",
+      "evidence": "(101.1322, 5.971784, 20.15244)",
       "passed": true
     },
     {
-      "check": "SBH second passage reverse capsule traversal",
-      "evidence": "(136.3848, 6.489423, 31.42642)",
+      "check": "Continuous North row false reaches SBH",
+      "evidence": "(173.0462, 6.964489, 37.02591)",
+      "passed": true
+    },
+    {
+      "check": "Continuous North row true reaches SBH",
+      "evidence": "(117.1695, 6.467208, 23.8919)",
+      "passed": true
+    },
+    {
+      "check": "Continuous North row true reaches BRH",
+      "evidence": "(45.23834, 5.819768, 7.043721)",
+      "passed": true
+    },
+    {
+      "check": "Continuous North row true reaches PJH",
+      "evidence": "(-26.93251, 2.511935, -10.13194)",
       "passed": true
     },
     {
@@ -617,7 +632,7 @@
     },
     {
       "check": "PJH North master edit propagates",
-      "evidence": "[364, 285]",
+      "evidence": "[359, 282]",
       "passed": true
     },
     {
@@ -632,7 +647,7 @@
     },
     {
       "check": "BRH North master edit propagates",
-      "evidence": "[356, 285]",
+      "evidence": "[352, 282]",
       "passed": true
     },
     {
@@ -647,7 +662,7 @@
     },
     {
       "check": "SBH North master edit propagates",
-      "evidence": "[356, 285]",
+      "evidence": "[352, 282]",
       "passed": true
     },
     {

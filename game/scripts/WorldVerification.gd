@@ -56,37 +56,51 @@ func run() -> void:
 			edge_count+=1
 			if not ray(center+direction*0.4,center-direction*0.4).is_empty(): edge_hits+=1
 		check(data.id+" solid facade edges",edge_count==edge_hits,"%d/%d"%[edge_hits,edge_count])
-	# Passages are exterior circulation: test both visibility and actual capsule traversal.
+	# Longitudinal exterior gallery: both directions through each existing footprint.
 	for id in ["PJH","BRH","SBH"]:
-		var building: Node3D=world.get_node("Buildings/"+id)
-		var passage: Dictionary=building.get_meta("exterior_passage")
-		var start: Vector3=passage.start-passage.axis*0.8+passage.side*8.0
-		var end: Vector3=passage.end+passage.axis*0.8+passage.side*8.0
-		check(id+" passage clear at eye level",ray(start+Vector3.UP*1.68,end+Vector3.UP*1.68).is_empty())
-		var column: Vector3=passage.start+passage.side*4.0+passage.axis*0.3+Vector3.UP*1.4
-		check(id+" undercroft column is solid",not ray(column-passage.side,column+passage.side).is_empty())
+		var passage: Dictionary=world.get_node("Buildings/"+id).get_meta("exterior_passage")
+		var start: Vector3=passage.gallery_start-passage.side*0.8
+		var end: Vector3=passage.gallery_end+passage.side*0.8
+		check(id+" longitudinal gallery clear at eye level",ray(start+Vector3.UP*1.68,end+Vector3.UP*1.68).is_empty())
+		var column: Vector3=passage.start+passage.side*2.8-passage.axis*0.15+Vector3.UP*1.4
+		check(id+" courtyard column solid",not ray(column-passage.side,column+passage.side).is_empty())
 		var mid: Vector3=(start+end)*0.5
-		check(id+" central lounge stays closed",not ray(passage.start-passage.axis+Vector3.UP*1.4,passage.end+passage.axis+Vector3.UP*1.4).is_empty())
-		check(id+" passage has overhead collision",not ray(mid+Vector3.UP*1.68,mid+Vector3.UP*3.5).is_empty())
-		player.position=start+Vector3.UP*0.3
+		check(id+" rear residential boundary closed",not ray(mid+Vector3.UP*1.4,mid+passage.axis*3+Vector3.UP*1.4).is_empty())
+		check(id+" gallery overhead collision",not ray(mid+Vector3.UP*1.68,mid+Vector3.UP*3.5).is_empty())
+		for reverse in [false,true]:
+			var origin: Vector3=end if reverse else start
+			var direction: Vector3=-passage.side if reverse else passage.side
+			player.position=Geo.point([origin.x,origin.z],0.3)
+			player.velocity=Vector3.ZERO
+			player.pivot.rotation=Vector3(0,atan2(-direction.x,-direction.z),0)
+			await frames(30)
+			Input.action_press("move_forward")
+			await frames(int((passage.length+1.6)/4.5*60)+12)
+			Input.action_release("move_forward")
+			check(id+" longitudinal capsule traversal "+str(reverse),(player.position-origin).dot(direction)>passage.length+1.3 and player.is_on_floor(),str(player.position))
+	# Walk continuously through all three buildings, including the graded links.
+	for ids in [["PJH","BRH","SBH"],["SBH","BRH","PJH"]]:
+		var reverse: bool=ids[0]=="SBH"
+		var first: Dictionary=world.get_node("Buildings/"+ids[0]).get_meta("exterior_passage")
+		var origin: Vector3=first.gallery_end if reverse else first.gallery_start
+		player.position=Geo.point([origin.x,origin.z],0.3)
 		player.velocity=Vector3.ZERO
-		player.pivot.rotation=Vector3(0,atan2(-passage.axis.x,-passage.axis.z),0)
 		await frames(30)
-		Input.action_press("move_forward")
-		await frames(int((passage.length+1.6)/4.5*60)+12)
-		Input.action_release("move_forward")
-		check(id+" passage capsule traversal",(player.position-start).dot(passage.axis)>passage.length+1.3 and player.is_on_floor(),str(player.position))
-		var reverse_start: Vector3=passage.end+passage.axis*0.8-passage.side*8.0
-		var reverse_end: Vector3=passage.start-passage.axis*0.8-passage.side*8.0
-		check(id+" second passage clear at eye level",ray(reverse_start+Vector3.UP*1.68,reverse_end+Vector3.UP*1.68).is_empty())
-		player.position=reverse_start+Vector3.UP*0.3
-		player.velocity=Vector3.ZERO
-		player.pivot.rotation=Vector3(0,atan2(passage.axis.x,passage.axis.z),0)
-		await frames(30)
-		Input.action_press("move_forward")
-		await frames(int((passage.length+1.6)/4.5*60)+12)
-		Input.action_release("move_forward")
-		check(id+" second passage reverse capsule traversal",(reverse_start-player.position).dot(passage.axis)>passage.length+1.3 and player.is_on_floor(),str(player.position))
+		for id in ids:
+			var passage: Dictionary=world.get_node("Buildings/"+id).get_meta("exterior_passage")
+			var target: Vector3=passage.gallery_start if reverse else passage.gallery_end
+			var reached:=false
+			Input.action_press("move_forward")
+			for frame in 1600:
+				var delta: Vector3=target-player.position
+				delta.y=0
+				if delta.length()<0.35:
+					reached=true
+					break
+				player.pivot.rotation.y=atan2(-delta.x,-delta.z)
+				await frames(1)
+			Input.action_release("move_forward")
+			check("Continuous North row "+str(reverse)+" reaches "+id,reached and player.is_on_floor(),str(player.position))
 	# Use an unobstructed part of Field 4 edge for reproducible movement checks.
 	player.position=Geo.point([-25,110],0.3)
 	player.velocity=Vector3.ZERO

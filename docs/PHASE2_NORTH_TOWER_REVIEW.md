@@ -1,3 +1,5 @@
+> CORRECTION 2026-10-16: User confirmed a continuous LONGITUDINAL gallery under the long courtyard-facing wing, linking PJH–BRH–SBH. Previous north–south two-lane passage interpretation is rejected. Ground-floor dimensions and inter-building connection details remain estimated. Implementation and tests are being corrected; previous passage passes do not validate the correct layout. Hamilton Hall follows this correction.
+
 # North Tower refinement — current 2026-10-16 checkpoint
 
 ## User direction and reference review

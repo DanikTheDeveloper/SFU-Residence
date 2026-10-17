@@ -32,6 +32,7 @@ func _ready() -> void:
 	preload("res://scripts/SurfaceController.gd").build(self,paths)
 	var buildings := group_node("Buildings")
 	for data in registry: Buildings.build(buildings,data)
+	preload("res://scripts/NorthTowerPassage.gd").connect_row(self)
 	vegetation=group_node("Vegetation")
 	build_landscape()
 	preload("res://scripts/SiteDetails.gd").build(self)
@@ -231,7 +232,7 @@ func capture_views() -> void:
 	for id in ["PJH","SBH"]:
 		var entry_data: Dictionary=get_node("Buildings/"+id).get_meta("building")
 		views.append([Geo.point(entry_data.outdoor_anchor,1.68),Geo.point(entry_data.entrance,1.5)])
-	views.append([passage.start+passage.side*8.0+passage.axis*(passage.length*0.4)+Vector3.UP*1.68,passage.end+passage.side*8.0+Vector3.UP*1.68])
+	views.append([passage.gallery_start+passage.side*2+Vector3.UP*1.68,passage.gallery_end+Vector3.UP*1.68])
 	add_child(capture)
 	capture.far=1200
 	capture.fov=72

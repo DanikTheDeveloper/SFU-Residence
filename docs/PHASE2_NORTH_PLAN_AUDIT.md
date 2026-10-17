@@ -1,3 +1,5 @@
+> CORRECTION 2026-10-16: User confirmed a continuous LONGITUDINAL gallery under the long courtyard-facing wing, linking PJH–BRH–SBH. Previous north–south two-lane passage interpretation is rejected. Ground-floor dimensions and inter-building connection details remain estimated. Implementation and tests are being corrected; previous passage passes do not validate the correct layout. Hamilton Hall follows this correction.
+
 # North Tower plan-to-model audit — 2026-10-16
 
 Public SFU plans reviewed visually using existing bundled Poppler, no installation. Three PDFs, PDF page2 (level2) for each. Private research copies: Windows Temp/sfu-north-plan-review. URLs and rights are recorded in the North photo folder's ONLINE_REFERENCES.json. PDFs are approximate illustrations, not surveyed construction drawings.

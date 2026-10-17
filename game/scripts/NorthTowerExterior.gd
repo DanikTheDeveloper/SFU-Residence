@@ -40,6 +40,10 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 			for level in int(data.floors):
 				var center:=a+tangent*glass_along+Vector3.UP*((level+0.5)*story)
 				kit.window(center,tangent,normal,1.9,story-0.12,yaw,true,"white_frame")
+				# Small metal glass-clamp plates visible in the architect's stair detail.
+				for side_sign in [-1,1]:
+					for height_sign in [-1,1]:
+						kit.part("white_frame",center+tangent*side_sign*0.91+Vector3.UP*height_sign*story*0.28+normal*0.23,Vector3(0.10,0.10,0.025),yaw)
 				if projecting_end:
 					kit.part("concrete",a+tangent*(glass_along+screen_along)*0.5+Vector3.UP*(level*story)+normal*0.24,Vector3(5.7,0.10,0.48),yaw)
 			for position in [a,a+edge]:
@@ -70,7 +74,7 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 			for level in int(data.floors):
 				# Omit ground-level modules at the real opening, including projecting fins.
 				if level==0 and absf((mid-door).dot(tangent))<spacing*0.5+1.3 and absf((mid-door).dot(normal))<0.4: continue
-				if level==0 and not lounge and Passage.interval(mid-tangent*spacing*0.5,mid+tangent*spacing*0.5,passage,0.35).x>=0: continue
+				if level==0 and Passage.interval(mid-tangent*spacing*0.5,mid+tangent*spacing*0.5,passage,0.35).x>=0: continue
 				var window_width: float=spacing*0.88 if inner_wing and level==0 else width
 				var wh: float=story-0.75 if narrow else 2.05
 				if inner_wing and level==0: wh=1.4
