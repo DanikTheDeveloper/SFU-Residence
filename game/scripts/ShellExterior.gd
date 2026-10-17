@@ -43,6 +43,18 @@ static func build(root: Node3D,data: Dictionary,points: Array,base: float,height
 		var tangent:=edge/length
 		var normal:=Vector3.UP.cross(tangent)
 		var yaw: float=-atan2(edge.z,edge.x)
+		# Close small grade gaps below projecting facade bands without moving the pad.
+		var skirt:=PackedVector3Array()
+		var segments:=maxi(1,int(ceil(length)))
+		for segment in segments:
+			var left: Vector3=a+edge*(float(segment)/segments)+normal*0.28
+			var right: Vector3=a+edge*(float(segment+1)/segments)+normal*0.28
+			var bottom_left:=Vector3(left.x,minf(base-0.05,Geo.elevation(left.x,left.z)-0.05),left.z)
+			var bottom_right:=Vector3(right.x,minf(base-0.05,Geo.elevation(right.x,right.z)-0.05),right.z)
+			left.y=base+0.20
+			right.y=base+0.20
+			skirt.append_array([bottom_left,right,bottom_right,bottom_left,left,right])
+		Geo.mesh_from_vertices(root,skirt,material("concrete"),true).name="ShellGradeStem"
 		kit.part("concrete",a+edge*0.5+Vector3.UP*(height+0.1)+normal*0.25,Vector3(length+0.1,0.30,0.85),yaw)
 		kit.part("frame",a+edge*0.5+Vector3.UP*(height+0.27)+normal*0.25,Vector3(length+0.1,0.045,0.9),yaw)
 		if length<3: continue
