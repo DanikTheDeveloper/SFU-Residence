@@ -1,0 +1,13 @@
+[
+  {
+    "building": "Hamilton Hall",
+    "source_url": "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/hamilton_hall/Hamilton_Hall_FloorPlan.pdf",
+    "source": "Official SFU Residence and Housing linked floor plan",
+    "local_filename": null,
+    "date": null,
+    "viewpoint": "Level2 plan, north explicitly toward Towers",
+    "observations": "Central north projection, narrow end wings and alternating room projections; levels2\u20134 supplied, no ground plan. Supports central north massing; exact ground doorway inferred by combining with user sign photo. Not a measured survey.",
+    "licensing": "SFU copyright; reference only, not redistributed. Temporary PDF render outside repository.",
+    "confidence": "HIGH building identity and orientation; MEDIUM ground-entry inference"
+  }
+]

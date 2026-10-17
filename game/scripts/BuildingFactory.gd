@@ -87,6 +87,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	if data.type in ["modern_tower","north_tower"]:
 		body_mat=preload("res://scripts/FacadeKit.gd").material("reveal")
 	if data.type=="north_tower": body_mat=preload("res://scripts/NorthTowerMaterials.gd").material("concrete")
+	if data.id=="HAM": body_mat=preload("res://scripts/HamiltonExterior.gd").material("stucco")
 	if data.id=="MCH": body_mat=preload("res://scripts/McTaggartExterior.gd").brick_material()
 	if data.id=="CYR": body_mat=preload("res://scripts/CourtyardExterior.gd").material("reveal")
 	var wall_mesh := Geo.mesh_from_vertices(root,walls,body_mat,true)
@@ -101,6 +102,8 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		preload("res://scripts/TownhouseBlockExterior.gd").build(root,data,points,base,height)
 		accent_mat=preload("res://scripts/FacadeKit.gd").material("white_frame")
 		glass_mat=preload("res://scripts/FacadeKit.gd").material("orange")
+	elif data.id=="HAM":
+		preload("res://scripts/HamiltonExterior.gd").build(root,data,points,base,height)
 	elif data.id=="MCH":
 		preload("res://scripts/McTaggartExterior.gd").build(root,data,points,base,height)
 		accent_mat=Geo.material(Color("aab0b5"))
@@ -119,7 +122,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	var normal := (anchor-door).normalized()
 	normal.y=0
 	var door_yaw := atan2(normal.x,normal.z)
-	if data.type not in ["townhouse","north_tower"]:
+	if data.type not in ["townhouse","north_tower"] and data.id!="HAM":
 		var door_mesh := Geo.box(root,door+Vector3.UP*1.15+normal*0.15,Vector3(2.1,2.3,0.16),glass_mat)
 		door_mesh.rotation.y=door_yaw
 		var canopy := Geo.box(root,door+Vector3.UP*2.85+normal*0.9,Vector3(3.6,0.22,2.1),accent_mat,true)
@@ -142,6 +145,17 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		label.modulate=Color("29312f")
 		label.outline_size=0
 		label.font_size=32
+		label.pixel_size=0.009
+	if data.id=="HAM":
+		door=root.get_meta("photo_entrance")
+		normal=root.get_meta("photo_entrance_normal")
+		door_yaw=atan2(normal.x,normal.z)
+		var plaque:=Geo.box(root,door+Vector3.UP*3.0+normal*1.92,Vector3(3.2,0.4,0.06),preload("res://scripts/HamiltonExterior.gd").material("white_frame"))
+		plaque.rotation.y=door_yaw
+		label.position=door+Vector3.UP*3.0+normal*1.965
+		label.modulate=Color("263633")
+		label.outline_size=0
+		label.font_size=28
 		label.pixel_size=0.009
 	if data.id=="MCH": label.position=door+Vector3.UP*2.88+normal*2.0
 	label.rotation.y=door_yaw

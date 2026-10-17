@@ -82,6 +82,10 @@ PASS SQU anchor outside
 PASS SQU ground 
 PASS SQU stable player 
 PASS SQU solid facade edges 13/13
+PASS Hamilton primary portico faces north 
+PASS Hamilton exterior entry remains closed 
+PASS Hamilton portico overhead solid 
+PASS Hamilton separate four-floor master 
 PASS PJH longitudinal gallery clear at eye level 
 PASS PJH courtyard column solid 
 PASS PJH rear residential boundary closed 
@@ -171,4 +175,4 @@ PASS Courtyard uses distinct precast master
 PASS Courtyard preserves eleven-floor registry 
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=169 failures=0
+VERIFICATION_COMPLETE checks=173 failures=0

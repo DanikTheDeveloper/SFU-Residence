@@ -406,6 +406,26 @@
       "passed": true
     },
     {
+      "check": "Hamilton primary portico faces north",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Hamilton exterior entry remains closed",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Hamilton portico overhead solid",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Hamilton separate four-floor master",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "PJH longitudinal gallery clear at eye level",
       "evidence": "",
       "passed": true

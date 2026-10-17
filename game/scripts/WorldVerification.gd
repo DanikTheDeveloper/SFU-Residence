@@ -56,6 +56,13 @@ func run() -> void:
 			edge_count+=1
 			if not ray(center+direction*0.4,center-direction*0.4).is_empty(): edge_hits+=1
 		check(data.id+" solid facade edges",edge_count==edge_hits,"%d/%d"%[edge_hits,edge_count])
+	var hamilton: Node3D=world.get_node("Buildings/HAM")
+	var ham_door: Vector3=hamilton.get_meta("photo_entrance")
+	var ham_normal: Vector3=hamilton.get_meta("photo_entrance_normal")
+	check("Hamilton primary portico faces north",ham_normal.z < -0.9)
+	check("Hamilton exterior entry remains closed",not ray(ham_door+ham_normal+Vector3.UP*1.4,ham_door-ham_normal+Vector3.UP*1.4).is_empty())
+	check("Hamilton portico overhead solid",not ray(ham_door+ham_normal*1.5+Vector3.UP*1.68,ham_door+ham_normal*1.5+Vector3.UP*3.5).is_empty())
+	check("Hamilton separate four-floor master",hamilton.get_meta("family_master")=="res://scripts/HamiltonExterior.gd" and hamilton.get_meta("floor_count")==4)
 	# Longitudinal exterior gallery: both directions through each existing footprint.
 	for id in ["PJH","BRH","SBH"]:
 		var passage: Dictionary=world.get_node("Buildings/"+id).get_meta("exterior_passage")

@@ -1,0 +1,38 @@
+[
+  {
+    "building": "Hamilton Hall",
+    "local_filename": "1638917139878.jpg",
+    "source": "User-selected local photograph",
+    "source_url": null,
+    "photograph_date": null,
+    "viewpoint": "Exact compass orientation unconfirmed",
+    "observations": "Four storeys; light grey horizontal siding on projecting paired-window stacks; grey stucco central wall; white/aluminium frames, lower horizontal transoms and narrow operable lights; broad flat grey entry portico on slender square columns; grey/brown rectangular paving with pale bands.",
+    "license": "Unknown; reference-only. No photo pixels used in shipped game materials.",
+    "identity_confidence": "HIGH: readable Hamilton Hall sign",
+    "sha256": "0bee94207d65a2890896ea9c5784513263807a21932dda67453545e594ed843c"
+  },
+  {
+    "building": "Hamilton Hall",
+    "local_filename": "1726522334676.jpg",
+    "source": "User-selected local photograph",
+    "source_url": null,
+    "photograph_date": null,
+    "viewpoint": "Exact compass orientation unconfirmed",
+    "observations": "Four-storey paired projecting window stacks; vertical recessed strips/sidelights; light grey siding; grey end wall; dark fascia/overhang/gutter; low grey stone base. Pavers and pale transverse bands.",
+    "license": "Unknown; reference-only. No photo pixels used in shipped game materials.",
+    "identity_confidence": "HIGH: matches sign-identified photo and entry canopy",
+    "sha256": "bdeabe7a30a425cda974e9e6781b9e6084d3deb8c017fd24f385431ab83c032d"
+  },
+  {
+    "building": "Unidentified modern residence",
+    "local_filename": "1726522313260.jpg",
+    "source": "User-selected local photograph",
+    "source_url": null,
+    "photograph_date": null,
+    "viewpoint": "Exact compass orientation unconfirmed",
+    "observations": "Different modern facade: small staggered windows, tall white siding wall, dark lower wing and large external stair. Folder membership alone does not establish Hamilton identity. Preserve file; do not apply its geometry to Hamilton.",
+    "license": "Unknown; reference-only. No photo pixels used in shipped game materials.",
+    "identity_confidence": "UNCONFIRMED / EXCLUDED from Hamilton modeling",
+    "sha256": "1ed51b6069353719a01fce22118812779759d97a803e82f733f998a0ed26360e"
+  }
+]
