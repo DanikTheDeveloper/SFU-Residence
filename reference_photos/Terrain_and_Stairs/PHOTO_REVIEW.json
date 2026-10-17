@@ -1,0 +1,58 @@
+[
+  {
+    "area": "Shadbolt House, identifiable by sign",
+    "local_filename": "PWL-SFU-Residences-Phase-1-1001.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Eye-level stair approach",
+    "observations": [
+      "Concrete straight stair, light sidewalls, silver handrails, inset step lighting",
+      "Grey rectangular running-bond pavers at approach, planting beds on sides",
+      "Exact stair location and height relative to corrected gallery not yet surveyed"
+    ],
+    "identity_confidence": "High for precinct; per-image limits described above",
+    "licensing": "User-supplied references; copyright not licensed for shipping. No image pixels used in game."
+  },
+  {
+    "area": "Modern East/West family; individual tower unresolved",
+    "local_filename": "PWL-SFU-Residences-Phase-1-1025.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Courtyard near glazed connector",
+    "observations": [
+      "Charcoal open-frame light column",
+      "Low concrete edge, mixed sedge and fern planting",
+      "Modern building model remains frozen"
+    ],
+    "identity_confidence": "High for precinct; per-image limits described above",
+    "licensing": "User-supplied references; copyright not licensed for shipping. No image pixels used in game."
+  },
+  {
+    "area": "Residence landscape; exact location unresolved",
+    "local_filename": "PWL-SFU-Residences-Phase-1-1029.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Paving close-up",
+    "observations": [
+      "Grey rectangular staggered pavers of several tones",
+      "Light concrete planter edge and black linear drain",
+      "Reeds/sedges in bed; do not infer exact planting species"
+    ],
+    "identity_confidence": "High for precinct; per-image limits described above",
+    "licensing": "User-supplied references; copyright not licensed for shipping. No image pixels used in game."
+  },
+  {
+    "area": "Residence precinct overview",
+    "local_filename": "PWL-SFU-Residences-Phase-1-1068.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Aerial",
+    "observations": [
+      "North Towers behind modern towers, older Dining at right",
+      "Terraced courtyard planting and broad circulation",
+      "Aerial source era precedes completed northern Dining extension; do not replace current footprint"
+    ],
+    "identity_confidence": "High for precinct; per-image limits described above",
+    "licensing": "User-supplied references; copyright not licensed for shipping. No image pixels used in game."
+  }
+]

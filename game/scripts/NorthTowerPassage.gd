@@ -89,7 +89,11 @@ static func pave(root: Node3D,a: Vector3,b: Vector3,width: float,title: String) 
 	var side:=Vector3(tangent.z,0,-tangent.x).normalized()*width*0.5
 	var polygon: Array=[]
 	for corner in [a-side,b-side,b+side,a+side]: polygon.append([corner.x,corner.z])
-	Geo.polygon(root,polygon,preload("res://scripts/NorthTowerMaterials.gd").material("paving"),0.025).name=title
+	var pavers=preload("res://scripts/ResidencePavers.gd")
+	var mat: Material=pavers.material() if title=="CourtyardApron" else preload("res://scripts/NorthTowerMaterials.gd").material("paving")
+	var node:=Geo.polygon(root,polygon,mat,0.025)
+	node.name=title
+	if title=="CourtyardApron": pavers.align(node,a,tangent)
 
 static func connect_row(world: Node3D) -> void:
 	var root:=Node3D.new()

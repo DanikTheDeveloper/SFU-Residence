@@ -53,7 +53,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -152,6 +152,7 @@ func build_landscape() -> void:
 	cone.height=1
 	cone.radial_segments=9
 	Geo.instances(vegetation,pines,Geo.material(Color("365b48")),cone,500)
+	var photo_lights=preload("res://scripts/CourtyardLighting.gd").new()
 	var poles: Array[Transform3D]=[]
 	var lamps: Array[Transform3D]=[]
 	var seats: Array[Transform3D]=[]
@@ -165,12 +166,21 @@ func build_landscape() -> void:
 		var p: Vector3 = (a+b)*0.5+side*(road.width*0.5+0.8)
 		p.y=Geo.elevation(p.x,p.z)
 		if inside_building(Vector2(p.x,p.z),1): continue
-		poles.append(Geo.transform(p+Vector3.UP*2,Vector3(0.12,4,0.12)))
-		lamps.append(Geo.transform(p+Vector3.UP*4,Vector3(0.65,0.16,0.65)))
+		var courtyard_fixture:=false
+		for building in registry:
+			if building.id not in ["EAT","WET"]: continue
+			var centre:=Vector2(building.centroid[0],building.centroid[1])
+			if centre.distance_to(Vector2(p.x,p.z))<45.0: courtyard_fixture=true
+		if courtyard_fixture:
+			photo_lights.append(p,b-a)
+		else:
+			poles.append(Geo.transform(p+Vector3.UP*2,Vector3(0.12,4,0.12)))
+			lamps.append(Geo.transform(p+Vector3.UP*4,Vector3(0.65,0.16,0.65)))
 		if i%21==0:
 			var yaw := -atan2((b-a).z,(b-a).x)
 			seats.append(Geo.transform(p+Vector3(1,0.48,0),Vector3(1.7,0.16,0.5),yaw))
 			backs.append(Geo.transform(p+Vector3(1,0.8,0.22),Vector3(1.7,0.5,0.10),yaw))
+	photo_lights.finish(props)
 	Geo.instances(props,poles,Geo.material(Color("3c4849")),null,200)
 	Geo.instances(props,lamps,Geo.material(Color("e6d9b5")),null,200)
 	Geo.instances(props,seats,Geo.material(Color("9f7950")),null,180)
@@ -211,6 +221,9 @@ func _process(_delta: float) -> void:
 	if player and not Geo.contains_point(Vector2(player.position.x,player.position.z),boundary): player.reset("boundary")
 
 func capture_views() -> void:
+	var capture_kind: String=""
+	for kind in ["north","hamilton","shell","dining","landscape"]:
+		if ("--capture-"+kind) in OS.get_cmdline_user_args(): capture_kind=kind
 	DisplayServer.window_set_title("SFU automated screenshot capture - controls disabled")
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
 	for frame in 40: await get_tree().physics_frame
@@ -233,6 +246,17 @@ func capture_views() -> void:
 		var entry_data: Dictionary=get_node("Buildings/"+id).get_meta("building")
 		views.append([Geo.point(entry_data.outdoor_anchor,1.68),Geo.point(entry_data.entrance,1.5)])
 	views.append([passage.gallery_start+passage.side*2+Vector3.UP*1.68,passage.gallery_end+Vector3.UP*1.68])
+	if capture_kind in ["north","landscape"]:
+		var apron_eye: Vector3=passage.start-passage.axis*1.6+passage.side*7
+		apron_eye.y=Geo.elevation(apron_eye.x,apron_eye.z)+1.68
+		var apron_target: Vector3=passage.start-passage.axis*1.6+passage.side*3
+		apron_target.y=Geo.elevation(apron_target.x,apron_target.z)
+		views.append([apron_eye,apron_target])
+		var fixture: MultiMeshInstance3D=get_node("Props/PhotoCourtyardLightFrames")
+		var light_base: Vector3=fixture.multimesh.get_instance_transform(0).origin-Vector3.UP*0.95
+		var light_eye: Vector3=light_base+Vector3(3,0,3)
+		light_eye.y=Geo.elevation(light_eye.x,light_eye.z)+1.68
+		views.append([light_eye,light_base+Vector3.UP*1.9])
 	if "--capture-hamilton" in OS.get_cmdline_user_args():
 		views=[[Geo.point([42,49],1.68),Geo.point([30.437,43.0935],4.8)],[Geo.point([-5,70],1.68),Geo.point([-4,44],5.0)],[Geo.point([5,9],1.68),Geo.point([1.345,23.6235],4.0)]]
 		var ham: Node3D=get_node("Buildings/HAM")
@@ -245,6 +269,7 @@ func capture_views() -> void:
 		views=[[Geo.point([245,146],1.68),Geo.point([253,136.6],4.0)],[Geo.point([242,103],1.68),Geo.point([260,100],5.0)],[Geo.point([286,97],1.68),Geo.point([273,96],5.0)]]
 	if "--capture-dining" in OS.get_cmdline_user_args():
 		views=[[Geo.point([171,11],1.68),Geo.point([186,17],5.0)],[Geo.point([216,-9],1.68),Geo.point([215,8],5.0)],[Geo.point([250,62],1.68),Geo.point([237,55],5.0)],[Geo.point([205,76],1.68),Geo.point([210,58],5.0)]]
+	if capture_kind=="landscape": views=views.slice(13)
 	add_child(capture)
 	capture.far=1200
 	capture.fov=72
@@ -264,7 +289,7 @@ func capture_views() -> void:
 		frame_times.sort()
 		measurements.append({"view":i,"camera_xyz":[capture.position.x,capture.position.y,capture.position.z],"look_at":[views[i][1].x,views[i][1].y,views[i][1].z],"viewport_size":[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y],"fov":capture.fov,"eye_height_m":1.68,"fps_mean":90.0/((Time.get_ticks_usec()-start)/1000000.0),"frame_ms_p95":frame_times[85],"draw_calls":Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME)})
 		await RenderingServer.frame_post_draw
-		get_viewport().get_texture().get_image().save_png(("res://docs/screenshots/dining_%d.png" if "--capture-dining" in OS.get_cmdline_user_args() else "res://docs/screenshots/shell_%d.png" if "--capture-shell" in OS.get_cmdline_user_args() else "res://docs/screenshots/hamilton_%d.png" if "--capture-hamilton" in OS.get_cmdline_user_args() else "res://docs/screenshots/view_%d.png")%i)
+		get_viewport().get_texture().get_image().save_png("res://docs/screenshots/%s_%d.png"%["view" if capture_kind in ["","north"] else capture_kind,i])
 	overview.current=true
 	map_mode=true
 	for label in get_tree().get_nodes_in_group("building_labels"):
@@ -280,7 +305,7 @@ func capture_views() -> void:
 	for frame in 40: await get_tree().process_frame
 	await RenderingServer.frame_post_draw
 	get_viewport().get_texture().get_image().save_png("res://docs/screenshots/player_view.png")
-	var report:=FileAccess.open("res://docs/performance_dining.json" if "--capture-dining" in OS.get_cmdline_user_args() else "res://docs/performance_shell.json" if "--capture-shell" in OS.get_cmdline_user_args() else "res://docs/performance_hamilton.json" if "--capture-hamilton" in OS.get_cmdline_user_args() else "res://docs/performance_north.json" if "--capture-north" in OS.get_cmdline_user_args() else "res://docs/performance.json",FileAccess.WRITE)
+	var report:=FileAccess.open("res://docs/performance%s.json"%("" if capture_kind=="" else "_"+capture_kind),FileAccess.WRITE)
 	report.store_string(JSON.stringify({"device":RenderingServer.get_video_adapter_name(),"renderer":RenderingServer.get_current_rendering_method(),"resolution":[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y],"tier":"medium","samples":measurements},"  "))
 	print("CAPTURE_COMPLETE fps=",Engine.get_frames_per_second()," draws=",Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
 	get_tree().quit()
