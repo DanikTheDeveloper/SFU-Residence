@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3814958 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <way id="24275379" visible="true" version="13" changeset="186051551" timestamp="2026-07-20T10:19:10Z" user="PedestrianMapping_MapMasker" uid="23065612">
+  <nd ref="7212434764"/>
+  <nd ref="7674535387"/>
+  <nd ref="14028474998"/>
+  <nd ref="5992758862"/>
+  <nd ref="13202097188"/>
+  <nd ref="647478166"/>
+  <nd ref="262838293"/>
+  <nd ref="7212434763"/>
+  <nd ref="7212434762"/>
+  <nd ref="262838294"/>
+  <nd ref="7212434761"/>
+  <nd ref="262838295"/>
+  <nd ref="262838296"/>
+  <nd ref="262838297"/>
+  <nd ref="7674535389"/>
+  <nd ref="262838298"/>
+  <nd ref="8406304371"/>
+  <nd ref="262831397"/>
+  <tag k="highway" v="residential"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="name" v="West Campus Road"/>
+  <tag k="sidewalk:left" v="separate"/>
+  <tag k="sidewalk:right" v="no"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="24275382" visible="true" version="15" changeset="148386724" timestamp="2024-03-08T14:27:08Z" user="joel56dt" uid="3794090">
+  <nd ref="11704178831"/>
+  <nd ref="10784896034"/>
+  <nd ref="365785877"/>
+  <nd ref="9763101395"/>
+  <nd ref="262838326"/>
+  <nd ref="10785313474"/>
+  <tag k="highway" v="residential"/>
+  <tag k="name" v="Residence Lane"/>
+  <tag k="sidewalk:left" v="separate"/>
+  <tag k="sidewalk:right" v="no"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="31554543" visible="true" version="25" changeset="188933927" timestamp="2026-09-12T20:29:37Z" user="in2itivity" uid="23643298">
+  <nd ref="6907893550"/>
+  <nd ref="13202097186"/>
+  <nd ref="262831408"/>
+  <nd ref="262831407"/>
+  <nd ref="262831406"/>
+  <nd ref="262831405"/>
+  <nd ref="262831404"/>
+  <nd ref="262831402"/>
+  <nd ref="262831400"/>
+  <nd ref="7674362795"/>
+  <nd ref="262831399"/>
+  <tag k="cycleway:right" v="separate"/>
+  <tag k="highway" v="secondary"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lanes:backward" v="1"/>
+  <tag k="lanes:forward" v="1"/>
+  <tag k="lcn_ref" v="University Drive"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="50"/>
+  <tag k="name" v="University Drive West"/>
+  <tag k="sidewalk:left" v="no"/>
+  <tag k="sidewalk:right" v="separate"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="32528093" visible="true" version="4" changeset="134513284" timestamp="2023-04-04T21:01:12Z" user="Drunk501" uid="18673342">
+  <nd ref="365785877"/>
+  <nd ref="9763101393"/>
+  <nd ref="365785878"/>
+  <nd ref="365785879"/>
+  <nd ref="365785880"/>
+  <nd ref="365785881"/>
+  <nd ref="6127130667"/>
+  <nd ref="9763101380"/>
+  <nd ref="1014294901"/>
+  <tag k="highway" v="service"/>
+  <tag k="name" v="Terry Fox Lane"/>
+ </way>
+ <way id="32528097" visible="true" version="3" changeset="140828648" timestamp="2023-09-05T03:29:18Z" user="MuddyHikers" uid="577328">
+  <nd ref="7674534878"/>
+  <nd ref="365785899"/>
+  <nd ref="7674534834"/>
+  <nd ref="365785900"/>
+  <tag k="highway" v="service"/>
+  <tag k="service" v="parking_aisle"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="32528099" visible="true" version="2" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534879"/>
+  <nd ref="7674534880"/>
+  <nd ref="7674534881"/>
+  <nd ref="7674535385"/>
+  <nd ref="365785901"/>
+  <nd ref="365785903"/>
+  <tag k="highway" v="service"/>
+ </way>
+ <way id="32528100" visible="true" version="2" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534872"/>
+  <nd ref="365785905"/>
+  <nd ref="7674534871"/>
+  <nd ref="7674534844"/>
+  <nd ref="7674534876"/>
+  <nd ref="7674534852"/>
+  <nd ref="365785906"/>
+  <tag k="highway" v="service"/>
+ </way>
+ <way id="35195749" visible="true" version="7" changeset="172986940" timestamp="2025-10-08T06:09:21Z" user="maxwellward" uid="21854367">
+  <nd ref="647478166"/>
+  <nd ref="13202097187"/>
+  <nd ref="10785240996"/>
+  <nd ref="9071674964"/>
+  <tag k="highway" v="service"/>
+  <tag k="lanes" v="2"/>
+  <tag k="oneway" v="no"/>
+  <tag k="service" v="driveway"/>
+ </way>
+ <way id="40703187" visible="true" version="22" changeset="188933927" timestamp="2026-09-12T20:29:37Z" user="in2itivity" uid="23643298">
+  <nd ref="262831397"/>
+  <nd ref="393588137"/>
+  <nd ref="13199997027"/>
+  <nd ref="5932331241"/>
+  <nd ref="5932331242"/>
+  <nd ref="262831395"/>
+  <nd ref="262831394"/>
+  <nd ref="7674362796"/>
+  <nd ref="262831393"/>
+  <nd ref="7164735638"/>
+  <nd ref="262831392"/>
+  <nd ref="262831391"/>
+  <nd ref="262831390"/>
+  <nd ref="9747545173"/>
+  <nd ref="7674362797"/>
+  <nd ref="262831389"/>
+  <nd ref="262831387"/>
+  <nd ref="7674362798"/>
+  <nd ref="262831386"/>
+  <nd ref="7674362799"/>
+  <nd ref="262831385"/>
+  <nd ref="262831384"/>
+  <nd ref="262831383"/>
+  <nd ref="7674362800"/>
+  <nd ref="262831382"/>
+  <nd ref="262831381"/>
+  <nd ref="5328109523"/>
+  <nd ref="262831380"/>
+  <tag k="cycleway:right" v="separate"/>
+  <tag k="highway" v="secondary"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lcn_ref" v="University Drive"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="50"/>
+  <tag k="name" v="University Drive West"/>
+  <tag k="sidewalk:left" v="no"/>
+  <tag k="sidewalk:right" v="separate"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="71714695" visible="true" version="7" changeset="161401443" timestamp="2025-01-16T02:45:44Z" user="Drunk501" uid="18673342">
+  <nd ref="852566046"/>
+  <nd ref="852566077"/>
+  <nd ref="2053299947"/>
+  <nd ref="4727054001"/>
+  <nd ref="262831396"/>
+  <tag k="bicycle" v="yes"/>
+  <tag k="highway" v="cycleway"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="124680075" visible="true" version="7" changeset="184495516" timestamp="2026-06-23T22:58:22Z" user="Fleezing" uid="13837260">
+  <nd ref="412704739"/>
+  <nd ref="412712688"/>
+  <nd ref="7297894403"/>
+  <nd ref="9540346872"/>
+  <tag k="access" v="private"/>
+  <tag k="highway" v="service"/>
+  <tag k="service" v="parking_aisle"/>
+ </way>
+ <way id="328439085" visible="true" version="15" changeset="155207882" timestamp="2024-08-13T17:51:28Z" user="Vsert" uid="21839785">
+  <nd ref="262831396"/>
+  <nd ref="3352601616"/>
+  <nd ref="3352601615"/>
+  <nd ref="5932331238"/>
+  <nd ref="5932331239"/>
+  <nd ref="3352601614"/>
+  <nd ref="3352601613"/>
+  <nd ref="3352601612"/>
+  <nd ref="7164735643"/>
+  <nd ref="3352601611"/>
+  <nd ref="7307366267"/>
+  <nd ref="3352601610"/>
+  <nd ref="3352601609"/>
+  <nd ref="3352601608"/>
+  <nd ref="3352601607"/>
+  <nd ref="3352601606"/>
+  <nd ref="3352601605"/>
+  <nd ref="3352601604"/>
+  <nd ref="3352601603"/>
+  <nd ref="3793553559"/>
+  <nd ref="5328109528"/>
+  <nd ref="5328109527"/>
+  <nd ref="5328109526"/>
+  <nd ref="3793553568"/>
+  <nd ref="5328109525"/>
+  <nd ref="5328109524"/>
+  <nd ref="4112886691"/>
+  <tag k="bicycle" v="designated"/>
+  <tag k="foot" v="designated"/>
+  <tag k="highway" v="cycleway"/>
+  <tag k="segregated" v="no"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="width" v="1"/>
+ </way>
+ <way id="337913582" visible="true" version="8" changeset="174311701" timestamp="2025-11-07T00:03:00Z" user="joel56dt" uid="3794090">
+  <nd ref="4727054000"/>
+  <nd ref="488340347"/>
+  <nd ref="488340365"/>
+  <nd ref="13286339379"/>
+  <nd ref="488340377"/>
+  <nd ref="488340395"/>
+  <nd ref="488340414"/>
+  <nd ref="488340446"/>
+  <nd ref="488340481"/>
+  <nd ref="488340502"/>
+  <nd ref="6907893574"/>
+  <nd ref="6907910615"/>
+  <nd ref="488340526"/>
+  <nd ref="488340553"/>
+  <tag k="bicycle" v="designated"/>
+  <tag k="foot" v="designated"/>
+  <tag k="highway" v="cycleway"/>
+  <tag k="segregated" v="no"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="479634864" visible="true" version="3" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="366495763"/>
+  <nd ref="7674534836"/>
+  <nd ref="7674534839"/>
+  <nd ref="4730070481"/>
+  <nd ref="4727053944"/>
+  <nd ref="4727053945"/>
+  <nd ref="4727053946"/>
+  <nd ref="4727053947"/>
+  <nd ref="4727053948"/>
+  <nd ref="4727053959"/>
+  <nd ref="4727053958"/>
+  <nd ref="7674534797"/>
+  <nd ref="4727053956"/>
+  <nd ref="4727053955"/>
+  <nd ref="7674534875"/>
+  <nd ref="4727053964"/>
+  <nd ref="4727053965"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="479634865" visible="true" version="2" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053962"/>
+  <nd ref="4727053963"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="ground"/>
+ </way>
+ <way id="479634867" visible="true" version="2" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534859"/>
+  <nd ref="4727053970"/>
+  <nd ref="7674534860"/>
+  <nd ref="7674534829"/>
+  <nd ref="7674534828"/>
+  <nd ref="4727053971"/>
+  <nd ref="4727053966"/>
+  <nd ref="4727053967"/>
+  <nd ref="7674534861"/>
+  <nd ref="7674534864"/>
+  <nd ref="7674534863"/>
+  <nd ref="7674534816"/>
+  <nd ref="4727053975"/>
+  <nd ref="4727053976"/>
+  <nd ref="4727053977"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="479634870" visible="true" version="3" changeset="120146235" timestamp="2022-04-25T04:52:44Z" user="Fleezing" uid="13837260">
+  <nd ref="4727053983"/>
+  <nd ref="4727053979"/>
+  <nd ref="7674534803"/>
+  <nd ref="4727053980"/>
+  <nd ref="9691161913"/>
+  <nd ref="4727053981"/>
+  <nd ref="7674534802"/>
+  <nd ref="4727053982"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="479634871" visible="true" version="2" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534811"/>
+  <nd ref="7674534812"/>
+  <nd ref="7674534813"/>
+  <nd ref="4727053985"/>
+  <nd ref="4727053982"/>
+  <nd ref="4727053984"/>
+  <nd ref="4727053983"/>
+  <nd ref="7674534827"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="layer" v="-1"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="479634872" visible="true" version="2" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053984"/>
+  <nd ref="4727053973"/>
+  <nd ref="7674534865"/>
+  <nd ref="7674534815"/>
+  <nd ref="7674534819"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="479634873" visible="true" version="3" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534806"/>
+  <nd ref="7674534825"/>
+  <nd ref="4727053978"/>
+  <nd ref="7674534826"/>
+  <nd ref="7674534823"/>
+  <nd ref="7674534815"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="layer" v="-1"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="479634874" visible="true" version="3" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="7674534805"/>
+  <nd ref="7674534806"/>
+  <nd ref="4727053988"/>
+  <nd ref="7674534804"/>
+  <nd ref="7674534811"/>
+  <nd ref="7674534810"/>
+  <nd ref="7674534809"/>
+  <nd ref="4727053989"/>
+  <nd ref="7674534808"/>
+  <nd ref="9763101400"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="479634875" visible="true" version="3" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053990"/>
+  <nd ref="4727053991"/>
+  <nd ref="4727053992"/>
+  <nd ref="7674534807"/>
+  <nd ref="4727053993"/>
+  <nd ref="4727053994"/>
+  <nd ref="4727053995"/>
+  <nd ref="4727053996"/>
+  <nd ref="4727053997"/>
+  <nd ref="5932331240"/>
+  <nd ref="4727053998"/>
+  <nd ref="4727053999"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="479634876" visible="true" version="5" changeset="185156119" timestamp="2026-07-05T18:43:41Z" user="user_23928007" uid="23928007">
+  <nd ref="4727053999"/>
+  <nd ref="393588137"/>
+  <nd ref="13286339374"/>
+  <nd ref="4727054000"/>
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="crossing:island" v="no"/>
+  <tag k="crossing:markings" v="zebra"/>
+  <tag k="footway" v="crossing"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="479634877" visible="true" version="4" changeset="150603807" timestamp="2024-04-28T05:15:00Z" user="krmatthews" uid="11969358">
+  <nd ref="4727054000"/>
+  <nd ref="262831396"/>
+  <tag k="bicycle" v="designated"/>
+  <tag k="foot" v="designated"/>
+  <tag k="highway" v="cycleway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="628378714" visible="true" version="2" changeset="174311701" timestamp="2025-11-07T00:03:00Z" user="joel56dt" uid="3794090">
+  <nd ref="262831396"/>
+  <nd ref="5932331236"/>
+  <nd ref="13286339381"/>
+  <nd ref="365785798"/>
+  <nd ref="5932331238"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="635244850" visible="true" version="8" changeset="146619779" timestamp="2024-01-24T08:54:36Z" user="user_19686245" uid="19686245">
+  <nd ref="5992758862"/>
+  <nd ref="10785299801"/>
+  <nd ref="10785812709"/>
+  <nd ref="10784896033"/>
+  <nd ref="10785812710"/>
+  <nd ref="5992758863"/>
+  <nd ref="10785313467"/>
+  <nd ref="5992758865"/>
+  <nd ref="5992758866"/>
+  <tag k="highway" v="service"/>
+  <tag k="motor_vehicle" v="designated"/>
+ </way>
+ <way id="635244851" visible="true" version="6" changeset="136641159" timestamp="2023-05-28T00:56:33Z" user="Fleezing" uid="13837260">
+  <nd ref="1387002268"/>
+  <nd ref="10785691533"/>
+  <nd ref="1387002165"/>
+  <tag k="access" v="private"/>
+  <tag k="highway" v="service"/>
+ </way>
+ <way id="653815607" visible="true" version="2" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="6127137998"/>
+  <nd ref="9763101378"/>
+  <nd ref="6127137999"/>
+  <tag k="highway" v="steps"/>
+  <tag k="incline" v="down"/>
+ </way>
+ <way id="661676607" visible="true" version="4" changeset="134517133" timestamp="2023-04-05T00:12:48Z" user="Drunk501" uid="18673342">
+  <nd ref="1387002165"/>
+  <nd ref="6194563747"/>
+  <nd ref="6194563746"/>
+  <nd ref="7297894409"/>
+  <nd ref="7297894402"/>
+  <nd ref="9540184577"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="661676608" visible="true" version="3" changeset="134517133" timestamp="2023-04-05T00:12:48Z" user="Drunk501" uid="18673342">
+  <nd ref="6194563753"/>
+  <nd ref="6194563752"/>
+  <nd ref="6194563749"/>
+  <tag k="highway" v="footway"/>
+  <tag k="incline" v="up"/>
+ </way>
+ <way id="739612566" visible="true" version="5" changeset="145098464" timestamp="2023-12-14T07:37:40Z" user="liaofthebay" uid="20645397">
+  <nd ref="10785783085"/>
+  <nd ref="9271832162"/>
+  <nd ref="6925149273"/>
+  <nd ref="6925149268"/>
+  <tag k="covered" v="yes"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="concrete"/>
+ </way>
+ <way id="739612567" visible="true" version="3" changeset="145098464" timestamp="2023-12-14T07:43:51Z" user="liaofthebay" uid="20645397">
+  <nd ref="6925149264"/>
+  <nd ref="6925149271"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="concrete:plates"/>
+ </way>
+ <way id="767353627" visible="true" version="6" changeset="116002390" timestamp="2022-01-10T23:42:14Z" user="Fleezing" uid="13837260">
+  <nd ref="9071674966"/>
+  <nd ref="7674534882"/>
+  <nd ref="7674534883"/>
+  <tag k="highway" v="path"/>
+  <tag k="incline" v="down"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="771965048" visible="true" version="2" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534875"/>
+  <nd ref="7674534852"/>
+  <nd ref="4727053966"/>
+  <tag k="footway" v="crossing"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="781660331" visible="true" version="3" changeset="136641159" timestamp="2023-05-28T00:56:33Z" user="Fleezing" uid="13837260">
+  <nd ref="9540184577"/>
+  <nd ref="7297894408"/>
+  <nd ref="7297894407"/>
+  <nd ref="7297894406"/>
+  <nd ref="10932646395"/>
+  <nd ref="7297894400"/>
+  <nd ref="7297894405"/>
+  <nd ref="7297894404"/>
+  <nd ref="7297894403"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="782547533" visible="true" version="2" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="7307366269"/>
+  <nd ref="7307366270"/>
+  <nd ref="7307366271"/>
+  <nd ref="7307366272"/>
+  <nd ref="7307366273"/>
+  <tag k="highway" v="path"/>
+  <tag k="informal" v="yes"/>
+  <tag k="surface" v="dirt"/>
+ </way>
+ <way id="782547534" visible="true" version="3" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="7674534878"/>
+  <nd ref="7307366273"/>
+  <nd ref="9763101402"/>
+  <nd ref="7674534835"/>
+  <tag k="highway" v="path"/>
+  <tag k="surface" v="compacted"/>
+  <tag k="width" v="3"/>
+ </way>
+ <way id="782547535" visible="true" version="1" changeset="82366862" timestamp="2020-03-18T23:59:43Z" user="jerschwab" uid="23427">
+  <nd ref="7164735639"/>
+  <nd ref="7307366275"/>
+  <nd ref="4727053961"/>
+  <tag k="highway" v="path"/>
+ </way>
+ <way id="821940975" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053977"/>
+  <nd ref="4727053987"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940976" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053985"/>
+  <nd ref="4727053986"/>
+  <nd ref="7674534824"/>
+  <nd ref="7674534825"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="layer" v="-1"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940977" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053969"/>
+  <nd ref="4727053972"/>
+  <nd ref="4727053973"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940978" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534861"/>
+  <nd ref="7674534858"/>
+  <nd ref="7674534814"/>
+  <nd ref="4727053969"/>
+  <nd ref="7674534827"/>
+  <nd ref="7674534859"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940979" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534865"/>
+  <nd ref="7674534801"/>
+  <nd ref="7674534862"/>
+  <nd ref="7674534864"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940980" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534820"/>
+  <nd ref="7674534819"/>
+  <nd ref="7674534818"/>
+  <nd ref="7674534817"/>
+  <nd ref="7674534816"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="821940981" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534822"/>
+  <nd ref="4727053978"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940982" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534821"/>
+  <nd ref="7674534820"/>
+  <nd ref="7674534822"/>
+  <tag k="highway" v="steps"/>
+ </way>
+ <way id="821940983" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053977"/>
+  <nd ref="7674534821"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940984" visible="true" version="2" changeset="110879123" timestamp="2021-09-07T20:45:41Z" user="Fleezing" uid="13837260">
+  <nd ref="7674534834"/>
+  <nd ref="4727053944"/>
+  <tag k="highway" v="steps"/>
+  <tag k="incline" v="up"/>
+ </way>
+ <way id="821940985" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053950"/>
+  <nd ref="4727053951"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940986" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053948"/>
+  <nd ref="4727053949"/>
+  <nd ref="7674534838"/>
+  <nd ref="4727053950"/>
+  <nd ref="7674534837"/>
+  <nd ref="366495763"/>
+  <nd ref="7674534835"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940987" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534829"/>
+  <nd ref="7674534844"/>
+  <nd ref="4727053965"/>
+  <nd ref="4727053962"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940988" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053951"/>
+  <nd ref="7674534850"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940989" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="4727053951"/>
+  <nd ref="7674534845"/>
+  <nd ref="7674534833"/>
+  <nd ref="7674534832"/>
+  <nd ref="4727053961"/>
+  <nd ref="7674534831"/>
+  <nd ref="7674534830"/>
+  <nd ref="4727053962"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="ground"/>
+ </way>
+ <way id="821940990" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534845"/>
+  <nd ref="7674534850"/>
+  <nd ref="4727053953"/>
+  <nd ref="4727053963"/>
+  <nd ref="4727053954"/>
+  <nd ref="4727053955"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940991" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534859"/>
+  <nd ref="4727053979"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="821940992" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534863"/>
+  <nd ref="7674534862"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="821940993" visible="true" version="1" changeset="87414844" timestamp="2020-07-01T18:38:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534870"/>
+  <nd ref="365785904"/>
+  <nd ref="365785905"/>
+  <tag k="highway" v="service"/>
+  <tag k="service" v="parking_aisle"/>
+ </way>
+ <way id="821940994" visible="true" version="3" changeset="175944071" timestamp="2025-12-15T05:34:39Z" user="keithonearth" uid="154287">
+  <nd ref="13377514206"/>
+  <nd ref="13377514205"/>
+  <tag k="highway" v="steps"/>
+  <tag k="incline" v="up"/>
+ </way>
+ <way id="980707211" visible="true" version="2" changeset="184495516" timestamp="2026-06-23T22:58:22Z" user="Fleezing" uid="13837260">
+  <nd ref="412708194"/>
+  <nd ref="412712688"/>
+  <tag k="access" v="private"/>
+  <tag k="highway" v="service"/>
+  <tag k="lanes" v="2"/>
+ </way>
+ <way id="980707212" visible="true" version="2" changeset="184495516" timestamp="2026-06-23T22:58:22Z" user="Fleezing" uid="13837260">
+  <nd ref="412708194"/>
+  <nd ref="9071674965"/>
+  <tag k="access" v="private"/>
+  <tag k="highway" v="service"/>
+  <tag k="service" v="parking_aisle"/>
+ </way>
+ <way id="1004923889" visible="true" version="2" changeset="145098464" timestamp="2023-12-14T07:42:00Z" user="liaofthebay" uid="20645397">
+  <nd ref="9271832165"/>
+  <nd ref="9271832166"/>
+  <nd ref="9271832167"/>
+  <nd ref="9271832168"/>
+  <nd ref="9271832169"/>
+  <nd ref="6127143037"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paving_stones"/>
+ </way>
+ <way id="1004923893" visible="true" version="2" changeset="145098464" timestamp="2023-12-14T07:38:50Z" user="liaofthebay" uid="20645397">
+  <nd ref="9271832162"/>
+  <nd ref="9271832172"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="concrete"/>
+ </way>
+ <way id="1020140929" visible="true" version="1" changeset="116002390" timestamp="2022-01-10T23:42:14Z" user="Fleezing" uid="13837260">
+  <nd ref="7674534884"/>
+  <nd ref="7164714905"/>
+  <nd ref="9408839265"/>
+  <tag k="highway" v="path"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="1020140930" visible="true" version="2" changeset="175944071" timestamp="2025-12-15T05:34:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674534883"/>
+  <nd ref="13377514204"/>
+  <nd ref="7674534884"/>
+  <tag k="highway" v="path"/>
+  <tag k="incline" v="down"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="1035586177" visible="true" version="2" changeset="149596563" timestamp="2024-04-05T05:08:36Z" user="Drunk501" uid="18673342">
+  <nd ref="5992758866"/>
+  <nd ref="5992758867"/>
+  <nd ref="5992758868"/>
+  <nd ref="5992758869"/>
+  <nd ref="5992758872"/>
+  <nd ref="5992758870"/>
+  <nd ref="5992758873"/>
+  <nd ref="5992758871"/>
+  <tag k="highway" v="service"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="1035586179" visible="true" version="3" changeset="149596563" timestamp="2024-04-05T05:08:36Z" user="Drunk501" uid="18673342">
+  <nd ref="5992758866"/>
+  <nd ref="6925149271"/>
+  <tag k="highway" v="service"/>
+  <tag k="surface" v="concrete"/>
+ </way>
+ <way id="1054604482" visible="true" version="1" changeset="120146235" timestamp="2022-04-25T04:52:44Z" user="Fleezing" uid="13837260">
+  <nd ref="9691161911"/>
+  <nd ref="9691161912"/>
+  <nd ref="9691161913"/>
+  <tag k="highway" v="path"/>
+  <tag k="informal" v="yes"/>
+  <tag k="surface" v="dirt"/>
+ </way>
+ <way id="1054604483" visible="true" version="1" changeset="120146235" timestamp="2022-04-25T04:52:44Z" user="Fleezing" uid="13837260">
+  <nd ref="4727053987"/>
+  <nd ref="7674534805"/>
+  <tag k="highway" v="path"/>
+  <tag k="incline" v="down"/>
+  <tag k="informal" v="yes"/>
+  <tag k="surface" v="dirt"/>
+ </way>
+ <way id="1062757714" visible="true" version="1" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="262838334"/>
+  <nd ref="6127137998"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1062757720" visible="true" version="1" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="9763101398"/>
+  <nd ref="9763101399"/>
+  <tag k="highway" v="steps"/>
+  <tag k="incline" v="up"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="1062757721" visible="true" version="2" changeset="148386724" timestamp="2024-03-08T14:27:08Z" user="joel56dt" uid="3794090">
+  <nd ref="9763101395"/>
+  <nd ref="11704178825"/>
+  <nd ref="9763101396"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="1062757722" visible="true" version="1" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="9763101396"/>
+  <nd ref="9763101397"/>
+  <tag k="highway" v="steps"/>
+  <tag k="incline" v="up"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="1062757723" visible="true" version="1" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="9763101397"/>
+  <nd ref="9763101398"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="1062757724" visible="true" version="1" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="7674534805"/>
+  <nd ref="9763101400"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1062757725" visible="true" version="1" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="4727053990"/>
+  <nd ref="4727053987"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="1062757726" visible="true" version="1" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="9763101400"/>
+  <nd ref="4727053990"/>
+  <tag k="highway" v="steps"/>
+  <tag k="incline" v="up"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="1062757727" visible="true" version="1" changeset="121340962" timestamp="2022-05-23T01:21:43Z" user="Fleezing" uid="13837260">
+  <nd ref="7674534835"/>
+  <nd ref="7307366275"/>
+  <tag k="highway" v="path"/>
+ </way>
+ <way id="1107015017" visible="true" version="1" changeset="128065714" timestamp="2022-10-26T06:11:27Z" user="bat fragrance" uid="10207697">
+  <nd ref="7674534872"/>
+  <nd ref="4727053970"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159715861" visible="true" version="4" changeset="148386724" timestamp="2024-03-08T14:27:08Z" user="joel56dt" uid="3794090">
+  <nd ref="10784896033"/>
+  <nd ref="11704178830"/>
+  <tag k="handrail" v="yes"/>
+  <tag k="highway" v="steps"/>
+  <tag k="incline" v="down"/>
+  <tag k="surface" v="concrete"/>
+  <tag k="width" v="1.8"/>
+ </way>
+ <way id="1159720406" visible="true" version="1" changeset="134507992" timestamp="2023-04-04T18:11:43Z" user="Drunk501" uid="18673342">
+  <nd ref="6925149264"/>
+  <nd ref="10784973308"/>
+  <nd ref="10784973318"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159720409" visible="true" version="1" changeset="134507992" timestamp="2023-04-04T18:11:43Z" user="Drunk501" uid="18673342">
+  <nd ref="1387002268"/>
+  <nd ref="10784973308"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159756807" visible="true" version="1" changeset="134513284" timestamp="2023-04-04T21:01:12Z" user="Drunk501" uid="18673342">
+  <nd ref="10785313467"/>
+  <nd ref="10785313468"/>
+  <nd ref="10785313477"/>
+  <nd ref="10785313469"/>
+  <nd ref="10785313476"/>
+  <nd ref="10785313475"/>
+  <nd ref="10785313470"/>
+  <nd ref="10785313471"/>
+  <nd ref="10785313472"/>
+  <nd ref="10785313478"/>
+  <nd ref="10785313473"/>
+  <nd ref="10785313474"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="1159756808" visible="true" version="1" changeset="134513284" timestamp="2023-04-04T21:01:12Z" user="Drunk501" uid="18673342">
+  <nd ref="10785313470"/>
+  <nd ref="10785313479"/>
+  <tag k="highway" v="steps"/>
+ </way>
+ <way id="1159756809" visible="true" version="1" changeset="134513284" timestamp="2023-04-04T21:01:12Z" user="Drunk501" uid="18673342">
+  <nd ref="10785313480"/>
+  <nd ref="10785313481"/>
+  <nd ref="10785313482"/>
+  <nd ref="10785313483"/>
+  <nd ref="10785313484"/>
+  <nd ref="10785313485"/>
+  <nd ref="10785313486"/>
+  <tag k="highway" v="footway"/>
+  <tag k="incline" v="down"/>
+  <tag k="surface" v="concrete"/>
+  <tag k="wheelchair" v="yes"/>
+ </way>
+ <way id="1159756810" visible="true" version="2" changeset="145434466" timestamp="2023-12-23T11:42:09Z" user="Drunk501" uid="18673342">
+  <nd ref="10785313487"/>
+  <nd ref="10785313492"/>
+  <nd ref="10785313488"/>
+  <tag k="handrail" v="yes"/>
+  <tag k="highway" v="steps"/>
+  <tag k="incline" v="down"/>
+  <tag k="ramp" v="separate"/>
+ </way>
+ <way id="1159756811" visible="true" version="1" changeset="134513284" timestamp="2023-04-04T21:01:12Z" user="Drunk501" uid="18673342">
+  <nd ref="9763101399"/>
+  <nd ref="10785313489"/>
+  <nd ref="10785313490"/>
+  <nd ref="10785313486"/>
+  <nd ref="10785313488"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159756812" visible="true" version="1" changeset="134513284" timestamp="2023-04-04T21:01:12Z" user="Drunk501" uid="18673342">
+  <nd ref="10785313488"/>
+  <nd ref="10785313491"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159756813" visible="true" version="1" changeset="134513284" timestamp="2023-04-04T21:01:12Z" user="Drunk501" uid="18673342">
+  <nd ref="10785313482"/>
+  <nd ref="10785313492"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159758370" visible="true" version="2" changeset="184495516" timestamp="2026-06-23T22:58:22Z" user="Fleezing" uid="13837260">
+  <nd ref="9071674964"/>
+  <nd ref="412708194"/>
+  <tag k="access" v="private"/>
+  <tag k="highway" v="service"/>
+  <tag k="service" v="parking_aisle"/>
+ </way>
+ <way id="1159760165" visible="true" version="1" changeset="134513897" timestamp="2023-04-04T21:21:50Z" user="Drunk501" uid="18673342">
+  <nd ref="10785313467"/>
+  <nd ref="10785299797"/>
+  <nd ref="10785299798"/>
+  <nd ref="10785299799"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="concrete"/>
+ </way>
+ <way id="1159760166" visible="true" version="1" changeset="134513897" timestamp="2023-04-04T21:21:50Z" user="Drunk501" uid="18673342">
+  <nd ref="10785299798"/>
+  <nd ref="10785299800"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159760167" visible="true" version="2" changeset="134518124" timestamp="2023-04-05T01:25:40Z" user="Drunk501" uid="18673342">
+  <nd ref="10785299801"/>
+  <nd ref="10785299802"/>
+  <nd ref="10785812708"/>
+  <nd ref="10785812705"/>
+  <nd ref="10785299799"/>
+  <nd ref="10785299803"/>
+  <tag k="highway" v="footway"/>
+  <tag k="layer" v="-1"/>
+ </way>
+ <way id="1159783721" visible="true" version="3" changeset="185561560" timestamp="2026-07-11T21:36:54Z" user="maxwellward" uid="21854367">
+  <nd ref="10785691527"/>
+  <nd ref="14005361177"/>
+  <nd ref="1387002268"/>
+  <tag k="access" v="private"/>
+  <tag k="highway" v="service"/>
+  <tag k="oneway" v="yes"/>
+ </way>
+ <way id="1159783722" visible="true" version="1" changeset="134517133" timestamp="2023-04-05T00:12:48Z" user="Drunk501" uid="18673342">
+  <nd ref="10785691535"/>
+  <nd ref="10785691533"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159783725" visible="true" version="1" changeset="134517133" timestamp="2023-04-05T00:12:48Z" user="Drunk501" uid="18673342">
+  <nd ref="6194563749"/>
+  <nd ref="6194563748"/>
+  <nd ref="1387002165"/>
+  <tag k="highway" v="footway"/>
+  <tag k="incline" v="up"/>
+ </way>
+ <way id="1159793610" visible="true" version="2" changeset="145098464" timestamp="2023-12-14T07:43:46Z" user="liaofthebay" uid="20645397">
+  <nd ref="6925149264"/>
+  <nd ref="10785785204"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="concrete:plates"/>
+ </way>
+ <way id="1159793611" visible="true" version="2" changeset="140829176" timestamp="2023-09-05T03:28:26Z" user="MuddyHikers" uid="577328">
+  <nd ref="10785812706"/>
+  <nd ref="10785812705"/>
+  <tag k="handrail" v="yes"/>
+  <tag k="highway" v="steps"/>
+  <tag k="incline" v="down"/>
+ </way>
+ <way id="1159793612" visible="true" version="3" changeset="144708267" timestamp="2023-12-03T00:58:10Z" user="liaofthebay" uid="20645397">
+  <nd ref="10785812707"/>
+  <nd ref="10785812708"/>
+  <tag k="handrail" v="yes"/>
+  <tag k="highway" v="steps"/>
+  <tag k="ramp" v="no"/>
+ </way>
+ <way id="1159793613" visible="true" version="1" changeset="134518124" timestamp="2023-04-05T01:25:40Z" user="Drunk501" uid="18673342">
+  <nd ref="10785812708"/>
+  <nd ref="10785812709"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159793614" visible="true" version="1" changeset="134518124" timestamp="2023-04-05T01:25:40Z" user="Drunk501" uid="18673342">
+  <nd ref="10785812705"/>
+  <nd ref="10785812710"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159793615" visible="true" version="2" changeset="136641159" timestamp="2023-05-28T00:56:33Z" user="Fleezing" uid="13837260">
+  <nd ref="9540346872"/>
+  <nd ref="9540346873"/>
+  <nd ref="10785812711"/>
+  <nd ref="10785812716"/>
+  <nd ref="1387002268"/>
+  <tag k="access" v="private"/>
+  <tag k="highway" v="service"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="1159793616" visible="true" version="1" changeset="134518124" timestamp="2023-04-05T01:25:40Z" user="Drunk501" uid="18673342">
+  <nd ref="10784973308"/>
+  <nd ref="10785812716"/>
+  <nd ref="10785812712"/>
+  <tag k="crossing" v="uncontrolled"/>
+  <tag k="crossing:island" v="no"/>
+  <tag k="crossing:markings" v="zebra"/>
+  <tag k="footway" v="crossing"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1159793617" visible="true" version="2" changeset="136641159" timestamp="2023-05-28T00:56:33Z" user="Fleezing" uid="13837260">
+  <nd ref="10785812712"/>
+  <nd ref="10785812713"/>
+  <nd ref="10785812714"/>
+  <nd ref="10785812715"/>
+  <nd ref="10932646391"/>
+  <nd ref="10932646392"/>
+  <nd ref="10932646393"/>
+  <nd ref="10932646394"/>
+  <nd ref="10932646395"/>
+  <tag k="highway" v="footway"/>
+  <tag k="incline" v="up"/>
+ </way>
+ <way id="1159794798" visible="true" version="2" changeset="145098464" timestamp="2023-12-14T07:43:49Z" user="liaofthebay" uid="20645397">
+  <nd ref="6925149264"/>
+  <nd ref="10785783085"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="concrete:plates"/>
+ </way>
+ <way id="1201691407" visible="true" version="5" changeset="188933927" timestamp="2026-09-12T20:29:37Z" user="in2itivity" uid="23643298">
+  <nd ref="262831399"/>
+  <nd ref="262831398"/>
+  <nd ref="7674535390"/>
+  <nd ref="262831397"/>
+  <tag k="cycleway:right" v="separate"/>
+  <tag k="highway" v="secondary"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lanes:backward" v="1"/>
+  <tag k="lanes:forward" v="2"/>
+  <tag k="lcn_ref" v="University Drive"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="50"/>
+  <tag k="name" v="University Drive West"/>
+  <tag k="sidewalk:left" v="no"/>
+  <tag k="sidewalk:right" v="separate"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="turn:lanes:forward" v="left|none"/>
+ </way>
+ <way id="1259056981" visible="true" version="1" changeset="148386724" timestamp="2024-03-08T14:27:08Z" user="joel56dt" uid="3794090">
+  <nd ref="262838314"/>
+  <nd ref="9071674967"/>
+  <nd ref="262838315"/>
+  <nd ref="365785900"/>
+  <nd ref="262838316"/>
+  <nd ref="365785903"/>
+  <nd ref="262838317"/>
+  <nd ref="262838318"/>
+  <nd ref="7674534873"/>
+  <nd ref="7674534877"/>
+  <nd ref="262838319"/>
+  <nd ref="365785906"/>
+  <nd ref="262838320"/>
+  <nd ref="7674534874"/>
+  <nd ref="7212434765"/>
+  <nd ref="262838321"/>
+  <nd ref="9071674966"/>
+  <nd ref="7674535386"/>
+  <nd ref="7674535388"/>
+  <nd ref="7212434764"/>
+  <tag k="highway" v="residential"/>
+  <tag k="name" v="Residence Lane"/>
+  <tag k="sidewalk:left" v="separate"/>
+  <tag k="sidewalk:right" v="no"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="1259056982" visible="true" version="1" changeset="148386724" timestamp="2024-03-08T14:27:08Z" user="joel56dt" uid="3794090">
+  <nd ref="10785313473"/>
+  <nd ref="11704178825"/>
+  <nd ref="11704178826"/>
+  <nd ref="11704178827"/>
+  <nd ref="11704178829"/>
+  <nd ref="11704178828"/>
+  <tag k="footway" v="sidewalk"/>
+  <tag k="highway" v="footway"/>
+ </way>
+ <way id="1259056983" visible="true" version="1" changeset="148386724" timestamp="2024-03-08T14:27:08Z" user="joel56dt" uid="3794090">
+  <nd ref="11704178830"/>
+  <nd ref="11704178829"/>
+  <nd ref="10784896034"/>
+  <tag k="handrail" v="yes"/>
+  <tag k="highway" v="footway"/>
+  <tag k="incline" v="down"/>
+  <tag k="surface" v="concrete"/>
+  <tag k="width" v="1.8"/>
+ </way>
+ <way id="1259056984" visible="true" version="1" changeset="148386724" timestamp="2024-03-08T14:27:08Z" user="joel56dt" uid="3794090">
+  <nd ref="7212434764"/>
+  <nd ref="262838323"/>
+  <nd ref="11704178831"/>
+  <tag k="highway" v="residential"/>
+  <tag k="name" v="Residence Lane"/>
+  <tag k="sidewalk:both" v="no"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="1259056985" visible="true" version="1" changeset="148386724" timestamp="2024-03-08T14:27:08Z" user="joel56dt" uid="3794090">
+  <nd ref="10785313474"/>
+  <nd ref="262838327"/>
+  <nd ref="262838328"/>
+  <nd ref="5992758871"/>
+  <nd ref="262838330"/>
+  <nd ref="262838332"/>
+  <nd ref="262838334"/>
+  <tag k="highway" v="residential"/>
+  <tag k="name" v="Residence Lane"/>
+  <tag k="sidewalk:both" v="no"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+ <way id="1269268033" visible="true" version="1" changeset="149596563" timestamp="2024-04-05T05:08:36Z" user="Drunk501" uid="18673342">
+  <nd ref="5992758868"/>
+  <nd ref="6925149272"/>
+  <tag k="highway" v="footway"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="1326459875" visible="true" version="1" changeset="158159758" timestamp="2024-10-21T08:55:14Z" user="sarya_Lyft" uid="18784339">
+  <nd ref="262838334"/>
+  <nd ref="6127143035"/>
+  <nd ref="6127143036"/>
+  <nd ref="6127143037"/>
+  <tag k="highway" v="service"/>
+ </way>
+ <way id="1458657595" visible="true" version="1" changeset="175944071" timestamp="2025-12-15T05:34:39Z" user="keithonearth" uid="154287">
+  <nd ref="13377514205"/>
+  <nd ref="7674534883"/>
+  <tag k="highway" v="path"/>
+ </way>
+ <way id="1458657596" visible="true" version="1" changeset="175944071" timestamp="2025-12-15T05:34:39Z" user="keithonearth" uid="154287">
+  <nd ref="7674535385"/>
+  <nd ref="13377514206"/>
+  <tag k="highway" v="path"/>
+ </way>
+</osm>

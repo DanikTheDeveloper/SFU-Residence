@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3781335 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="365786262" visible="true" version="2" changeset="110879123" timestamp="2021-09-07T20:45:41Z" user="Fleezing" uid="13837260" lat="49.2808700" lon="-122.9279438"/>
+ <node id="365786263" visible="true" version="3" changeset="134513897" timestamp="2023-04-04T21:21:50Z" user="Drunk501" uid="18673342" lat="49.2804242" lon="-122.9250755"/>
+ <node id="365786264" visible="true" version="4" changeset="134513897" timestamp="2023-04-04T21:21:50Z" user="Drunk501" uid="18673342" lat="49.2801318" lon="-122.9251827"/>
+ <node id="365786265" visible="true" version="3" changeset="110879123" timestamp="2021-09-07T20:45:41Z" user="Fleezing" uid="13837260" lat="49.2806657" lon="-122.9277913"/>
+ <node id="4727055505" visible="true" version="1" changeset="46727508" timestamp="2017-03-10T03:26:14Z" user="gingerywilson" uid="5013680" lat="49.2805064" lon="-122.9256238"/>
+ <node id="9071674962" visible="true" version="1" changeset="110879123" timestamp="2021-09-07T20:45:41Z" user="Fleezing" uid="13837260" lat="49.2805339" lon="-122.9278459"/>
+ <node id="9071674963" visible="true" version="1" changeset="110879123" timestamp="2021-09-07T20:45:41Z" user="Fleezing" uid="13837260" lat="49.2807077" lon="-122.9280126"/>
+ <node id="9071674964" visible="true" version="2" changeset="134513507" timestamp="2023-04-04T21:08:44Z" user="Drunk501" uid="18673342" lat="49.2805870" lon="-122.9278233"/>
+ <node id="10785812706" visible="true" version="1" changeset="134518124" timestamp="2023-04-05T01:25:40Z" user="Drunk501" uid="18673342" lat="49.2802756" lon="-122.9261342"/>
+ <node id="10785812707" visible="true" version="1" changeset="134518124" timestamp="2023-04-05T01:25:40Z" user="Drunk501" uid="18673342" lat="49.2804259" lon="-122.9271298"/>
+ <node id="13960966415" visible="true" version="1" changeset="184495516" timestamp="2026-06-23T22:58:22Z" user="Fleezing" uid="13837260" lat="49.2810133" lon="-122.9273786"/>
+ <node id="13960966416" visible="true" version="1" changeset="184495516" timestamp="2026-06-23T22:58:22Z" user="Fleezing" uid="13837260" lat="49.2807807" lon="-122.9258545"/>
+ <way id="32528160" visible="true" version="9" changeset="184495516" timestamp="2026-06-23T22:58:22Z" user="Fleezing" uid="13837260">
+  <nd ref="365786262"/>
+  <nd ref="13960966415"/>
+  <nd ref="13960966416"/>
+  <nd ref="4727055505"/>
+  <nd ref="365786263"/>
+  <nd ref="365786264"/>
+  <nd ref="10785812706"/>
+  <nd ref="10785812707"/>
+  <nd ref="9071674962"/>
+  <nd ref="9071674964"/>
+  <nd ref="365786265"/>
+  <nd ref="9071674963"/>
+  <nd ref="365786262"/>
+  <tag k="construction" v="residential"/>
+  <tag k="landuse" v="construction"/>
+  <tag k="name" v="Phase 3 Student Housing Project"/>
+  <tag k="opening_date" v="2027-09"/>
+  <tag k="website" v="https://www.sfu.ca/students/residences/community/new-residence-buildings/phase-three.html"/>
+ </way>
+</osm>

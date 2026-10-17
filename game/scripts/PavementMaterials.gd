@@ -4,7 +4,7 @@ static var cache: Dictionary={}
 
 static func material(kind: String) -> StandardMaterial3D:
 	if cache.has(kind): return cache[kind]
-	var colors: Dictionary={"concrete":Color("96988e"),"walkway":Color("717776"),"road":Color("51575a"),"border":Color("babbb0")}
+	var colors: Dictionary={"concrete":Color("96988e"),"concrete_plates":Color("96988e"),"compacted":Color("746c59"),"walkway":Color("717776"),"road":Color("51575a"),"border":Color("babbb0")}
 	var result:=Geo.material(colors[kind],0.96)
 	var pixels:=Image.create(256,256,false,Image.FORMAT_RGB8)
 	var rng:=RandomNumberGenerator.new()
@@ -12,10 +12,10 @@ static func material(kind: String) -> StandardMaterial3D:
 	for y in 256:
 		for x in 256:
 			var shade: float=rng.randf_range(0.90,1.0)
-			if kind=="concrete":
+			if kind in ["concrete","concrete_plates"]:
 				shade=rng.randf_range(0.96,1.0)
 				# 2m control-joint spacing on a 4m tile; estimated construction rhythm.
-				if x%128==0: shade=0.76
+				if x%128==0 or (kind=="concrete_plates" and y%128==0): shade=0.76
 			elif kind=="border": shade=rng.randf_range(0.97,1.0)
 			elif rng.randf()<0.06: shade=0.72
 			pixels.set_pixel(x,y,Color(shade,shade,shade))

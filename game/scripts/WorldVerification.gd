@@ -245,6 +245,9 @@ func verify_families() -> void:
 			probe.free()
 		check(id+" North master edit propagates",counts[0]!=counts[1],str(counts))
 		north.bay_width=saved_north_bay_width
+	var lot: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/main_parking.json"))
+	for sample in [[10,-40],[60,-30],[110,-20],[165,0]]:
+		check("Main parking level "+str(sample),absf(Geo.elevation(sample[0],sample[1])-lot.height_estimate_m)<0.03)
 	var parking:=world.get_node("Props/ParkingLots")
 	check("Parking stalls arranged in mapped polygons",parking.get_meta("estimated_stalls")>15,str(parking.get_meta("estimated_stalls")))
 	var town=preload("res://scripts/TownhouseBlockExterior.gd")
@@ -277,6 +280,7 @@ func verify_families() -> void:
 
 func run_routes() -> void:
 	var routes: Array=JSON.parse_string(FileAccess.get_file_as_string("res://data/test_routes.json"))
+	routes.append({"buildings":["Residence Main Lot access and aisle"],"points":[[-30,-40],[0,-40],[25,-35],[50,-30],[75,-25],[100,-20],[125,-15],[150,-10]]})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true

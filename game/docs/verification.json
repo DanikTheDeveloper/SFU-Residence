@@ -721,8 +721,28 @@
       "passed": true
     },
     {
+      "check": "Main parking level [10, -40]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Main parking level [60, -30]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Main parking level [110, -20]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Main parking level [165, 0]",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Parking stalls arranged in mapped polygons",
-      "evidence": "83",
+      "evidence": "196",
       "passed": true
     },
     {

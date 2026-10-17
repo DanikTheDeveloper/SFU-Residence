@@ -1,0 +1,66 @@
+{
+  "osm_id": "32528160",
+  "points": [
+    [
+      -18.41,
+      -57.821
+    ],
+    [
+      22.589,
+      -73.756
+    ],
+    [
+      133.145,
+      -47.892
+    ],
+    [
+      149.88,
+      -17.391
+    ],
+    [
+      189.653,
+      -8.251
+    ],
+    [
+      181.877,
+      24.263
+    ],
+    [
+      112.856,
+      8.273
+    ],
+    [
+      40.636,
+      -8.44
+    ],
+    [
+      -11.309,
+      -20.449
+    ],
+    [
+      -9.669,
+      -26.353
+    ],
+    [
+      -7.348,
+      -35.104
+    ],
+    [
+      -23.401,
+      -39.774
+    ],
+    [
+      -18.41,
+      -57.821
+    ]
+  ],
+  "tags": {
+    "name": "Residence Main Lot (pre-construction reconstruction)",
+    "amenity": "parking",
+    "surface": "paved"
+  },
+  "reference": "OSM way 32528160 version 8 (2023-04-05); original node geometry; user-confirmed level lot",
+  "height_estimate_m": 8.87,
+  "level_source": "Median existing contour-derived grid under lot; NOT surveyed finished elevation",
+  "era": "pre-Phase3 construction, working assumption; user preference pending"
+}

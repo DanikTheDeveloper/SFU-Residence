@@ -1,5 +1,6 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
+PHOTO_PAVING { "concrete": 196, "townhouse_grey": 111, "east_pavers": 1, "vehicle": 90 }
 WORLD_READY buildings=19 paths=398 renderer=gl_compatibility
 PASS Pauline Jewett entrance label uses footprint not neighboring centroid 
 PASS 19 scene buildings 
@@ -146,7 +147,11 @@ PASS BRH North master edit propagates [352, 282]
 PASS SBH distinct North master 
 PASS SBH eight floors 
 PASS SBH North master edit propagates [352, 282]
-PASS Parking stalls arranged in mapped polygons 83
+PASS Main parking level [10, -40] 
+PASS Main parking level [60, -30] 
+PASS Main parking level [110, -20] 
+PASS Main parking level [165, 0] 
+PASS Parking stalls arranged in mapped polygons 196
 PASS COW shared townhouse master 
 PASS COW pitched roof generated 
 PASS COW townhouse master edit propagates [102, 72]
@@ -182,4 +187,4 @@ PASS Courtyard uses distinct precast master
 PASS Courtyard preserves eleven-floor registry 
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=180 failures=0
+VERIFICATION_COMPLETE checks=184 failures=0

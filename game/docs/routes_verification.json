@@ -14,6 +14,11 @@
       "check": "Walk loop [\"WET\", \"EAT\", \"MCH\", \"HAM\", \"WET\"]",
       "evidence": "43/43 checkpoints",
       "passed": true
+    },
+    {
+      "check": "Walk loop [\"Residence Main Lot access and aisle\"]",
+      "evidence": "8/8 checkpoints",
+      "passed": true
     }
   ],
   "failures": 0

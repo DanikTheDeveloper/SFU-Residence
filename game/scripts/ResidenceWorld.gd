@@ -24,6 +24,7 @@ func _ready() -> void:
 	registry=JSON.parse_string(FileAccess.get_file_as_string("res://data/buildings.json"))
 	roads=JSON.parse_string(FileAccess.get_file_as_string("res://data/roads.json"))
 	site=JSON.parse_string(FileAccess.get_file_as_string("res://data/site.json"))
+	site.parking.append(JSON.parse_string(FileAccess.get_file_as_string("res://data/main_parking.json")))
 	for p in site.boundary: boundary.append(Vector2(p[0],p[1]))
 	configure_inputs()
 	build_light()
@@ -284,7 +285,7 @@ func capture_views() -> void:
 	if capture_kind=="courtyard":
 		views=[[Geo.point([353,17],1.68),Geo.point([337,-13],9)],[Geo.point([319,-60],1.68),Geo.point([320,-35],6)],[Geo.point([279,-1],1.68),Geo.point([280,-15],9)],[Vector3(375,65,65),Vector3(307,12,-15)]]
 	if capture_kind=="parking":
-		views=[[Geo.point([-168,125],1.68),Geo.point([-176,123],0.8)],[Geo.point([-167,117],1.68),Geo.point([-175,112],1.0)],[Geo.point([-172,110],1.68),Geo.point([-160,124],1.2)]]
+		views=[[Geo.point([15,-45],1.68),Geo.point([70,-30],1.0)],[Geo.point([100,-30],1.68),Geo.point([100,0],8)],[Vector3(80,55,-90),Geo.point([85,-20],0)],[Geo.point([-168,125],1.68),Geo.point([-176,123],0.8)],[Geo.point([-167,117],1.68),Geo.point([-175,112],1.0)],[Geo.point([-172,110],1.68),Geo.point([-160,124],1.2)]]
 	if capture_kind=="paving":
 		views=[[Geo.point([130,90],1.68),Geo.point([130,86.8],0.1)],[Geo.point([-180,63],1.68),Geo.point([-179,59],0.2)],[Geo.point([61,72],1.68),Geo.point([68,68],0.1)]]
 	if capture_kind=="landscape": views=views.slice(13)

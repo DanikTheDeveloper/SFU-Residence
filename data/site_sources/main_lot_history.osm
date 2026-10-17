@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3814622 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <way id="32528160" visible="true" version="1" changeset="861665" timestamp="2009-03-26T04:52:23Z" user="Tovok7" uid="46823">
+  <nd ref="365786262"/>
+  <nd ref="365786263"/>
+  <nd ref="365786264"/>
+  <nd ref="365786265"/>
+  <nd ref="365786262"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="name" v="Residence Parking - main lot"/>
+  <tag k="parking" v="surface"/>
+ </way>
+ <way id="32528160" visible="true" version="2" changeset="46727508" timestamp="2017-03-10T03:26:14Z" user="gingerywilson" uid="5013680">
+  <nd ref="365786262"/>
+  <nd ref="4727055505"/>
+  <nd ref="365786263"/>
+  <nd ref="365786264"/>
+  <nd ref="365786265"/>
+  <nd ref="365786262"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="name" v="Residence Parking - main lot"/>
+  <tag k="parking" v="surface"/>
+ </way>
+ <way id="32528160" visible="true" version="3" changeset="76080667" timestamp="2019-10-23T06:00:29Z" user="Quetron" uid="1964278">
+  <nd ref="365786262"/>
+  <nd ref="4727055505"/>
+  <nd ref="365786263"/>
+  <nd ref="365786264"/>
+  <nd ref="6907805119"/>
+  <nd ref="6907805116"/>
+  <nd ref="365786265"/>
+  <nd ref="365786262"/>
+  <tag k="access" v="private"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="name" v="Residence Parking - main lot"/>
+  <tag k="parking" v="surface"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="32528160" visible="true" version="4" changeset="110879123" timestamp="2021-09-07T20:45:41Z" user="Fleezing" uid="13837260">
+  <nd ref="365786262"/>
+  <nd ref="4727055505"/>
+  <nd ref="365786263"/>
+  <nd ref="365786264"/>
+  <nd ref="6907805119"/>
+  <nd ref="6907805116"/>
+  <nd ref="9071674962"/>
+  <nd ref="365786265"/>
+  <nd ref="9071674963"/>
+  <nd ref="365786262"/>
+  <tag k="access" v="private"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="name" v="Residence Parking - main lot"/>
+  <tag k="parking" v="surface"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="32528160" visible="true" version="5" changeset="116003693" timestamp="2022-01-11T01:18:38Z" user="Fleezing" uid="13837260">
+  <nd ref="365786262"/>
+  <nd ref="4727055505"/>
+  <nd ref="365786263"/>
+  <nd ref="365786264"/>
+  <nd ref="6907805119"/>
+  <nd ref="6907805116"/>
+  <nd ref="9071674962"/>
+  <nd ref="365786265"/>
+  <nd ref="9071674963"/>
+  <nd ref="365786262"/>
+  <tag k="access" v="private"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="name" v="Residence Main Lot"/>
+  <tag k="parking" v="surface"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="32528160" visible="true" version="6" changeset="117901456" timestamp="2022-02-27T09:35:52Z" user="3ngineer" uid="5661515">
+  <nd ref="365786262"/>
+  <nd ref="4727055505"/>
+  <nd ref="365786263"/>
+  <nd ref="365786264"/>
+  <nd ref="9071674962"/>
+  <nd ref="365786265"/>
+  <nd ref="9071674963"/>
+  <nd ref="365786262"/>
+  <tag k="access" v="private"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="name" v="Residence Main Lot"/>
+  <tag k="parking" v="surface"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="32528160" visible="true" version="7" changeset="134513507" timestamp="2023-04-04T21:08:44Z" user="Drunk501" uid="18673342">
+  <nd ref="365786262"/>
+  <nd ref="4727055505"/>
+  <nd ref="365786263"/>
+  <nd ref="365786264"/>
+  <nd ref="9071674962"/>
+  <nd ref="9071674964"/>
+  <nd ref="365786265"/>
+  <nd ref="9071674963"/>
+  <nd ref="365786262"/>
+  <tag k="access" v="private"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="name" v="Residence Main Lot"/>
+  <tag k="parking" v="surface"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="32528160" visible="true" version="8" changeset="134518124" timestamp="2023-04-05T01:25:40Z" user="Drunk501" uid="18673342">
+  <nd ref="365786262"/>
+  <nd ref="4727055505"/>
+  <nd ref="365786263"/>
+  <nd ref="365786264"/>
+  <nd ref="10785812706"/>
+  <nd ref="10785812707"/>
+  <nd ref="9071674962"/>
+  <nd ref="9071674964"/>
+  <nd ref="365786265"/>
+  <nd ref="9071674963"/>
+  <nd ref="365786262"/>
+  <tag k="access" v="private"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="name" v="Residence Main Lot"/>
+  <tag k="parking" v="surface"/>
+  <tag k="surface" v="paved"/>
+ </way>
+ <way id="32528160" visible="true" version="9" changeset="184495516" timestamp="2026-06-23T22:58:22Z" user="Fleezing" uid="13837260">
+  <nd ref="365786262"/>
+  <nd ref="13960966415"/>
+  <nd ref="13960966416"/>
+  <nd ref="4727055505"/>
+  <nd ref="365786263"/>
+  <nd ref="365786264"/>
+  <nd ref="10785812706"/>
+  <nd ref="10785812707"/>
+  <nd ref="9071674962"/>
+  <nd ref="9071674964"/>
+  <nd ref="365786265"/>
+  <nd ref="9071674963"/>
+  <nd ref="365786262"/>
+  <tag k="construction" v="residential"/>
+  <tag k="landuse" v="construction"/>
+  <tag k="name" v="Phase 3 Student Housing Project"/>
+  <tag k="opening_date" v="2027-09"/>
+  <tag k="website" v="https://www.sfu.ca/students/residences/community/new-residence-buildings/phase-three.html"/>
+ </way>
+</osm>

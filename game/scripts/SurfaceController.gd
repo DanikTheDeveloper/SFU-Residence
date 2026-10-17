@@ -39,10 +39,13 @@ static func build(world: Node3D,parent: Node3D) -> void:
 	var border:=Finish.material("border")
 	var edge:=Geo.material(Color("9a9b91"))
 	var east_door:=Vector2(130.164,86.2765)
-	var counts: Dictionary={"concrete":0,"townhouse_grey":0,"east_pavers":0,"vehicle":0}
+	var mapped: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/surface_overrides.json"))
+	var counts: Dictionary={"mapped_surface":0,"concrete":0,"townhouse_grey":0,"east_pavers":0,"vehicle":0}
 	# Original polygons and every centreline/width retained. No new ground collisions.
 	for area in world.site.parking: Geo.polygon(parent,area.points,asphalt,0.025)
-	for road in world.roads:
+	for road_index in world.roads.size():
+		var road: Dictionary=world.roads[road_index]
+		var surface: String=mapped.get(str(road_index),"UNKNOWN")
 		var a:=Geo.point(road.points[0])
 		var b:=Geo.point(road.points[1])
 		var mid:=Vector2((a.x+b.x)*0.5,(a.z+b.z)*0.5)
@@ -50,7 +53,9 @@ static func build(world: Node3D,parent: Node3D) -> void:
 		if not pedestrian:
 			var in_parking:=false
 			for area in world.site.parking:
-				if Geo.contains_point(mid,area.points): in_parking=true
+				var outline:=PackedVector2Array()
+				for point in area.points: outline.append(Vector2(point[0],point[1]))
+				if Geo.contains_point(mid,outline): in_parking=true
 			if not in_parking: Geo.strip(parent,a,b,road.width+0.5,edge,0.025)
 			strip(parent,a,b,road.width,asphalt,0.035)
 			counts.vehicle+=1
@@ -66,6 +71,17 @@ static func build(world: Node3D,parent: Node3D) -> void:
 				var center: Vector3=(a+b)*0.5
 				strip(parent,center-side*road.width*0.5,center+side*road.width*0.5,0.14,border,0.075)
 			counts.east_pavers+=1
+		elif surface in ["asphalt","concrete","concrete:plates","paving_stones","dirt","ground","compacted"]:
+			var finish: Material
+			var tile:=4.0
+			match surface:
+				"asphalt": finish=walkway; tile=2.0
+				"concrete": finish=concrete
+				"concrete:plates": finish=Finish.material("concrete_plates")
+				"paving_stones": finish=Pavers.material(); tile=1.6
+				_: finish=Finish.material("compacted")
+			strip(parent,a,b,road.width,finish,0.050,tile)
+			counts.mapped_surface+=1
 		elif road.kind=="path" and near_townhouse(mid,world.registry):
 			# User townhouse images show fine grey surfacing, not plaza blocks.
 			strip(parent,a,b,road.width,walkway,0.050,2.0)
