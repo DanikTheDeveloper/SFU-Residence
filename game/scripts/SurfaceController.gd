@@ -13,6 +13,17 @@ static func near_townhouse(point: Vector2,registry: Array) -> bool:
 			if point.distance_to(Geometry2D.get_closest_point_to_segment(point,Vector2(a[0],a[1]),Vector2(b[0],b[1])))<8.0: return true
 	return false
 
+static func closest_entry_is_east(point: Vector2,registry: Array) -> bool:
+	var closest: String=""
+	var distance: float=INF
+	for building in registry:
+		var entry:=Vector2(building.entrance[0],building.entrance[1])
+		var candidate:=point.distance_squared_to(entry)
+		if candidate<distance:
+			distance=candidate
+			closest=building.id
+	return closest=="EAT"
+
 static func strip(parent: Node3D,a: Vector3,b: Vector3,width: float,mat: Material,offset: float,tile: float=4.0) -> void:
 	var side:=Vector3(-(b-a).z,0,(b-a).x).normalized()*width*0.5
 	var polygon: Array=[]
@@ -42,7 +53,7 @@ static func build(world: Node3D,parent: Node3D) -> void:
 			counts.vehicle+=1
 			continue
 		# Handpicked PWL 1023 identifies East by its sign: only nearby existing walks.
-		var warm_pavers: bool=road.kind=="path" and mid.distance_to(east_door)<14.0 and a.distance_to(b)<25.0
+		var warm_pavers: bool=road.kind=="path" and mid.distance_to(east_door)<14.0 and a.distance_to(b)<25.0 and closest_entry_is_east(mid,world.registry)
 		if warm_pavers:
 			strip(parent,a,b,road.width+0.16,border,0.055)
 			strip(parent,a,b,road.width,Pavers.material(true),0.065,1.2)

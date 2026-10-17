@@ -164,7 +164,12 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		label.outline_size=0
 		label.font_size=28
 		label.pixel_size=0.009
-	if data.id=="MCH": label.position=door+Vector3.UP*2.88+normal*2.0
+	if data.id=="MCH":
+		# Small navigation label; lettering is not a verified architectural sign.
+		label.position=door+Vector3.UP*2.88+normal*2.0
+		label.font_size=24
+		label.pixel_size=0.007
+		label.outline_size=3
 	label.rotation.y=door_yaw
 	var debug := Label3D.new()
 	debug.name="MapLabel"
