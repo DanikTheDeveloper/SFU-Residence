@@ -1,0 +1,62 @@
+[
+  {
+    "building": "Shell House",
+    "local_filename": "1638918386812.jpg",
+    "source": "User-selected local photograph",
+    "source_url": null,
+    "photograph_date": null,
+    "viewpoint": "Compass orientation unknown",
+    "observations": "Readable Shell House sign; concrete floor bands, brown square-grid panels, dark narrow paired windows, top-storey deep light concrete fins; glazed entry under thin reddish fascia. Three visible levels at photographed entry; wood slat fence and freestanding sign.",
+    "licensing": "Unknown; reference only, no photo pixels redistributed in game",
+    "identity_confidence": "HIGH: readable sign or matching identified facade",
+    "sha256": "c1ac3b906a245dd37b8140eb7772666571e384864abe5a989273b5dac36695d2"
+  },
+  {
+    "building": "Shell House",
+    "local_filename": "Shell.jpg",
+    "source": "User-selected local photograph",
+    "source_url": null,
+    "photograph_date": null,
+    "viewpoint": "Compass orientation unknown",
+    "observations": "Readable Shell House sign; same facade and entrance in snow; low glazed sloping-roof annex and timber pergola visible at right. Unknown date. Main wing shows three visible storeys.",
+    "licensing": "Unknown; reference only, no photo pixels redistributed in game",
+    "identity_confidence": "HIGH: readable sign or matching identified facade",
+    "sha256": "9fc17c78eb115dd153db8da99ef1bc2d76f00b0a13bb20a3a3958c7bd3f5e5b8"
+  },
+  {
+    "building": "Shell House",
+    "local_filename": "1773695185556.jpg",
+    "source": "User-selected local photograph",
+    "source_url": null,
+    "photograph_date": null,
+    "viewpoint": "Compass orientation unknown",
+    "observations": "Matching facade and wood slat fence; concrete picnic tables; top-only deep pale fins; alternating narrow glazing and square-patterned brown panels.",
+    "licensing": "Unknown; reference only, no photo pixels redistributed in game",
+    "identity_confidence": "HIGH: readable sign or matching identified facade",
+    "sha256": "ae0b2f0e329baaba2961d521999ea3c0d2a87957cf6e744a232a9bcc36424714"
+  },
+  {
+    "building": "Shell House",
+    "local_filename": "maxresdefault.jpg",
+    "source": "User-selected local photograph",
+    "source_url": null,
+    "photograph_date": null,
+    "viewpoint": "Compass orientation unknown",
+    "observations": "Close exterior detail, matching Shell facade: brown square-grid panel relief, dark window frames, lower operable lights, deep upper-storey concrete fins and slab overhang.",
+    "licensing": "Unknown; reference only, no photo pixels redistributed in game",
+    "identity_confidence": "HIGH: readable sign or matching identified facade",
+    "sha256": "6a6609abb8c4cbd8bbe933f0d4887c4d322e916fa75479dc041409247268d8a4"
+  },
+  {
+    "building": "Shell House",
+    "local_filename": "images.jpeg",
+    "source": "User-selected local photograph",
+    "source_url": null,
+    "photograph_date": null,
+    "viewpoint": "Compass orientation unknown",
+    "observations": "Low resolution corner view, likely Shell: breeze-block screening, white stair landing, concrete rails, wood fence and matching brown-panel side facade. Exact corner orientation unverified.",
+    "licensing": "Unknown; reference only, no photo pixels redistributed in game",
+    "identity_confidence": "MEDIUM: matching facade; low resolution",
+    "sha256": "24c0d13d158564d21682169998a9dfa3218cf6d4d3e1afa95a80cc5cdab4a7cd"
+  }
+]

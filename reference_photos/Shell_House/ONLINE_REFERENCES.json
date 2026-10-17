@@ -1,0 +1,22 @@
+[
+  {
+    "building": "Shell House",
+    "source_url": "https://www.sfu.ca/students/residences/community/renovations/Archive-renovations.html",
+    "source": "SFU Residence and Housing renovation archive",
+    "local_filename": null,
+    "photograph_date": null,
+    "observations": "Official text documents exterior concrete repair and 2020 replacement of main entrance doors, side glazing, outside walking surface and lighting. Does not locate doorway or settle floor count.",
+    "licensing": "SFU copyright, URL-only reference",
+    "confidence": "HIGH named building; no floor geometry inference"
+  },
+  {
+    "building": "Shell House Residence",
+    "source_url": "https://www.sfu.ca/fs/campus-maps/directory-of-buildings/Shell-house-residence.html",
+    "source": "SFU Facilities Services building directory",
+    "local_filename": null,
+    "photograph_date": null,
+    "observations": "Official total Floor Levels4; building092; constructed1967, renovated2014, architectZoltan S. Kiss. Does not establish above-ground exposure on each facade.",
+    "licensing": "SFU copyright, URL-only reference",
+    "confidence": "HIGH official total levels; hillside/basement exposure unresolved"
+  }
+]

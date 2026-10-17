@@ -56,6 +56,9 @@ func run() -> void:
 			edge_count+=1
 			if not ray(center+direction*0.4,center-direction*0.4).is_empty(): edge_hits+=1
 		check(data.id+" solid facade edges",edge_count==edge_hits,"%d/%d"%[edge_hits,edge_count])
+	var shell: Node3D=world.get_node("Buildings/SHR")
+	check("Shell has distinct photo-based master",shell.get_meta("family_master")=="res://scripts/ShellExterior.gd")
+	check("Shell official total four levels preserved",shell.get_meta("floor_count")==4)
 	var hamilton: Node3D=world.get_node("Buildings/HAM")
 	var ham_door: Vector3=hamilton.get_meta("photo_entrance")
 	var ham_normal: Vector3=hamilton.get_meta("photo_entrance_normal")

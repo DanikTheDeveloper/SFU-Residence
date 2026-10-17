@@ -406,6 +406,16 @@
       "passed": true
     },
     {
+      "check": "Shell has distinct photo-based master",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Shell uncertain four-floor registry preserved",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Hamilton primary portico faces north",
       "evidence": "",
       "passed": true

@@ -53,7 +53,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -241,6 +241,8 @@ func capture_views() -> void:
 		var eye: Vector3=door+normal*4.8+Vector3(normal.z,0,-normal.x)*3.0
 		eye.y=Geo.elevation(eye.x,eye.z)+1.68
 		views.append([eye,door+Vector3.UP*1.6])
+	if "--capture-shell" in OS.get_cmdline_user_args():
+		views=[[Geo.point([245,146],1.68),Geo.point([253,136.6],4.0)],[Geo.point([242,103],1.68),Geo.point([260,100],5.0)],[Geo.point([286,97],1.68),Geo.point([273,96],5.0)]]
 	add_child(capture)
 	capture.far=1200
 	capture.fov=72
@@ -260,7 +262,7 @@ func capture_views() -> void:
 		frame_times.sort()
 		measurements.append({"view":i,"camera_xyz":[capture.position.x,capture.position.y,capture.position.z],"look_at":[views[i][1].x,views[i][1].y,views[i][1].z],"viewport_size":[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y],"fov":capture.fov,"eye_height_m":1.68,"fps_mean":90.0/((Time.get_ticks_usec()-start)/1000000.0),"frame_ms_p95":frame_times[85],"draw_calls":Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME)})
 		await RenderingServer.frame_post_draw
-		get_viewport().get_texture().get_image().save_png(("res://docs/screenshots/hamilton_%d.png" if "--capture-hamilton" in OS.get_cmdline_user_args() else "res://docs/screenshots/view_%d.png")%i)
+		get_viewport().get_texture().get_image().save_png(("res://docs/screenshots/shell_%d.png" if "--capture-shell" in OS.get_cmdline_user_args() else "res://docs/screenshots/hamilton_%d.png" if "--capture-hamilton" in OS.get_cmdline_user_args() else "res://docs/screenshots/view_%d.png")%i)
 	overview.current=true
 	map_mode=true
 	for label in get_tree().get_nodes_in_group("building_labels"):
@@ -276,7 +278,7 @@ func capture_views() -> void:
 	for frame in 40: await get_tree().process_frame
 	await RenderingServer.frame_post_draw
 	get_viewport().get_texture().get_image().save_png("res://docs/screenshots/player_view.png")
-	var report:=FileAccess.open("res://docs/performance_hamilton.json" if "--capture-hamilton" in OS.get_cmdline_user_args() else "res://docs/performance_north.json" if "--capture-north" in OS.get_cmdline_user_args() else "res://docs/performance.json",FileAccess.WRITE)
+	var report:=FileAccess.open("res://docs/performance_shell.json" if "--capture-shell" in OS.get_cmdline_user_args() else "res://docs/performance_hamilton.json" if "--capture-hamilton" in OS.get_cmdline_user_args() else "res://docs/performance_north.json" if "--capture-north" in OS.get_cmdline_user_args() else "res://docs/performance.json",FileAccess.WRITE)
 	report.store_string(JSON.stringify({"device":RenderingServer.get_video_adapter_name(),"renderer":RenderingServer.get_current_rendering_method(),"resolution":[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y],"tier":"medium","samples":measurements},"  "))
 	print("CAPTURE_COMPLETE fps=",Engine.get_frames_per_second()," draws=",Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
 	get_tree().quit()
