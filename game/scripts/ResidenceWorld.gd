@@ -112,7 +112,7 @@ func build_ground() -> void:
 			var c := Geo.point([x+2,z+2])
 			var d := Geo.point([x,z+2])
 			verts.append_array([a,c,b,a,d,c])
-	Geo.mesh_from_vertices(ground,verts,Geo.material(Color("6e8056")),true,true).name="Terrain"
+	Geo.mesh_from_vertices(ground,verts,preload("res://scripts/GroundMaterials.gd").grass(),true,true).name="Terrain"
 	var edge_mat := Geo.material(Color("425c3f"))
 	for i in boundary.size():
 		var a := Geo.point([boundary[i].x,boundary[i].y])

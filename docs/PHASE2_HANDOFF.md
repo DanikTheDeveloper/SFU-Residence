@@ -3,7 +3,7 @@
 ## Resume here
 Use outer game/ and current working tree. Latest committed milestone: 1df28b3 Dining exterior. Earlier verified milestones: da90b52 North longitudinal gallery, 996cd31 Hamilton, 9935b61 Shell facade, 6f108df Shell grade stems.
 
-Landscape increment ready for checkpoint:
+Landscape checkpoint 55c709d:
 - ResidencePavers.gd: original 256px mipmapped grey running-bond pavers, estimated 400x200mm scale, aligned to North courtyard apron. Gallery floor remains concrete.
 - CourtyardLighting.gd: open-frame charcoal fixture from user PWL 1025. Replaces generic fixture shapes at existing estimated positions near EAT/WET; no claim of surveyed light coordinates.
 - NorthTowerPassage.gd and ResidenceWorld.gd integrate these; north capture adds close-up views 13/14.
@@ -26,3 +26,6 @@ Use bash scripts/run_game.sh; restart needed to see changes in an already runnin
 All edits are local. User reference photos, FILE_MANIFEST.json, historic_maps and untracked metadata must be preserved. 27 known one-off patch scripts were backed up byte-for-byte to /home/danik/Backups/SFU-iteration-helper-scripts-20261017 and removed from scripts/. Unknown files were preserved.
 
 Continue useful evidence-backed work while usage permits. Five hours is a usage reset, not a deadline. Save status/handoff after each verified milestone; stop only on actual low-usage signal or user instruction.
+
+## Verified grass material increment
+GroundMaterials.gd adds a subtle original mipmapped grass colour texture to the existing terrain mesh. No vertex, normal, height, collision or pad changes. This is generic surface detail consistent with planted-site references, not a surveyed species or planting map. Smoke passed in /tmp/ground-material-smoke.log; /tmp/ground-material-capture.log completed and both landscape views inspected; preservation/family validators passed. Next: extend the searchable per-photo review index for remaining buildings before further architectural edits.

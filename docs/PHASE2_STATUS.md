@@ -1,7 +1,7 @@
 # Phase 2 status — 2026-10-17
 
 ## Current runnable checkpoint
-Commit 1df28b3: Dining Commons exterior, following North gallery, Hamilton and Shell milestones. Godot 4.7.2 Standard, GDScript, Compatibility/OpenGL, Debian WSL2 retained. First-person mouse fix remains unchanged and was confirmed working by the user.
+Commits 1df28b3 (Dining Commons) and 55c709d (landscape paving/fixtures), following North gallery, Hamilton and Shell milestones. Godot 4.7.2 Standard, GDScript, Compatibility/OpenGL, Debian WSL2 retained. First-person mouse fix remains unchanged and was confirmed working by the user.
 
 ## Verified progress
 - North Towers: shared model with the user's corrected LONGITUDINAL courtyard-side gallery connecting Pauline Jewett, Barbara Rae and Shadbolt. Previous transverse-tunnel assumptions are obsolete. Recessed closed doors, columns, rear boundary and overhead collision; connectors are estimated.
@@ -20,3 +20,6 @@ Photo-based North courtyard pavers and open-frame courtyard light geometry at ex
 
 ## Remaining work
 See PHASE2_PHOTO_REFINEMENT_BACKLOG.md and individual HAMILTON/SHELL/DINING/LANDSCAPE review documents. Priorities: exact North parking-stair/longitudinal-gallery relationship, planted-bed boundaries and terrain transitions, Shell entrance/above-grade exposure, as-built Dining exterior, further Courtyard/McTaggart entry detail. Photograph material evidence does not establish measured locations.
+
+## Verified grass material increment
+GroundMaterials.gd adds a subtle original mipmapped grass colour texture to the existing terrain mesh. No vertex, normal, height, collision or pad changes. This is generic surface detail consistent with planted-site references, not a surveyed species or planting map. Smoke passed in /tmp/ground-material-smoke.log. GTX1650 capture completed; both landscape views inspected. Terrain/preservation and family validators pass.

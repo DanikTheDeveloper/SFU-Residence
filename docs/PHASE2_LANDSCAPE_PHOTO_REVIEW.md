@@ -13,3 +13,5 @@ Open-frame charcoal courtyard fixtures now replace generic pole/cap shapes at ex
 Stair-location audit: archived prototype source OSM 1159793611 runs from (112.856,8.273) to (110.252,19.715), beside the inter-house gap. Shadbolt photo entry registry is (118.507,40.275), and its long-wing centre is about (144.69,31.90). That segment cannot simply be asserted to be the foreground flight in PWL 1001. The old prototype's six broad treads over 11.7 m also do not match the compact photo flight. Keep archived until independently localized; do not restore based only on nearby house identity.
 
 Validation: 177 checks and all 333 route checkpoints passed. North views 13/14 visually inspected; paver tones reduced after first capture and final landscape_0 inspected. Dedicated --capture-landscape now captures the apron and fixture in two views.
+
+GroundMaterials.gd now adds original subtle grass colour variation with a single mipmapped texture. No extra geometry, no species claim and no change to the terrain height field. Final smoke and eye-level landscape captures passed; protected data/family validators passed.

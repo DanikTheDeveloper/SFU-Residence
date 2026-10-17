@@ -1,0 +1,99 @@
+{
+  "device": "D3D12 (NVIDIA GeForce GTX 1650)",
+  "renderer": "gl_compatibility",
+  "resolution": [
+    1280.0,
+    720.0
+  ],
+  "samples": [
+    {
+      "camera_xyz": [
+        171.0,
+        12.478949546814,
+        11.0
+      ],
+      "draw_calls": 156.0,
+      "eye_height_m": 1.68,
+      "fov": 72.0,
+      "fps_mean": 23.5441784272018,
+      "frame_ms_p95": 66.482,
+      "look_at": [
+        186.0,
+        18.3910007476807,
+        17.0
+      ],
+      "view": 0,
+      "viewport_size": [
+        1280.0,
+        720.0
+      ]
+    },
+    {
+      "camera_xyz": [
+        216.0,
+        15.9839496612549,
+        -9.0
+      ],
+      "draw_calls": 177.0,
+      "eye_height_m": 1.68,
+      "fov": 72.0,
+      "fps_mean": 29.9912225688615,
+      "frame_ms_p95": 43.075,
+      "look_at": [
+        215.0,
+        18.4694995880127,
+        8.0
+      ],
+      "view": 1,
+      "viewport_size": [
+        1280.0,
+        720.0
+      ]
+    },
+    {
+      "camera_xyz": [
+        250.0,
+        13.964599609375,
+        62.0
+      ],
+      "draw_calls": 427.0,
+      "eye_height_m": 1.68,
+      "fov": 72.0,
+      "fps_mean": 16.6677222890783,
+      "frame_ms_p95": 79.231,
+      "look_at": [
+        237.0,
+        18.3910007476807,
+        55.0
+      ],
+      "view": 2,
+      "viewport_size": [
+        1280.0,
+        720.0
+      ]
+    },
+    {
+      "camera_xyz": [
+        205.0,
+        14.3523998260498,
+        76.0
+      ],
+      "draw_calls": 134.0,
+      "eye_height_m": 1.68,
+      "fov": 72.0,
+      "fps_mean": 27.3605712887285,
+      "frame_ms_p95": 49.854,
+      "look_at": [
+        210.0,
+        18.3910007476807,
+        58.0
+      ],
+      "view": 3,
+      "viewport_size": [
+        1280.0,
+        720.0
+      ]
+    }
+  ],
+  "tier": "medium"
+}
