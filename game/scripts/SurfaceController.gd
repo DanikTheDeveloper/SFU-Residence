@@ -48,7 +48,10 @@ static func build(world: Node3D,parent: Node3D) -> void:
 		var mid:=Vector2((a.x+b.x)*0.5,(a.z+b.z)*0.5)
 		var pedestrian: bool=road.kind=="path" or road.name=="Residence Lane"
 		if not pedestrian:
-			Geo.strip(parent,a,b,road.width+0.5,edge,0.025)
+			var in_parking:=false
+			for area in world.site.parking:
+				if Geo.contains_point(mid,area.points): in_parking=true
+			if not in_parking: Geo.strip(parent,a,b,road.width+0.5,edge,0.025)
 			strip(parent,a,b,road.width,asphalt,0.035)
 			counts.vehicle+=1
 			continue

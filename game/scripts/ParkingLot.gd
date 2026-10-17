@@ -8,9 +8,7 @@ static func build(world: Node3D, parent: Node3D) -> void:
 	var paint:=Node3D.new()
 	root.add_child(paint)
 	var white:=Geo.material(Color("cac9bb"))
-	var bodies: Array[Transform3D]=[]
-	var glass: Array[Transform3D]=[]
-	var wheels: Array[Transform3D]=[]
+	var cars: Array[Transform3D]=[]
 	var stalls:=0
 	for area in world.site.parking:
 		var poly:=PackedVector2Array()
@@ -42,7 +40,7 @@ static func build(world: Node3D, parent: Node3D) -> void:
 						if not Geometry2D.is_point_in_polygon(p+axis*du+cross*dv,poly): fits=false
 				if not fits or world.inside_building(p,3): continue
 				for side in [-1,1]:
-					var a: Vector2=p+axis*side*1.30-cross*2.6
+					var a: Vector2=p+axis*side*1.35-cross*2.6
 					var b: Vector2=a+cross*5.2
 					Geo.strip(paint,Geo.point([a.x,a.y]),Geo.point([b.x,b.y]),0.09,white,0.065)
 				stalls+=1
@@ -60,10 +58,7 @@ static func build(world: Node3D, parent: Node3D) -> void:
 				var right:=Vector3.UP.cross(forward).normalized()
 				var up:=forward.cross(right).normalized()
 				var basis:=Basis(right,up,forward)
-				bodies.append(Transform3D(basis.scaled_local(Vector3(1.75,0.6,3.9)),pos+up*0.72))
-				glass.append(Transform3D(basis.scaled_local(Vector3(1.55,0.55,2.0)),pos+up*1.23))
-				for side in [-1,1]:
-					for end in [-1,1]: wheels.append(Transform3D(basis.scaled_local(Vector3(0.24,0.55,0.55)),pos+up*0.35+right*side*0.85+forward*end*1.2))
+				cars.append(Transform3D(basis,pos+up*0.065))
 				var body:=StaticBody3D.new()
 				root.add_child(body)
 				body.transform=Transform3D(basis,pos+up*0.8)
@@ -82,8 +77,6 @@ static func build(world: Node3D, parent: Node3D) -> void:
 		root.add_child(sign)
 		sign.position=sign_pos+Vector3.UP*2.8
 	Geo.merge_surfaces(paint)
-	Geo.instances(root,bodies,Geo.material(Color("647984")),null,220)
-	Geo.instances(root,glass,Geo.material(Color("34484e")),null,220)
-	Geo.instances(root,wheels,Geo.material(Color("252a2c")),null,160)
+	preload("res://scripts/ParkedVehicles.gd").build(root,cars)
 	root.set_meta("estimated_stalls",stalls)
-	root.set_meta("cars",bodies.size())
+	root.set_meta("cars",cars.size())

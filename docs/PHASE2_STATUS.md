@@ -20,3 +20,8 @@ North Towers retain the corrected longitudinal courtyard-facing gallery through 
 North parking-stair localization; McTaggart connector and three-visible/four-total level reconciliation; Shell photo-door location and exposed levels; Courtyard roof terrace/penthouse, forecourt and planted-bed geometry; current as-built Dining finish. Landscape planting, curb/drain positions and actual pavement boundaries remain estimated. Preserve verified paths and building coordinates until new evidence supports changes.
 
 Host reported 91% usage consumed during final verification. Finish current checkpoint and stop; resume from handoff next window.
+
+## New landscape iteration: vehicles
+Replaced box cars with four CC0 Cosmo GLB models (coupe, mobil, jeep, van). Imported meshes are normalized to existing stalls and instanced by variant. Existing collision/route clearance preserved. License included in game/assets/vehicles/cosmo. Smoke /tmp/vehicles-smoke.log passed; GTX1650 --capture-parking completed and three views reviewed. Validators pass. Capture identified pale road-edge overlays inside parking; these now suppress within mapped parking and divider spacing was corrected. Final combined parking regression will verify those changes.
+
+Online parking research found missing Residence Main Lot, OSM way32528160. Current way is Phase3 construction; version8 retains pre-construction parking tags. Awaiting/assuming full pre-construction lot per current request, not current construction. Official SFU rear-tower photograph confirms cars and deciduous planted edge; exact stalls/drainage/finished level unresolved. Next: add reversible mapped lot and local level grading, preserving all foundations.
