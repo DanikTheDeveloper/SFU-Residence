@@ -29,3 +29,6 @@ Six supplied images indexed; design rendering and duplicate distinguished. Corre
 
 ## Usage-window handoff
 Host reported 93% of the five-hour allowance used. Finished the current material correction and saved verified work; no further changes started. Next iteration: read this handoff, inspect git status, and continue the prioritized photo backlog. Do not redo completed Dining or landscape work.
+
+## Verified new iteration: Courtyard massing
+Latest resume baseline d9f9dc5. Five Courtyard photos individually reviewed and indexed. Correcting erroneous uniform eleven-storey extrusion into highrise / three-storey lowrise / lower atrium while preserving the full original outline and tallest roof height. See PHASE2_COURTYARD_PHOTO_REVIEW.md. Final /tmp/courtyard-grade-verification.log: 180 checks and 333 route checkpoints pass. GPU views inspected. Photo index coverage now 46/46 files, including individually reviewed Courtyard, East/West and Townhouse files; exact duplicates and uncertain identities recorded. Next: local paving variants and textured paths, keeping all geometry and approved architecture intact.

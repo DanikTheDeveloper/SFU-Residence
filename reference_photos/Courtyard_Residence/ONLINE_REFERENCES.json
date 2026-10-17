@@ -20,5 +20,33 @@
     "local_filename": null,
     "licensing": "URL-only research; no image downloading or texture reuse. Permission to redistribute not established.",
     "model_limits": "Precise bay counts, variable wing roof levels, compass-specific red reveal placement and garden dimensions unresolved."
+  },
+  {
+    "building": "Courtyard Residence",
+    "source_url": "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/courtyard_residence/Courtyard_Residences_Floor_Room_Plan_V2.pdf",
+    "source": "SFU Residence and Housing",
+    "photograph_date": null,
+    "local_filename": null,
+    "viewpoint": "Level 2 floor plan visually inspected",
+    "observations": [
+      "Long highrise east-west orientation, north University Drive and east visitor parking labels",
+      "Public highrise plans cover levels 2 through 11; approximate artist interpretation per PDF"
+    ],
+    "licensing": "Read-only plan reference; not shipped as game asset",
+    "identity_confidence": "High"
+  },
+  {
+    "building": "Courtyard Residence",
+    "source_url": "https://rjcca.b-cdn.net/project-details/simon-fraser-university-residences-phase-1-phase-2-dining-commons.html",
+    "source": "RJC Engineers",
+    "photograph_date": null,
+    "local_filename": null,
+    "viewpoint": "Structural project description",
+    "observations": [
+      "Three-storey low rise corroborates photos",
+      "Describes tower as 12 storeys, versus existing SFU/registry 11; count/basement convention unresolved, retained baseline tower height"
+    ],
+    "licensing": "URL/text reference only",
+    "identity_confidence": "High project identity; tower floor-count conflict recorded"
   }
 ]

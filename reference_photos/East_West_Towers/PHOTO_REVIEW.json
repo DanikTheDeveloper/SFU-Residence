@@ -1,0 +1,69 @@
+[
+  {
+    "building": "East Tower, sign visible",
+    "local_filename": "1638918934812.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Entry courtyard",
+    "observations": [
+      "Turquoise entry surrounds and glass canopy; approved model unchanged",
+      "Grey/tan small pavers, pale concrete bands and low planted edges"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  },
+  {
+    "building": "East Tower, sign visible",
+    "local_filename": "1771013055311.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Entry courtyard with foreground rails",
+    "observations": [
+      "Paver apron, pale retaining/seat walls, planting beds, open-frame lamps",
+      "Rail in foreground; precise flight/grade not fully visible"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  },
+  {
+    "building": "East/West family; individual tower unresolved",
+    "local_filename": "PWL-SFU-Residences-Phase-1-1017.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Side facade / path",
+    "observations": [
+      "Pale brick above dark brick plinth",
+      "Open-frame charcoal lamp and narrow grey path beside planting"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  },
+  {
+    "building": "East Tower, sign visible",
+    "local_filename": "PWL-SFU-Residences-Phase-1-1023.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Frontal entry / paving",
+    "observations": [
+      "Mixed warm tan and grey rectangular paving",
+      "Pale transverse bands and black linear drain",
+      "Continuous planted beds; exact bed boundary needs plan"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  },
+  {
+    "building": "East Tower context, same courtyard family",
+    "local_filename": "PWL-SFU-Residences-Phase-1-1025.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Glazed connector / landscape",
+    "observations": [
+      "Charcoal open-frame fixture",
+      "Pale low concrete edging, ferns and rush-like planting",
+      "Duplicate file also present in Terrain_and_Stairs"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  }
+]

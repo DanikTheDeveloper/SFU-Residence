@@ -1,0 +1,92 @@
+[
+  {
+    "building": "Townhouse family; block unidentified",
+    "local_filename": "16360616545524.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Oblique porch row",
+    "observations": [
+      "Blue horizontal siding, white trim, red doors, narrow top balconies",
+      "Ground floor porches on stone bases; plain grey paths"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  },
+  {
+    "building": "Townhouse family; block unidentified",
+    "local_filename": "17526851659512.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Long row and pedestrian path",
+    "observations": [
+      "Individual homes, porch roofs and upper balconies",
+      "Grey fine-textured asphalt-like path beside grass; concrete doorstep"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  },
+  {
+    "building": "Townhouse family; block unidentified",
+    "local_filename": "1752685165951.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Same view as 17526851659512.jpg",
+    "observations": [
+      "Visual duplicate, not independent evidence"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  },
+  {
+    "building": "Townhouse family; block unidentified",
+    "local_filename": "images (1).jpeg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Row elevation",
+    "observations": [
+      "Repeated porch-and-house rhythm; minor roof/door variation",
+      "Plain grey path and grass"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  },
+  {
+    "building": "Townhouse family; block unidentified",
+    "local_filename": "images (2).jpeg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Shaded wooded path",
+    "observations": [
+      "Grey path, autumn leaves, porch steps and planted edges",
+      "No justification for rectangular plaza pavers here"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  },
+  {
+    "building": "Townhouse family; block unidentified",
+    "local_filename": "images (3).jpeg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Distant road-side view",
+    "observations": [
+      "Pitched main roofs and stepped entrance approach",
+      "Grey sidewalk parallel to vehicle road; exact location unresolved"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  },
+  {
+    "building": "Townhouse family; block unidentified",
+    "local_filename": "images.jpeg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Close porch view",
+    "observations": [
+      "Individual red door, white square posts, stone base, exposed soffit beams",
+      "Concrete entry slab/step; approved model preserved"
+    ],
+    "identity_confidence": "High family identity; individual identity stated above",
+    "licensing": "User-supplied visual reference only; no pixels shipped"
+  }
+]

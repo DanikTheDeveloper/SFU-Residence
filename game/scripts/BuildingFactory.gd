@@ -92,9 +92,10 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	if data.id=="HAM": body_mat=preload("res://scripts/HamiltonExterior.gd").material("stucco")
 	if data.id=="MCH": body_mat=preload("res://scripts/McTaggartExterior.gd").brick_material()
 	if data.id=="CYR": body_mat=preload("res://scripts/CourtyardExterior.gd").material("reveal")
-	var wall_mesh := Geo.mesh_from_vertices(root,walls,body_mat,true)
-	wall_mesh.name="ExteriorCollision"
-	Geo.mesh_from_vertices(root,roof,roof_mat,true).name="Roof"
+	if data.id!="CYR":
+		var wall_mesh := Geo.mesh_from_vertices(root,walls,body_mat,true)
+		wall_mesh.name="ExteriorCollision"
+		Geo.mesh_from_vertices(root,roof,roof_mat,true).name="Roof"
 	if data.id in ["EAT","WET"]:
 		preload("res://scripts/ModernTowerExterior.gd").build(root,data,points,base,height)
 		accent_mat=preload("res://scripts/FacadeKit.gd").material("teal" if data.id=="EAT" else "frame")

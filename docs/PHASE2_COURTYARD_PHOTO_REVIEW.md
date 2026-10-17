@@ -1,0 +1,11 @@
+# Courtyard Residence — photo / massing audit, 2026-10-17
+
+All five local files inspected individually, including AVIF decoded with bundled Pillow for private review. The two numbered tall-facade JPEGs show the same view. The reference preview was moved outside the active project; no photograph is a game asset.
+
+The old model extruded the entire merged footprint eleven storeys. Photographs show a long highrise, three-storey lowrise and lower glazed atrium. SFU's north-oriented level-2 plan labels visitor parking at the east end. Together with the footprint's existing re-entrant corners, this supports the southern long wing as the highrise, northern short wing as lowrise and eastern join as atrium.
+
+CourtyardExterior.zones partitions the ORIGINAL polygon without moving vertices: highrise indices 3..14; lowrise [0,1,2,15,16,17]; atrium [2,3,14,15]. Shared edges close exactly. The original registry, XZ, terrain pad, secondary route entrance and maximum 34.1m height remain unchanged. Lowrise 10.8m and atrium 8m are estimated from visible levels/proportions, not survey measurements. Three low-rise levels corroborated by structural engineer RJC. RJC calls the tower 12 storeys while existing SFU/registry convention is 11; this may involve lower level counting and is unresolved, so no tower height change.
+
+New facade treatment adds the dominant glazed eastern tower end and warm-framed opaque exterior atrium glazing. No interiors. Lower-wing roof terrace/penthouse, exact podium cutbacks, small facade exceptions, precise primary door coordinates, courtyard planting and paving are still pending. Original west route doorway remains available; the photo-informed east atrium door position is estimated.
+
+Verified: 180 checks including three distinct roof collision heights, 333 route checkpoints, original geography/terrain/approved-family validators. Final /tmp/courtyard-grade-verification.log passes after grade-contact stems. GTX1650 Compatibility capture completed; all initial views and final in-bound eastern approach inspected. Sum of partition areas equals original footprint area exactly within floating-point tolerance. Final first-person east view moved inside the existing play boundary. Forecourt grading/pavement still requires refinement; existing sloped terrain has not been flattened.

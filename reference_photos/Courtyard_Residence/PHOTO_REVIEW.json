@@ -1,0 +1,73 @@
+[
+  {
+    "building": "Courtyard Residence",
+    "local_filename": "17526849049475.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Highrise end and long facade, elevated view",
+    "observations": [
+      "Pale ribbed and smooth precast zones",
+      "Dark horizontal bands group storeys",
+      "Tall glazed end above two-level podium",
+      "Low wing and glazed bridge visible"
+    ],
+    "identity_confidence": "High: matches official architect and SFU plans",
+    "licensing": "User-supplied reference only; no photo pixels used in game"
+  },
+  {
+    "building": "Courtyard Residence",
+    "local_filename": "1752684904947.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Same highrise view as 17526849049475.jpg",
+    "observations": [
+      "Visual duplicate; not an independent viewpoint"
+    ],
+    "identity_confidence": "High: matches official architect and SFU plans",
+    "licensing": "User-supplied reference only; no photo pixels used in game"
+  },
+  {
+    "building": "Courtyard Residence",
+    "local_filename": "images (1).jpeg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Aerial overview from visitor-parking end",
+    "observations": [
+      "Long highrise, short three-storey wing and lower glazed connector",
+      "Open courtyard between unequal-height wings",
+      "Low-rise roof terrace and small rooftop volume"
+    ],
+    "identity_confidence": "High: matches official architect and SFU plans",
+    "licensing": "User-supplied reference only; no photo pixels used in game"
+  },
+  {
+    "building": "Courtyard Residence",
+    "local_filename": "images.jpeg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Reverse elevated overview",
+    "observations": [
+      "Large difference in wing heights",
+      "Ground forecourt paving and curved vehicle edge",
+      "Roof equipment and pale perimeter parapets"
+    ],
+    "identity_confidence": "High: matches official architect and SFU plans",
+    "licensing": "User-supplied reference only; no photo pixels used in game"
+  },
+  {
+    "building": "Courtyard Residence",
+    "local_filename": "courtyard-residence-sfu-burnaby-6-ledcor.avif",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Front visitor-parking elevation",
+    "observations": [
+      "Three visible low-rise levels and small roof volume",
+      "Two-storey glazed atrium with warm structural frames",
+      "Highrise glazed end and deep podium piers",
+      "Grey and warm small-unit paving with pale edging; red vertical fence",
+      "Construction cones/vehicles indicate image not necessarily final landscape state"
+    ],
+    "identity_confidence": "High: matches official architect and SFU plans",
+    "licensing": "User-supplied reference only; no photo pixels used in game"
+  }
+]

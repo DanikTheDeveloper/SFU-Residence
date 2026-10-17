@@ -406,6 +406,21 @@
       "passed": true
     },
     {
+      "check": "Courtyard Lowrise roof matches configured zone height",
+      "evidence": "(320.0, 22.893, -31.0)",
+      "passed": true
+    },
+    {
+      "check": "Courtyard Highrise roof matches configured zone height",
+      "evidence": "(320.0, 46.193, -2.0)",
+      "passed": true
+    },
+    {
+      "check": "Courtyard Atrium roof matches configured zone height",
+      "evidence": "(335.0, 20.09299, -15.0)",
+      "passed": true
+    },
+    {
       "check": "Dining retains distinct old and new exterior zones",
       "evidence": "",
       "passed": true

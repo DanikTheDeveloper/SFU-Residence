@@ -56,6 +56,11 @@ func run() -> void:
 			edge_count+=1
 			if not ray(center+direction*0.4,center-direction*0.4).is_empty(): edge_hits+=1
 		check(data.id+" solid facade edges",edge_count==edge_hits,"%d/%d"%[edge_hits,edge_count])
+	var courtyard: Node3D=world.get_node("Buildings/CYR")
+	var cy_base: float=courtyard.get_meta("foundation_world_y")
+	for sample in [[320.0,-31.0,10.8,"Lowrise"],[320.0,-2.0,34.1,"Highrise"],[335.0,-15.0,8.0,"Atrium"]]:
+		var top_hit:=ray(Vector3(sample[0],100,sample[1]),Vector3(sample[0],-100,sample[1]))
+		check("Courtyard "+sample[3]+" roof matches configured zone height",not top_hit.is_empty() and absf(top_hit.position.y-(cy_base+sample[2]))<0.12,str(top_hit.get("position","missing")))
 	var dining: Node3D=world.get_node("Buildings/DC")
 	check("Dining retains distinct old and new exterior zones",dining.get_meta("exterior_zones").size()==2 and dining.get_meta("family_master")=="res://scripts/DiningExterior.gd")
 	check("Dining three-level registry retained",dining.get_meta("floor_count")==3)

@@ -82,6 +82,9 @@ PASS SQU anchor outside
 PASS SQU ground 
 PASS SQU stable player 
 PASS SQU solid facade edges 13/13
+PASS Courtyard Lowrise roof matches configured zone height (320.0, 22.893, -31.0)
+PASS Courtyard Highrise roof matches configured zone height (320.0, 46.193, -2.0)
+PASS Courtyard Atrium roof matches configured zone height (335.0, 20.09299, -15.0)
 PASS Dining retains distinct old and new exterior zones 
 PASS Dining three-level registry retained 
 PASS Shell has distinct photo-based master 
@@ -179,4 +182,4 @@ PASS Courtyard uses distinct precast master
 PASS Courtyard preserves eleven-floor registry 
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=177 failures=0
+VERIFICATION_COMPLETE checks=180 failures=0
