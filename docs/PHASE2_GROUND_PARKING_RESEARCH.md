@@ -25,3 +25,8 @@ Current OSM precinct extract has no individually mapped trees. It does contain w
 
 ## Verified checkpoint
 /tmp/main-parking-restricted-verification.log: 184 checks, all original 333 route checkpoints plus 8 main-lot checkpoints, zero failures. GTX1650 Compatibility capture /tmp/main-parking-capture.log completed; three main-lot views inspected. Approved East/West master, facade kit, original pads and original source terrain remain unchanged. Runtime local grading is intentionally changed. FPS shares load with an existing user game.
+
+
+## Vegetation evidence
+Official rear-North photograph in the parking reference index shows a deciduous planted edge. OSM map bbox -122.932,49.2784,-122.9225,49.2818 supplies 13 complete woodland/grass polygons, zero individual trees. Source: data/site_sources/precinct.osm; repeatable scripts fetch_mapped_trees.py and build_planting_regions.py. OSM ODbL attribution retained. Rooftop garden excluded.
+PhotoVegetation.gd uses original opaque branch/leaf meshes and sparse grass triangles, batched with shadows disabled and short grass visibility. No third-party photo pixels or new dependencies. Individual locations/species/spacing remain estimated. This is improved silhouette geometry, not photoreal foliage or a planting survey. Final smoke and GPU capture complete; parking eye-level and elevated views inspected. More woodland/grass review remains.

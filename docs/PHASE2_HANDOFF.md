@@ -1,5 +1,22 @@
 # Phase 2 handoff — 2026-10-17
 
+## Latest checkpoint: landscape iteration, 2026-10-17
+This section supersedes historical resume instructions below. Completed: a1a46cd licensed cars; 3b8d207 level Residence Main Lot and mapped ground finishes; vegetation checkpoint follows these commits.
+
+Added missing Residence Main Lot from its mapped pre-construction outline and levelled its core at estimated game Y=8.87m. Original terrain source, building pads and gallery preserved. Full pre-construction parking is a reversible working assumption pending the user's reply about Phase 3 construction. Exact elevation, stall arrangement, curb/drain and retaining geometry remain unverified.
+
+Four CC0 Cosmo vehicle models replace dummy boxes. These are stylized, not photorealistic or surveyed vehicle makes. All 398 road/path segments have evidence records; 95 pedestrian segments use explicit mapped materials. Unknown finishes retain documented fallbacks. Photo-derived townhouse/East finishes remain.
+
+Random campus-wide cone/sphere trees replaced with original branching leaf meshes constrained to mapped woodland and a photo-supported North rear edge: 25 broadleaf, 72 conifers, 59 sparse grass clumps within mapped grass. Positions, species mix and spacing are estimates; no individual tree survey was available. Rooftop garden excluded. GPU views parking_0 and parking_2 inspected: silhouettes improved, still sparse/stylized. More woodland/lawn eye-level review and density tuning are needed.
+
+Verification: /tmp/main-parking-restricted-verification.log passes 184 checks / 341 route checkpoints / 376 terrain-ray parity checks, including North continuous gallery and new lot traverse. Later changes are visual only. /tmp/vegetation-smoke.log passes WORLD_READY. /tmp/vegetation-capture.log completes on GTX1650 Compatibility; final two parking views inspected. Preservation/family/photo validators pass, 46/46 photos. Concurrent user game prevents an isolated FPS claim. Restart with bash scripts/run_game.sh.
+
+Next: exact parking stairs, curb/drain and retaining edges, building-side stall arrangement, planting silhouettes/grass coverage, then unresolved McTaggart connector, Shell entrance/exposed levels, Courtyard terrace/forecourt and Dining current as-built details. No buildings changed in this landscape iteration. Approved East/West, townhouses and fixed mouse preserved. See PHASE2_GROUND_PARKING_RESEARCH.md.
+
+Actual account reading reached 90% consumed during final verification. Checkpoint saved; stop and resume on the next user request. Five hours is a usage reset, not a development deadline. One-off helper scripts backed up outside workspace at /home/danik/Backups/SFU-landscape-iteration-20261017; user files preserved.
+
+## Historical checkpoint notes
+
 ## Resume here
 Canonical project: outer game/. Read git status and this handoff; do not recopy Phase 1 or redo reviewed photos. This iteration's verified commits: e642e99 Courtyard massing and 97c24d2 pavement. McTaggart details and pavement guard are the final verified checkpoint. Check latest git log for its commit.
 
@@ -29,7 +46,7 @@ Approved East/West master, FacadeKit, townhouse master, terrain smoothing/pads, 
 
 Additional notes: user source files, FILE_MANIFEST.json, historic_maps and untracked reference metadata are preserved. Original nested game is retained; obsolete nested Markdown cleanup already completed outside the workspace. This window's 16 known one-off patch helpers and pre-consolidation status/handoff were backed up to /home/danik/Backups/SFU-photo-iteration-20261017. Earlier helper backup is /home/danik/Backups/SFU-iteration-helper-scripts-20261017.
 
-Host reported 91% of the five-hour usage window consumed while finishing verification. Stop after saving current checkpoint; next user-started iteration resumes here. Five hours is a usage reset, not a development deadline. No automatic reset wait or resume is scheduled.
+Historical previous photo iteration: host reported 91% of the five-hour usage window consumed while finishing verification. Stop after saving current checkpoint; next user-started iteration resumes here. Five hours is a usage reset, not a development deadline. No automatic reset wait or resume is scheduled.
 
 ## New landscape iteration: vehicles
 Replaced box cars with four CC0 Cosmo GLB models (coupe, mobil, jeep, van). Imported meshes are normalized to existing stalls and instanced by variant. Existing collision/route clearance preserved. License included in game/assets/vehicles/cosmo. Smoke /tmp/vehicles-smoke.log passed; GTX1650 --capture-parking completed and three views reviewed. Validators pass. Capture identified pale road-edge overlays inside parking; these now suppress within mapped parking and divider spacing was corrected. Final combined parking regression will verify those changes.

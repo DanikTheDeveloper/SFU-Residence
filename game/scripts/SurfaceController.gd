@@ -80,7 +80,8 @@ static func build(world: Node3D,parent: Node3D) -> void:
 				"concrete:plates": finish=Finish.material("concrete_plates")
 				"paving_stones": finish=Pavers.material(); tile=1.6
 				_: finish=Finish.material("compacted")
-			strip(parent,a,b,road.width,finish,0.050,tile)
+			var visual_offset: float={"asphalt":0.052,"concrete":0.045,"concrete:plates":0.047,"paving_stones":0.064}.get(surface,0.048)
+			strip(parent,a,b,road.width,finish,visual_offset,tile)
 			counts.mapped_surface+=1
 		elif road.kind=="path" and near_townhouse(mid,world.registry):
 			# User townhouse images show fine grey surfacing, not plaza blocks.

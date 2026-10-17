@@ -124,35 +124,7 @@ func build_ground() -> void:
 
 func build_landscape() -> void:
 	var props := group_node("Props")
-	var trunks: Array[Transform3D]=[]
-	var crowns: Array[Transform3D]=[]
-	var pines: Array[Transform3D]=[]
-	var rng := RandomNumberGenerator.new()
-	rng.seed=1948
-	for i in 1600:
-		var p := Vector2(rng.randf_range(-295,360),rng.randf_range(-125,185))
-		if not Geo.contains_point(p,boundary): continue
-		if occupied(p,4): continue
-		if p.x>-90 and p.x<55 and p.y>70: continue
-		var pos := Geo.point([p.x,p.y])
-		var h := rng.randf_range(5,11)
-		trunks.append(Geo.transform(pos+Vector3.UP*h*0.4,Vector3(0.3,h*0.8,0.3)))
-		if i%3==0: crowns.append(Geo.transform(pos+Vector3.UP*h*0.75,Vector3(h*0.55,h*0.55,h*0.55)))
-		else:
-			for layer in 3:
-				pines.append(Geo.transform(pos+Vector3.UP*h*(0.48+0.19*layer),Vector3(h*(0.62-0.14*layer),h*0.57,h*(0.62-0.14*layer))))
-		if trunks.size()>=150: break
-	Geo.instances(vegetation,trunks,Geo.material(Color("655744")),null,500)
-	var sphere := SphereMesh.new()
-	sphere.radial_segments=10
-	sphere.rings=5
-	Geo.instances(vegetation,crowns,Geo.material(Color("516d3b")),sphere,500)
-	var cone := CylinderMesh.new()
-	cone.top_radius=0
-	cone.bottom_radius=0.5
-	cone.height=1
-	cone.radial_segments=9
-	Geo.instances(vegetation,pines,Geo.material(Color("365b48")),cone,500)
+	preload("res://scripts/PhotoVegetation.gd").build(self,vegetation)
 	var photo_lights=preload("res://scripts/CourtyardLighting.gd").new()
 	var poles: Array[Transform3D]=[]
 	var lamps: Array[Transform3D]=[]
