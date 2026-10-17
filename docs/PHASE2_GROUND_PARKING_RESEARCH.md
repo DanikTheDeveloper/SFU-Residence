@@ -1,7 +1,7 @@
 # Ground, parking and planting evidence — 2026-10-17
 
 ## Residence Main Lot
-This lot was entirely absent from the original three parking polygons, which cover townhouse parking. Added a separate runtime site layer, preserving original site.json, all building coordinates and roads. OSM way 32528160 version 8 (2023-04-05) describes Residence Main Lot, surface=paved. Its geometry is used in the existing geographic projection. Current version 9 is Phase 3 construction; the reconstruction uses the full pre-construction lot as a reversible working assumption following the user's request. No construction building was added.
+This lot was entirely absent from the original three parking polygons, which cover townhouse parking. Added a separate runtime site layer, preserving original site.json, all building coordinates and roads. OSM way 32528160 version 8 (2023-04-05) describes Residence Main Lot, surface=paved. Its geometry is used in the existing geographic projection. Current version 9 is Phase 3 construction; the reconstruction uses the full pre-construction lot as explicitly confirmed by the user. No construction building was added.
 
 Sources:
 - https://www.openstreetmap.org/way/32528160/history (ODbL; downloaded XML under data/site_sources)

@@ -62,5 +62,5 @@
   "reference": "OSM way 32528160 version 8 (2023-04-05); original node geometry; user-confirmed level lot",
   "height_estimate_m": 8.87,
   "level_source": "Median existing contour-derived grid under lot; NOT surveyed finished elevation",
-  "era": "pre-Phase3 construction, working assumption; user preference pending"
+  "era": "pre-Phase3 construction; full parking lot explicitly confirmed by user"
 }
