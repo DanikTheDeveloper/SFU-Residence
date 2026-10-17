@@ -23,3 +23,6 @@ Official SFU Facilities directory now corroborates4 TOTAL levels. Photos show3 v
 Next: Dining Commons source-era/footprint audit before modeling. Supplied photos depict older concrete/glass wing;2022 DIALOG expansion is distinct and gallery inspected so far contains interiors. Do not apply old-wing facade to the whole merged building. North parking-stair linkage and courtyard landscaping remain open.
 
 2026-10-17 foundation follow-up: Shell grade stems close the visible gap below the lower facade band using existing terrain samples; foundation/pad and XZ unchanged.175 checks and333 route checkpoints pass in /tmp/shell-grade-verification.log. GTX1650 capture completed, entrance view inspected.
+
+## Dining Commons verified checkpoint — 2026-10-17
+Distinct old-wing / north-extension exterior implemented from individually reviewed local photos, architect information and credited construction/render references. See PHASE2_DINING_REVIEW.md. 177 checks and 333 route checkpoints pass after grade-stem correction in /tmp/dining-grade-verification.log. GTX1650 Compatibility capture completed; all four dining views inspected. Next: photo-based North apron paving and courtyard light geometry at existing estimated fixture locations. Do not treat design-render finishes as confirmed as-built.

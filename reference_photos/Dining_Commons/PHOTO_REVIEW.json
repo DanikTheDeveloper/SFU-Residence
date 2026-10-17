@@ -1,0 +1,26 @@
+[
+  {
+    "building": "Dining Commons, original south wing",
+    "local_filename": "1.png",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Exterior; exact orientation inferred from footprint, not surveyed",
+    "observations": [
+      "Older concrete wing: deep roof fascia, full-height aluminium curtain wall, thick piers, horizontal screening in front of glazing."
+    ],
+    "identity_confidence": "High for older Dining wing; precise facade mapping medium",
+    "licensing": "User-supplied reference only; not shipped as texture"
+  },
+  {
+    "building": "Dining Commons, original south wing",
+    "local_filename": "2.png",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Exterior; exact orientation inferred from footprint, not surveyed",
+    "observations": [
+      "Older wing: opaque concrete upper service/end volume, formwork joints, lower glazing and downhill plinth."
+    ],
+    "identity_confidence": "High for older Dining wing; precise facade mapping medium",
+    "licensing": "User-supplied reference only; not shipped as texture"
+  }
+]

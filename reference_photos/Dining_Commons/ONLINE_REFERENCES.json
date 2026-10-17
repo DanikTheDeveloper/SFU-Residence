@@ -6,10 +6,28 @@
     "source": "DIALOG, project architect",
     "retrieved": "2026-10-16",
     "photograph_date": "Unknown",
-    "viewpoint": "Gallery not yet visually inspected",
-    "observations": [],
-    "identity_confidence": "Project identified by official architect; individual image assessment pending",
+    "viewpoint": "Project page and initial gallery inspected; interior views",
+    "observations": [
+      "2022 expansion, 28,000 square feet, three levels; interior images not used for exterior geometry"
+    ],
+    "identity_confidence": "High: architect names project",
     "local_filename": null,
     "licensing": "No reuse permission established; URL reference only"
+  },
+  {
+    "building": "Dining Commons north expansion",
+    "source_url": "https://dailyhive.com/vancouver/sfu-dining-commons-burnaby-student-residence-housing/",
+    "source": "Kenneth Chan construction photographs; exterior design rendering credited DIALOG/SFU",
+    "retrieved": "2026-10-17",
+    "photograph_date": "Construction: July 17, 2021; rendering date unknown",
+    "viewpoint": "West glazed end and long side in exterior design rendering",
+    "observations": [
+      "Expansion north of old hall replacing parking",
+      "Construction confirms tall glazed end and cantilevered roof",
+      "Exterior design rendering shows dark side below clerestory, light roof edge and warm soffit; finish is design intent, NOT verified as-built"
+    ],
+    "identity_confidence": "High for project; final finish medium pending current exterior photos",
+    "local_filename": null,
+    "licensing": "URL reference only; no reproduction permission established"
   }
 ]

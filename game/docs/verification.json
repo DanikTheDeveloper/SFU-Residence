@@ -406,6 +406,16 @@
       "passed": true
     },
     {
+      "check": "Dining retains distinct old and new exterior zones",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Dining three-level registry retained",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Shell has distinct photo-based master",
       "evidence": "",
       "passed": true

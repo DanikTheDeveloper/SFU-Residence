@@ -87,6 +87,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	if data.type in ["modern_tower","north_tower"]:
 		body_mat=preload("res://scripts/FacadeKit.gd").material("reveal")
 	if data.type=="north_tower": body_mat=preload("res://scripts/NorthTowerMaterials.gd").material("concrete")
+	if data.id=="DC": body_mat=preload("res://scripts/DiningExterior.gd").material("concrete")
 	if data.id=="SHR": body_mat=preload("res://scripts/ShellExterior.gd").material("concrete")
 	if data.id=="HAM": body_mat=preload("res://scripts/HamiltonExterior.gd").material("stucco")
 	if data.id=="MCH": body_mat=preload("res://scripts/McTaggartExterior.gd").brick_material()
@@ -103,6 +104,8 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		preload("res://scripts/TownhouseBlockExterior.gd").build(root,data,points,base,height)
 		accent_mat=preload("res://scripts/FacadeKit.gd").material("white_frame")
 		glass_mat=preload("res://scripts/FacadeKit.gd").material("orange")
+	elif data.id=="DC":
+		preload("res://scripts/DiningExterior.gd").build(root,data,points,base,height)
 	elif data.id=="SHR":
 		preload("res://scripts/ShellExterior.gd").build(root,data,points,base,height)
 	elif data.id=="HAM":
@@ -125,7 +128,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	var normal := (anchor-door).normalized()
 	normal.y=0
 	var door_yaw := atan2(normal.x,normal.z)
-	if data.type not in ["townhouse","north_tower"] and data.id not in ["HAM","SHR"]:
+	if data.type not in ["townhouse","north_tower"] and data.id not in ["HAM","SHR","DC"]:
 		var door_mesh := Geo.box(root,door+Vector3.UP*1.15+normal*0.15,Vector3(2.1,2.3,0.16),glass_mat)
 		door_mesh.rotation.y=door_yaw
 		var canopy := Geo.box(root,door+Vector3.UP*2.85+normal*0.9,Vector3(3.6,0.22,2.1),accent_mat,true)

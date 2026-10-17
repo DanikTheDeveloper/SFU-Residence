@@ -56,6 +56,9 @@ func run() -> void:
 			edge_count+=1
 			if not ray(center+direction*0.4,center-direction*0.4).is_empty(): edge_hits+=1
 		check(data.id+" solid facade edges",edge_count==edge_hits,"%d/%d"%[edge_hits,edge_count])
+	var dining: Node3D=world.get_node("Buildings/DC")
+	check("Dining retains distinct old and new exterior zones",dining.get_meta("exterior_zones").size()==2 and dining.get_meta("family_master")=="res://scripts/DiningExterior.gd")
+	check("Dining three-level registry retained",dining.get_meta("floor_count")==3)
 	var shell: Node3D=world.get_node("Buildings/SHR")
 	check("Shell has distinct photo-based master",shell.get_meta("family_master")=="res://scripts/ShellExterior.gd")
 	check("Shell official total four levels preserved",shell.get_meta("floor_count")==4)
