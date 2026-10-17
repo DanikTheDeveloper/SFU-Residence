@@ -9,7 +9,7 @@ This is a reconstruction, not a surveyed digital twin. Local user-selected photo
 | Shell | Concrete/brown-panel master, top-level fins, terrain-contact stems | Resolve four total levels versus three visible in entry photos; long-frontage entry versus mapped short-end anchor; annex, pergola/fence and corner screen placement |
 | Dining | Separate old concrete wing and north extension; curtain wall, screens, roof overhang | Current as-built exterior images; exact old/new joint and roof steps; screen geometry and service door positions |
 | Courtyard | Distinct precast/ribbed family from previous checkpoint | Further close-up matching of entrances and ground landscape, avoiding assumptions from unrelated modern towers |
-| McTaggart-Cowan | Distinct renewed-envelope family from previous checkpoint | Detailed entry/canopy audit and facade material matching against every added photo |
+| McTaggart-Cowan | Distinct renewed-envelope family from previous checkpoint | Six images now indexed; mortar corrected. Next: inset entry/connector massing, canopy, grade exposure and stair placement |
 | Townhouses | Approved shared actual-house modules | Only evidence-backed local differences such as laundry attachments; do not remodel approved family without cause |
 | East/West | Approved common model, unchanged | Only confirmed defect/terrain-contact corrections if specifically needed |
 | Landscape | Original geographic routes and parking retained; photo-based North apron pavers underway | Stair placement, curved beds, drainage channels, light locations, species and realistic sparse planting; avoid randomly distributing reference props |

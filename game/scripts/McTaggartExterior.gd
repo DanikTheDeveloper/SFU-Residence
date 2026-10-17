@@ -8,19 +8,19 @@ static var brick: StandardMaterial3D
 
 static func brick_material() -> StandardMaterial3D:
 	if brick: return brick
-	brick=Geo.material(Color("555863"),0.92)
+	brick=Geo.material(Color("757883"),0.92)
 	var image:=Image.create(128,128,false,Image.FORMAT_RGB8)
 	for y in 128:
 		for x in 128:
 			var row:=int(y/8)
 			var joint: bool=y%8==0 or (x+(16 if row%2 else 0))%32==0
-			var v: float=0.72 if joint else 0.94+0.05*sin(float(x*13+y*7))
+			var v: float=0.95 if joint else 0.68+0.015*sin(float(x*13+y*7))
 			image.set_pixel(x,y,Color(v,v,v))
 	image.generate_mipmaps()
 	brick.albedo_texture=ImageTexture.create_from_image(image)
 	brick.uv1_triplanar=true
 	brick.uv1_world_triplanar=true
-	brick.uv1_scale=Vector3(0.5,0.5,0.5)
+	brick.uv1_scale=Vector3.ONE # Approx. 250 x 62.5mm brick bond; dimensions estimated.
 	return brick
 
 static func build(root: Node3D, data: Dictionary, points: Array, base: float, height: float) -> void:

@@ -1,7 +1,7 @@
 # Phase 2 handoff — 2026-10-17
 
 ## Resume here
-Use outer game/ and current working tree. Latest committed milestone: 1df28b3 Dining exterior. Earlier verified milestones: da90b52 North longitudinal gallery, 996cd31 Hamilton, 9935b61 Shell facade, 6f108df Shell grade stems.
+Use outer game/ and current working tree. Verified commits: 1df28b3 Dining exterior, 55c709d paving/fixtures, 8d64ecf grass and capture artifacts. Latest material/index commit follows these. Earlier verified milestones: da90b52 North longitudinal gallery, 996cd31 Hamilton, 9935b61 Shell facade, 6f108df Shell grade stems.
 
 Landscape checkpoint 55c709d:
 - ResidencePavers.gd: original 256px mipmapped grey running-bond pavers, estimated 400x200mm scale, aligned to North courtyard apron. Gallery floor remains concrete.
@@ -28,4 +28,10 @@ All edits are local. User reference photos, FILE_MANIFEST.json, historic_maps an
 Continue useful evidence-backed work while usage permits. Five hours is a usage reset, not a deadline. Save status/handoff after each verified milestone; stop only on actual low-usage signal or user instruction.
 
 ## Verified grass material increment
-GroundMaterials.gd adds a subtle original mipmapped grass colour texture to the existing terrain mesh. No vertex, normal, height, collision or pad changes. This is generic surface detail consistent with planted-site references, not a surveyed species or planting map. Smoke passed in /tmp/ground-material-smoke.log; /tmp/ground-material-capture.log completed and both landscape views inspected; preservation/family validators passed. Next: extend the searchable per-photo review index for remaining buildings before further architectural edits.
+GroundMaterials.gd adds a subtle original mipmapped grass colour texture to the existing terrain mesh. No vertex, normal, height, collision or pad changes. This is generic surface detail consistent with planted-site references, not a surveyed species or planting map. Smoke passed in /tmp/ground-material-smoke.log; /tmp/ground-material-capture.log completed and both landscape views inspected; preservation/family validators passed. McTaggart per-photo index is now complete; Courtyard per-photo index still needs the same review. Prioritize North stair localization, then McTaggart entry/connector massing and Shell grade/door uncertainty. Keep all surveyed/confirmed geometry distinctions explicit.
+
+## Verified McTaggart material follow-up
+Six supplied images indexed; design rendering and duplicate distinguished. Corrected mortar contrast and brick scale from completed photographs. Geometry unchanged. Smoke passed in /tmp/mctaggart-material-smoke.log. GTX1650 Compatibility capture completed in /tmp/mctaggart-material-capture.log; both views inspected, including close-up mortar/brick scale. Preservation and family validators pass. Entrance/connector massing still needs a separate photo/plan correction; this checkpoint only corrects material.
+
+## Usage-window handoff
+Host reported 93% of the five-hour allowance used. Finished the current material correction and saved verified work; no further changes started. Next iteration: read this handoff, inspect git status, and continue the prioritized photo backlog. Do not redo completed Dining or landscape work.

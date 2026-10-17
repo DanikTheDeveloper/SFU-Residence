@@ -1,0 +1,83 @@
+[
+  {
+    "building": "McTaggart-Cowan Hall",
+    "local_filename": "1721322782290.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Design rendering, NOT as-built photograph",
+    "observations": [
+      "Gold projecting window surrounds in rendering are stronger than completed-photo finish; do not use to override current photographs",
+      "Three exposed entry levels and central glazed connector"
+    ],
+    "identity_confidence": "High: matches named contractor project and supplied entrance views",
+    "licensing": "User-supplied reference only; no photo pixels shipped"
+  },
+  {
+    "building": "McTaggart-Cowan Hall",
+    "local_filename": "1782503552135.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Real entrance view from upper stair landing",
+    "observations": [
+      "Grey charcoal brick with LIGHT narrow mortar joints",
+      "Muted bronze narrow window surrounds and low operable light",
+      "Grey glazed connector, metal canopy, descending concrete stairs, black rails, sedges/ferns and boulders"
+    ],
+    "identity_confidence": "High: matches named contractor project and supplied entrance views",
+    "licensing": "User-supplied reference only; no photo pixels shipped"
+  },
+  {
+    "building": "McTaggart-Cowan Hall",
+    "local_filename": "1782503552135 (1).jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Same view as 1782503552135.jpg",
+    "observations": [
+      "Visual duplicate; not independent corroboration"
+    ],
+    "identity_confidence": "High: matches named contractor project and supplied entrance views",
+    "licensing": "User-supplied reference only; no photo pixels shipped"
+  },
+  {
+    "building": "McTaggart-Cowan Hall",
+    "local_filename": "1787671727862.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Real closer entrance view",
+    "observations": [
+      "Pale grey horizontal connector panels",
+      "Closed white-framed doors and metal canopy with projecting downlights",
+      "Red wall cabinet and adjacent dark exterior cabinet; no gameplay use implied"
+    ],
+    "identity_confidence": "High: matches named contractor project and supplied entrance views",
+    "licensing": "User-supplied reference only; no photo pixels shipped"
+  },
+  {
+    "building": "McTaggart-Cowan Hall",
+    "local_filename": "DSC06311-HDR-Edit-scaled.jpg",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Real broad entrance courtyard view",
+    "observations": [
+      "Three exposed levels at entrance, slim bronze window frames and pale mortar",
+      "Dark handrails along descending stairs, mature trees, ferns, grasses, rocks",
+      "Landing/flight dimensions and compass orientation still unresolved"
+    ],
+    "identity_confidence": "High: matches named contractor project and supplied entrance views",
+    "licensing": "User-supplied reference only; no photo pixels shipped"
+  },
+  {
+    "building": "McTaggart-Cowan Hall",
+    "local_filename": "Untitled.png",
+    "source_url": null,
+    "photograph_date": "Unknown",
+    "viewpoint": "Small after-renovation image",
+    "observations": [
+      "Long side has three upper window levels above exposed dark lower level on slope",
+      "Grey panelled end/stair bay and pale parapet",
+      "Confirms grade exposure varies; does not establish exact floor heights"
+    ],
+    "identity_confidence": "High: matches named contractor project and supplied entrance views",
+    "licensing": "User-supplied reference only; no photo pixels shipped"
+  }
+]

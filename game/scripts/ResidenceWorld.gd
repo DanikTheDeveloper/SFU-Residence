@@ -53,7 +53,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -222,7 +222,7 @@ func _process(_delta: float) -> void:
 
 func capture_views() -> void:
 	var capture_kind: String=""
-	for kind in ["north","hamilton","shell","dining","landscape"]:
+	for kind in ["north","hamilton","shell","dining","landscape","mctaggart"]:
 		if ("--capture-"+kind) in OS.get_cmdline_user_args(): capture_kind=kind
 	DisplayServer.window_set_title("SFU automated screenshot capture - controls disabled")
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
@@ -269,6 +269,18 @@ func capture_views() -> void:
 		views=[[Geo.point([245,146],1.68),Geo.point([253,136.6],4.0)],[Geo.point([242,103],1.68),Geo.point([260,100],5.0)],[Geo.point([286,97],1.68),Geo.point([273,96],5.0)]]
 	if "--capture-dining" in OS.get_cmdline_user_args():
 		views=[[Geo.point([171,11],1.68),Geo.point([186,17],5.0)],[Geo.point([216,-9],1.68),Geo.point([215,8],5.0)],[Geo.point([250,62],1.68),Geo.point([237,55],5.0)],[Geo.point([205,76],1.68),Geo.point([210,58],5.0)]]
+	if capture_kind=="mctaggart":
+		var data: Dictionary=get_node("Buildings/MCH").get_meta("building")
+		var door:=Geo.point(data.entrance)
+		var outward:=Geo.point(data.outdoor_anchor)-door
+		outward.y=0
+		outward=outward.normalized()
+		var side:=Vector3(outward.z,0,-outward.x)
+		views=[]
+		for offset in [outward*12, outward*4+side*3]:
+			var eye: Vector3=door+offset
+			eye.y=Geo.elevation(eye.x,eye.z)+1.68
+			views.append([eye,door+Vector3.UP*3])
 	if capture_kind=="landscape": views=views.slice(13)
 	add_child(capture)
 	capture.far=1200
