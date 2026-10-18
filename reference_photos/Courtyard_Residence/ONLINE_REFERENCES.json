@@ -56,5 +56,38 @@
     "observations": "Visually reviewed architect photo: two-level tall pale piers at highrise corner, recessed glazing behind, bridge toward adjacent academic/parkade side. Supports exterior colonnade, not removing every enclosed ground-floor space. Same composition agrees with user Ledcor AVIF. Exact long-side open extent remains to resolve.",
     "license": "DIALOG/photographer copyright, URL only",
     "identity_confidence": "High: architect named project"
+  },
+  {
+    "building": "Courtyard Residence",
+    "source_url": "https://dialogdesign.ca/wp-content/uploads/projects//LAP0604_DialogSFUResidences_0027_largeimage.jpg",
+    "source": "DIALOG official completed project gallery; project completion2023",
+    "local_filename": null,
+    "photograph_date": "Not stated",
+    "viewpoint": "From sheltered ground-level space toward internal courtyard",
+    "observations": "Open ground-level covered space looking into the courtyard: pale rectangular columns, closely spaced pale ceiling fins, grey rectangular pavers, low concrete planters and light picnic furniture. Opposite lowrise/atrium visible. Do not infer that the entire highrise ground floor is empty.",
+    "licensing": "Copyright reference-only; no pixels redistributed",
+    "confidence": "HIGH official specific project; viewed2026-10-18"
+  },
+  {
+    "building": "Courtyard Residence",
+    "source_url": "https://dialogdesign.ca/wp-content/uploads/projects//LAP0604_DialogSFUResidences_0058_largeimage.jpg",
+    "source": "DIALOG official completed project gallery; project completion2023",
+    "local_filename": null,
+    "photograph_date": "Not stated",
+    "viewpoint": "East street frontage",
+    "observations": "Eastern glazed highrise end rests above tall pale concrete piers, with recessed glazing and an upper glazed-railing walkway behind. Grey/tan forecourt blocks, planted tree squares and lowrise visible. This is a taller portico than the court-facing covered space.",
+    "licensing": "Copyright reference-only; no pixels redistributed",
+    "confidence": "HIGH official specific project; viewed2026-10-18"
+  },
+  {
+    "building": "Courtyard Residence",
+    "source_url": "https://dialogdesign.ca/wp-content/uploads/projects//LAP0604_DialogSFUResidences_0063_largeimage.jpg",
+    "source": "DIALOG official completed project gallery; project completion2023",
+    "local_filename": null,
+    "photograph_date": "Not stated",
+    "viewpoint": "Eastern atrium entrance close-up",
+    "observations": "Main eastern atrium entrance between highrise and lowrise: dark projecting canopy, timber curtain wall behind pale piers, grey/tan pavers and low concrete planter edge. Internal stair is visible through glazing but remains outside implementation scope.",
+    "licensing": "Copyright reference-only; no pixels redistributed",
+    "confidence": "HIGH official specific project; viewed2026-10-18"
   }
 ]

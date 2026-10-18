@@ -1,79 +1,25 @@
-# Phase 2 — active checkpoint, 2026-10-18
+# Phase 2 status — 2026-10-18
 
-The current section supersedes historical camera failures and prior usage-stop notes below. User started a new usage window on October18 and explicitly confirmed the mouse now works. Preserve the existing Windows Raw Input adapter, primary-monitor/fullscreen behavior and host movement forwarding. Do not restart mouse troubleshooting absent a new reported failure.
+## Current verified state
+Canonical project is outer game/. Godot4.7.2 Standard Linux, GDScript, OpenGL Compatibility, Debian WSL2 and GTX1650 remain unchanged. Mouse is user-confirmed working; retain the Windows Raw Input adapter, fullscreen/primary-monitor placement and host movement forwarding. No new camera changes this iteration.
 
-Canonical project: outer game/, Godot4.7.2 Standard Linux/GDScript/Compatibility on Debian WSL2. Latest verified commit on resume:729bad2. Approved East/West and townhouse masters, original19 building coordinates, source terrain and preconstruction full Residence Main Lot remain protected.
-
-Completed previous checkpoint: capped inner faces/reveals in the correct longitudinal North gallery; separate townhouse terrain-contact plinths and porch-foot extensions. Last full regression:184 physics checks,341 route points,0 failures. Worst townhouse contact views and North gallery eye-level view inspected on GTX1650. Porch approach grades remain unfinished.
-
-Current work: Shell courtyard furnishings from the user's five local photos. Weathered timber screening and round concrete picnic tables with curved concrete seating; west-side placement is an estimate, not a measured site survey. Verified Shell checkpoint: /tmp/shell-courtyard-final-verification.log passes186 physics checks,348 route checkpoints including the new7-point fence-opening route,376 terrain-ray parity checks; preservation/family/photo validators pass. /tmp/shell-courtyard-final-capture.log completes on GTX1650 Compatibility; final shell_3 inspected at eye level. Tables stay clear of the existing route after relocation. Shell steps, annex and exact frontage grade remain unfinished. See PHASE2_SHELL_REVIEW.md. No building geometry changed in this increment.
-
-Next priorities: Shell stairs/annex localization; McTaggart descending approach; Courtyard exterior colonnade and bridge toward West Mall; North gallery-to-parking stairs; East/West surrounding stairs and basketball court; Beedie Field refinements. Source details and uncertainties: PHASE2_SITE_WALK_CORRECTIONS.md. Beedie first pass verified: /tmp/beedie-verification.log passes191 physics checks and358 continuous route checkpoints (including10 through field gate/outfield),376 terrain-ray samples, preservation and family validators. Initial GTX1650 Compatibility capture complete; field_0 and field_3 visually inspected. Final GTX1650 Compatibility capture /tmp/beedie-final-capture.log completed after turf grain adjustment; field_1 inspected at eye level. The initial distinct linear noise pattern is removed. Runtime tests remain191 physics checks/358 route points/0 failures; only turf texture generation changed afterward. No isolated FPS claim; remaining details in PHASE2_BEEDIE_FIELD.md. Old Street View must not override current East/West, Courtyard, McTaggart or recent paving.
-
-Continue sequential verified increments while access remains available. Five hours is the usage-reset window, not a development deadline. Update this section after each milestone; historical quota-stop messages below do not apply to this window.
-
-## Earlier checkpoint history
-
-## Latest checkpoint: landscape iteration, 2026-10-17
-This section supersedes historical resume instructions below. Completed: a1a46cd licensed cars; 3b8d207 level Residence Main Lot and mapped ground finishes; vegetation checkpoint follows these commits.
-
-Added missing Residence Main Lot from its mapped pre-construction outline and levelled its core at estimated game Y=8.87m. Original terrain source, building pads and gallery preserved. User confirmed: restore the full pre-construction parking lot. This is the authoritative era target for future iterations. Exact elevation, stall arrangement, curb/drain and retaining geometry remain unverified.
-
-Four CC0 Cosmo vehicle models replace dummy boxes. These are stylized, not photorealistic or surveyed vehicle makes. All 398 road/path segments have evidence records; 95 pedestrian segments use explicit mapped materials. Unknown finishes retain documented fallbacks. Photo-derived townhouse/East finishes remain.
-
-Random campus-wide cone/sphere trees replaced with original branching leaf meshes constrained to mapped woodland and a photo-supported North rear edge: 25 broadleaf, 72 conifers, 59 sparse grass clumps within mapped grass. Positions, species mix and spacing are estimates; no individual tree survey was available. Rooftop garden excluded. GPU views parking_0 and parking_2 inspected: silhouettes improved, still sparse/stylized. More woodland/lawn eye-level review and density tuning are needed.
-
-Verification: /tmp/main-parking-restricted-verification.log passes 184 checks / 341 route checkpoints / 376 terrain-ray parity checks, including North continuous gallery and new lot traverse. Later changes are visual only. /tmp/vegetation-smoke.log passes WORLD_READY. /tmp/vegetation-capture.log completes on GTX1650 Compatibility; final two parking views inspected. Preservation/family/photo validators pass, 46/46 photos. Concurrent user game prevents an isolated FPS claim. Restart with bash scripts/run_game.sh.
-
-Next: exact parking stairs, curb/drain and retaining edges, building-side stall arrangement, planting silhouettes/grass coverage, then unresolved McTaggart connector, Shell entrance/exposed levels, Courtyard terrace/forecourt and Dining current as-built details. No buildings changed in this landscape iteration. Approved East/West, townhouses and fixed mouse preserved. See PHASE2_GROUND_PARKING_RESEARCH.md.
-
-Actual account reading reached 90% consumed during final verification. Checkpoint saved; stop and resume on the next user request. Five hours is a usage reset, not a development deadline. One-off helper scripts backed up outside workspace at /home/danik/Backups/SFU-landscape-iteration-20261017; user files preserved.
-
-## Historical checkpoint notes
-
-## Current iteration
-- Reviewed/indexed all 46 supplied photo files. Per-building PHOTO_REVIEW.json records distinguish duplicates, renderings, uncertain identities and completed photographs. `python3 scripts/validate_photo_reference_index.py` reports new or changed photos without equating indexing with architectural accuracy.
-- Courtyard Residence: corrected the erroneous uniform eleven-storey extrusion into highrise, three-storey lowrise and lower atrium. Original full footprint and tallest roof retained. Added glazed east end, photo-informed closed atrium entrance and grade-following foundations. Commit e642e99. Lowrise/atrium heights are estimates; SFU eleven-floor vs RJC twelve-storey terminology remains unresolved.
-- Pavement: original textured concrete, fine grey townhouse paths and mixed grey/tan East entrance pavers. Shared UV origins and ordered visual offsets fix overlap flicker. All road/path/parking geometry and physics retained. Commit 97c24d2, followed by a nearest-entrance guard preventing East's finish leaking onto McTaggart's approach. Final segment counts are 196 concrete, 111 townhouse-grey, 1 East-paver and 90 vehicle.
-- McTaggart: charcoal brick with pale narrow mortar retained; added bronze window aprons, vertical envelope seams, pale entrance/sidelight divisions and two canopy-light housings. Batched geometry, no additional realtime lights. Reduced oversized navigation lettering. Exact connector/entrance massing remains unresolved; this is a detail pass, not a completed reconstruction.
+-2d0ca64: Shell courtyard furniture. Weathered timber fence, three original round concrete picnic sets with curved seats, and narrow concrete walk. Existing passage left open. First table placement blocked a real regression route; relocated it and all routes now pass. Photo forms verified; exact west-frontage placement/count/dimensions remain estimated. Shell building geometry unchanged.
+-560b2cf: Beedie Field. Original OSM outline retained, local reversible level-surface grading, turf/infield/warning-track, fence/backstop, six unlit pole assemblies, approximate open shelters and scoreboard. Original terrain sources and building pads unchanged. Study boundary extended only around field so it is not cut off. This is a playable first pass, not a completed surveyed sports facility.
+-Courtyard research: three additional DIALOG completed-project photographs inspected and indexed. Court-facing undercroft, tall eastern portico and eastern entrance are distinct arrangements. Implementation remains pending; exact next increment in PHASE2_COURTYARD_PHOTO_REVIEW.md.
 
 ## Verification
-Courtyard geometry: 180 physics checks, 333 pedestrian route checkpoints and 376 terrain-ray parity checks passed in /tmp/courtyard-grade-verification.log. Subsequent pavement/material/detail changes do not change physics. Smoke and GTX1650 Compatibility visual capture performed for each increment. Final smoke: /tmp/photo-final-smoke.log. Final capture: /tmp/photo-final-capture.log (completed; both final eye-level views inspected). Preservation/family validators pass: unchanged coordinates, terrain/pads, approved East/West master and facade kit, eight families / ten named instances / zero errors. Photo inventory: 46/46, zero findings.
+Final geometry regression /tmp/beedie-verification.log:191 physics checks,358 continuous route checkpoints,376 terrain-ray parity samples, zero failures. Includes original routes, Shell fence opening and Beedie gate/outfield. Preservation validator confirms unchanged19-building XZ, original site/routes, approved East/West master/FacadeKit/pads and source contour grid. Architectural family validator:8 families,10 named instances,0 errors. Photo inventory46/46 indexed,0 findings; does not establish fidelity or reuse rights.
 
-Screenshots and reports are in game/docs. A separate user game remained running; capture FPS shares GPU load and is not an isolated performance benchmark. Restart the game to load changes.
+GPU capture /tmp/shell-courtyard-final-capture.log completed; final shell_3 inspected. /tmp/beedie-final-capture.log completed after a turf-noise-only adjustment; field_0/field_3 initial and field_1 final inspected. Device log confirms GTX1650 through D3D12/OpenGL Compatibility. Captures are not an isolated performance benchmark; visual quality remains simplified. Screenshots in game/docs/screenshots.
 
-## Preserved / earlier milestones
-Godot 4.7.2 Standard, GDScript, Compatibility/OpenGL, Debian WSL2, GTX1650, strict first person. User-confirmed mouse fix unchanged. Approved East/West and townhouse architecture unchanged. No interiors, NPCs or API integration.
+## Remaining work
+1. Courtyard actual open ground level/columns/closed inner boundary and bridge toward West Mall; reconcile the differently sized exterior spaces before carving geometry.
+2. North longitudinal gallery is correct and closed inner wall faces were repaired previously; photo-localized exits/stairs to parking still missing.
+3. Shell stairs/landings, annex/pergola, trees, actual entry placement and three visible vs four total levels still unresolved.
+4. McTaggart descending approach/connector, East/West surrounding stairs and confirmed basketball placement.
+5. Beedie sunken dugouts, bleachers/bullpens/batting cage, precise pole/scoreboard locations and finished elevations; current fixtures are estimates.
+6. Further photo-grounded paving/curbs/drains/retaining features; townhouse approach grades; denser realistic planting where supported.
 
-North Towers retain the corrected longitudinal courtyard-facing gallery through all three houses. Hamilton has its distinct grey exterior and north portico. Shell has concrete/brown panels, fins and terrain-contact stems. Dining distinguishes the original concrete wing and newer northern extension. See individual review documents for limitations rather than treating all buildings as photo-exact.
+All approved East/West and townhouse architecture preserved. Full preconstruction Residence Main Lot remains the user-selected target. No interiors, NPCs, conversations or API integration.
 
-## Remaining priorities
-North parking-stair localization; McTaggart connector and three-visible/four-total level reconciliation; Shell photo-door location and exposed levels; Courtyard roof terrace/penthouse, forecourt and planted-bed geometry; current as-built Dining finish. Landscape planting, curb/drain positions and actual pavement boundaries remain estimated. Preserve verified paths and building coordinates until new evidence supports changes.
-
-Historical previous photo iteration: host reported 91% usage consumed during final verification. Finish current checkpoint and stop; resume from handoff next window.
-
-## New landscape iteration: vehicles
-Replaced box cars with four CC0 Cosmo GLB models (coupe, mobil, jeep, van). Imported meshes are normalized to existing stalls and instanced by variant. Existing collision/route clearance preserved. License included in game/assets/vehicles/cosmo. Smoke /tmp/vehicles-smoke.log passed; GTX1650 --capture-parking completed and three views reviewed. Validators pass. Capture identified pale road-edge overlays inside parking; these now suppress within mapped parking and divider spacing was corrected. Final combined parking regression will verify those changes.
-
-Online parking research found missing Residence Main Lot, OSM way32528160. Current way is Phase3 construction; version8 retains pre-construction parking tags. User has now confirmed the full pre-construction lot as the reconstruction target. Official SFU rear-tower photograph confirms cars and deciduous planted edge; exact stalls/drainage/finished level unresolved. Next: add reversible mapped lot and local level grading, preserving all foundations.
-
-## Verified ground/parking milestone (latest)
-Added missing Residence Main Lot as a separate geographic layer, levelled its core at estimated 8.87m without changing source terrain or any building pads. First broad transition regressed gallery routes; restricted transition fixed it. 184 checks / 341 route checkpoints pass in /tmp/main-parking-restricted-verification.log. GTX1650 main-lot capture completed and views inspected. Applied explicit mapped surfaces to 95 pedestrian segments; all 398 segments indexed with evidence/unknown status. See PHASE2_GROUND_PARKING_RESEARCH.md for exact limits, source links and confirmed pre-construction target. Next: replace random cone/sphere vegetation with better geometry constrained to documented woodland/grass regions; no individually mapped tree survey exists.
-
-## Active site-walk iteration — 2026-10-17
-User's latest corrections are durable in PHASE2_SITE_WALK_CORRECTIONS.md. Camera physical capture reopened: Wayland alone was tested by user and still lets the pointer escape. Implemented a foreground-only Win32 raw-mouse helper using existing Windows Python plus localhost GDScript adapter; no engine/renderer change. Actual Windows-to-Linux connection QA passed. Physical multi-turn/Escape/Alt+Tab confirmation pending; see PHASE2_MOUSE_CAPTURE.md. Never equate synthetic yaw tests with physical capture success.
-North gallery one-sided wall meshes now have 16cm inner faces and capped opening reveals. /tmp/gallery-closed-verification.log passes full 184 checks / 341 route checkpoints, including continuous North gallery. Visual inspection still pending. Next: finish camera physical validation and gallery captures, then terrain-contact audit / photo-supported site surrounds. Full user-confirmed pre-construction parking target retained.
-
-Site-walk one-off patch helpers and review-only converted image archived outside active workspace at /home/danik/Backups/SFU-site-walk-20261017. Retained reusable input/contact diagnostic scripts. Final checkpoint follows926ab25; inspect git log for hash.
-
-## Final user confirmation and next scope — 2026-10-17
-User explicitly confirms: mouse now works. Preserve the Windows raw-input / immutable WSLg title fix and primary-monitor placement. Latest movement fix also forwards only W/A/S/D/Shift/Space while the game is active; no keyboard hook or key logging. HostMovementQA passes forward movement, right sprint, release stopping and one-shot jump. User's latest wording confirms mouse, not separately every movement key; retain physical WASD/Shift/jump check on next launch.
-
-User authorizes careful visual inspection of Google Street View or similar. Do not scrape/extract protected imagery or ship its pixels. Date every reference and prefer recent official/user photos. Old Street View is explicitly obsolete for modern East/West Towers, McTaggart updates, Courtyard (absent in old imagery), and paving before East/West. Preserve correctly completed facade models. Use historical imagery only for features whose persistence is corroborated; never overwrite newer evidence with an old view.
-
-Next modeling priority: Shell's immediate surroundings (photo-localized furniture, timber fence, stair landings), then McTaggart descending approach; Courtyard open exterior colonnade and West Mall-facing bridge; North gallery-to-parking stairs; East/West exterior stairs/basketball; Beedie Field. Complete one verified feature at a time. All remain pending except North wall closure and townhouse ground contact completed this iteration. Full pre-construction parking remains confirmed.
-
-Actual host usage signal at final checkpoint: primary100%, ordinaryUsageAllowed=false, rate_limit_reached. Stop after saving tested files. No new modeling started after this signal. Next user-started iteration resumes with this note and PHASE2_SITE_WALK_CORRECTIONS.md, not earlier mouse-failure or usage-stop text.
-
-
-
+Host usage read87% consumed near final handoff; this is a usage reset window, not a five-hour coding deadline. Resume on the next user request; no automatic continuation is scheduled. Historical status/handoff backups outside workspace: /home/danik/Backups/SFU-site-iteration-20261018 (initial and before-final copies). Specific earlier evidence remains in the other PHASE2 documents.
