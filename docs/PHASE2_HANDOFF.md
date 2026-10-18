@@ -28,3 +28,17 @@ Approved East/West master/FacadeKit/pads, original19-building geography/routes/s
 Revisited user PWL-SFU-Residences-Phase-1-1001.jpg this window: readable Shadbolt sign, approximately nine concrete risers, side concrete cheeks, metal rails, inset step light, mixed grey rectangular pavers and planted flanks. This is courtyard-facing evidence, not enough to locate rear parking stairs. Do not revive the old wrong-orientation prototype (/home/danik/Backups/SFU-North-stair-prototype-20261016) blindly.
 
 Untracked user files deliberately retained: FILE_MANIFEST.json, car source zip/Zone.Identifier, historic_maps/, photo .gitkeep files and reference_photos/README.md. Nested original Godot rollback remains; obsolete nested Markdown cleanup already completed. Previous long STATUS/HANDOFF backed up outside active workspace in /home/danik/Backups/SFU-site-iteration-20261018/fields-portico-pre-consolidation. Host read85% consumed near safe finalization. Resume on next user request; no automatic reset scheduling.
+
+## User visual correction — 2026-10-18, after portico checkpoint
+User accepts locations of all three fields but rejects their current visual resemblance. Field realism is now the next priority, ahead of the previous Courtyard continuation. Specifically identify and recreate the BLACK walk-in booth/shelter on the residence-facing side of Field4 directly behind East/West Towers. User initially mentioned McTaggart but explicitly corrected to East/West; do not place it at Field2 based on the initial wording. Open shelter access is requested; do not turn this into residential interior scope.
+
+Official SFU Recreation lists TWO coaches booths on Field4, but identity of the user's black shelter is NOT yet visually confirmed. Do not substitute a generic dugout, a Beedie softball shelter, or Terry Fox stadium booth. Research exact Field4 photos, match residence-side orientation, inspect roof/sides/openings/bench/base/fence/adjacent paving and then implement a physically enterable exterior shelter with collision and eye-level capture. Preserve approved tower models and field footprints. Reassess all three fields' surface colours, line layout, perimeter structures, vegetation and approaches against specific photographs; current fields are explicitly only first passes, not photo-matched finished models.
+
+Sources found in targeted search (not yet visually reviewed in this follow-up):
+- https://www.sfu.ca/recreation/info/facilities.html — official Field4 artificial turf, two coaches booths, lights,360 seats; text checked.
+- https://sfulacrossecamps.com/2015/12/20/accomodations/ — dated2015 Field4/residence panorama; historical surroundings and towers must not overwrite modern buildings.
+- https://www.flickr.com/photos/drowcliffe/6995171797 — titled SFU Field4 view from southeast; historical2012-era candidate, copyright/visual-reference only.
+- https://icsf.ca/fields-facilities/sfu-4 — exact field page, candidate for current evidence.
+Broad image search returned mostly OTHER venues/commercial dugouts; rejected as identity evidence. None downloaded or modeled. Field2/Beedie need equally specific comparisons, not generic sports assets.
+
+Actual host usage94% consumed during this follow-up. Saved research/priority correction only; runtime unchanged from2f8385f, so no repeated game tests needed. Continue next user-started window from this section. Earlier218 physics/389 route passing checkpoint still applies; it establishes playability, not visual fidelity.

@@ -1,0 +1,23 @@
+{
+  "priority": "Identify exact black walk-in shelter on Field4 residence-facing edge behind East/West; then photo-match all three fields",
+  "identity": "UNCONFIRMED; official two coaches booths are a possible match only",
+  "candidates": [
+    {
+      "url": "https://sfulacrossecamps.com/2015/12/20/accomodations/",
+      "date": "2015 page",
+      "status": "not visually reviewed; historic towers obsolete"
+    },
+    {
+      "url": "https://www.flickr.com/photos/drowcliffe/6995171797",
+      "date": "historical approximately2012",
+      "status": "not visually reviewed; copyright URL-only"
+    },
+    {
+      "url": "https://icsf.ca/fields-facilities/sfu-4",
+      "date": "unknown",
+      "status": "not visually reviewed"
+    }
+  ],
+  "reviewed_text": "https://www.sfu.ca/recreation/info/facilities.html",
+  "local_images_downloaded": false
+}
