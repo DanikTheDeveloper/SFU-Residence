@@ -21,6 +21,10 @@ func run() -> void:
 		return
 	await frames(5)
 	check("Pauline Jewett entrance label uses footprint not neighboring centroid",world.get_node("UI").nearest_building_name(Vector2(19.57,21.05))=="Pauline Jewett House")
+	var field_level: float=world.get_node("Props/BeedieField").get_meta("finished_level_estimate")
+	for p in [[89,140],[140,155],[110,170],[95,195]]:
+		check("Beedie level playing surface "+str(p),absf(Geo.elevation(p[0],p[1])-field_level)<0.02)
+	check("Beedie outfield inside expanded study boundary",Geo.contains_point(Vector2(100,201),world.boundary))
 	check("19 scene buildings",world.get_node("Buildings").get_child_count()==19)
 	check("Compatibility selected",RenderingServer.get_current_rendering_method()=="gl_compatibility")
 	check("Interior boundary ray degeneracy regression",Geo.contains_point(Vector2(-216.3434,62),world.boundary))
@@ -291,6 +295,7 @@ func run_routes() -> void:
 	var routes: Array=JSON.parse_string(FileAccess.get_file_as_string("res://data/test_routes.json"))
 	routes.append({"buildings":["Residence Main Lot access and aisle"],"points":[[-30,-40],[0,-40],[25,-35],[50,-30],[75,-25],[100,-20],[125,-15],[150,-10]]})
 	routes.append({"buildings":["Shell courtyard fence opening"],"points":[[248.33,86.854],[251,87.452],[254,88.124],[257,88.796],[254,88.124],[251,87.452],[248.33,86.854]]})
+	routes.append({"buildings":["Beedie entrance and outfield"],"points":[[102,129],[102,137],[108,150],[112,170],[110,192],[95,185],[90,170],[97,145],[102,137],[102,129]]})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true
@@ -321,5 +326,6 @@ func run_routes() -> void:
 	file.store_string(JSON.stringify({"failures":failures,"checks":results},"  "))
 	print("ROUTES_COMPLETE failures=",failures)
 	get_tree().quit(0 if failures==0 else 1)
+
 
 

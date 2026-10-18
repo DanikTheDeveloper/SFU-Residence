@@ -6,6 +6,31 @@
       "passed": true
     },
     {
+      "check": "Beedie level playing surface [89, 140]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Beedie level playing surface [140, 155]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Beedie level playing surface [110, 170]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Beedie level playing surface [95, 195]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Beedie outfield inside expanded study boundary",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "19 scene buildings",
       "evidence": "",
       "passed": true

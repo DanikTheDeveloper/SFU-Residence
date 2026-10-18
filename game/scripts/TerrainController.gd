@@ -7,6 +7,8 @@ static func initialize() -> void:
 		grid=JSON.parse_string(FileAccess.get_file_as_string("res://data/terrain_grid.json"))
 		var grading: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/parking_grade.json"))
 		for sample in grading.changes: grid.heights[int(sample[0])]=sample[1]
+		var field: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/beedie_grade.json"))
+		for sample in field.changes: grid.heights[int(sample[0])]=sample[1]
 
 static func height(x: float, z: float) -> float:
 	initialize()
@@ -27,3 +29,4 @@ static func height(x: float, z: float) -> float:
 static func foundation(id: String) -> float:
 	initialize()
 	return float(grid.pads[id].height)
+

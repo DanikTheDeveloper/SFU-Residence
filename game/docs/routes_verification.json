@@ -24,6 +24,11 @@
       "check": "Walk loop [\"Shell courtyard fence opening\"]",
       "evidence": "7/7 checkpoints",
       "passed": true
+    },
+    {
+      "check": "Walk loop [\"Beedie entrance and outfield\"]",
+      "evidence": "10/10 checkpoints",
+      "passed": true
     }
   ],
   "failures": 0

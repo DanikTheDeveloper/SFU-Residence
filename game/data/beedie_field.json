@@ -1,0 +1,71 @@
+{
+  "osm_way": "32528092",
+  "source_url": "https://www.openstreetmap.org/way/32528092",
+  "license": "ODbL, OpenStreetMap contributors",
+  "points": [
+    [
+      88.824,
+      130.999
+    ],
+    [
+      103.201,
+      134.59
+    ],
+    [
+      116.715,
+      138.06
+    ],
+    [
+      151.128,
+      146.844
+    ],
+    [
+      145.47,
+      166.67
+    ],
+    [
+      138.927,
+      179.346
+    ],
+    [
+      131.194,
+      189.832
+    ],
+    [
+      126.116,
+      193.991
+    ],
+    [
+      114.612,
+      198.917
+    ],
+    [
+      100.887,
+      200.673
+    ],
+    [
+      84.798,
+      199.317
+    ],
+    [
+      69.209,
+      195.614
+    ],
+    [
+      77.022,
+      162.156
+    ],
+    [
+      80.402,
+      148.701
+    ],
+    [
+      83.384,
+      134.023
+    ]
+  ],
+  "implemented": true,
+  "notes": "Mapped field retained in place. Runtime playable boundary expanded only around this footprint. Individual fixture positions and dimensions estimated.",
+  "height_estimate_m": 0.48,
+  "reference": "SFU Athletics official facility description and Jasper Chan photographs uploaded2012; historic visual evidence, not a current survey"
+}

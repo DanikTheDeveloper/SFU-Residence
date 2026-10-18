@@ -4,6 +4,11 @@ PHOTO_PAVING { "mapped_surface": 95, "concrete": 110, "townhouse_grey": 102, "ea
 PHOTO_PLANTING broadleaf=25 conifers=72 grass_clumps=59
 WORLD_READY buildings=19 paths=398 renderer=gl_compatibility
 PASS Pauline Jewett entrance label uses footprint not neighboring centroid 
+PASS Beedie level playing surface [89, 140] 
+PASS Beedie level playing surface [140, 155] 
+PASS Beedie level playing surface [110, 170] 
+PASS Beedie level playing surface [95, 195] 
+PASS Beedie outfield inside expanded study boundary 
 PASS 19 scene buildings 
 PASS Compatibility selected 
 PASS Interior boundary ray degeneracy regression 
@@ -190,4 +195,4 @@ PASS Courtyard uses distinct precast master
 PASS Courtyard preserves eleven-floor registry 
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=186 failures=0
+VERIFICATION_COMPLETE checks=191 failures=0

@@ -9,5 +9,16 @@
     "observations": "Official panorama visually reviewed in browser: grass outfield, reddish warning track, dark perimeter windscreen with yellow top rail, tall backstop, light poles, low dugout structures. Official page specifies six poles, sand/silt infield, synthetic rubber warning track and 50ft dugouts. Not current as-built proof.",
     "license": "Copyright SFU/photographer; URL record only, no image pixels shipped",
     "identity_confidence": "High: official named facility page"
+  },
+  {
+    "building": "Beedie Field",
+    "source_url": "https://athletics.sfu.ca/images/2012/9/3/TWO.jpg",
+    "source": "SFU Athletics / photograph credited Jasper Chan in image",
+    "local_filename": null,
+    "photograph_date": "Unknown; uploaded September2012",
+    "viewpoint": "Elevated third-baseline view, night",
+    "observations": "Visually inspected October18. Grass outfield, ochre infield, red warning track, dark blue outfield windscreen with yellow top rail, tall backstop grid, six pole lights, pale roofed dugouts and red scoreboard. Specific fixture coordinates estimated from this view and OSM outline, not surveyed.",
+    "licensing": "Copyright; URL-only reference, no image pixels redistributed.",
+    "confidence": "HIGH identity from official Beedie facility page; historic rather than current photo"
   }
 ]

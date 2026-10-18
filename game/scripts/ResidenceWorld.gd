@@ -26,6 +26,7 @@ func _ready() -> void:
 	site=JSON.parse_string(FileAccess.get_file_as_string("res://data/site.json"))
 	site.parking.append(JSON.parse_string(FileAccess.get_file_as_string("res://data/main_parking.json")))
 	for p in site.boundary: boundary.append(Vector2(p[0],p[1]))
+	boundary=preload("res://scripts/BeedieField.gd").extend_boundary(boundary)
 	configure_inputs()
 	build_light()
 	build_ground()
@@ -37,6 +38,7 @@ func _ready() -> void:
 	vegetation=group_node("Vegetation")
 	build_landscape()
 	preload("res://scripts/SiteDetails.gd").build(self)
+	preload("res://scripts/BeedieField.gd").build(self)
 	player=PlayerScene.instantiate()
 	add_child(player)
 	player.spawn=Geo.point([35,80],0.25)
@@ -54,7 +56,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -195,7 +197,7 @@ func _process(_delta: float) -> void:
 
 func capture_views() -> void:
 	var capture_kind: String=""
-	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact"]:
+	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field"]:
 		if ("--capture-"+kind) in OS.get_cmdline_user_args(): capture_kind=kind
 	DisplayServer.window_set_title("SFU automated screenshot capture - controls disabled")
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
@@ -256,6 +258,8 @@ func capture_views() -> void:
 			views.append([eye,door+Vector3.UP*3])
 	if capture_kind=="courtyard":
 		views=[[Geo.point([353,17],1.68),Geo.point([337,-13],9)],[Geo.point([319,-60],1.68),Geo.point([320,-35],6)],[Geo.point([279,-1],1.68),Geo.point([280,-15],9)],[Vector3(375,65,65),Vector3(307,12,-15)]]
+	if capture_kind=="field":
+		views=[[Geo.point([89,133],1.68),Geo.point([112,173],1.0)],[Geo.point([120,190],1.68),Geo.point([91,139],2.5)],[Geo.point([63,175],1.68),Geo.point([97,160],2.0)],[Vector3(165,45,213),Geo.point([109,167])]]
 	if capture_kind=="parking":
 		views=[[Geo.point([15,-45],1.68),Geo.point([70,-30],1.0)],[Geo.point([100,-30],1.68),Geo.point([100,0],8)],[Vector3(80,55,-90),Geo.point([85,-20],0)],[Geo.point([-168,125],1.68),Geo.point([-176,123],0.8)],[Geo.point([-167,117],1.68),Geo.point([-175,112],1.0)],[Geo.point([-172,110],1.68),Geo.point([-160,124],1.2)]]
 	if capture_kind=="contact":
@@ -302,5 +306,6 @@ func capture_views() -> void:
 	report.store_string(JSON.stringify({"device":RenderingServer.get_video_adapter_name(),"renderer":RenderingServer.get_current_rendering_method(),"resolution":[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y],"tier":"medium","samples":measurements},"  "))
 	print("CAPTURE_COMPLETE fps=",Engine.get_frames_per_second()," draws=",Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
 	get_tree().quit()
+
 
 
