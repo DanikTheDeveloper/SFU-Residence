@@ -26,6 +26,11 @@
       "passed": true
     },
     {
+      "check": "Walk loop [\"Field4 spawn approach and pitch\"]",
+      "evidence": "14/14 checkpoints",
+      "passed": true
+    },
+    {
       "check": "Walk loop [\"Beedie entrance and outfield\"]",
       "evidence": "10/10 checkpoints",
       "passed": true

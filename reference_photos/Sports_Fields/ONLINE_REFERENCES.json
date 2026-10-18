@@ -1,0 +1,26 @@
+[
+  {
+    "building_or_area": "Field4",
+    "source_url": "https://www.sfu.ca/content/sfu/recreation/info/facilities/_jcr_content/main_content/image_136816291.img.original.low.jpg/1732206019493.JPG",
+    "source_page": "https://www.sfu.ca/recreation/info/facilities.html",
+    "local_filename": null,
+    "photograph_date": "unknown; asset timestamp is not capture date",
+    "viewpoint": "not georeferenced",
+    "observations": "Artificial green turf, white soccer goals and lines, red banners/scoreboard, tall lighting poles and forest edge.",
+    "license": "SFU copyright; visual reference URL only, no pixels redistributed",
+    "identity_confidence": "high",
+    "reviewed": "2026-10-18"
+  },
+  {
+    "building_or_area": "Field2",
+    "source_url": "https://www.sfu.ca/content/sfu/recreation/info/facilities/_jcr_content/main_content/image_969880721.img.original.low.jpg/1732206006822.JPG",
+    "source_page": "https://www.sfu.ca/recreation/info/facilities.html",
+    "local_filename": null,
+    "photograph_date": "unknown; asset timestamp is not capture date",
+    "viewpoint": "not georeferenced",
+    "observations": "Athletic Field2 sign confirms identity; dry patchy natural grass, tall H-shaped goal posts and conifers. Temporary tent excluded.",
+    "license": "SFU copyright; visual reference URL only, no pixels redistributed",
+    "identity_confidence": "high",
+    "reviewed": "2026-10-18"
+  }
+]

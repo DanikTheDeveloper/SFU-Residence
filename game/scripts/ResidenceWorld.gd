@@ -27,6 +27,7 @@ func _ready() -> void:
 	site.parking.append(JSON.parse_string(FileAccess.get_file_as_string("res://data/main_parking.json")))
 	for p in site.boundary: boundary.append(Vector2(p[0],p[1]))
 	boundary=preload("res://scripts/BeedieField.gd").extend_boundary(boundary)
+	boundary=preload("res://scripts/Field4.gd").extend_boundary(boundary)
 	configure_inputs()
 	build_light()
 	build_ground()
@@ -39,6 +40,7 @@ func _ready() -> void:
 	build_landscape()
 	preload("res://scripts/SiteDetails.gd").build(self)
 	preload("res://scripts/BeedieField.gd").build(self)
+	preload("res://scripts/Field4.gd").build(self)
 	player=PlayerScene.instantiate()
 	add_child(player)
 	player.spawn=Geo.point([35,80],0.25)
@@ -56,7 +58,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -122,7 +124,7 @@ func build_ground() -> void:
 		var b := Geo.point([boundary[(i+1)%boundary.size()].x,boundary[(i+1)%boundary.size()].y])
 		var wall := Geo.box(ground,(a+b)*0.5+Vector3.UP*1.15,Vector3(a.distance_to(b),2.3,1.1),edge_mat,true)
 		wall.rotation.y=-atan2((b-a).z,(b-a).x)
-	Geo.polygon(ground,[[-66,74],[55,100],[40,160],[-80,137]],Geo.material(Color("4c7754")),0.02)
+	# Field4 replaces the old anonymous quadrilateral; see mapped site module.
 
 func build_landscape() -> void:
 	var props := group_node("Props")
@@ -197,7 +199,7 @@ func _process(_delta: float) -> void:
 
 func capture_views() -> void:
 	var capture_kind: String=""
-	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field"]:
+	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4"]:
 		if ("--capture-"+kind) in OS.get_cmdline_user_args(): capture_kind=kind
 	DisplayServer.window_set_title("SFU automated screenshot capture - controls disabled")
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
@@ -258,6 +260,8 @@ func capture_views() -> void:
 			views.append([eye,door+Vector3.UP*3])
 	if capture_kind=="courtyard":
 		views=[[Geo.point([353,17],1.68),Geo.point([337,-13],9)],[Geo.point([319,-60],1.68),Geo.point([320,-35],6)],[Geo.point([279,-1],1.68),Geo.point([280,-15],9)],[Vector3(375,65,65),Vector3(307,12,-15)]]
+	if capture_kind=="field4":
+		views=[[Geo.point([35,80],1.68),Geo.point([8,115],1.0)],[Geo.point([-50,98],1.68),Geo.point([55,124],1.2)],[Vector3(90,45,180),Geo.point([8,110])]]
 	if capture_kind=="field":
 		views=[[Geo.point([89,133],1.68),Geo.point([112,173],1.0)],[Geo.point([120,190],1.68),Geo.point([91,139],2.5)],[Geo.point([63,175],1.68),Geo.point([97,160],2.0)],[Vector3(165,45,213),Geo.point([109,167])]]
 	if capture_kind=="parking":
@@ -306,6 +310,7 @@ func capture_views() -> void:
 	report.store_string(JSON.stringify({"device":RenderingServer.get_video_adapter_name(),"renderer":RenderingServer.get_current_rendering_method(),"resolution":[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y],"tier":"medium","samples":measurements},"  "))
 	print("CAPTURE_COMPLETE fps=",Engine.get_frames_per_second()," draws=",Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
 	get_tree().quit()
+
 
 
 

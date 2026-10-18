@@ -1,0 +1,41 @@
+{
+  "name": "Field 4",
+  "kind": "playing_surface",
+  "osm_id": "32528090",
+  "osm_tags": {
+    "leisure": "pitch",
+    "lit": "yes",
+    "sport": "soccer",
+    "surface": "artificial_turf"
+  },
+  "source_url": "https://www.openstreetmap.org/way/32528090",
+  "license": "ODbL-1.0; OpenStreetMap contributors",
+  "points": [
+    [
+      -59.569,
+      127.652
+    ],
+    [
+      60.599,
+      156.018
+    ],
+    [
+      75.245,
+      93.926
+    ],
+    [
+      -44.931,
+      65.583
+    ]
+  ],
+  "bounds_xz": [
+    -59.569,
+    65.583,
+    75.245,
+    156.018
+  ],
+  "runtime_status": "first pass",
+  "height_estimate_m": -1.52,
+  "official_source": "https://www.sfu.ca/recreation/info/facilities.html",
+  "uncertainty": "Mapped pitch bounds; estimated median finished level, goal/line dimensions and fixture locations. User identifies eastern Field2 as the second Beedie area; Field4 uses the soccer layout shown by SFU."
+}

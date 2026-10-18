@@ -31,6 +31,46 @@
       "passed": true
     },
     {
+      "check": "Field4 level surface [-35, 90]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field4 terrain collision [-35, 90]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field4 level surface [0, 110]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field4 terrain collision [0, 110]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field4 level surface [50, 120]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field4 terrain collision [50, 120]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field4 level surface [20, 140]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field4 terrain collision [20, 140]",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "19 scene buildings",
       "evidence": "",
       "passed": true
@@ -617,7 +657,7 @@
     },
     {
       "check": "W movement",
-      "evidence": "metres=4.131715",
+      "evidence": "metres=4.131790",
       "passed": true
     },
     {
