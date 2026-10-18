@@ -43,7 +43,7 @@ def main():
    protect=max(0,min(1,(bd-0.35)/2.65));influence*=protect*protect*(3-2*protect)
   value=round(g['heights'][k]+(target-g['heights'][k])*influence,4)
   if abs(value-g['heights'][k])>.0001:changes.append([k,value])
- lot.update({'tags':{'name':'Residence Main Lot (pre-construction reconstruction)','amenity':'parking','surface':'paved'},'reference':'OSM way 32528160 version 8 (2023-04-05); original node geometry; user-confirmed level lot','height_estimate_m':target,'level_source':'Median existing contour-derived grid under lot; NOT surveyed finished elevation','era':'pre-Phase3 construction, working assumption; user preference pending'})
+ lot.update({'tags':{'name':'Residence Main Lot (pre-construction reconstruction)','amenity':'parking','surface':'paved'},'reference':'OSM way 32528160 version 8 (2023-04-05); original node geometry; user-confirmed level lot','height_estimate_m':target,'level_source':'Median existing contour-derived grid under lot; NOT surveyed finished elevation','era':'pre-Phase3 construction; full parking lot explicitly confirmed by user'})
  (ROOT/'game/data/main_parking.json').write_text(json.dumps(lot,indent=2))
  import hashlib
  patch={'base_sha256':hashlib.sha256((ROOT/'game/data/terrain_grid.json').read_bytes()).hexdigest(),'description':'User-requested level Residence Main Lot; target estimated from existing median. 26m bounded blend; foundations/entrance samples fixed. No source elevation changes.','height_m':target,'changes':changes}

@@ -15,3 +15,6 @@ reference_photos/**/*.tiff
 
 reference_photos/**/*.avif
 reference_photos/**/*:Zone.Identifier
+
+# Per-run local input diagnostics (not a shipped asset).
+game/docs/raw_mouse_host.log

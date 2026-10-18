@@ -11,6 +11,9 @@ var last_send:=0
 var revision:=0
 var requested:=false
 var connected:=false
+var host_active:=false
+var movement_keys:=0
+var jump_requested:=false
 var helper_pid:=-1
 
 func start(owner_player: CharacterBody3D) -> void:
@@ -27,12 +30,15 @@ func start(owner_player: CharacterBody3D) -> void:
   server.stop()
   return
  DisplayServer.window_set_title("SFU Residences | "+token)
- helper_pid=OS.create_process(python,[str(output[0]).strip_edges(),str(server.get_local_port()),token])
+ helper_pid=OS.create_process(python,[str(output[0]).strip_edges(),str(server.get_local_port()),token,"fullscreen" if DisplayServer.window_get_mode() in [DisplayServer.WINDOW_MODE_FULLSCREEN,DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN] else "windowed"])
  if helper_pid<0: server.stop()
  else: print("MOUSE_BRIDGE_START localhost port=",server.get_local_port())
 
 func capture(value: bool) -> void:
  requested=value
+ if not value:
+  movement_keys=0
+  jump_requested=false
  revision+=1
  send_state()
 
@@ -75,8 +81,14 @@ func _process(_delta: float) -> void:
     Input.mouse_mode=Input.MOUSE_MODE_HIDDEN if requested else Input.MOUSE_MODE_VISIBLE
     print("MOUSE_BRIDGE_CONNECTED Win32 relative counts; click game to capture")
     send_state()
-   elif requested and player.enabled and bool(packet.get("active",false)):
-    player.apply_look(Vector2(float(packet.get("dx",0)),float(packet.get("dy",0))))
+   else:
+    host_active=bool(packet.get("active",false))
+    var keys: int=int(packet.get("keys",0)) if host_active and requested else 0
+    if keys&32 and not movement_keys&32: jump_requested=true
+    movement_keys=keys
+    if not host_active: jump_requested=false
+    if requested and player.enabled and host_active:
+     player.apply_look(Vector2(float(packet.get("dx",0)),float(packet.get("dy",0))))
    last_packet=Time.get_ticks_msec()
  if Time.get_ticks_msec()-last_packet>1500:
   stop_bridge()
@@ -87,6 +99,9 @@ func stop_bridge() -> void:
  server.stop()
  authenticated=false
  connected=false
+ host_active=false
+ movement_keys=0
+ jump_requested=false
  requested=false
  Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
  print("MOUSE_BRIDGE_STOPPED cursor released; native capture available on click")
@@ -94,3 +109,11 @@ func stop_bridge() -> void:
 func _exit_tree() -> void:
  if peer!=null: peer.disconnect_from_host()
  server.stop()
+
+func movement_axis() -> Vector2:
+ return Vector2(float((movement_keys&8)!=0)-float((movement_keys&2)!=0),float((movement_keys&4)!=0)-float((movement_keys&1)!=0)).limit_length()
+
+func consume_jump() -> bool:
+ var value:=jump_requested
+ jump_requested=false
+ return value

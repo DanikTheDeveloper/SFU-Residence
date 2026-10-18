@@ -1,6 +1,7 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 PHOTO_PAVING { "mapped_surface": 95, "concrete": 110, "townhouse_grey": 102, "east_pavers": 1, "vehicle": 90 }
+PHOTO_PLANTING broadleaf=25 conifers=72 grass_clumps=59
 WORLD_READY buildings=19 paths=398 renderer=gl_compatibility
 PASS Walk loop ["WET", "HAM", "COW", "CHI", "KEL", "KIM", "KIT", "PEN", "QUA", "QUE", "SQU", "WET"] 150/150 checkpoints
 PASS Walk loop ["WET", "PJH", "BRH", "SBH", "DC", "CYR", "SHR", "EAT", "WET"] 140/140 checkpoints

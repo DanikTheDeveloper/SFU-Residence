@@ -5,6 +5,11 @@ Only localhost TCP; closes on parent disconnect. Esc/focus loss release clipping
 import ctypes as C
 from ctypes import wintypes as W
 import json, socket, sys, time
+from pathlib import Path
+if not any(arg in sys.argv for arg in ["--self-test","--inspect"]):
+ log_path=Path(__file__).resolve().parent.parent/"game/docs/raw_mouse_host.log"
+ sys.stdout=sys.stderr=open(log_path,"w",buffering=1,encoding="utf-8")
+ print("Host raw mouse starting",flush=True)
 
 u=C.WinDLL('user32',use_last_error=True)
 k=C.WinDLL('kernel32',use_last_error=True)
@@ -43,6 +48,27 @@ try:
  api('SetProcessDpiAwarenessContext',[W.HANDLE],W.BOOL)(W.HANDLE(-4))
 except AttributeError: pass
 
+if '--inspect' in sys.argv:
+ ENUM=C.WINFUNCTYPE(W.BOOL,W.HWND,W.LPARAM)
+ @ENUM
+ def inspect_window(handle,param):
+  title=C.create_unicode_buffer(512);u.GetWindowTextW(handle,title,512)
+  if 'SFU' in title.value or 'Godot' in title.value:
+   print('WINDOW',int(handle),repr(title.value),flush=True)
+  return True
+ api('EnumWindows',[ENUM,W.LPARAM],W.BOOL)(inspect_window,0)
+ class MI(C.Structure):
+  _fields_=[('size',W.DWORD),('monitor',W.RECT),('work',W.RECT),('flags',W.DWORD)]
+ MON=C.WINFUNCTYPE(W.BOOL,W.HANDLE,W.HDC,C.POINTER(W.RECT),W.LPARAM)
+ api('GetMonitorInfoW',[W.HANDLE,C.POINTER(MI)],W.BOOL)
+ @MON
+ def inspect_monitor(handle,hdc,rect,param):
+  info=MI();info.size=C.sizeof(info);u.GetMonitorInfoW(handle,C.byref(info))
+  print('MONITOR',list((info.monitor.left,info.monitor.top,info.monitor.right,info.monitor.bottom)),'primary',bool(info.flags&1),flush=True)
+  return True
+ api('EnumDisplayMonitors',[W.HDC,C.POINTER(W.RECT),MON,W.LPARAM],W.BOOL)(None,None,inspect_monitor,0)
+ sys.exit(0)
+
 # Self-test checks native ABI and registration without capturing the pointer.
 self_test='--self-test' in sys.argv
 active=False; dx=dy=0
@@ -70,6 +96,13 @@ if self_test:
  sys.exit(0)
 
 port=int(sys.argv[1]);token=sys.argv[2]
+fullscreen=len(sys.argv)>3 and sys.argv[3]=='fullscreen'
+api('SetWindowPos',[W.HWND,W.HWND,C.c_int,C.c_int,C.c_int,C.c_int,W.UINT],W.BOOL)
+class MONITORINFO(C.Structure):
+ _fields_=[('size',W.DWORD),('monitor',W.RECT),('work',W.RECT),('flags',W.DWORD)]
+api('MonitorFromPoint',[W.POINT,W.DWORD],W.HANDLE)
+api('GetMonitorInfoW',[W.HANDLE,C.POINTER(MONITORINFO)],W.BOOL)
+placed=False
 sock=None
 for attempt in range(60):
  try:
@@ -79,6 +112,7 @@ if sock is None:sys.exit(2)
 sock.setsockopt(socket.IPPROTO_TCP,socket.TCP_NODELAY,1)
 sock.setblocking(False)
 sock.sendall((json.dumps({'hello':token})+'\n').encode())
+print("Localhost connected",flush=True)
 buffer=b'';last_command=time.monotonic();last_send=0;armed=False;revision=-1;clipped=False
 try:
  while True:
@@ -96,12 +130,31 @@ try:
      revision=command.get('revision');armed=bool(command.get('capture'))
     if not command.get('capture'):armed=False
   except BlockingIOError:pass
-  if now-last_command>1.0:break
+  if now-last_command>1.0:
+   # Release promptly during a stalled frame, but allow shader/startup stalls
+   # to recover without silently killing the helper.
+   armed=False
+  if now-last_command>30.0:break
   foreground=u.GetForegroundWindow();title=C.create_unicode_buffer(512)
   u.GetWindowTextW(foreground,title,512)
-  matches=token in title.value
+  # WSLg Wayland ignores title changes after initial window creation on this
+  # installed version. Accept its immutable project title, not arbitrary paths.
+  matches=token in title.value or title.value.startswith('SFU Residences | Burnaby')
+  if matches and armed and not placed:
+   monitor=u.MonitorFromPoint(W.POINT(0,0),1)
+   info=MONITORINFO();info.size=C.sizeof(info)
+   if u.GetMonitorInfoW(monitor,C.byref(info)):
+    r=info.monitor
+    if fullscreen:
+     success=u.SetWindowPos(foreground,None,r.left,r.top,r.right-r.left,r.bottom-r.top,0x14)
+    else:
+     success=u.SetWindowPos(foreground,None,r.left+80,r.top+80,0,0,0x15)
+    print('Primary monitor placement',bool(success),'fullscreen',fullscreen,flush=True)
+   placed=True
   if not matches or u.GetAsyncKeyState(0x1B)&0x8000:armed=False
+  previous_active=active
   active=armed and matches
+  if active!=previous_active:print("Capture",active,"foreground_match",matches,flush=True)
   if active:
    rect=W.RECT();point=W.POINT()
    if u.GetClientRect(foreground,C.byref(rect)):
@@ -116,10 +169,12 @@ try:
   while u.PeekMessageW(C.byref(msg),None,0,0,1):
    u.TranslateMessage(C.byref(msg));u.DispatchMessageW(C.byref(msg))
   if now-last_send>.008:
-   sock.sendall((json.dumps({'dx':dx,'dy':dy,'active':active})+'\n').encode())
+   keys=sum((1<<i) for i,key in enumerate([0x57,0x41,0x53,0x44,0x10,0x20]) if active and u.GetAsyncKeyState(key)&0x8000)
+   sock.sendall((json.dumps({'dx':dx,'dy':dy,'active':active,'keys':keys})+'\n').encode())
    dx=dy=0;last_send=now
   time.sleep(.002)
 finally:
+ print("Host raw mouse stopping; release cursor",flush=True)
  if clipped:u.ClipCursor(None)
  u.DestroyWindow(hwnd)
  sock.close()

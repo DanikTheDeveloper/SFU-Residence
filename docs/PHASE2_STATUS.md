@@ -1,5 +1,20 @@
 # Phase 2 status — 2026-10-17
 
+## CURRENT resume point — site-walk corrections, 2026-10-17
+This section supersedes older completed-camera claims and older usage-stop instructions below.
+
+Priority1 remains physical mouse validation. Native Wayland was insufficient in user's test. Commit926ab25 introduced a Windows raw-input helper while keeping Linux Godot/GDScript/OpenGL. Follow-up fixes: fullscreen default, Windows-primary-monitor placement, tolerate shader/startup stalls, recognize WSLg's immutable original title, visible mouse-lock status. Last user test was BEFORE immutable-title fix and failed; a new test is pending. See PHASE2_MOUSE_CAPTURE.md, /tmp/raw-mouse-stall-qa.log. Escape/focus-loss/disconnect release must be physically confirmed. No dependencies installed.
+
+North gallery now has real inner wall faces and capped reveals. Eye-level view_12 inspected: exposed backside/window artefacts corrected. /tmp/gallery-closed-verification.log passes184 checks and341 route points. Direction/layout unchanged.
+
+Townhouse terrain contact: separate TownhouseGroundContact.gd closes up to0.88m gaps and extends existing porch feet to terrain, without modifying approved master, coordinates, pads or roofs. /tmp/townhouse-contact-verification.log passes184 checks/341 route points; /tmp/townhouse-contact-capture.log completes on GTX1650 Compatibility. contact_0 and contact_1 inspected at worst Cowichan/Qualicum gaps. Porch approach grades/landings still need further refinement; this closes visible gaps rather than claiming all approaches photo-exact.
+
+All latest user requests and targeted evidence are saved in PHASE2_SITE_WALK_CORRECTIONS.md. Remaining: Shell furniture/fence/landings; McTaggart descending approach; Courtyard colonnade/bridge toward West Mall; North parking stairs; East/West surrounding stairs/basketball; Beedie Field. Field's mapped outline and official panorama metadata saved, NOT implemented. The mapped basketball point found far east does not establish the requested court position. No unsupported features placed merely to fill the scene.
+
+Next concrete action: confirm physical host mouse using normal bash scripts/run_game.sh, HUD Mouse locked, repeated turns, Escape, Alt+Tab, external primary display. If failure, inspect game/docs/raw_mouse_host.log and latest Godot user log before another edit. Then choose one photo-localized exterior circulation feature; finish its collision and visual validation before starting the next.
+
+## Earlier checkpoint history
+
 ## Latest checkpoint: landscape iteration, 2026-10-17
 This section supersedes historical resume instructions below. Completed: a1a46cd licensed cars; 3b8d207 level Residence Main Lot and mapped ground finishes; vegetation checkpoint follows these commits.
 
@@ -49,3 +64,14 @@ Added missing Residence Main Lot as a separate geographic layer, levelled its co
 ## Active site-walk iteration — 2026-10-17
 User's latest corrections are durable in PHASE2_SITE_WALK_CORRECTIONS.md. Camera physical capture reopened: Wayland alone was tested by user and still lets the pointer escape. Implemented a foreground-only Win32 raw-mouse helper using existing Windows Python plus localhost GDScript adapter; no engine/renderer change. Actual Windows-to-Linux connection QA passed. Physical multi-turn/Escape/Alt+Tab confirmation pending; see PHASE2_MOUSE_CAPTURE.md. Never equate synthetic yaw tests with physical capture success.
 North gallery one-sided wall meshes now have 16cm inner faces and capped opening reveals. /tmp/gallery-closed-verification.log passes full 184 checks / 341 route checkpoints, including continuous North gallery. Visual inspection still pending. Next: finish camera physical validation and gallery captures, then terrain-contact audit / photo-supported site surrounds. Full user-confirmed pre-construction parking target retained.
+
+Site-walk one-off patch helpers and review-only converted image archived outside active workspace at /home/danik/Backups/SFU-site-walk-20261017. Retained reusable input/contact diagnostic scripts. Final checkpoint follows926ab25; inspect git log for hash.
+
+## Final user confirmation and next scope — 2026-10-17
+User explicitly confirms: mouse now works. Preserve the Windows raw-input / immutable WSLg title fix and primary-monitor placement. Latest movement fix also forwards only W/A/S/D/Shift/Space while the game is active; no keyboard hook or key logging. HostMovementQA passes forward movement, right sprint, release stopping and one-shot jump. User's latest wording confirms mouse, not separately every movement key; retain physical WASD/Shift/jump check on next launch.
+
+User authorizes careful visual inspection of Google Street View or similar. Do not scrape/extract protected imagery or ship its pixels. Date every reference and prefer recent official/user photos. Old Street View is explicitly obsolete for modern East/West Towers, McTaggart updates, Courtyard (absent in old imagery), and paving before East/West. Preserve correctly completed facade models. Use historical imagery only for features whose persistence is corroborated; never overwrite newer evidence with an old view.
+
+Next modeling priority: Shell's immediate surroundings (photo-localized furniture, timber fence, stair landings), then McTaggart descending approach; Courtyard open exterior colonnade and West Mall-facing bridge; North gallery-to-parking stairs; East/West exterior stairs/basketball; Beedie Field. Complete one verified feature at a time. All remain pending except North wall closure and townhouse ground contact completed this iteration. Full pre-construction parking remains confirmed.
+
+Actual host usage signal at final checkpoint: primary100%, ordinaryUsageAllowed=false, rate_limit_reached. Stop after saving tested files. No new modeling started after this signal. Next user-started iteration resumes with this note and PHASE2_SITE_WALK_CORRECTIONS.md, not earlier mouse-failure or usage-stop text.

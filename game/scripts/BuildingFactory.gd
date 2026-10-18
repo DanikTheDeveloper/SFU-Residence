@@ -103,6 +103,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 		preload("res://scripts/NorthTowerExterior.gd").build(root,data,points,base,height)
 	elif data.type=="townhouse":
 		preload("res://scripts/TownhouseBlockExterior.gd").build(root,data,points,base,height)
+		preload("res://scripts/TownhouseGroundContact.gd").build(root,points,base)
 		accent_mat=preload("res://scripts/FacadeKit.gd").material("white_frame")
 		glass_mat=preload("res://scripts/FacadeKit.gd").material("orange")
 	elif data.id=="DC":

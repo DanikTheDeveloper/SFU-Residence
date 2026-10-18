@@ -60,6 +60,11 @@ func _process(_delta: float) -> void:
 	var heading: float=fposmod(-rad_to_deg(active_camera.global_rotation.y if active_camera else world.player.pivot.rotation.y),360)
 	detail.text="%s  ·  %s  ·  %d FPS  ·  F2 graphics"%["N ↑" if world.map_mode else "Heading %03d°"%int(heading),"LOW" if world.low_quality else "MEDIUM",Engine.get_frames_per_second()]
 
+	if world.player.raw_mouse!=null and world.player.raw_mouse.connected:
+		detail.text+="  ·  "+("Mouse locked" if world.player.raw_mouse.host_active else "Click to lock mouse")
+	else:
+		detail.text+="  ·  Native mouse"
+
 func nearest_building_name(observer: Vector2) -> String:
 	# A long U-shaped tower's centroid can be farther away than a neighboring hall.
 	# Measure the actual footprint so a person at its door sees the right name.

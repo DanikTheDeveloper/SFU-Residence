@@ -84,11 +84,15 @@ func input_active() -> bool:
 func _physics_process(delta: float) -> void:
 	if not enabled: return
 	var axis := Input.get_vector("move_left","move_right","move_forward","move_back") if input_active() else Vector2.ZERO
+	var host_controls: bool=raw_mouse!=null and raw_mouse.connected
+	if host_controls: axis=raw_mouse.movement_axis() if input_active() else Vector2.ZERO
+	var wants_jump: bool=raw_mouse.consume_jump() if host_controls else Input.is_action_just_pressed("jump")
+	var sprinting: bool=(raw_mouse.movement_keys&16)!=0 if host_controls else Input.is_action_pressed("sprint")
 	var direction := Basis(Vector3.UP,pivot.rotation.y)*Vector3(axis.x,0,axis.y)
-	var speed := 8.0 if Input.is_action_pressed("sprint") else 4.5
+	var speed := 8.0 if sprinting else 4.5
 	velocity.x=move_toward(velocity.x,direction.x*speed,25*delta)
 	velocity.z=move_toward(velocity.z,direction.z*speed,25*delta)
 	if not is_on_floor(): velocity.y-=24*delta
-	elif Input.is_action_just_pressed("jump") and input_active(): velocity.y=7.0
+	elif wants_jump and input_active(): velocity.y=7.0
 	move_and_slide()
 	if global_position.y < -40: reset("fall")

@@ -54,7 +54,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -195,7 +195,7 @@ func _process(_delta: float) -> void:
 
 func capture_views() -> void:
 	var capture_kind: String=""
-	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking"]:
+	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact"]:
 		if ("--capture-"+kind) in OS.get_cmdline_user_args(): capture_kind=kind
 	DisplayServer.window_set_title("SFU automated screenshot capture - controls disabled")
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
@@ -258,6 +258,8 @@ func capture_views() -> void:
 		views=[[Geo.point([353,17],1.68),Geo.point([337,-13],9)],[Geo.point([319,-60],1.68),Geo.point([320,-35],6)],[Geo.point([279,-1],1.68),Geo.point([280,-15],9)],[Vector3(375,65,65),Vector3(307,12,-15)]]
 	if capture_kind=="parking":
 		views=[[Geo.point([15,-45],1.68),Geo.point([70,-30],1.0)],[Geo.point([100,-30],1.68),Geo.point([100,0],8)],[Vector3(80,55,-90),Geo.point([85,-20],0)],[Geo.point([-168,125],1.68),Geo.point([-176,123],0.8)],[Geo.point([-167,117],1.68),Geo.point([-175,112],1.0)],[Geo.point([-172,110],1.68),Geo.point([-160,124],1.2)]]
+	if capture_kind=="contact":
+		views=[[Geo.point([-87,-50],1.68),Geo.point([-88.72,-43.93],0.65)],[Geo.point([-222,25],1.68),Geo.point([-223.41,31.90],0.65)]]
 	if capture_kind=="paving":
 		views=[[Geo.point([130,90],1.68),Geo.point([130,86.8],0.1)],[Geo.point([-180,63],1.68),Geo.point([-179,59],0.2)],[Geo.point([61,72],1.68),Geo.point([68,68],0.1)]]
 	if capture_kind=="landscape": views=views.slice(13)

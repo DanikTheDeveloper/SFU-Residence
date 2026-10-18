@@ -48,5 +48,13 @@
     ],
     "licensing": "URL/text reference only",
     "identity_confidence": "High project identity; tower floor-count conflict recorded"
+  },
+  {
+    "source_url": "https://dialogdesign.ca/projects/simon-fraser-university-phase-2-student-residence/",
+    "image_url": "https://dialogdesign.ca/wp-content/uploads/projects/LAP0604_DialogSFUResidences_0005_hiresjpg-2600x1950.jpg",
+    "date": "Unknown, project completed 2023",
+    "observations": "Visually reviewed architect photo: two-level tall pale piers at highrise corner, recessed glazing behind, bridge toward adjacent academic/parkade side. Supports exterior colonnade, not removing every enclosed ground-floor space. Same composition agrees with user Ledcor AVIF. Exact long-side open extent remains to resolve.",
+    "license": "DIALOG/photographer copyright, URL only",
+    "identity_confidence": "High: architect named project"
   }
 ]

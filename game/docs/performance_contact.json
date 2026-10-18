@@ -1,0 +1,55 @@
+{
+  "device": "D3D12 (NVIDIA GeForce GTX 1650)",
+  "renderer": "gl_compatibility",
+  "resolution": [
+    1280.0,
+    720.0
+  ],
+  "samples": [
+    {
+      "camera_xyz": [
+        -87.0,
+        1.70850002765656,
+        -50.0
+      ],
+      "draw_calls": 509.0,
+      "eye_height_m": 1.68,
+      "fov": 72.0,
+      "fps_mean": 21.1299697395356,
+      "frame_ms_p95": 51.531,
+      "look_at": [
+        -88.7200012207031,
+        2.12653350830078,
+        -43.9300003051758
+      ],
+      "view": 0,
+      "viewport_size": [
+        1280.0,
+        720.0
+      ]
+    },
+    {
+      "camera_xyz": [
+        -222.0,
+        -6.29930019378662,
+        25.0
+      ],
+      "draw_calls": 185.0,
+      "eye_height_m": 1.68,
+      "fov": 72.0,
+      "fps_mean": 33.6265443457526,
+      "frame_ms_p95": 34.315,
+      "look_at": [
+        -223.410003662109,
+        -5.74984169006348,
+        31.8999996185303
+      ],
+      "view": 1,
+      "viewport_size": [
+        1280.0,
+        720.0
+      ]
+    }
+  ],
+  "tier": "medium"
+}

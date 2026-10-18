@@ -1,6 +1,7 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
-PHOTO_PAVING { "concrete": 196, "townhouse_grey": 111, "east_pavers": 1, "vehicle": 90 }
+PHOTO_PAVING { "mapped_surface": 95, "concrete": 110, "townhouse_grey": 102, "east_pavers": 1, "vehicle": 90 }
+PHOTO_PLANTING broadleaf=25 conifers=72 grass_clumps=59
 WORLD_READY buildings=19 paths=398 renderer=gl_compatibility
 PASS Pauline Jewett entrance label uses footprint not neighboring centroid 
 PASS 19 scene buildings 

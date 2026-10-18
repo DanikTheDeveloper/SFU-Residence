@@ -30,4 +30,10 @@ if [[ -d /mnt/wslg && "${SFU_RAW_MOUSE:-1}" != 0 && -z "${SFU_WINDOWS_PYTHON:-}"
   done
 fi
 if [[ "${SFU_RAW_MOUSE:-1}" == 0 ]]; then unset SFU_WINDOWS_PYTHON; fi
-exec "$BIN" --path "$ROOT/game" "${DISPLAY_ARGS[@]}" "$@"
+WINDOW_ARGS=(--fullscreen --screen 0)
+for arg in "$@"; do
+  case "$arg" in
+    --headless|--editor|--script|--windowed|--fullscreen|--maximized|--minimized|--quit*|--capture*|--verify|--pointer-qa) WINDOW_ARGS=();;
+  esac
+done
+exec "$BIN" --path "$ROOT/game" "${DISPLAY_ARGS[@]}" "${WINDOW_ARGS[@]}" "$@"
