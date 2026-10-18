@@ -30,6 +30,13 @@ func run() -> void:
 		check("Field4 level surface "+str(p),absf(Geo.elevation(p[0],p[1])-field4_level)<0.02)
 		var turf_hit:=ray(Vector3(p[0],field4_level+2,p[1]),Vector3(p[0],field4_level-2,p[1]))
 		check("Field4 terrain collision "+str(p),not turf_hit.is_empty() and absf(turf_hit.position.y-field4_level)<0.1)
+	var field2_level: float=world.get_node("Props/Field2").get_meta("finished_level_estimate")
+	for p in [[170,190],[200,220],[220,239],[220,241],[240,250]]:
+		check("Field2 level surface "+str(p),absf(Geo.elevation(p[0],p[1])-field2_level)<0.02)
+		var turf_hit:=ray(Vector3(p[0],field2_level+2,p[1]),Vector3(p[0],field2_level-2,p[1]))
+		check("Field2 extended terrain collision "+str(p),not turf_hit.is_empty() and absf(turf_hit.position.y-field2_level)<0.1)
+		check("Field2 point inside study boundary "+str(p),Geo.contains_point(Vector2(p[0],p[1]),world.boundary))
+	check("Field2 no old grid seam step",absf(Geo.elevation(220,239.9)-Geo.elevation(220,240.1))<0.02)
 	check("19 scene buildings",world.get_node("Buildings").get_child_count()==19)
 	check("Compatibility selected",RenderingServer.get_current_rendering_method()=="gl_compatibility")
 	check("Interior boundary ray degeneracy regression",Geo.contains_point(Vector2(-216.3434,62),world.boundary))
@@ -301,6 +308,7 @@ func run_routes() -> void:
 	routes.append({"buildings":["Residence Main Lot access and aisle"],"points":[[-30,-40],[0,-40],[25,-35],[50,-30],[75,-25],[100,-20],[125,-15],[150,-10]]})
 	routes.append({"buildings":["Shell courtyard fence opening"],"points":[[248.33,86.854],[251,87.452],[254,88.124],[257,88.796],[254,88.124],[251,87.452],[248.33,86.854]]})
 	routes.append({"buildings":["Field4 spawn approach and pitch"],"points":[[35,80],[30,92],[20,110],[0,105],[-20,100],[-35,110],[-18,115],[0,120],[20,125],[40,130],[55,120],[42,106],[30,92],[35,80]]})
+	routes.append({"buildings":["Field2 approach and extended ground"],"points":[[170,145],[170,165],[175,185],[195,200],[215,215],[235,230],[240,245],[220,245],[205,230],[190,215],[175,195],[170,175],[170,155]]})
 	routes.append({"buildings":["Beedie entrance and outfield"],"points":[[102,129],[102,137],[108,150],[112,170],[110,192],[95,185],[90,170],[97,145],[102,137],[102,129]]})
 	var player: CharacterBody3D=world.player
 	player.test_input=true

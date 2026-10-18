@@ -9,10 +9,12 @@ Source: https://www.sfu.ca/recreation/info/facilities.html ; image URL and obser
 
 A new traversal initially failed because a 41m segment exceeded the harness's 500-frame travel budget at 4.5m/s. Intermediate checkpoints now cover the same route. This was not proof of a physical wall; the initial diagnosis was revised after reproducing the timeout.
 
-## Field2 (implementation preparation)
+## Field2 (verified first pass)
 User identifies the eastern field beside McTaggart as the second part of Beedie and describes football use. Official SFU labels this Field2 and lists rugby/soccer. Its specific photograph includes an Athletic Field2 sign, dry natural grass and tall H-shaped posts. Preserve the user's location clarification while retaining official venue naming and uncertainty about American football markings.
 
 Original OSM32528091 extends to Z257.972, beyond old terrain Z240. scripts/build_field2_grade.py generates a separate appended-row extension to Z280 using original licensed City of Burnaby contours, six local smoothing passes and a 20m seam-offset blend. It does not overwrite terrain_grid.json. A separate finished-field grading layer is provisional. No arbitrary global vertical scaling.
 
 ## Remaining shared work
 Accurate approaches, seating, pole/scoreboard locations, perimeter fences where evidenced, field-specific surface transitions and richer forest-edge planting. Beedie's sunken dugouts, bleachers, bullpens and batting cage remain unfinished. Current photographs supersede obsolete street imagery for modern buildings and surfaces. Maintain continuous access and verify new terrain/collision coverage before claiming completion.
+
+Field2 runtime integration verified:215 physics checks and385 route checkpoints, including old/new terrain seam and extended-field crossing. Field4 verified checkpoint681cade. See STATUS/HANDOFF for captures and remaining limitations.

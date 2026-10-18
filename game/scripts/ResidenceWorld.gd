@@ -28,6 +28,7 @@ func _ready() -> void:
 	for p in site.boundary: boundary.append(Vector2(p[0],p[1]))
 	boundary=preload("res://scripts/BeedieField.gd").extend_boundary(boundary)
 	boundary=preload("res://scripts/Field4.gd").extend_boundary(boundary)
+	boundary=preload("res://scripts/Field2.gd").extend_boundary(boundary)
 	configure_inputs()
 	build_light()
 	build_ground()
@@ -41,6 +42,7 @@ func _ready() -> void:
 	preload("res://scripts/SiteDetails.gd").build(self)
 	preload("res://scripts/BeedieField.gd").build(self)
 	preload("res://scripts/Field4.gd").build(self)
+	preload("res://scripts/Field2.gd").build(self)
 	player=PlayerScene.instantiate()
 	add_child(player)
 	player.spawn=Geo.point([35,80],0.25)
@@ -58,7 +60,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args() or "--capture-field2" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -111,7 +113,7 @@ func build_ground() -> void:
 	var ground := group_node("Ground")
 	var verts := PackedVector3Array()
 	for x in range(-350,400,2):
-		for z in range(-180,240,2):
+		for z in range(-180,280,2):
 			var a := Geo.point([x,z])
 			var b := Geo.point([x+2,z])
 			var c := Geo.point([x+2,z+2])
@@ -199,7 +201,7 @@ func _process(_delta: float) -> void:
 
 func capture_views() -> void:
 	var capture_kind: String=""
-	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4"]:
+	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4","field2"]:
 		if ("--capture-"+kind) in OS.get_cmdline_user_args(): capture_kind=kind
 	DisplayServer.window_set_title("SFU automated screenshot capture - controls disabled")
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
@@ -260,6 +262,8 @@ func capture_views() -> void:
 			views.append([eye,door+Vector3.UP*3])
 	if capture_kind=="courtyard":
 		views=[[Geo.point([353,17],1.68),Geo.point([337,-13],9)],[Geo.point([319,-60],1.68),Geo.point([320,-35],6)],[Geo.point([279,-1],1.68),Geo.point([280,-15],9)],[Vector3(375,65,65),Vector3(307,12,-15)]]
+	if capture_kind=="field2":
+		views=[[Geo.point([170,170],1.68),Geo.point([235,220],2.5)],[Geo.point([230,245],1.68),Geo.point([175,200],2.0)],[Vector3(300,65,285),Geo.point([175,185])]]
 	if capture_kind=="field4":
 		views=[[Geo.point([35,80],1.68),Geo.point([8,115],1.0)],[Geo.point([-50,98],1.68),Geo.point([55,124],1.2)],[Vector3(90,45,180),Geo.point([8,110])]]
 	if capture_kind=="field":

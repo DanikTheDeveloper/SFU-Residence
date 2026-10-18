@@ -17,6 +17,22 @@ PASS Field4 level surface [50, 120]
 PASS Field4 terrain collision [50, 120] 
 PASS Field4 level surface [20, 140] 
 PASS Field4 terrain collision [20, 140] 
+PASS Field2 level surface [170, 190] 
+PASS Field2 extended terrain collision [170, 190] 
+PASS Field2 point inside study boundary [170, 190] 
+PASS Field2 level surface [200, 220] 
+PASS Field2 extended terrain collision [200, 220] 
+PASS Field2 point inside study boundary [200, 220] 
+PASS Field2 level surface [220, 239] 
+PASS Field2 extended terrain collision [220, 239] 
+PASS Field2 point inside study boundary [220, 239] 
+PASS Field2 level surface [220, 241] 
+PASS Field2 extended terrain collision [220, 241] 
+PASS Field2 point inside study boundary [220, 241] 
+PASS Field2 level surface [240, 250] 
+PASS Field2 extended terrain collision [240, 250] 
+PASS Field2 point inside study boundary [240, 250] 
+PASS Field2 no old grid seam step 
 PASS 19 scene buildings 
 PASS Compatibility selected 
 PASS Interior boundary ray degeneracy regression 
@@ -114,26 +130,26 @@ PASS PJH longitudinal gallery clear at eye level
 PASS PJH courtyard column solid 
 PASS PJH rear residential boundary closed 
 PASS PJH gallery overhead collision 
-PASS PJH longitudinal capsule traversal false (30.43144, 2.877039, 3.418353)
-PASS PJH longitudinal capsule traversal true (-28.45388, 2.60414, -10.55848)
+PASS PJH longitudinal capsule traversal false (30.43146, 2.877042, 3.418323)
+PASS PJH longitudinal capsule traversal true (-28.45385, 2.604148, -10.55847)
 PASS BRH longitudinal gallery clear at eye level 
 PASS BRH courtyard column solid 
 PASS BRH rear residential boundary closed 
 PASS BRH gallery overhead collision 
-PASS BRH longitudinal capsule traversal false (102.6654, 6.030079, 20.58109)
-PASS BRH longitudinal capsule traversal true (43.61199, 5.580877, 6.594115)
+PASS BRH longitudinal capsule traversal false (102.6654, 6.030081, 20.58107)
+PASS BRH longitudinal capsule traversal true (43.61161, 5.580753, 6.59403)
 PASS SBH longitudinal gallery clear at eye level 
 PASS SBH courtyard column solid 
 PASS SBH rear residential boundary closed 
 PASS SBH gallery overhead collision 
-PASS SBH longitudinal capsule traversal false (174.2044, 7.445425, 37.36684)
+PASS SBH longitudinal capsule traversal false (174.2046, 7.445511, 37.36674)
 PASS SBH longitudinal capsule traversal true (115.6222, 6.456358, 23.46015)
-PASS Continuous North row false reaches PJH (28.92901, 2.628873, 2.997017)
-PASS Continuous North row false reaches BRH (101.1322, 5.971784, 20.15244)
-PASS Continuous North row false reaches SBH (173.0462, 6.964489, 37.02591)
+PASS Continuous North row false reaches PJH (28.929, 2.628859, 2.997013)
+PASS Continuous North row false reaches BRH (101.1323, 5.971788, 20.15246)
+PASS Continuous North row false reaches SBH (173.0465, 6.964576, 37.02594)
 PASS Continuous North row true reaches SBH (117.1695, 6.467208, 23.8919)
-PASS Continuous North row true reaches BRH (45.23834, 5.819768, 7.043721)
-PASS Continuous North row true reaches PJH (-26.93251, 2.511935, -10.13194)
+PASS Continuous North row true reaches BRH (45.23887, 5.819918, 7.043845)
+PASS Continuous North row true reaches PJH (-26.93088, 2.511844, -10.13156)
 PASS W movement metres=4.131790
 PASS Sprint faster 
 PASS Jump rises 
@@ -203,4 +219,4 @@ PASS Courtyard uses distinct precast master
 PASS Courtyard preserves eleven-floor registry 
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=199 failures=0
+VERIFICATION_COMPLETE checks=215 failures=0

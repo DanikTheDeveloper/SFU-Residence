@@ -31,6 +31,11 @@
       "passed": true
     },
     {
+      "check": "Walk loop [\"Field2 approach and extended ground\"]",
+      "evidence": "13/13 checkpoints",
+      "passed": true
+    },
+    {
       "check": "Walk loop [\"Beedie entrance and outfield\"]",
       "evidence": "10/10 checkpoints",
       "passed": true

@@ -71,6 +71,86 @@
       "passed": true
     },
     {
+      "check": "Field2 level surface [170, 190]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 extended terrain collision [170, 190]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 point inside study boundary [170, 190]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 level surface [200, 220]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 extended terrain collision [200, 220]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 point inside study boundary [200, 220]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 level surface [220, 239]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 extended terrain collision [220, 239]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 point inside study boundary [220, 239]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 level surface [220, 241]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 extended terrain collision [220, 241]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 point inside study boundary [220, 241]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 level surface [240, 250]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 extended terrain collision [240, 250]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 point inside study boundary [240, 250]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field2 no old grid seam step",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "19 scene buildings",
       "evidence": "",
       "passed": true
@@ -557,12 +637,12 @@
     },
     {
       "check": "PJH longitudinal capsule traversal false",
-      "evidence": "(30.43144, 2.877039, 3.418353)",
+      "evidence": "(30.43146, 2.877042, 3.418323)",
       "passed": true
     },
     {
       "check": "PJH longitudinal capsule traversal true",
-      "evidence": "(-28.45388, 2.60414, -10.55848)",
+      "evidence": "(-28.45385, 2.604148, -10.55847)",
       "passed": true
     },
     {
@@ -587,12 +667,12 @@
     },
     {
       "check": "BRH longitudinal capsule traversal false",
-      "evidence": "(102.6654, 6.030079, 20.58109)",
+      "evidence": "(102.6654, 6.030081, 20.58107)",
       "passed": true
     },
     {
       "check": "BRH longitudinal capsule traversal true",
-      "evidence": "(43.61199, 5.580877, 6.594115)",
+      "evidence": "(43.61161, 5.580753, 6.59403)",
       "passed": true
     },
     {
@@ -617,7 +697,7 @@
     },
     {
       "check": "SBH longitudinal capsule traversal false",
-      "evidence": "(174.2044, 7.445425, 37.36684)",
+      "evidence": "(174.2046, 7.445511, 37.36674)",
       "passed": true
     },
     {
@@ -627,17 +707,17 @@
     },
     {
       "check": "Continuous North row false reaches PJH",
-      "evidence": "(28.92901, 2.628873, 2.997017)",
+      "evidence": "(28.929, 2.628859, 2.997013)",
       "passed": true
     },
     {
       "check": "Continuous North row false reaches BRH",
-      "evidence": "(101.1322, 5.971784, 20.15244)",
+      "evidence": "(101.1323, 5.971788, 20.15246)",
       "passed": true
     },
     {
       "check": "Continuous North row false reaches SBH",
-      "evidence": "(173.0462, 6.964489, 37.02591)",
+      "evidence": "(173.0465, 6.964576, 37.02594)",
       "passed": true
     },
     {
@@ -647,12 +727,12 @@
     },
     {
       "check": "Continuous North row true reaches BRH",
-      "evidence": "(45.23834, 5.819768, 7.043721)",
+      "evidence": "(45.23887, 5.819918, 7.043845)",
       "passed": true
     },
     {
       "check": "Continuous North row true reaches PJH",
-      "evidence": "(-26.93251, 2.511935, -10.13194)",
+      "evidence": "(-26.93088, 2.511844, -10.13156)",
       "passed": true
     },
     {

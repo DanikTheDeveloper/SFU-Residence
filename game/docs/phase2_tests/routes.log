@@ -9,5 +9,6 @@ PASS Walk loop ["WET", "EAT", "MCH", "HAM", "WET"] 43/43 checkpoints
 PASS Walk loop ["Residence Main Lot access and aisle"] 8/8 checkpoints
 PASS Walk loop ["Shell courtyard fence opening"] 7/7 checkpoints
 PASS Walk loop ["Field4 spawn approach and pitch"] 14/14 checkpoints
+PASS Walk loop ["Field2 approach and extended ground"] 13/13 checkpoints
 PASS Walk loop ["Beedie entrance and outfield"] 10/10 checkpoints
 ROUTES_COMPLETE failures=0

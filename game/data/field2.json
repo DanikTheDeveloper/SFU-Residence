@@ -1,0 +1,51 @@
+{
+  "name": "Field 2",
+  "kind": "playing_surface",
+  "osm_id": "32528091",
+  "osm_tags": {
+    "leisure": "pitch",
+    "name": "Field 2",
+    "sport": "soccer"
+  },
+  "source_url": "https://www.openstreetmap.org/way/32528091",
+  "license": "ODbL-1.0; OpenStreetMap contributors",
+  "points": [
+    [
+      156.278,
+      159.298
+    ],
+    [
+      273.958,
+      189.421
+    ],
+    [
+      266.552,
+      218.431
+    ],
+    [
+      256.418,
+      257.972
+    ],
+    [
+      249.991,
+      256.327
+    ],
+    [
+      163.176,
+      234.099
+    ],
+    [
+      138.738,
+      227.85
+    ]
+  ],
+  "bounds_xz": [
+    138.738,
+    159.298,
+    273.958,
+    257.972
+  ],
+  "runtime_status": "first pass",
+  "height_estimate_m": 0.52,
+  "uncertainty": "User calls this eastern pitch second part of Beedie/football; official SFU lists Field2 rugby/soccer. Photo confirms H posts, not American football yard markings. Finished grade and goal positions estimated."
+}

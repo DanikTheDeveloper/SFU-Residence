@@ -5,12 +5,18 @@ static var grid: Dictionary = {}
 static func initialize() -> void:
 	if grid.is_empty():
 		grid=JSON.parse_string(FileAccess.get_file_as_string("res://data/terrain_grid.json"))
+		var extension: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/field2_terrain_extension.json"))
+		assert(int(grid.depth)==int(extension.original_depth),"Terrain extension base depth mismatch")
+		grid.heights.append_array(extension.heights)
+		grid.depth=extension.depth
 		var grading: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/parking_grade.json"))
 		for sample in grading.changes: grid.heights[int(sample[0])]=sample[1]
 		var field: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/beedie_grade.json"))
 		for sample in field.changes: grid.heights[int(sample[0])]=sample[1]
 		var field4: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/field4_grade.json"))
 		for sample in field4.changes: grid.heights[int(sample[0])]=sample[1]
+		var field2: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/field2_grade.json"))
+		for sample in field2.changes: grid.heights[int(sample[0])]=sample[1]
 
 static func height(x: float, z: float) -> float:
 	initialize()
