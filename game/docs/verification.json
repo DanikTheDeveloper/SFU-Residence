@@ -431,6 +431,16 @@
       "passed": true
     },
     {
+      "check": "Shell concrete tabletop solid at seating area",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Shell timber screen blocks capsule-height crossing",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Shell has distinct photo-based master",
       "evidence": "",
       "passed": true

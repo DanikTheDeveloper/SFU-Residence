@@ -239,7 +239,7 @@ func capture_views() -> void:
 		eye.y=Geo.elevation(eye.x,eye.z)+1.68
 		views.append([eye,door+Vector3.UP*1.6])
 	if "--capture-shell" in OS.get_cmdline_user_args():
-		views=[[Geo.point([245,146],1.68),Geo.point([253,136.6],4.0)],[Geo.point([242,103],1.68),Geo.point([260,100],5.0)],[Geo.point([286,97],1.68),Geo.point([273,96],5.0)]]
+		views=[[Geo.point([245,146],1.68),Geo.point([253,136.6],4.0)],[Geo.point([242,103],1.68),Geo.point([260,100],5.0)],[Geo.point([286,97],1.68),Geo.point([273,96],5.0)],[Geo.point([247,95],1.68),Geo.point([252,92],0.65)],[Geo.point([249,73],1.68),Geo.point([257,72],0.70)]]
 	if "--capture-dining" in OS.get_cmdline_user_args():
 		views=[[Geo.point([171,11],1.68),Geo.point([186,17],5.0)],[Geo.point([216,-9],1.68),Geo.point([215,8],5.0)],[Geo.point([250,62],1.68),Geo.point([237,55],5.0)],[Geo.point([205,76],1.68),Geo.point([210,58],5.0)]]
 	if capture_kind=="mctaggart":
@@ -302,3 +302,5 @@ func capture_views() -> void:
 	report.store_string(JSON.stringify({"device":RenderingServer.get_video_adapter_name(),"renderer":RenderingServer.get_current_rendering_method(),"resolution":[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y],"tier":"medium","samples":measurements},"  "))
 	print("CAPTURE_COMPLETE fps=",Engine.get_frames_per_second()," draws=",Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
 	get_tree().quit()
+
+

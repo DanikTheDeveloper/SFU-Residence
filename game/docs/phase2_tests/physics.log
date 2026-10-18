@@ -89,6 +89,8 @@ PASS Courtyard Highrise roof matches configured zone height (320.0, 46.193, -2.0
 PASS Courtyard Atrium roof matches configured zone height (335.0, 20.09299, -15.0)
 PASS Dining retains distinct old and new exterior zones 
 PASS Dining three-level registry retained 
+PASS Shell concrete tabletop solid at seating area 
+PASS Shell timber screen blocks capsule-height crossing 
 PASS Shell has distinct photo-based master 
 PASS Shell official total four levels preserved 
 PASS Hamilton primary portico faces north 
@@ -188,4 +190,4 @@ PASS Courtyard uses distinct precast master
 PASS Courtyard preserves eleven-floor registry 
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=184 failures=0
+VERIFICATION_COMPLETE checks=186 failures=0

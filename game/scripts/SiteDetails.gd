@@ -28,6 +28,7 @@ static func build(world: Node3D) -> void:
 			sign.position=p+Vector3.UP*2.6
 		# No centerline paint without direct marking evidence.
 	preload("res://scripts/ParkingLot.gd").build(world,root)
+	preload("res://scripts/ShellCourtyard.gd").build(world)
 	# Original small plaza furnishings, kept clear of mapped walkways.
 	for data in world.registry:
 		var center:=Vector2(data.centroid[0],data.centroid[1])
@@ -38,3 +39,4 @@ static func build(world: Node3D) -> void:
 		for offset in [-2.3,2.3]:
 			Geo.box(root,p+Vector3(offset,0.45,0),Vector3(0.5,0.15,2.0),Geo.material(Color("8b6a49")),true)
 			Geo.box(root,p+Vector3(offset,0.24,0),Vector3(0.32,0.48,1.5),dark)
+

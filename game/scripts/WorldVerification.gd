@@ -64,6 +64,15 @@ func run() -> void:
 	var dining: Node3D=world.get_node("Buildings/DC")
 	check("Dining retains distinct old and new exterior zones",dining.get_meta("exterior_zones").size()==2 and dining.get_meta("family_master")=="res://scripts/DiningExterior.gd")
 	check("Dining three-level registry retained",dining.get_meta("floor_count")==3)
+	var courtyard_tangent:=Vector3(11.686,0,-49.726).normalized()
+	var courtyard_outward:=Vector3(courtyard_tangent.z,0,-courtyard_tangent.x)
+	var table_point:=Vector3(255.533,0,109.004)+courtyard_tangent*16+ courtyard_outward*7
+	table_point.y=Geo.elevation(table_point.x,table_point.z)
+	var table_hit:=ray(table_point+Vector3.UP*1.5,table_point+Vector3.UP*0.6)
+	check("Shell concrete tabletop solid at seating area",not table_hit.is_empty() and absf(table_hit.position.y-table_point.y-0.8)<0.02)
+	var fence_point:=Vector3(255.533,0,109.004)+courtyard_tangent*10+courtyard_outward*3.2
+	fence_point.y=Geo.elevation(fence_point.x,fence_point.z)+0.9
+	check("Shell timber screen blocks capsule-height crossing",not ray(fence_point+courtyard_outward,fence_point-courtyard_outward).is_empty())
 	var shell: Node3D=world.get_node("Buildings/SHR")
 	check("Shell has distinct photo-based master",shell.get_meta("family_master")=="res://scripts/ShellExterior.gd")
 	check("Shell official total four levels preserved",shell.get_meta("floor_count")==4)
@@ -281,6 +290,7 @@ func verify_families() -> void:
 func run_routes() -> void:
 	var routes: Array=JSON.parse_string(FileAccess.get_file_as_string("res://data/test_routes.json"))
 	routes.append({"buildings":["Residence Main Lot access and aisle"],"points":[[-30,-40],[0,-40],[25,-35],[50,-30],[75,-25],[100,-20],[125,-15],[150,-10]]})
+	routes.append({"buildings":["Shell courtyard fence opening"],"points":[[248.33,86.854],[251,87.452],[254,88.124],[257,88.796],[254,88.124],[251,87.452],[248.33,86.854]]})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true
@@ -311,3 +321,5 @@ func run_routes() -> void:
 	file.store_string(JSON.stringify({"failures":failures,"checks":results},"  "))
 	print("ROUTES_COMPLETE failures=",failures)
 	get_tree().quit(0 if failures==0 else 1)
+
+

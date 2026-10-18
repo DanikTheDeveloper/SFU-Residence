@@ -7,4 +7,5 @@ PASS Walk loop ["WET", "HAM", "COW", "CHI", "KEL", "KIM", "KIT", "PEN", "QUA", "
 PASS Walk loop ["WET", "PJH", "BRH", "SBH", "DC", "CYR", "SHR", "EAT", "WET"] 140/140 checkpoints
 PASS Walk loop ["WET", "EAT", "MCH", "HAM", "WET"] 43/43 checkpoints
 PASS Walk loop ["Residence Main Lot access and aisle"] 8/8 checkpoints
+PASS Walk loop ["Shell courtyard fence opening"] 7/7 checkpoints
 ROUTES_COMPLETE failures=0
