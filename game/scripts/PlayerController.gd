@@ -8,6 +8,7 @@ var enabled := true
 var test_input := false
 var pointer_warp_mode := false
 var total_look_yaw := 0.0
+var raw_mouse: Node
 
 func _ready() -> void:
 	name="Player"
@@ -32,11 +33,27 @@ func _ready() -> void:
 	camera.far=1000
 	camera.current=true
 	# Native relative capture avoids recenter events feeding back into look.
-	Input.use_accumulated_input=true
+	Input.use_accumulated_input=false
+	raw_mouse=preload("res://scripts/WSLRawMouse.gd").new()
+	add_child(raw_mouse)
+	raw_mouse.start(self)
 	capture_pointer.call_deferred()
 
+func _notification(what: int) -> void:
+	# Never keep turning from stale motion after Alt-Tab or losing the window.
+	if what==NOTIFICATION_APPLICATION_FOCUS_OUT:
+		release_pointer()
+
+func release_pointer() -> void:
+	if raw_mouse!=null: raw_mouse.capture(false)
+	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
+
 func capture_pointer() -> void:
-	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	if raw_mouse!=null and raw_mouse.connected:
+		Input.mouse_mode=Input.MOUSE_MODE_HIDDEN
+		raw_mouse.capture(true)
+	else:
+		Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
 
 func apply_look(delta_pixels: Vector2) -> void:
 	# Only pitch is clamped. Yaw can pass through any number of complete turns.
@@ -47,12 +64,12 @@ func apply_look(delta_pixels: Vector2) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("release_mouse"):
-		Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
+		release_pointer()
 		return
 	if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT and enabled:
 		capture_pointer()
 		return
-	if event is InputEventMouseMotion and enabled and input_active():
+	if event is InputEventMouseMotion and enabled and input_active() and not (raw_mouse!=null and raw_mouse.connected):
 		apply_look(event.screen_relative if event.screen_relative!=Vector2.ZERO else event.relative)
 	if event.is_action_pressed("respawn"): reset()
 
@@ -62,7 +79,7 @@ func reset(reason: String="manual") -> void:
 	velocity=Vector3.ZERO
 
 func input_active() -> bool:
-	return Input.mouse_mode in [Input.MOUSE_MODE_CAPTURED,Input.MOUSE_MODE_CONFINED_HIDDEN] or (test_input and "--verify" in OS.get_cmdline_user_args())
+	return (raw_mouse!=null and raw_mouse.connected and raw_mouse.requested) or Input.mouse_mode in [Input.MOUSE_MODE_CAPTURED,Input.MOUSE_MODE_CONFINED_HIDDEN] or (test_input and "--verify" in OS.get_cmdline_user_args())
 
 func _physics_process(delta: float) -> void:
 	if not enabled: return

@@ -47,14 +47,30 @@ static func quad(vertices: PackedVector3Array,a: Vector3,b: Vector3,bottom: floa
 	var high:=Vector3.UP*top
 	vertices.append_array([a+low,b+high,b+low,a+low,a+high,b+high])
 
+static func closed_wall(vertices: PackedVector3Array,a: Vector3,b: Vector3,bottom: float,top: float) -> void:
+	# A real thin shell: exterior, inner face and cut reveals. Single-sided planes
+	# exposed the building void when viewed from inside the exterior gallery.
+	if a.distance_to(b)<0.001 or top-bottom<0.001: return
+	var inward: Vector3=-Vector3.UP.cross(b-a).normalized()*0.16
+	quad(vertices,a,b,bottom,top)
+	quad(vertices,b+inward,a+inward,bottom,top)
+	quad(vertices,a+inward,a,bottom,top)
+	quad(vertices,b,b+inward,bottom,top)
+	var aa:=a+Vector3.UP*top
+	var bb:=b+Vector3.UP*top
+	vertices.append_array([aa,bb,bb+inward,aa,bb+inward,aa+inward])
+	aa=a+Vector3.UP*bottom
+	bb=b+Vector3.UP*bottom
+	vertices.append_array([aa,bb+inward,bb,aa,aa+inward,bb+inward])
+
 static func append_wall(vertices: PackedVector3Array,a: Vector3,b: Vector3,height: float,data: Dictionary) -> void:
 	var cut:=interval(a,b,layout(data,a.y))
 	if cut.x<0:
-		quad(vertices,a,b,0,height)
+		closed_wall(vertices,a,b,0,height)
 		return
-	if cut.x>0.0001: quad(vertices,a,a.lerp(b,cut.x),0,height)
-	quad(vertices,a.lerp(b,cut.x),a.lerp(b,cut.y),CLEAR_HEIGHT,height)
-	if cut.y<0.9999: quad(vertices,a.lerp(b,cut.y),b,0,height)
+	if cut.x>0.0001: closed_wall(vertices,a,a.lerp(b,cut.x),0,height)
+	closed_wall(vertices,a.lerp(b,cut.x),a.lerp(b,cut.y),CLEAR_HEIGHT,height)
+	if cut.y<0.9999: closed_wall(vertices,a.lerp(b,cut.y),b,0,height)
 
 static func build(root: Node3D,data: Dictionary,base: float,material: Material) -> void:
 	var plan:=layout(data,base)
