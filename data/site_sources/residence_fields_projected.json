@@ -1,0 +1,261 @@
+{
+  "reviewed": "2026-10-18",
+  "official_source": "https://www.sfu.ca/recreation/info/facilities.html",
+  "official_surface_uses": {
+    "Field 4": "Artificial turf; soccer/lacrosse; two coaches booths; lighting; seating360",
+    "Field 2": "Grass; rugby/soccer",
+    "Beedie Field": "Softball; grass outfield, sand infield, synthetic warning track"
+  },
+  "notes": "Three distinct residence-adjacent fields. Field4 pitch and facility polygons overlap: never instantiate as two fields. Terry Fox Field farther east is a separate fourth venue, not a replacement for Field2. Original source records retained; geometry not a survey.",
+  "features": [
+    {
+      "name": "Field 4",
+      "kind": "playing_surface",
+      "osm_id": "32528090",
+      "osm_tags": {
+        "leisure": "pitch",
+        "lit": "yes",
+        "sport": "soccer",
+        "surface": "artificial_turf"
+      },
+      "source_url": "https://www.openstreetmap.org/way/32528090",
+      "license": "ODbL-1.0; OpenStreetMap contributors",
+      "points": [
+        [
+          -59.569,
+          127.652
+        ],
+        [
+          60.599,
+          156.018
+        ],
+        [
+          75.245,
+          93.926
+        ],
+        [
+          -44.931,
+          65.583
+        ],
+        [
+          -59.569,
+          127.652
+        ]
+      ],
+      "bounds_xz": [
+        -59.569,
+        65.583,
+        75.245,
+        156.018
+      ],
+      "runtime_status": "not implemented; source preparation only"
+    },
+    {
+      "name": "Field 2",
+      "kind": "playing_surface",
+      "osm_id": "32528091",
+      "osm_tags": {
+        "leisure": "pitch",
+        "name": "Field 2",
+        "sport": "soccer"
+      },
+      "source_url": "https://www.openstreetmap.org/way/32528091",
+      "license": "ODbL-1.0; OpenStreetMap contributors",
+      "points": [
+        [
+          156.278,
+          159.298
+        ],
+        [
+          273.958,
+          189.421
+        ],
+        [
+          266.552,
+          218.431
+        ],
+        [
+          256.418,
+          257.972
+        ],
+        [
+          249.991,
+          256.327
+        ],
+        [
+          163.176,
+          234.099
+        ],
+        [
+          138.738,
+          227.85
+        ],
+        [
+          156.278,
+          159.298
+        ]
+      ],
+      "bounds_xz": [
+        138.738,
+        159.298,
+        273.958,
+        257.972
+      ],
+      "runtime_status": "not implemented; source preparation only"
+    },
+    {
+      "name": "Beedie Field",
+      "kind": "playing_surface",
+      "osm_id": "32528092",
+      "osm_tags": {
+        "alt_name": "Beedie Field",
+        "barrier": "fence",
+        "leisure": "pitch",
+        "name": "Field 3",
+        "sport": "softball",
+        "surface": "grass"
+      },
+      "source_url": "https://www.openstreetmap.org/way/32528092",
+      "license": "ODbL-1.0; OpenStreetMap contributors",
+      "points": [
+        [
+          88.824,
+          130.999
+        ],
+        [
+          103.201,
+          134.59
+        ],
+        [
+          116.715,
+          138.06
+        ],
+        [
+          151.128,
+          146.844
+        ],
+        [
+          145.47,
+          166.67
+        ],
+        [
+          138.927,
+          179.346
+        ],
+        [
+          131.194,
+          189.832
+        ],
+        [
+          126.116,
+          193.991
+        ],
+        [
+          114.612,
+          198.917
+        ],
+        [
+          100.887,
+          200.673
+        ],
+        [
+          84.798,
+          199.317
+        ],
+        [
+          69.209,
+          195.614
+        ],
+        [
+          77.022,
+          162.156
+        ],
+        [
+          80.402,
+          148.701
+        ],
+        [
+          83.384,
+          134.023
+        ],
+        [
+          88.824,
+          130.999
+        ]
+      ],
+      "bounds_xz": [
+        69.209,
+        130.999,
+        151.128,
+        200.673
+      ],
+      "runtime_status": "first pass implemented"
+    },
+    {
+      "name": "Field 4",
+      "kind": "facility_outline",
+      "osm_id": "1091325198",
+      "osm_tags": {
+        "leisure": "sports_centre",
+        "name": "Field 4",
+        "sport": "soccer",
+        "surface": "artificial_turf"
+      },
+      "source_url": "https://www.openstreetmap.org/way/1091325198",
+      "license": "ODbL-1.0; OpenStreetMap contributors",
+      "points": [
+        [
+          77.733,
+          91.558
+        ],
+        [
+          61.825,
+          158.875
+        ],
+        [
+          -80.895,
+          125.161
+        ],
+        [
+          -64.995,
+          57.832
+        ],
+        [
+          -48.311,
+          61.78
+        ],
+        [
+          -6.253,
+          71.721
+        ],
+        [
+          0.979,
+          73.422
+        ],
+        [
+          11.468,
+          75.902
+        ],
+        [
+          18.142,
+          77.481
+        ],
+        [
+          60.867,
+          87.577
+        ],
+        [
+          77.733,
+          91.558
+        ]
+      ],
+      "bounds_xz": [
+        -80.895,
+        57.832,
+        77.733,
+        158.875
+      ],
+      "runtime_status": "not implemented; source preparation only"
+    }
+  ]
+}

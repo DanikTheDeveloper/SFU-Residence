@@ -30,3 +30,19 @@ User authorizes careful visual inspection of Google Street View or similar. Do n
 Next modeling priority: Shell's immediate surroundings (photo-localized furniture, timber fence, stair landings), then McTaggart descending approach; Courtyard open exterior colonnade and West Mall-facing bridge; North gallery-to-parking stairs; East/West exterior stairs/basketball; Beedie Field. Complete one verified feature at a time. All remain pending except North wall closure and townhouse ground contact completed this iteration. Full pre-construction parking remains confirmed.
 
 Actual host usage signal at final checkpoint: primary100%, ordinaryUsageAllowed=false, rate_limit_reached. Stop after saving tested files. No new modeling started after this signal. Next user-started iteration resumes with this note and PHASE2_SITE_WALK_CORRECTIONS.md, not earlier mouse-failure or usage-stop text.
+
+## User follow-up: THREE residence-adjacent fields — 2026-10-18
+User confirms there are three distinct fields behind West/East/McTaggart; Beedie alone is incomplete. Source preparation completed within user-reported remaining7% allowance; no runtime geometry changed.
+
+Official SFU Recreation https://www.sfu.ca/recreation/info/facilities.html identifies Field4 as artificial turf for soccer/lacrosse (two coaches booths, lighting,360 seats), Field2 as grass for rugby/soccer, Beedie as softball. Cross-checked SFU Athletics facilities page https://athletics.sfu.ca/sports/2014/8/8/ATH_0808144723.aspx?id=90 . Existing precinct.osm contains all three adjacent mapped venues. Terry Fox Field is a different venue farther east; do not substitute it for Field2.
+
+scripts/prepare_residence_fields.py writes data/site_sources/residence_fields_projected.json, with original source IDs/tags, projected polygons, bounds, licensing and implementation status. Projection regression matches the existing Beedie coordinates exactly.
+-Field4 playing surface: OSM32528090, X-59.569..75.245,Z65.583..156.018. Outer facility OSM1091325198: X-80.895..77.733,Z57.832..158.875. These overlap and are ONE field, not two.
+-Field2: OSM32528091, X138.738..273.958,Z159.298..257.972. Extends beyond current rendered terrain Z240 AND playable boundary; must expand sampled terrain/render/collision coverage deliberately. Do not clamp elevations outside the old grid or clip/relocate the field.
+-Beedie: OSM32528092, already implemented first pass; preserve it.
+
+Next field increment: audit Field4 against the current anonymous green quadrilateral in ResidenceWorld.build_ground ([-66,74],[55,100],[40,160],[-80,137]); replace that placeholder with the mapped field rather than layering duplicate turf. Also audit spawn[35,80], paths, boundary and level grading before placing goals/fences. Obtain current specific field photos; preserve surrounding approved buildings. Then extend geographic/terrain coverage for Field2, with collision and traversal checks. Neither missing field has been implemented yet.
+
+All repeated user remarks remain active: mouse now works and must be preserved; Shell timber seating/fence/stairs/terraces (fence/concrete picnic seating partial, timber benches not yet verified); McTaggart descending approach; Courtyard open supported ground level and bridge toward West Mall; North gallery direction correct, wall backsides fixed previously but parking stairs pending; East/West exterior stairs and basketball court while preserving facades; three sports fields; townhouse ground contact improved but approach grades pending; continuing paving/curb/retaining/landscape research. Old Street View cannot override current East/West, McTaggart, Courtyard or newer paving. No request was dropped.
+
+Current runtime remains verified checkpoint560b2cf:191 physics checks/358 route points; this source/documentation follow-up needs no repeated runtime test. Resume this expanded backlog on next user-started window; prior stop wording does not mean work is finished.
