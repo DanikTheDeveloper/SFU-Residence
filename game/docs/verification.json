@@ -287,7 +287,7 @@
     },
     {
       "check": "CYR solid facade edges",
-      "evidence": "18/18",
+      "evidence": "16/16",
       "passed": true
     },
     {
@@ -548,6 +548,21 @@
     {
       "check": "SQU solid facade edges",
       "evidence": "13/13",
+      "passed": true
+    },
+    {
+      "check": "Courtyard eastern exterior recess open",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard portico rear remains closed",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard portico soffit collision",
+      "evidence": "",
       "passed": true
     },
     {

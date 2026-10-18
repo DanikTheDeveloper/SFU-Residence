@@ -262,6 +262,11 @@ func capture_views() -> void:
 			views.append([eye,door+Vector3.UP*3])
 	if capture_kind=="courtyard":
 		views=[[Geo.point([353,17],1.68),Geo.point([337,-13],9)],[Geo.point([319,-60],1.68),Geo.point([320,-35],6)],[Geo.point([279,-1],1.68),Geo.point([280,-15],9)],[Vector3(375,65,65),Vector3(307,12,-15)]]
+	if capture_kind=="courtyard":
+		var portico: Dictionary=get_node("Buildings/CYR").get_meta("east_portico")
+		var eye: Vector3=portico.a.lerp(portico.b,0.25)-portico.outward*1.8
+		eye.y=Geo.elevation(eye.x,eye.z)+1.68
+		views.append([eye,eye+portico.tangent*8+Vector3.UP*0.6])
 	if capture_kind=="field2":
 		views=[[Geo.point([170,170],1.68),Geo.point([235,220],2.5)],[Geo.point([230,245],1.68),Geo.point([175,200],2.0)],[Vector3(300,65,285),Geo.point([175,185])]]
 	if capture_kind=="field4":

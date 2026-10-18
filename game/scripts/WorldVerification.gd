@@ -69,11 +69,18 @@ func run() -> void:
 			if data.type=="north_tower":
 				var passage=preload("res://scripts/NorthTowerPassage.gd")
 				if passage.interval(center,center,passage.layout(data,center.y)).x>=0: continue
+			if data.id=="CYR" and preload("res://scripts/CourtyardPortico.gd").contains(data,midpoint): continue
 			edge_count+=1
 			if not ray(center+direction*0.4,center-direction*0.4).is_empty(): edge_hits+=1
 		check(data.id+" solid facade edges",edge_count==edge_hits,"%d/%d"%[edge_hits,edge_count])
 	var courtyard: Node3D=world.get_node("Buildings/CYR")
 	var cy_base: float=courtyard.get_meta("foundation_world_y")
+	var portico: Dictionary=courtyard.get_meta("east_portico")
+	var portico_mid: Vector3=(portico.a+portico.b)*0.5-portico.outward*1.8+Vector3.UP*(cy_base+1.5)
+	check("Courtyard eastern exterior recess open",ray(portico_mid-portico.tangent*2,portico_mid+portico.tangent*2).is_empty())
+	check("Courtyard portico rear remains closed",not ray(portico_mid,portico_mid-portico.outward*3).is_empty())
+	check("Courtyard portico soffit collision",not ray(portico_mid,portico_mid+Vector3.UP*6).is_empty())
+
 	for sample in [[320.0,-31.0,10.8,"Lowrise"],[320.0,-2.0,34.1,"Highrise"],[335.0,-15.0,8.0,"Atrium"]]:
 		var top_hit:=ray(Vector3(sample[0],100,sample[1]),Vector3(sample[0],-100,sample[1]))
 		check("Courtyard "+sample[3]+" roof matches configured zone height",not top_hit.is_empty() and absf(top_hit.position.y-(cy_base+sample[2]))<0.12,str(top_hit.get("position","missing")))
@@ -310,6 +317,12 @@ func run_routes() -> void:
 	routes.append({"buildings":["Field4 spawn approach and pitch"],"points":[[35,80],[30,92],[20,110],[0,105],[-20,100],[-35,110],[-18,115],[0,120],[20,125],[40,130],[55,120],[42,106],[30,92],[35,80]]})
 	routes.append({"buildings":["Field2 approach and extended ground"],"points":[[170,145],[170,165],[175,185],[195,200],[215,215],[235,230],[240,245],[220,245],[205,230],[190,215],[175,195],[170,175],[170,155]]})
 	routes.append({"buildings":["Beedie entrance and outfield"],"points":[[102,129],[102,137],[108,150],[112,170],[110,192],[95,185],[90,170],[97,145],[102,137],[102,129]]})
+	var portico: Dictionary=world.get_node("Buildings/CYR").get_meta("east_portico")
+	var portico_points: Array=[]
+	for item in [[0.3,2.0],[0.3,-1.8],[0.7,-1.8],[0.7,2.0]]:
+		var p: Vector3=portico.a.lerp(portico.b,item[0])+portico.outward*item[1]
+		portico_points.append([p.x,p.z])
+	routes.append({"buildings":["Courtyard eastern portico entry crossing exit"],"points":portico_points})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true
