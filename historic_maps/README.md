@@ -1,0 +1,2 @@
+# Legacy context maps ONLY
+These are the two screenshots initially provided by the user; they help identify the geographic scope and understand why an older visual may not match today's towers. They are NOT photographs of current building facades, a legal survey, DEM, or sources of automatically copyable game textures. Preserve existing model's accepted XZ topology instead of rebuilding from these historic/context maps.

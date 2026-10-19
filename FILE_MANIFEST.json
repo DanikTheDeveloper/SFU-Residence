@@ -1,0 +1,312 @@
+{
+  "package": "SFU_Residences_Phase2_Usage_Window_Iterations",
+  "version": "2.3",
+  "purpose": "Preserve full Phase 2 shared architecture plan while using as much of successive five-hour Codex usage-reset allowances as available, checkpointing continuously",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size": 349,
+      "sha256": "cccfc8ce99daf44cee58fba88c89ec6cc226c44898c0427ec9921c1249be89cc"
+    },
+    {
+      "path": "AGENTS.md",
+      "size": 7859,
+      "sha256": "d7e87f4a0453fd79011a29cd55cea7d88a596a161f9bb885aa4576985fd9cba5"
+    },
+    {
+      "path": "CODEX_TASK_PROMPT.md",
+      "size": 4041,
+      "sha256": "78dbaaac5c8c1c46259b723a59961cd642ccaed082bd36a02f2ca972082daa52"
+    },
+    {
+      "path": "QUICK_START_RU.md",
+      "size": 5534,
+      "sha256": "e3e1dd0d863fc7ff30f0ce3a0c86273079b07a22c7f1b2ef6804edab1e1f1fcc"
+    },
+    {
+      "path": "README.md",
+      "size": 5286,
+      "sha256": "ff6ab37b807bb9763782540f8c867ac77428ff6391a952a9c8af5b2c3246a65d"
+    },
+    {
+      "path": "data/architecture_families.json",
+      "size": 6613,
+      "sha256": "8f43031c9f571eeb53e0aae8a3c193bf946d538c2fa6ae6c7e7ae9a18f8d9286"
+    },
+    {
+      "path": "data/architecture_family_tracker.template.csv",
+      "size": 1000,
+      "sha256": "7b3b950fa29cc79668daec2d4061dae033e350f053739bab573aa2917d4136d1"
+    },
+    {
+      "path": "data/architecture_instances.template.csv",
+      "size": 1530,
+      "sha256": "28ef2f98b827335eecf84da3a1f09753f247a2670ce5c9c1ee5584cadbc83820"
+    },
+    {
+      "path": "data/building_refinement_tracker.template.csv",
+      "size": 1519,
+      "sha256": "90dfb959e24e7b1cefdbe6964e8818569ad9e7e2d7b9f26252a29714c717f291"
+    },
+    {
+      "path": "data/elevation_anchors.template.csv",
+      "size": 390,
+      "sha256": "59c225822a41171499690ea550b3343b15df87a54a1c2611b76cb2ca90d2f6ba"
+    },
+    {
+      "path": "data/photo_feature_evidence.template.csv",
+      "size": 142,
+      "sha256": "cfe26dca8222dbd4fd48ae72f78c6532da92b0e074c7619d9408dc81654613bf"
+    },
+    {
+      "path": "data/photo_manifest.template.csv",
+      "size": 161,
+      "sha256": "d8839c5d41412bbac58f4e0cfdc9b774e32e9e5c78aa72251d5bbafca99d67b4"
+    },
+    {
+      "path": "data/renderer_palette_example.json",
+      "size": 681,
+      "sha256": "c62fd59249682581128b3cb28dae54e0e12433148552b377e7fc54c28e4df4bb"
+    },
+    {
+      "path": "data/surface_inventory.template.csv",
+      "size": 432,
+      "sha256": "62700de33464563c10409a36479026ac80734e7cd96b6159b7c79ed8dd6cbd7b"
+    },
+    {
+      "path": "docs/PHASE2_00_DECISION_AND_SCOPE.md",
+      "size": 3212,
+      "sha256": "729db601d113cac746887ca209a1be2d6ae22974894f6b14c95accc98b145cf8"
+    },
+    {
+      "path": "docs/PHASE2_01_MIGRATION_AND_ARCHIVE.md",
+      "size": 2525,
+      "sha256": "c3ae226736f1e62bf90f8f82fac1d169247a563666336d99f041d5424302ad95"
+    },
+    {
+      "path": "docs/PHASE2_02_CURRENT_BASELINE_AUDIT.md",
+      "size": 1902,
+      "sha256": "3cf2841c5d6f0960b919da7cdccc6bdeb027bdf6ae4e27cfd23a2b4fee845a35"
+    },
+    {
+      "path": "docs/PHASE2_03_TERRAIN_AND_ELEVATION.md",
+      "size": 3945,
+      "sha256": "35bf413e75271e877d87d4f4079144a792a2b9a33ff928463b3760efb8f4b1af"
+    },
+    {
+      "path": "docs/PHASE2_04_ROADS_PARKING_MATERIALS.md",
+      "size": 2583,
+      "sha256": "1369d9bae56444ed68e5133c21c3dc1d8b3802a15671a403a409ce42e7da0502"
+    },
+    {
+      "path": "docs/PHASE2_05_PHOTO_INTAKE.md",
+      "size": 3418,
+      "sha256": "f1fc01f66c65da660a8edcb3fc9ddf0f6cdbe6b32a5c34bd02478add4c558ad2"
+    },
+    {
+      "path": "docs/PHASE2_06_PILOT_BUILDING_FACADE.md",
+      "size": 3669,
+      "sha256": "cb3a18e673a7bb82d6b68df4e2bacdb06f3f6ac37298ffffd7c4c721e26b10ba"
+    },
+    {
+      "path": "docs/PHASE2_07_FIRST_PERSON_CONTROLLER.md",
+      "size": 1932,
+      "sha256": "c430384d16e83ec57a39180b7ec771c3956b897a9798c9bb176a7d6c1e2f405d"
+    },
+    {
+      "path": "docs/PHASE2_08_VISUAL_REALISM_PIPELINE.md",
+      "size": 3224,
+      "sha256": "f4cf24defb223790d79e5e44b7d7cba982469c564857d08bd782861d3166a7e4"
+    },
+    {
+      "path": "docs/PHASE2_09_FIVE_HOUR_RUNBOOK.md",
+      "size": 4222,
+      "sha256": "e55f1dd62c455196586c3ca0d0ac4bbaf61404f7d053baa5c3795da1c8b9421e"
+    },
+    {
+      "path": "docs/PHASE2_10_GODOT_ARCHITECTURE.md",
+      "size": 3633,
+      "sha256": "891d68c37ede2e39c6f3908211f2683b6ecb73998d7b008d0cab2611eea985cc"
+    },
+    {
+      "path": "docs/PHASE2_11_VISUAL_QA_SCORECARD.md",
+      "size": 2890,
+      "sha256": "b447fbca5bd64f5f5961c05bed566173c97fb1a751b5236efc8a5989ff3a56a0"
+    },
+    {
+      "path": "docs/PHASE2_12_PERFORMANCE_WSL2.md",
+      "size": 1493,
+      "sha256": "11dfde0852628503fcba896d25502a9b0bc99c1dee55d01a225f1655963d482e"
+    },
+    {
+      "path": "docs/PHASE2_13_PROVENANCE_AND_LICENSES.md",
+      "size": 1552,
+      "sha256": "8e5a8bf98708fb265c48e3d20acdfe14448a395a9bca2634f567c27a33086347"
+    },
+    {
+      "path": "docs/PHASE2_14_FUTURE_NPC_ONLINE_AI.md",
+      "size": 1456,
+      "sha256": "7bf99cb0f777b3052e08eec891b51347b5658a39e58a5320ab5345c270163c8e"
+    },
+    {
+      "path": "docs/PHASE2_15_SUBSEQUENT_BUILDINGS.md",
+      "size": 2088,
+      "sha256": "3e6b7164780e0619857e0ff960638381adc0af14161dcd1869ab74258ae3df3a"
+    },
+    {
+      "path": "docs/PHASE2_16_OFFICIAL_DATA_URLS.md",
+      "size": 2873,
+      "sha256": "28e7928a5572b85e018eb958ea6e27f67b440b568be8e6e8f4779cf07d83a450"
+    },
+    {
+      "path": "docs/PHASE2_17_DELIVERY_AND_HANDOFF.md",
+      "size": 1575,
+      "sha256": "e811510a7a93c65bad7c56379f4b792822d9f2c0129dfb0a45f792e111cc1b62"
+    },
+    {
+      "path": "docs/PHASE2_18_SHARED_ARCHETYPE_PIPELINE.md",
+      "size": 6990,
+      "sha256": "5508162da14a85f1296559aef53d520f3502c6c08685f8a556a8d26b47f28675"
+    },
+    {
+      "path": "docs/PHASE2_19_PHOTO_FOLDERS_AND_MIGRATION.md",
+      "size": 1999,
+      "sha256": "43c2669e4697ff6253d192479717cd740e0c229ceca91e2a2d99eadab0caf3ad"
+    },
+    {
+      "path": "docs/PHASE2_20_FAMILY_SESSION_WORKFLOW.md",
+      "size": 2618,
+      "sha256": "3d8a32ebd4cad509da3af2f01a30b8686880b62d758a5156ca871a518d2d001b"
+    },
+    {
+      "path": "docs/PHASE2_21_ROOFLINE_GRADE_AND_SOURCE_CONFLICT.md",
+      "size": 3680,
+      "sha256": "6a7a3c5d590f86734230666c233982ede8d6af192ae553101cb8cc6c745efb62"
+    },
+    {
+      "path": "docs/PHASE2_22_USAGE_WINDOW_ITERATIONS.md",
+      "size": 3741,
+      "sha256": "75b6fcaad303d0d47c24ad0368c15ee662026b80b1aa2e587872ad4ea5f28c4a"
+    },
+    {
+      "path": "docs/PHASE2_HANDOFF.template.md",
+      "size": 1204,
+      "sha256": "aa467c4171a3c47e494d2f01194b9046ce86f4b22d972822bb3438038c9246db"
+    },
+    {
+      "path": "docs/PHASE2_STATUS.template.md",
+      "size": 1319,
+      "sha256": "168f67066f382080be9e6cd0fd00fc94577a8d19f68e4f0bc0db18c800106181"
+    },
+    {
+      "path": "historic_maps/README.md",
+      "size": 424,
+      "sha256": "a1024ae1bfd71bdf7fc1bfe4532f5e0e762d15855b04dfe66e38c20dea6bbbe8"
+    },
+    {
+      "path": "historic_maps/sfu_old_residence_virtual_tour_map.png",
+      "size": 945566,
+      "sha256": "5a2f7364c5bd9d96109d3f0da2f2d916050f6118438e1b7bdc12f288d1e80d05"
+    },
+    {
+      "path": "historic_maps/sfu_residences_modern_map_screenshot.png",
+      "size": 246412,
+      "sha256": "af06feaf89fd585e20cd599942f05b9cb96e527fea13dcdd8492cd07efcbd02a"
+    },
+    {
+      "path": "reference_photos/Barbara_Pauline_Shadbolt/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reference_photos/Courtyard_Residence/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reference_photos/Dining_Commons/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reference_photos/East_West_Towers/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reference_photos/Hamilton_Hall/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reference_photos/McTaggart_Cowan_Hall/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reference_photos/Parking_and_Paths/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reference_photos/README.md",
+      "size": 3282,
+      "sha256": "9ad1a6e1574d1d3c93c93700cd32c0804b1536907fd4c68e85d5b75ad1c3678e"
+    },
+    {
+      "path": "reference_photos/Shell_House/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reference_photos/Terrain_and_Stairs/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reference_photos/Townhouses/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "scripts/audit_game.py",
+      "size": 1861,
+      "sha256": "fa29b0cb763a8c9201f18ca993fb2e2e2a57cce44764a76b996948797d1458ba"
+    },
+    {
+      "path": "scripts/check_wsl.sh",
+      "size": 1173,
+      "sha256": "1a6c54e5c7c9d2edee9ee1f7e1a3db59b6465c4c337aecce6763d2db0ad4bd60"
+    },
+    {
+      "path": "scripts/photo_inventory.py",
+      "size": 2407,
+      "sha256": "76307d7e0d1536097dcf9437900f78ce5e16af838b71999b644a8942b777dc02"
+    },
+    {
+      "path": "scripts/promote_game.py",
+      "size": 4690,
+      "sha256": "95249e578bc29054e9fefb0d5f3ff8e30239cd1a96a95b815baa2fed88c8eddc"
+    },
+    {
+      "path": "scripts/relocate_legacy_photos.py",
+      "size": 2737,
+      "sha256": "1a0d22bbb48d07d3acda2c1216bd949590a6c22777164b415e0fb1d817d56006"
+    },
+    {
+      "path": "scripts/smoke_test.sh",
+      "size": 1132,
+      "sha256": "5c260be058cd8343bac68540ddf5f238cddcc13c8e7a6e63a318b7fb90eba5e4"
+    },
+    {
+      "path": "scripts/validate_families.py",
+      "size": 3298,
+      "sha256": "2fcff0e4df5031d20fe3f9e1052625504861bf64ed8011d04265115ad5c127b7"
+    },
+    {
+      "path": "scripts/validate_phase2.py",
+      "size": 1503,
+      "sha256": "e8c08fb2d9f4aaffcb560fdc9a961785aaa37ac89f33d356e8f2012abe2257bb"
+    }
+  ]
+}
