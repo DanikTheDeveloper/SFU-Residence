@@ -334,6 +334,14 @@ func run_routes() -> void:
 		var p: Vector3=shelter.center+shelter.u*3+shelter.v*side
 		shelter_points.append([p.x,p.z])
 	routes.append({"buildings":["Field4 dark shelter entry and exit"],"points":shelter_points})
+	var stair: Node3D=world.get_node("NorthDiningStair")
+	var stair_start: Vector3=stair.get_meta("start")
+	var stair_direction: Vector3=stair.get_meta("direction")
+	var stair_points: Array=[]
+	for distance in [-1.0,1.0,3.0,5.0,6.4,8.0,10.5,8.0,6.4,5.0,3.0,1.0,-1.0]:
+		var p: Vector3=stair_start+stair_direction*distance
+		stair_points.append([p.x,p.z])
+	routes.append({"buildings":["North gallery to Dining stair ascent and descent"],"points":stair_points})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true

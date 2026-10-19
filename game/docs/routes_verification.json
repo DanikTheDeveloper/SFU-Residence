@@ -49,6 +49,11 @@
       "check": "Walk loop [\"Field4 dark shelter entry and exit\"]",
       "evidence": "5/5 checkpoints",
       "passed": true
+    },
+    {
+      "check": "Walk loop [\"North gallery to Dining stair ascent and descent\"]",
+      "evidence": "13/13 checkpoints",
+      "passed": true
     }
   ],
   "failures": 0

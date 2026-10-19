@@ -727,12 +727,12 @@
     },
     {
       "check": "SBH longitudinal capsule traversal false",
-      "evidence": "(174.2046, 7.445511, 37.36674)",
+      "evidence": "(174.0312, 7.587184, 37.3271)",
       "passed": true
     },
     {
       "check": "SBH longitudinal capsule traversal true",
-      "evidence": "(115.6222, 6.456358, 23.46015)",
+      "evidence": "(115.623, 6.456107, 23.46055)",
       "passed": true
     },
     {
@@ -752,17 +752,17 @@
     },
     {
       "check": "Continuous North row true reaches SBH",
-      "evidence": "(117.1695, 6.467208, 23.8919)",
+      "evidence": "(117.1695, 6.467773, 23.89188)",
       "passed": true
     },
     {
       "check": "Continuous North row true reaches BRH",
-      "evidence": "(45.23887, 5.819918, 7.043845)",
+      "evidence": "(45.23849, 5.819801, 7.043757)",
       "passed": true
     },
     {
       "check": "Continuous North row true reaches PJH",
-      "evidence": "(-26.93088, 2.511844, -10.13156)",
+      "evidence": "(-26.93178, 2.511894, -10.13177)",
       "passed": true
     },
     {

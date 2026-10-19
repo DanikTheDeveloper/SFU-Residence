@@ -7,12 +7,12 @@ Latest user instruction: work through all deferred remarks; preserve accepted ge
 | Mouse, infinite rotation, fullscreen primary monitor | User confirmed working; preserve host adapter and movement forwarding | Preserve |
 | Phase1 promotion / obsolete Markdown cleanup | Already completed, rollback and external backups retained | Complete |
 | Terrain smoothness / original hillside | Source-based smoothing and local grades implemented; refine abrupt forecourts and approaches without global flattening | Partial |
-| Field4 black walk-in shelter | Exact residence-side structure identification; panorama shows long dark end shelter and smaller central booths | Research then implement |
-| Field4 realism | Mapped turf/goals only; sideline concrete, fence, floodlights, seating/shelters, secondary markings, tree edge missing | Pending |
+| Field4 black walk-in shelter | User confirmed long end shelter and front fence. Enterable shelter/apron/front fence implemented; dimensions remain estimates. 221 physics/394 routes passed in157317b | Verified first pass |
+| Field4 realism | Sideline concrete, fence, light poles and shelters added in157317b. Seating, secondary markings, fixture precision and tree edge still incomplete | Partial |
 | Field2 realism | Mapped grass/H goals; strengthen photo match, surroundings and approaches; American-yard markings unconfirmed | Partial |
 | Beedie realism | Outline/infield/backstop first pass; sunken dugouts, benches/bleachers, bullpen, batting cage, fixture/track geometry | Partial |
 | North longitudinal gallery | Correct under long courtyard wing; repeat eye-level inside-wall/corner audit, no exposed building voids | Recheck |
-| North to Dining Commons | NEW user clarification: direct stair connection at end of longitudinal gallery to Dining Commons; preserve closed building interiors | Pending |
+| North to Dining Commons | Two-flight stair added from Shadbolt gallery toward Dining west wall; ascent/descent13/13 passed. Dimensions estimated; exact upper door/landing tie-in pending | Verified first pass |
 | North gallery to parking | Separate connection still missing; do not confuse with Dining link or Shadbolt courtyard stair photo | Pending |
 | North surrounding details | Red service doors, roof/fins, curved beds, pavers, drains, stairs/rails, door/sign localization | Partial |
 | Courtyard east portico | Implemented and traversable; forecourt remains crude grassy slope | Partial |

@@ -148,14 +148,14 @@ PASS SBH longitudinal gallery clear at eye level
 PASS SBH courtyard column solid 
 PASS SBH rear residential boundary closed 
 PASS SBH gallery overhead collision 
-PASS SBH longitudinal capsule traversal false (174.2046, 7.445511, 37.36674)
-PASS SBH longitudinal capsule traversal true (115.6222, 6.456358, 23.46015)
+PASS SBH longitudinal capsule traversal false (174.0312, 7.587184, 37.3271)
+PASS SBH longitudinal capsule traversal true (115.623, 6.456107, 23.46055)
 PASS Continuous North row false reaches PJH (28.929, 2.628859, 2.997013)
 PASS Continuous North row false reaches BRH (101.1323, 5.971788, 20.15246)
 PASS Continuous North row false reaches SBH (173.0465, 6.964576, 37.02594)
-PASS Continuous North row true reaches SBH (117.1695, 6.467208, 23.8919)
-PASS Continuous North row true reaches BRH (45.23887, 5.819918, 7.043845)
-PASS Continuous North row true reaches PJH (-26.93088, 2.511844, -10.13156)
+PASS Continuous North row true reaches SBH (117.1695, 6.467773, 23.89188)
+PASS Continuous North row true reaches BRH (45.23849, 5.819801, 7.043757)
+PASS Continuous North row true reaches PJH (-26.93178, 2.511894, -10.13177)
 PASS W movement metres=4.131790
 PASS Sprint faster 
 PASS Jump rises 

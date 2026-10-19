@@ -37,6 +37,7 @@ func _ready() -> void:
 	var buildings := group_node("Buildings")
 	for data in registry: Buildings.build(buildings,data)
 	preload("res://scripts/NorthTowerPassage.gd").connect_row(self)
+	preload("res://scripts/NorthDiningStair.gd").build(self)
 	vegetation=group_node("Vegetation")
 	build_landscape()
 	preload("res://scripts/SiteDetails.gd").build(self)
@@ -60,7 +61,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args() or "--capture-field2" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args() or "--capture-field2" in OS.get_cmdline_user_args() or "--capture-links" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -201,7 +202,7 @@ func _process(_delta: float) -> void:
 
 func capture_views() -> void:
 	var capture_kind: String=""
-	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4","field2"]:
+	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4","field2","links"]:
 		if ("--capture-"+kind) in OS.get_cmdline_user_args(): capture_kind=kind
 	DisplayServer.window_set_title("SFU automated screenshot capture - controls disabled")
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
@@ -267,6 +268,13 @@ func capture_views() -> void:
 		var eye: Vector3=portico.a.lerp(portico.b,0.25)-portico.outward*1.8
 		eye.y=Geo.elevation(eye.x,eye.z)+1.68
 		views.append([eye,eye+portico.tangent*8+Vector3.UP*0.6])
+	if capture_kind=="links":
+		var stair: Node3D=get_node("NorthDiningStair")
+		var a: Vector3=stair.get_meta("start")
+		var u: Vector3=stair.get_meta("direction")
+		var top: Vector3=a+u*10.9
+		top.y=preload("res://scripts/TerrainController.gd").foundation("DC")
+		views=[[a-u*2+Vector3.UP*1.68,top+Vector3.UP*0.5],[top+Vector3.UP*1.68,a+Vector3.UP*1.68]]
 	if capture_kind=="field2":
 		views=[[Geo.point([170,170],1.68),Geo.point([235,220],2.5)],[Geo.point([230,245],1.68),Geo.point([175,200],2.0)],[Vector3(300,65,285),Geo.point([175,185])]]
 	if capture_kind=="field4":
