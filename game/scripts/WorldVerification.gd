@@ -25,6 +25,11 @@ func run() -> void:
 	for p in [[89,140],[140,155],[110,170],[95,195]]:
 		check("Beedie level playing surface "+str(p),absf(Geo.elevation(p[0],p[1])-field_level)<0.02)
 	check("Beedie outfield inside expanded study boundary",Geo.contains_point(Vector2(100,201),world.boundary))
+	var field_shelter: Dictionary=world.get_node("Props/Field4/SidelineContext").get_meta("shelter_17")
+	var shelter_eye: Vector3=field_shelter.center+field_shelter.u*3+Vector3.UP*1.5
+	check("Field4 dark shelter has open front",ray(shelter_eye,shelter_eye+field_shelter.v*1.8).is_empty())
+	check("Field4 shelter closed rear",not ray(shelter_eye,shelter_eye-field_shelter.v*2).is_empty())
+	check("Field4 shelter solid roof",not ray(shelter_eye,shelter_eye+Vector3.UP*2).is_empty())
 	var field4_level: float=world.get_node("Props/Field4").get_meta("finished_level_estimate")
 	for p in [[-35,90],[0,110],[50,120],[20,140]]:
 		check("Field4 level surface "+str(p),absf(Geo.elevation(p[0],p[1])-field4_level)<0.02)
@@ -323,6 +328,12 @@ func run_routes() -> void:
 		var p: Vector3=portico.a.lerp(portico.b,item[0])+portico.outward*item[1]
 		portico_points.append([p.x,p.z])
 	routes.append({"buildings":["Courtyard eastern portico entry crossing exit"],"points":portico_points})
+	var shelter: Dictionary=world.get_node("Props/Field4/SidelineContext").get_meta("shelter_17")
+	var shelter_points: Array=[]
+	for side in [5.0,3.0,0.4,3.0,5.0]:
+		var p: Vector3=shelter.center+shelter.u*3+shelter.v*side
+		shelter_points.append([p.x,p.z])
+	routes.append({"buildings":["Field4 dark shelter entry and exit"],"points":shelter_points})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true

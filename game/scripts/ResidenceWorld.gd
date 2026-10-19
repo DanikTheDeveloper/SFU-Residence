@@ -271,6 +271,12 @@ func capture_views() -> void:
 		views=[[Geo.point([170,170],1.68),Geo.point([235,220],2.5)],[Geo.point([230,245],1.68),Geo.point([175,200],2.0)],[Vector3(300,65,285),Geo.point([175,185])]]
 	if capture_kind=="field4":
 		views=[[Geo.point([35,80],1.68),Geo.point([8,115],1.0)],[Geo.point([-50,98],1.68),Geo.point([55,124],1.2)],[Vector3(90,45,180),Geo.point([8,110])]]
+	if capture_kind=="field4":
+		var shelter: Dictionary=get_node("Props/Field4/SidelineContext").get_meta("shelter_17")
+		var eye: Vector3=shelter.center+shelter.u*3+shelter.v*7
+		eye.y=Geo.elevation(eye.x,eye.z)+1.68
+		views.append([eye,shelter.center+Vector3.UP*1.3])
+		views.append([shelter.center+shelter.u*3+Vector3.UP*1.68,shelter.center+shelter.v*15+Vector3.UP*1.2])
 	if capture_kind=="field":
 		views=[[Geo.point([89,133],1.68),Geo.point([112,173],1.0)],[Geo.point([120,190],1.68),Geo.point([91,139],2.5)],[Geo.point([63,175],1.68),Geo.point([97,160],2.0)],[Vector3(165,45,213),Geo.point([109,167])]]
 	if capture_kind=="parking":

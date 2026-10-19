@@ -22,5 +22,25 @@
     "license": "SFU copyright; visual reference URL only, no pixels redistributed",
     "identity_confidence": "high",
     "reviewed": "2026-10-18"
+  },
+  {
+    "building_or_area": "Field4 residence sideline",
+    "source_url": "https://sfulacrossecamps.com/wp-content/uploads/2015/12/sfu-field-4.jpg?w=1180",
+    "source_page": "https://sfulacrossecamps.com/2015/12/20/accomodations/",
+    "photograph_date": "page published2015; capture date unknown",
+    "viewpoint": "aerial, field south side and residence-facing long sideline visible",
+    "observations": "Long dark roofed shelter at east end near Beedie; two smaller central sideline structures; perimeter walkway/fence; tall poles; dense forest opposite residences. User confirms long end shelter is requested object. Historical towers are obsolete and excluded from reconstruction changes.",
+    "license": "Copyright SFU Lacrosse; URL-only visual reference; no pixels redistributed",
+    "identity_confidence": "high field identity; user-confirmed long shelter identification; present details/dimensions approximate",
+    "local_filename": null
+  },
+  {
+    "building_or_area": "Field4 fence",
+    "source_url": "https://www.flickr.com/photos/drowcliffe/6995171797",
+    "photograph_date": "2012-03-17",
+    "viewpoint": "southeast, photographer BlueAndWhiteArmy",
+    "observations": "Low dark chain-link fence, thin top rail, concrete perimeter strip, lighting pole and forest edge. Historical evidence only.",
+    "license": "Copyright; URL-only visual reference",
+    "local_filename": null
   }
 ]

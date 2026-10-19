@@ -44,6 +44,11 @@
       "check": "Walk loop [\"Courtyard eastern portico entry crossing exit\"]",
       "evidence": "4/4 checkpoints",
       "passed": true
+    },
+    {
+      "check": "Walk loop [\"Field4 dark shelter entry and exit\"]",
+      "evidence": "5/5 checkpoints",
+      "passed": true
     }
   ],
   "failures": 0

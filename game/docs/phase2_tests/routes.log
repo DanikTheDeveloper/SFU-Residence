@@ -12,4 +12,5 @@ PASS Walk loop ["Field4 spawn approach and pitch"] 14/14 checkpoints
 PASS Walk loop ["Field2 approach and extended ground"] 13/13 checkpoints
 PASS Walk loop ["Beedie entrance and outfield"] 10/10 checkpoints
 PASS Walk loop ["Courtyard eastern portico entry crossing exit"] 4/4 checkpoints
+PASS Walk loop ["Field4 dark shelter entry and exit"] 5/5 checkpoints
 ROUTES_COMPLETE failures=0

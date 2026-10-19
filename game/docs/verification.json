@@ -31,6 +31,21 @@
       "passed": true
     },
     {
+      "check": "Field4 dark shelter has open front",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field4 shelter closed rear",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Field4 shelter solid roof",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Field4 level surface [-35, 90]",
       "evidence": "",
       "passed": true

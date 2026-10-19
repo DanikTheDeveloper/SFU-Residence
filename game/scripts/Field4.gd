@@ -57,6 +57,7 @@ static func build(world: Node3D) -> void:
 			mark(kit,origin+v*size.y,origin+inward*size.x+v*size.y)
 			mark(kit,origin+inward*size.x-v*size.y,origin+inward*size.x+v*size.y)
 		goal(root,kit,origin,v,-inward)
+	preload("res://scripts/Field4Surroundings.gd").build(world,root,a,u,v,length,width)
 	for key in kit.batches:
 		var transforms: Array[Transform3D]=[]
 		transforms.assign(kit.batches[key])

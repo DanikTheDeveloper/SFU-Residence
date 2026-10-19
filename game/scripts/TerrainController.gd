@@ -17,6 +17,8 @@ static func initialize() -> void:
 		for sample in field4.changes: grid.heights[int(sample[0])]=sample[1]
 		var field2: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/field2_grade.json"))
 		for sample in field2.changes: grid.heights[int(sample[0])]=sample[1]
+		var shelters: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/field4_shelter_grade.json"))
+		for sample in shelters.changes: grid.heights[int(sample[0])]=sample[1]
 
 static func height(x: float, z: float) -> float:
 	initialize()
