@@ -109,12 +109,17 @@ func run() -> void:
 	table_point.y=Geo.elevation(table_point.x,table_point.z)
 	var table_hit:=ray(table_point+Vector3.UP*1.5,table_point+Vector3.UP*0.6)
 	check("Shell concrete tabletop solid at seating area",not table_hit.is_empty() and absf(table_hit.position.y-table_point.y-0.8)<0.02)
-	var fence_point:=Vector3(255.533,0,109.004)+courtyard_tangent*10+courtyard_outward*3.2
+	var fence_point:=Vector3(255.533,0,109.004)+courtyard_tangent*30+courtyard_outward*3.2
 	fence_point.y=Geo.elevation(fence_point.x,fence_point.z)+0.9
 	check("Shell timber screen blocks capsule-height crossing",not ray(fence_point+courtyard_outward,fence_point-courtyard_outward).is_empty())
 	var shell: Node3D=world.get_node("Buildings/SHR")
 	check("Shell has distinct photo-based master",shell.get_meta("family_master")=="res://scripts/ShellExterior.gd")
 	check("Shell official total four levels preserved",shell.get_meta("floor_count")==4)
+	var annex_eye:=Vector3(255.533,0,109.004)+courtyard_tangent*8+courtyard_outward*3.95
+	annex_eye.y=preload("res://scripts/TerrainController.gd").foundation("SHR")+1.4
+	check("Shell annex front glazing closes residential space",not ray(annex_eye,annex_eye-courtyard_outward*1.2).is_empty())
+	var annex_roof: Vector3=annex_eye-courtyard_outward*2.2
+	check("Shell annex sloped roof collidable",not ray(annex_roof+Vector3.UP*3,annex_roof).is_empty())
 	var hamilton: Node3D=world.get_node("Buildings/HAM")
 	var ham_door: Vector3=hamilton.get_meta("photo_entrance")
 	var ham_normal: Vector3=hamilton.get_meta("photo_entrance_normal")
@@ -396,6 +401,12 @@ func run_routes() -> void:
 		var p: Vector3=shell_door+shell_normal*offset
 		shell_points.append([p.x,p.z])
 	routes.append({"buildings":["Shell mapped main entrance approach and return"],"points":shell_points})
+	var annex: Node3D=world.get_node("Props/ShellAnnexExterior")
+	var annex_points: Array=[]
+	for distance in [17.0,14.5,12.0,9.5,7.0,4.0,7.0,9.5,12.0,14.5,17.0]:
+		var p: Vector3=annex.get_meta("origin")+annex.get_meta("along")*distance+annex.get_meta("outward")*3.95
+		annex_points.append([p.x,p.z])
+	routes.append({"buildings":["Shell exterior pergola walk and return"],"points":annex_points})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true

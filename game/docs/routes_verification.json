@@ -79,6 +79,11 @@
       "check": "Walk loop [\"Shell mapped main entrance approach and return\"]",
       "evidence": "7/7 checkpoints",
       "passed": true
+    },
+    {
+      "check": "Walk loop [\"Shell exterior pergola walk and return\"]",
+      "evidence": "11/11 checkpoints",
+      "passed": true
     }
   ],
   "failures": 0

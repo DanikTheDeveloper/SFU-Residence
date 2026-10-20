@@ -25,8 +25,8 @@ static func build(world: Node3D) -> void:
 	var outward := Vector3(tangent.z,0,-tangent.x)
 	var yaw := -atan2(tangent.z,tangent.x)
 	var kit := Kit.new()
-	# Two runs leave the mapped east-west access path open at ~20 m.
-	for interval in [Vector2(3,16),Vector2(24,43)]:
+	# North screen stays left of the mapped main door; south side has the photo annex.
+	for interval in [Vector2(24,43)]:
 		var count := int(ceil((interval.y-interval.x)/0.17))
 		for i in count+1:
 			var p: Vector3 = start+tangent*lerpf(interval.x,interval.y,float(i)/count)+outward*3.2
@@ -54,9 +54,10 @@ static func build(world: Node3D) -> void:
 		p.y = Geo.elevation(p.x,p.z)
 		picnic_table(root,p,concrete)
 	root.set_meta("table_count",3)
+	preload("res://scripts/ShellAnnex.gd").build(world)
 	# Narrow concrete walk visible immediately outside the timber screen.
 	var walk:=PackedVector3Array()
-	for i in range(3,43):
+	for i in range(17,43):
 		var corners: Array[Vector3]=[]
 		for v in [Vector2(i,3.65),Vector2(i+1,3.65),Vector2(i,4.85),Vector2(i+1,4.85)]:
 			var q: Vector3=start+tangent*v.x+outward*v.y

@@ -20,4 +20,5 @@ PASS Walk loop ["Dining mapped west door landing turn and return"] 11/11 checkpo
 PASS Walk loop ["Mapped North parking stair descent and return"] 13/13 checkpoints
 PASS Walk loop ["Courtyard eastern paved forecourt"] 9/9 checkpoints
 PASS Walk loop ["Shell mapped main entrance approach and return"] 7/7 checkpoints
+PASS Walk loop ["Shell exterior pergola walk and return"] 11/11 checkpoints
 ROUTES_COMPLETE failures=0

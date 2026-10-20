@@ -63,7 +63,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args() or "--capture-field2" in OS.get_cmdline_user_args() or "--capture-links" in OS.get_cmdline_user_args() or "--capture-gallery" in OS.get_cmdline_user_args() or "--capture-northparking" in OS.get_cmdline_user_args() or "--capture-woodland" in OS.get_cmdline_user_args() or "--capture-bridge" in OS.get_cmdline_user_args() or "--capture-forecourt" in OS.get_cmdline_user_args() or "--capture-passages" in OS.get_cmdline_user_args() or "--capture-shellmain" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args() or "--capture-field2" in OS.get_cmdline_user_args() or "--capture-links" in OS.get_cmdline_user_args() or "--capture-gallery" in OS.get_cmdline_user_args() or "--capture-northparking" in OS.get_cmdline_user_args() or "--capture-woodland" in OS.get_cmdline_user_args() or "--capture-bridge" in OS.get_cmdline_user_args() or "--capture-forecourt" in OS.get_cmdline_user_args() or "--capture-passages" in OS.get_cmdline_user_args() or "--capture-shellmain" in OS.get_cmdline_user_args() or "--capture-shellannex" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -204,7 +204,7 @@ func _process(_delta: float) -> void:
 
 func capture_views() -> void:
 	var capture_kind: String=""
-	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4","field2","links","gallery","northparking","woodland","bridge","forecourt","passages","shellmain"]:
+	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4","field2","links","gallery","northparking","woodland","bridge","forecourt","passages","shellmain","shellannex"]:
 		if ("--capture-"+kind) in OS.get_cmdline_user_args(): capture_kind=kind
 	DisplayServer.window_set_title("SFU automated screenshot capture - controls disabled")
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
@@ -249,6 +249,18 @@ func capture_views() -> void:
 		views.append([eye,door+Vector3.UP*1.6])
 	if "--capture-shell" in OS.get_cmdline_user_args():
 		views=[[Geo.point([245,146],1.68),Geo.point([253,136.6],4.0)],[Geo.point([242,103],1.68),Geo.point([260,100],5.0)],[Geo.point([286,97],1.68),Geo.point([273,96],5.0)],[Geo.point([247,95],1.68),Geo.point([252,92],0.65)],[Geo.point([249,73],1.68),Geo.point([257,72],0.70)]]
+	if capture_kind=="shellannex":
+		var annex: Node3D=get_node("Props/ShellAnnexExterior")
+		var origin: Vector3=annex.get_meta("origin")
+		var along: Vector3=annex.get_meta("along")
+		var outward: Vector3=annex.get_meta("outward")
+		views=[]
+		for offset in [Vector2(18,10),Vector2(8,4)]:
+			var eye: Vector3=origin+along*offset.x+outward*offset.y
+			eye.y=Geo.elevation(eye.x,eye.z)+1.68
+			var target: Vector3=origin+along*9.5+outward*2
+			target.y=preload("res://scripts/TerrainController.gd").foundation("SHR")+1.8
+			views.append([eye,target])
 	if capture_kind in ["shell","shellmain"]:
 		if capture_kind=="shellmain": views=[]
 		var shell: Node3D=get_node("Buildings/SHR")

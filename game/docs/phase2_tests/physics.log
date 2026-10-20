@@ -135,6 +135,8 @@ PASS Shell concrete tabletop solid at seating area
 PASS Shell timber screen blocks capsule-height crossing 
 PASS Shell has distinct photo-based master 
 PASS Shell official total four levels preserved 
+PASS Shell annex front glazing closes residential space 
+PASS Shell annex sloped roof collidable 
 PASS Hamilton primary portico faces north 
 PASS Hamilton exterior entry remains closed 
 PASS Hamilton portico overhead solid 
@@ -257,4 +259,4 @@ PASS Courtyard preserves eleven-floor registry
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Mapped parking stair collision above underlying hillside 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=252 failures=0
+VERIFICATION_COMPLETE checks=254 failures=0

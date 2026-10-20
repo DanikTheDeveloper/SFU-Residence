@@ -656,6 +656,16 @@
       "passed": true
     },
     {
+      "check": "Shell annex front glazing closes residential space",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Shell annex sloped roof collidable",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Hamilton primary portico faces north",
       "evidence": "",
       "passed": true

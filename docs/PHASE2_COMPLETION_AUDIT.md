@@ -19,10 +19,10 @@ Latest user instruction: work through all deferred remarks; preserve accepted ge
 | Courtyard inner gallery | Lower court-facing recess, piers, soffit fins, closed rear glazing, grey pavers added; physical entry/crossing/exit passed. Dimensions estimated | Verified first pass |
 | Courtyard West Mall bridge | South-facing glazed exterior link now tied to mapped West Mall parkade edge; inspected/physics passed. Exact attachment and far-end support provisional; full parkade unmodeled | Verified first pass |
 | Courtyard landscape/upper details | Eastern pavers/curbs/four young trees added; road tie-in, lowrise terrace/penthouse and precise entrance mapping remain | Partial |
-| Shell surrounds | Timber fence/concrete round tables implemented; timber seating if confirmed, stairs/landings, pergola/annex/trees | Partial |
+| Shell surrounds | North timber screen/concrete tables retained; glazed annex/sloped roof/timber pergola added from Shell.jpg with11point walk test. Exact surrounding stairs/grade/trees still pending | Partial |
 | Shell grade/entry | Mapped main entry6925149272 implemented on long west frontage with asphalt approach;7point route passed. Four total vs three visible floors and corner screen remain unresolved | Partial |
 | McTaggart approach | User confirms Dining-facing approach. Current pad flattened the approach (~0.1m rise over28m); photo requires entry/grade correction before a plausible descending stair | Grade conflict; pending |
-| East/West site | Approved facades frozen; verify external stairs and basketball court between towers, current paving | Pending |
+| East/West site | Approved facades frozen. Official SFU welcome page corroborates court between towers near East multipurpose door; precise court visuals and stair finished levels remain unresolved | Pending |
 | Townhouse contact | Foundation/porch footings implemented; refine approach grades; preserve approved family | Partial |
 | Townhouse plan differences |11-house door mapping/common-room annex and laundry attachments not implemented; block identity needed | Deferred evidence |
 | Hamilton | Distinct model implemented; secondary east door, exact portico geometry and ground plan remain uncertain | Partial |
