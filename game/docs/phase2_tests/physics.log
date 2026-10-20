@@ -63,7 +63,7 @@ PASS WET solid facade edges 17/17
 PASS CYR anchor outside 
 PASS CYR ground 
 PASS CYR stable player 
-PASS CYR solid facade edges 16/16
+PASS CYR solid facade edges 14/14
 PASS MCH anchor outside 
 PASS MCH ground 
 PASS MCH stable player 
@@ -122,6 +122,9 @@ PASS Courtyard portico soffit collision
 PASS Courtyard Lowrise roof matches configured zone height (320.0, 22.893, -31.0)
 PASS Courtyard Highrise roof matches configured zone height (320.0, 46.193, -2.0)
 PASS Courtyard Atrium roof matches configured zone height (335.0, 20.09299, -15.0)
+PASS Courtyard inner gallery front open 
+PASS Courtyard inner gallery rear closed 
+PASS Courtyard inner gallery overhead solid 
 PASS Dining retains distinct old and new exterior zones 
 PASS Dining three-level registry retained 
 PASS Shell concrete tabletop solid at seating area 
@@ -225,4 +228,4 @@ PASS Courtyard uses distinct precast master
 PASS Courtyard preserves eleven-floor registry 
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=221 failures=0
+VERIFICATION_COMPLETE checks=224 failures=0

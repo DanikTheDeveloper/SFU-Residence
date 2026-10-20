@@ -46,6 +46,11 @@
       "passed": true
     },
     {
+      "check": "Walk loop [\"Courtyard lower gallery entry crossing exit\"]",
+      "evidence": "5/5 checkpoints",
+      "passed": true
+    },
+    {
       "check": "Walk loop [\"Field4 dark shelter entry and exit\"]",
       "evidence": "5/5 checkpoints",
       "passed": true

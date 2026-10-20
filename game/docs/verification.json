@@ -302,7 +302,7 @@
     },
     {
       "check": "CYR solid facade edges",
-      "evidence": "16/16",
+      "evidence": "14/14",
       "passed": true
     },
     {
@@ -593,6 +593,21 @@
     {
       "check": "Courtyard Atrium roof matches configured zone height",
       "evidence": "(335.0, 20.09299, -15.0)",
+      "passed": true
+    },
+    {
+      "check": "Courtyard inner gallery front open",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard inner gallery rear closed",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard inner gallery overhead solid",
+      "evidence": "",
       "passed": true
     },
     {

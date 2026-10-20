@@ -4,6 +4,7 @@ extends RefCounted
 const Geo=preload("res://scripts/Geometry.gd")
 const Kit=preload("res://scripts/FacadeKit.gd")
 const Portico=preload("res://scripts/CourtyardPortico.gd")
+const Gallery=preload("res://scripts/CourtyardGallery.gd")
 const MASTER_ID="res://scripts/CourtyardExterior.gd"
 static var bay_width:=2.85
 static var palette: Dictionary={}
@@ -84,12 +85,20 @@ static func build(root: Node3D,data: Dictionary,_points: Array,base: float,heigh
 			for p in lower_polys[0]: lower.append([p.x,p.y])
 			var lower_poly: PackedVector2Array=lower_polys[0]
 			if Geometry2D.is_polygon_clockwise(lower_poly): lower.reverse()
-			shell(root,lower,base,portico.height,"HighriseRecessedLower")
+			var gallery:=Gallery.layout(data)
+			var lowest_polys:=Geometry2D.clip_polygons(lower_poly,gallery.cut)
+			assert(lowest_polys.size()==1,"Gallery must retain one closed ground shell")
+			var lowest: Array=[]
+			for p in lowest_polys[0]: lowest.append([p.x,p.y])
+			if Geometry2D.is_polygon_clockwise(lowest_polys[0]): lowest.reverse()
+			shell(root,lowest,base,Gallery.HEIGHT,"HighriseGalleryLower")
+			shell(root,lower,base+Gallery.HEIGHT,portico.height-Gallery.HEIGHT,"HighrisePorticoMiddle",false)
 			shell(root,points,base+portico.height,zone.height-portico.height,"HighriseUpper",false)
 		else:
 			shell(root,points,base,zone.height,zone.name)
 		facade(kit,data,points,base,zone.height,zone.floors,zone.name)
 	Portico.build(root,data,base,kit)
+	Gallery.build(root,data,base,kit)
 	# Closed eastern atrium entrance, inferred from the supplied frontal photograph.
 	# Original western route entrance remains an accessible secondary facade.
 	var door:=Vector3(339.9,base,-14.7)
@@ -142,6 +151,7 @@ static func facade(kit: RefCounted,data: Dictionary,points: Array,base: float,he
 			for bay in bays:
 				var center_xz:=a+tangent*((bay+0.5)*spacing)
 				for level in floors:
+					if zone=="Highrise" and level==0 and Gallery.contains(data,Vector2(center_xz.x,center_xz.z)): continue
 					if zone=="Highrise" and level<2 and Portico.contains(data,Vector2(center_xz.x,center_xz.z)): continue
 					if level==0 and Vector2(center_xz.x,center_xz.z).distance_to(Vector2(data.entrance[0],data.entrance[1]))<2.1: continue
 					var center:=center_xz+Vector3.UP*((level+0.5)*story)

@@ -16,12 +16,12 @@ Latest user instruction: work through all deferred remarks; preserve accepted ge
 | North gallery to parking | Separate connection still missing; do not confuse with Dining link or Shadbolt courtyard stair photo | Pending |
 | North surrounding details | Red service doors, roof/fins, curved beds, pavers, drains, stairs/rails, door/sign localization | Partial |
 | Courtyard east portico | Implemented and traversable; forecourt remains crude grassy slope | Partial |
-| Courtyard inner gallery | Lower columns/soffit/open supported ground level, distinct from tall east portico | Pending |
+| Courtyard inner gallery | Lower court-facing recess, piers, soffit fins, closed rear glazing, grey pavers added; physical entry/crossing/exit passed. Dimensions estimated | Verified first pass |
 | Courtyard West Mall bridge | User-confirmed direction; exact tie-in/grade not yet located; no existing dedicated bridge to merely move | Pending |
 | Courtyard landscape/upper details | Paved plaza/curbs/planters/trees, lowrise terrace/penthouse and precise entrance mapping | Pending |
 | Shell surrounds | Timber fence/concrete round tables implemented; timber seating if confirmed, stairs/landings, pergola/annex/trees | Partial |
 | Shell grade/entry | Four total vs three visible floors, entry along long frontage, corner screen localization | Unresolved |
-| McTaggart approach | Descending stairs, recessed entrance/connector/canopy, grade exposure and paving | Pending |
+| McTaggart approach | User confirms Dining-facing approach. Current pad flattened the approach (~0.1m rise over28m); photo requires entry/grade correction before a plausible descending stair | Grade conflict; pending |
 | East/West site | Approved facades frozen; verify external stairs and basketball court between towers, current paving | Pending |
 | Townhouse contact | Foundation/porch footings implemented; refine approach grades; preserve approved family | Partial |
 | Townhouse plan differences |11-house door mapping/common-room annex and laundry attachments not implemented; block identity needed | Deferred evidence |

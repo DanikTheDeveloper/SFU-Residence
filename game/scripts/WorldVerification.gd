@@ -74,7 +74,7 @@ func run() -> void:
 			if data.type=="north_tower":
 				var passage=preload("res://scripts/NorthTowerPassage.gd")
 				if passage.interval(center,center,passage.layout(data,center.y)).x>=0: continue
-			if data.id=="CYR" and preload("res://scripts/CourtyardPortico.gd").contains(data,midpoint): continue
+			if data.id=="CYR" and (preload("res://scripts/CourtyardPortico.gd").contains(data,midpoint) or preload("res://scripts/CourtyardGallery.gd").contains(data,midpoint)): continue
 			edge_count+=1
 			if not ray(center+direction*0.4,center-direction*0.4).is_empty(): edge_hits+=1
 		check(data.id+" solid facade edges",edge_count==edge_hits,"%d/%d"%[edge_hits,edge_count])
@@ -89,6 +89,11 @@ func run() -> void:
 	for sample in [[320.0,-31.0,10.8,"Lowrise"],[320.0,-2.0,34.1,"Highrise"],[335.0,-15.0,8.0,"Atrium"]]:
 		var top_hit:=ray(Vector3(sample[0],100,sample[1]),Vector3(sample[0],-100,sample[1]))
 		check("Courtyard "+sample[3]+" roof matches configured zone height",not top_hit.is_empty() and absf(top_hit.position.y-(cy_base+sample[2]))<0.12,str(top_hit.get("position","missing")))
+	var gallery: Dictionary=courtyard.get_meta("court_gallery")
+	var gallery_eye: Vector3=gallery.a.lerp(gallery.b,0.5)-gallery.outward*1.6+Vector3.UP*(cy_base+1.6)
+	check("Courtyard inner gallery front open",ray(gallery_eye,gallery_eye+gallery.outward*2.5).is_empty())
+	check("Courtyard inner gallery rear closed",not ray(gallery_eye,gallery_eye-gallery.outward*3).is_empty())
+	check("Courtyard inner gallery overhead solid",not ray(gallery_eye,gallery_eye+Vector3.UP*2).is_empty())
 	var dining: Node3D=world.get_node("Buildings/DC")
 	check("Dining retains distinct old and new exterior zones",dining.get_meta("exterior_zones").size()==2 and dining.get_meta("family_master")=="res://scripts/DiningExterior.gd")
 	check("Dining three-level registry retained",dining.get_meta("floor_count")==3)
@@ -328,6 +333,12 @@ func run_routes() -> void:
 		var p: Vector3=portico.a.lerp(portico.b,item[0])+portico.outward*item[1]
 		portico_points.append([p.x,p.z])
 	routes.append({"buildings":["Courtyard eastern portico entry crossing exit"],"points":portico_points})
+	var gallery: Dictionary=world.get_node("Buildings/CYR").get_meta("court_gallery")
+	var gallery_points: Array=[]
+	for sample in [[0.2,1.2],[0.2,-1.6],[0.5,-1.6],[0.8,-1.6],[0.8,1.2]]:
+		var p: Vector3=gallery.a.lerp(gallery.b,sample[0])+gallery.outward*sample[1]
+		gallery_points.append([p.x,p.z])
+	routes.append({"buildings":["Courtyard lower gallery entry crossing exit"],"points":gallery_points})
 	var shelter: Dictionary=world.get_node("Props/Field4/SidelineContext").get_meta("shelter_17")
 	var shelter_points: Array=[]
 	for side in [5.0,3.0,0.4,3.0,5.0]:
