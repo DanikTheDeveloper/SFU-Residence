@@ -14,7 +14,7 @@ static func build(world: Node3D) -> void:
 	var a: Vector3=plan.gallery_end
 	a.y=Geo.elevation(a.x,a.z)+0.045
 	var top: float=preload("res://scripts/TerrainController.gd").foundation("DC")
-	var total:=11.8
+	var total:=10.4
 	var middle:=a.y+3.61
 	var stations: Array[Vector2]=[Vector2(0,a.y),Vector2(5.94,middle),Vector2(6.94,middle),Vector2(total,top)]
 	var concrete:=Geo.material(Color("aaa99c"),0.96)
@@ -60,6 +60,22 @@ static func build(world: Node3D) -> void:
 			for j in int(ceil(sa.distance_to(sb)/1.4))+1:
 				var q: Vector3=sa.lerp(sb,minf(1,float(j)/maxf(1,ceil(sa.distance_to(sb)/1.4))))
 				rail(kit,"steel",q,q+Vector3.UP*0.95,0.045,0.045)
+	# Upper landing turns north to the mapped west-wall door (OSM10785299803).
+	# Finish the last flight before the wall; preserve original foundation heights.
+	var upper: Vector3=a+u*total
+	upper.y=top
+	var landing_center: Vector3=upper+u*0.72-v*1.30
+	var bottom: float=minf(top-0.28,Geo.elevation(landing_center.x,landing_center.z)-0.10)
+	var landing:=Geo.box(root,Vector3(landing_center.x,(bottom+top)*0.5,landing_center.z),Vector3(1.44,top-bottom,5.0),concrete,true)
+	landing.rotation.y=yaw;landing.name="MappedDiningDoorLanding"
+	for pair in [[upper-v*1.2,upper-v*3.8],[upper-v*3.8,upper-v*3.8+u*1.44],[upper+v*1.2,upper+v*1.2+u*1.44]]:
+		var start: Vector3=pair[0]
+		var finish: Vector3=pair[1]
+		rail(kit,"steel",start+Vector3.UP*0.95,finish+Vector3.UP*0.95,0.055,0.055)
+		for f in [0.0,0.5,1.0]:
+			var p: Vector3=start.lerp(finish,f)
+			rail(kit,"steel",p,p+Vector3.UP*0.95,0.045,0.045)
+	root.set_meta("door_landing_center",landing_center)
 	var collision_ramp:=Geo.mesh_from_vertices(root,ramp,concrete,true)
 	collision_ramp.name="ContinuousStairCollision"
 	# Keep the smooth physics ramp, but render only actual treads and landings.

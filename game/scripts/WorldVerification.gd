@@ -374,6 +374,13 @@ func run_routes() -> void:
 		var p: Vector3=stair_start+stair_direction*distance
 		stair_points.append([p.x,p.z])
 	routes.append({"buildings":["North gallery to Dining stair ascent and descent"],"points":stair_points})
+	var turn_points: Array=[]
+	var stair_u: Vector3=stair.get_meta("direction")
+	var stair_v:=Vector3(-stair_u.z,0,stair_u.x)
+	for coordinate in [Vector2(-1,0),Vector2(8,0),Vector2(10.5,0),Vector2(11.1,0),Vector2(11.1,-1.4),Vector2(11.1,-2.6),Vector2(11.1,-1.4),Vector2(11.1,0),Vector2(10.5,0),Vector2(8,0),Vector2(-1,0)]:
+		var p: Vector3=stair_start+stair_u*coordinate.x+stair_v*coordinate.y
+		turn_points.append([p.x,p.z])
+	routes.append({"buildings":["Dining mapped west door landing turn and return"],"points":turn_points})
 	var parking_stair: Node3D=world.get_node("NorthParkingStair")
 	var parking_points: Array=[]
 	for distance in [-1.0,1.0,3.0,5.9,8.0,11.7,14.0,11.7,8.0,5.9,3.0,1.0,-1.0]:
@@ -381,6 +388,14 @@ func run_routes() -> void:
 		parking_points.append([p.x,p.z])
 	routes.append({"buildings":["Mapped North parking stair descent and return"],"points":parking_points})
 	routes.append({"buildings":["Courtyard eastern paved forecourt"],"points":[[351,10],[352,-2],[347,-10],[348,-20],[352,-32],[348,-20],[347,-10],[352,-2],[351,10]]})
+	var shell: Node3D=world.get_node("Buildings/SHR")
+	var shell_door: Vector3=shell.get_meta("photo_main_entrance")
+	var shell_normal: Vector3=shell.get_meta("photo_main_normal")
+	var shell_points: Array=[]
+	for offset in [7.0,5.0,3.0,1.0,3.0,5.0,7.0]:
+		var p: Vector3=shell_door+shell_normal*offset
+		shell_points.append([p.x,p.z])
+	routes.append({"buildings":["Shell mapped main entrance approach and return"],"points":shell_points})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true

@@ -121,6 +121,15 @@ static func build(root: Node3D,data: Dictionary,points: Array,base: float,height
 	kit.part("frame",door+Vector3.UP*1.3+normal*0.52,Vector3(0.065,2.5,0.10),yaw)
 	for side in [-1,1]:
 		kit.part("frame",door+tangent*side*0.18+Vector3.UP*1.25+normal*0.61,Vector3(0.035,0.42,0.045),yaw)
+	# Original OSM west-wall entrance directly above the North-gallery approach.
+	var mapped: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/dining_gallery_entrance.json"))
+	var west_door:=Vector3(mapped.point[0],base+0.10,mapped.point[1])
+	var west_tangent:=Vector3(0.228793,0,-0.973475)
+	var west_normal:=Vector3(-0.973475,0,-0.228793)
+	var west_yaw: float=-atan2(west_tangent.z,west_tangent.x)
+	kit.window(west_door+west_normal*0.30+Vector3.UP*1.25,west_tangent,west_normal,1.6,2.5,west_yaw,true,"frame")
+	kit.part("frame",west_door+west_normal*0.50+Vector3.UP*1.25,Vector3(0.06,2.5,0.08),west_yaw)
+	root.set_meta("gallery_entrance",west_door)
 	for key in kit.batches:
 		var transforms: Array[Transform3D]=[]
 		transforms.assign(kit.batches[key])

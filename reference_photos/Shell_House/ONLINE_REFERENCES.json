@@ -18,5 +18,18 @@
     "observations": "Official total Floor Levels4; building092; constructed1967, renovated2014, architectZoltan S. Kiss. Does not establish above-ground exposure on each facade.",
     "licensing": "SFU copyright, URL-only reference",
     "confidence": "HIGH official total levels; hillside/basement exposure unresolved"
+  },
+  {
+    "building": "Shell House",
+    "source_url": "https://www.openstreetmap.org/node/6925149272",
+    "source": "Original precinct.osm node, version2 timestamp2024-04-05",
+    "local_filename": null,
+    "observations": [
+      "entrance=main at49.2795452,-122.9241043, local260.103,89.490 on west long frontage",
+      "Matches supplied Shell.jpg: double doors, dark red-brown shallow canopy, timber fence opening and asphalt approach",
+      "Mapped main entrance is distinct from earlier generic short-end route anchor"
+    ],
+    "identity_confidence": "High mapped entrance and building identity; dimensions estimated",
+    "licensing": "OSM ODbL; supplied photograph visual reference only"
   }
 ]

@@ -2,6 +2,7 @@ extends RefCounted
 # Shell House facade family. Registry four-floor mass retained pending grade/level audit.
 const Geo=preload("res://scripts/Geometry.gd")
 const Kit=preload("res://scripts/FacadeKit.gd")
+const MainEntry=preload("res://scripts/ShellMainEntrance.gd")
 const MASTER_ID="res://scripts/ShellExterior.gd"
 static var cache: Dictionary={}
 
@@ -20,6 +21,7 @@ static func material(key: String) -> Material:
 				elif y%32==0: shade-=0.04
 				pixels.set_pixel(x,y,Color(shade,shade,shade))
 		pixels.generate_mipmaps()
+		pixels.generate_mipmaps()
 		mat.albedo_texture=ImageTexture.create_from_image(pixels)
 		mat.uv1_triplanar=true
 		mat.uv1_world_triplanar=true
@@ -34,6 +36,7 @@ static func build(root: Node3D,data: Dictionary,points: Array,base: float,height
 	var kit:=Kit.new()
 	var story: float=height/int(data.floors)
 	var door:=Geo.point(data.entrance)
+	var main_door:=MainEntry.point(base)
 	for i in points.size():
 		var a:=Vector3(points[i][0],base,points[i][1])
 		var q: Array=points[(i+1)%points.size()]
@@ -61,12 +64,18 @@ static func build(root: Node3D,data: Dictionary,points: Array,base: float,height
 		var bays:=maxi(1,int(round(length/3.1)))
 		var spacing:=length/bays
 		for level in int(data.floors):
-			kit.part("concrete",a+edge*0.5+Vector3.UP*(level*story+0.28)+normal*0.20,Vector3(length,0.56,0.48),yaw)
+			var door_along: float=(main_door-a).dot(tangent)
+			if level==0 and absf((main_door-a).dot(normal))<0.5 and door_along> -2 and door_along<length+2:
+				for span in [Vector2(0,maxf(0,door_along-1.7)),Vector2(minf(length,door_along+1.7),length)]:
+					if span.y-span.x>0.01: kit.part("concrete",a+tangent*(span.x+span.y)*0.5+Vector3.UP*0.28+normal*0.20,Vector3(span.y-span.x,0.56,0.48),yaw)
+			else:
+				kit.part("concrete",a+edge*0.5+Vector3.UP*(level*story+0.28)+normal*0.20,Vector3(length,0.56,0.48),yaw)
 			if level>0:
 				kit.part("concrete",a+edge*0.5+Vector3.UP*(level*story-0.05)+normal*0.32,Vector3(length+0.06,0.10,0.72),yaw)
 			for bay in bays:
 				var mid:=a+tangent*((bay+0.5)*spacing)
 				if level==0 and absf((mid-door).dot(tangent))<spacing*0.5+1.8 and absf((mid-door).dot(normal))<0.6: continue
+				if level==0 and absf((mid-main_door).dot(tangent))<spacing*0.5+1.7 and absf((mid-main_door).dot(normal))<0.5: continue
 				var center:=mid+Vector3.UP*(level*story+story*0.58)
 				var panel_width: float=spacing*0.52
 				var window_height: float=story*0.69
@@ -92,6 +101,7 @@ static func build(root: Node3D,data: Dictionary,points: Array,base: float,height
 	canopy.rotation.y=yaw
 	canopy.name="ShellEntryCanopy"
 	kit.part("fascia",door+normal*1.97+Vector3.UP*2.86,Vector3(3.6,0.11,0.07),yaw)
+	MainEntry.build(root,base,kit,material("concrete"))
 	for key in kit.batches:
 		var transforms: Array[Transform3D]=[]
 		transforms.assign(kit.batches[key])

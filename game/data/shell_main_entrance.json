@@ -1,0 +1,13 @@
+{
+  "point": [
+    260.103,
+    89.49
+  ],
+  "osm_node": "6925149272",
+  "tag": "entrance=main",
+  "source_timestamp": "2024-04-05",
+  "source": "https://www.openstreetmap.org/node/6925149272",
+  "photo": "reference_photos/Shell_House/Shell.jpg",
+  "confidence": "Mapped main entrance agrees with supplied long-frontage photo; door/canopy dimensions estimated",
+  "license": "OSM ODbL; photo visual reference only"
+}

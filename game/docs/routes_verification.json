@@ -61,6 +61,11 @@
       "passed": true
     },
     {
+      "check": "Walk loop [\"Dining mapped west door landing turn and return\"]",
+      "evidence": "11/11 checkpoints",
+      "passed": true
+    },
+    {
       "check": "Walk loop [\"Mapped North parking stair descent and return\"]",
       "evidence": "13/13 checkpoints",
       "passed": true
@@ -68,6 +73,11 @@
     {
       "check": "Walk loop [\"Courtyard eastern paved forecourt\"]",
       "evidence": "9/9 checkpoints",
+      "passed": true
+    },
+    {
+      "check": "Walk loop [\"Shell mapped main entrance approach and return\"]",
+      "evidence": "7/7 checkpoints",
       "passed": true
     }
   ],
