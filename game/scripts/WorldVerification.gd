@@ -133,6 +133,12 @@ func run() -> void:
 		var mid: Vector3=(start+end)*0.5
 		check(id+" rear residential boundary closed",not ray(mid+Vector3.UP*1.4,mid+passage.axis*3+Vector3.UP*1.4).is_empty())
 		check(id+" gallery overhead collision",not ray(mid+Vector3.UP*1.68,mid+Vector3.UP*3.5).is_empty())
+		# Check both end corners as well as the middle: one midpoint ray missed
+		# the exposed wall backs originally reported by the user.
+		for fraction in [0.03,0.25,0.75,0.97]:
+			var eye: Vector3=passage.gallery_start.lerp(passage.gallery_end,fraction)+Vector3.UP*1.68
+			check(id+" gallery rear closure "+str(fraction),not ray(eye,eye+passage.axis*2.2).is_empty())
+			check(id+" gallery soffit closure "+str(fraction),not ray(eye,eye+Vector3.UP*1.5).is_empty())
 		for reverse in [false,true]:
 			var origin: Vector3=end if reverse else start
 			var direction: Vector3=-passage.side if reverse else passage.side
@@ -374,6 +380,7 @@ func run_routes() -> void:
 		var p: Vector3=parking_stair.get_meta("start")+parking_stair.get_meta("direction")*distance
 		parking_points.append([p.x,p.z])
 	routes.append({"buildings":["Mapped North parking stair descent and return"],"points":parking_points})
+	routes.append({"buildings":["Courtyard eastern paved forecourt"],"points":[[351,10],[352,-2],[347,-10],[348,-20],[352,-32],[348,-20],[347,-10],[352,-2],[351,10]]})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true

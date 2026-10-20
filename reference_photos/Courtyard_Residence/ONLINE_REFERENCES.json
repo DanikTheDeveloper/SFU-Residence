@@ -71,13 +71,20 @@
   {
     "building": "Courtyard Residence",
     "source_url": "https://dialogdesign.ca/wp-content/uploads/projects//LAP0604_DialogSFUResidences_0058_largeimage.jpg",
-    "source": "DIALOG official completed project gallery; project completion2023",
+    "source": "DIALOG architect project gallery",
     "local_filename": null,
-    "photograph_date": "Not stated",
-    "viewpoint": "East street frontage",
-    "observations": "Eastern glazed highrise end rests above tall pale concrete piers, with recessed glazing and an upper glazed-railing walkway behind. Grey/tan forecourt blocks, planted tree squares and lowrise visible. This is a taller portico than the court-facing covered space.",
-    "licensing": "Copyright reference-only; no pixels redistributed",
-    "confidence": "HIGH official specific project; viewed2026-10-18"
+    "photograph_date": "Unknown, completed project",
+    "viewpoint": "Eastern highrise portico, glazed atrium and lowrise foreground",
+    "observations": [
+      "Mostly grey rectangular paving with subdued warm blocks",
+      "Pale raised curb interrupted at access points beside asphalt",
+      "Young upright trees in small square surface openings",
+      "Red vertical pole screen near lowrise corner; not yet modeled"
+    ],
+    "licensing": "URL-only reference, no third-party photo pixels shipped",
+    "confidence": "HIGH official specific project; viewed2026-10-18",
+    "identity_confidence": "HIGH: official project image; individually visually inspected",
+    "model_limits": "Paving extent, tree spacing and grading estimated. Existing CYR foundation retained; source grid unchanged. Raised finish grade up to4.389m compared with old terrain is provisional modern-site grading, not measured fill. Road-edge transition remains incomplete."
   },
   {
     "building": "Courtyard Residence",

@@ -64,6 +64,11 @@
       "check": "Walk loop [\"Mapped North parking stair descent and return\"]",
       "evidence": "13/13 checkpoints",
       "passed": true
+    },
+    {
+      "check": "Walk loop [\"Courtyard eastern paved forecourt\"]",
+      "evidence": "9/9 checkpoints",
+      "passed": true
     }
   ],
   "failures": 0

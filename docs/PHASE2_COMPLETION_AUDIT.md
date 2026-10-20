@@ -11,14 +11,14 @@ Latest user instruction: work through all deferred remarks; preserve accepted ge
 | Field4 realism | Sideline concrete, fence, light poles and shelters added in157317b. Seating, secondary markings, fixture precision and tree edge still incomplete | Partial |
 | Field2 realism | Mapped grass/H goals; strengthen photo match, surroundings and approaches; American-yard markings unconfirmed | Partial |
 | Beedie realism | Outline/infield/backstop first pass; sunken dugouts, benches/bleachers, bullpen, batting cage, fixture/track geometry | Partial |
-| North longitudinal gallery | Correct under long courtyard wing; repeat eye-level inside-wall/corner audit, no exposed building voids | Recheck |
+| North longitudinal gallery | Nine eye-level views inspected across all three galleries;24 additional rear-wall/soffit corner rays pass. No exposed void found in these views; finer photo detailing remains | Closure verified |
 | North to Dining Commons | Two-flight stair added from Shadbolt gallery toward Dining west wall; ascent/descent13/13 passed. Dimensions estimated; exact upper door/landing tie-in pending | Verified first pass |
 | North gallery to parking | Mapped OSM1159793611 stair with rails/landings added; descent/return13/13 passed and eye-level reviewed. Width/count estimated; separate from Dining and courtyard photo | Verified first pass |
 | North surrounding details | Red service doors, roof/fins, curved beds, pavers, drains, stairs/rails, door/sign localization | Partial |
-| Courtyard east portico | Implemented and traversable; forecourt remains crude grassy slope | Partial |
+| Courtyard east portico | Implemented and traversable; eastern forecourt now locally graded and paved with curbs/tree pits,434-route checkpoint passed; road-edge transition still unfinished | Partial |
 | Courtyard inner gallery | Lower court-facing recess, piers, soffit fins, closed rear glazing, grey pavers added; physical entry/crossing/exit passed. Dimensions estimated | Verified first pass |
 | Courtyard West Mall bridge | South-facing glazed exterior link now tied to mapped West Mall parkade edge; inspected/physics passed. Exact attachment and far-end support provisional; full parkade unmodeled | Verified first pass |
-| Courtyard landscape/upper details | Paved plaza/curbs/planters/trees, lowrise terrace/penthouse and precise entrance mapping | Pending |
+| Courtyard landscape/upper details | Eastern pavers/curbs/four young trees added; road tie-in, lowrise terrace/penthouse and precise entrance mapping remain | Partial |
 | Shell surrounds | Timber fence/concrete round tables implemented; timber seating if confirmed, stairs/landings, pergola/annex/trees | Partial |
 | Shell grade/entry | Four total vs three visible floors, entry along long frontage, corner screen localization | Unresolved |
 | McTaggart approach | User confirms Dining-facing approach. Current pad flattened the approach (~0.1m rise over28m); photo requires entry/grade correction before a plausible descending stair | Grade conflict; pending |

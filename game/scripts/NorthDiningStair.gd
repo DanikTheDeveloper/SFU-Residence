@@ -60,7 +60,10 @@ static func build(world: Node3D) -> void:
 			for j in int(ceil(sa.distance_to(sb)/1.4))+1:
 				var q: Vector3=sa.lerp(sb,minf(1,float(j)/maxf(1,ceil(sa.distance_to(sb)/1.4))))
 				rail(kit,"steel",q,q+Vector3.UP*0.95,0.045,0.045)
-	Geo.mesh_from_vertices(root,ramp,concrete,true).name="ContinuousStairCollision"
+	var collision_ramp:=Geo.mesh_from_vertices(root,ramp,concrete,true)
+	collision_ramp.name="ContinuousStairCollision"
+	# Keep the smooth physics ramp, but render only actual treads and landings.
+	collision_ramp.visible=false
 	for key in kit.batches:
 		var transforms: Array[Transform3D]=[]
 		transforms.assign(kit.batches[key])

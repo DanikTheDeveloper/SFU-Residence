@@ -17,4 +17,5 @@ PASS Walk loop ["Courtyard lower gallery entry crossing exit"] 5/5 checkpoints
 PASS Walk loop ["Field4 dark shelter entry and exit"] 5/5 checkpoints
 PASS Walk loop ["North gallery to Dining stair ascent and descent"] 13/13 checkpoints
 PASS Walk loop ["Mapped North parking stair descent and return"] 13/13 checkpoints
+PASS Walk loop ["Courtyard eastern paved forecourt"] 9/9 checkpoints
 ROUTES_COMPLETE failures=0

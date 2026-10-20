@@ -696,6 +696,46 @@
       "passed": true
     },
     {
+      "check": "PJH gallery rear closure 0.03",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH gallery soffit closure 0.03",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH gallery rear closure 0.25",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH gallery soffit closure 0.25",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH gallery rear closure 0.75",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH gallery soffit closure 0.75",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH gallery rear closure 0.97",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "PJH gallery soffit closure 0.97",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "PJH longitudinal capsule traversal false",
       "evidence": "(30.43146, 2.877042, 3.418323)",
       "passed": true
@@ -726,6 +766,46 @@
       "passed": true
     },
     {
+      "check": "BRH gallery rear closure 0.03",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH gallery soffit closure 0.03",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH gallery rear closure 0.25",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH gallery soffit closure 0.25",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH gallery rear closure 0.75",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH gallery soffit closure 0.75",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH gallery rear closure 0.97",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "BRH gallery soffit closure 0.97",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "BRH longitudinal capsule traversal false",
       "evidence": "(102.6654, 6.030081, 20.58107)",
       "passed": true
@@ -752,6 +832,46 @@
     },
     {
       "check": "SBH gallery overhead collision",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH gallery rear closure 0.03",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH gallery soffit closure 0.03",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH gallery rear closure 0.25",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH gallery soffit closure 0.25",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH gallery rear closure 0.75",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH gallery soffit closure 0.75",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH gallery rear closure 0.97",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "SBH gallery soffit closure 0.97",
       "evidence": "",
       "passed": true
     },

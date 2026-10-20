@@ -143,18 +143,42 @@ PASS PJH longitudinal gallery clear at eye level
 PASS PJH courtyard column solid 
 PASS PJH rear residential boundary closed 
 PASS PJH gallery overhead collision 
+PASS PJH gallery rear closure 0.03 
+PASS PJH gallery soffit closure 0.03 
+PASS PJH gallery rear closure 0.25 
+PASS PJH gallery soffit closure 0.25 
+PASS PJH gallery rear closure 0.75 
+PASS PJH gallery soffit closure 0.75 
+PASS PJH gallery rear closure 0.97 
+PASS PJH gallery soffit closure 0.97 
 PASS PJH longitudinal capsule traversal false (30.43146, 2.877042, 3.418323)
 PASS PJH longitudinal capsule traversal true (-28.45385, 2.604148, -10.55847)
 PASS BRH longitudinal gallery clear at eye level 
 PASS BRH courtyard column solid 
 PASS BRH rear residential boundary closed 
 PASS BRH gallery overhead collision 
+PASS BRH gallery rear closure 0.03 
+PASS BRH gallery soffit closure 0.03 
+PASS BRH gallery rear closure 0.25 
+PASS BRH gallery soffit closure 0.25 
+PASS BRH gallery rear closure 0.75 
+PASS BRH gallery soffit closure 0.75 
+PASS BRH gallery rear closure 0.97 
+PASS BRH gallery soffit closure 0.97 
 PASS BRH longitudinal capsule traversal false (102.6654, 6.030081, 20.58107)
 PASS BRH longitudinal capsule traversal true (43.61161, 5.580753, 6.59403)
 PASS SBH longitudinal gallery clear at eye level 
 PASS SBH courtyard column solid 
 PASS SBH rear residential boundary closed 
 PASS SBH gallery overhead collision 
+PASS SBH gallery rear closure 0.03 
+PASS SBH gallery soffit closure 0.03 
+PASS SBH gallery rear closure 0.25 
+PASS SBH gallery soffit closure 0.25 
+PASS SBH gallery rear closure 0.75 
+PASS SBH gallery soffit closure 0.75 
+PASS SBH gallery rear closure 0.97 
+PASS SBH gallery soffit closure 0.97 
 PASS SBH longitudinal capsule traversal false (174.0312, 7.587184, 37.3271)
 PASS SBH longitudinal capsule traversal true (115.623, 6.456107, 23.46055)
 PASS Continuous North row false reaches PJH (28.929, 2.628859, 2.997013)
@@ -233,4 +257,4 @@ PASS Courtyard preserves eleven-floor registry
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Mapped parking stair collision above underlying hillside 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=228 failures=0
+VERIFICATION_COMPLETE checks=252 failures=0
