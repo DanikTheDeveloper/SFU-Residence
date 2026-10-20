@@ -95,6 +95,11 @@ func run() -> void:
 	check("Courtyard inner gallery front open",ray(gallery_eye,gallery_eye+gallery.outward*2.5).is_empty())
 	check("Courtyard inner gallery rear closed",not ray(gallery_eye,gallery_eye-gallery.outward*3).is_empty())
 	check("Courtyard inner gallery overhead solid",not ray(gallery_eye,gallery_eye+Vector3.UP*2).is_empty())
+	var link: Dictionary=courtyard.get_meta("west_mall_link")
+	check("Courtyard link faces south to mapped West Mall parkade",link.end.z>link.start.z+10 and link.end.x<link.start.x)
+	var link_mid: Vector3=(link.start+link.end)*0.5
+	check("Courtyard link deck collision",not ray(link_mid+Vector3.UP,link_mid-Vector3.UP).is_empty())
+	check("Courtyard link closed roof",not ray(link_mid+Vector3.UP*(link.height+1),link_mid+Vector3.UP*(link.height-0.3)).is_empty())
 	var dining: Node3D=world.get_node("Buildings/DC")
 	check("Dining retains distinct old and new exterior zones",dining.get_meta("exterior_zones").size()==2 and dining.get_meta("family_master")=="res://scripts/DiningExterior.gd")
 	check("Dining three-level registry retained",dining.get_meta("floor_count")==3)

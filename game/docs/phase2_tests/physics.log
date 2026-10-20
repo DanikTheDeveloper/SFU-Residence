@@ -126,6 +126,9 @@ PASS Courtyard Atrium roof matches configured zone height (335.0, 20.09299, -15.
 PASS Courtyard inner gallery front open 
 PASS Courtyard inner gallery rear closed 
 PASS Courtyard inner gallery overhead solid 
+PASS Courtyard link faces south to mapped West Mall parkade 
+PASS Courtyard link deck collision 
+PASS Courtyard link closed roof 
 PASS Dining retains distinct old and new exterior zones 
 PASS Dining three-level registry retained 
 PASS Shell concrete tabletop solid at seating area 
@@ -230,4 +233,4 @@ PASS Courtyard preserves eleven-floor registry
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Mapped parking stair collision above underlying hillside 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=225 failures=0
+VERIFICATION_COMPLETE checks=228 failures=0

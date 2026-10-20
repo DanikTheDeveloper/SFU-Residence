@@ -611,6 +611,21 @@
       "passed": true
     },
     {
+      "check": "Courtyard link faces south to mapped West Mall parkade",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard link deck collision",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard link closed roof",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Dining retains distinct old and new exterior zones",
       "evidence": "",
       "passed": true

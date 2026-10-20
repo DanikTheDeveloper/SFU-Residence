@@ -99,6 +99,7 @@ static func build(root: Node3D,data: Dictionary,_points: Array,base: float,heigh
 		facade(kit,data,points,base,zone.height,zone.floors,zone.name)
 	Portico.build(root,data,base,kit)
 	Gallery.build(root,data,base,kit)
+	preload("res://scripts/CourtyardBridge.gd").build(root,base)
 	# Closed eastern atrium entrance, inferred from the supplied frontal photograph.
 	# Original western route entrance remains an accessible secondary facade.
 	var door:=Vector3(339.9,base,-14.7)

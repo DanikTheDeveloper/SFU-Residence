@@ -1,0 +1,16 @@
+{
+  "start": [
+    340.44773431336847,
+    10.069099381225334
+  ],
+  "end": [
+    336.5882938348908,
+    26.832536775629876
+  ],
+  "width_estimate_m": 2.8,
+  "floor_offset_estimate_m": 3.05,
+  "height_estimate_m": 2.7,
+  "source": "DIALOG0005 exterior photograph + original OSM West Mall Visitor Parkade way102359676 north edge",
+  "confidence": "Confirmed south/parkade side; attachment offsets and vertical dimensions estimated",
+  "license": "OSM ODbL geographic record; photo URL-only visual reference"
+}

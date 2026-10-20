@@ -18,5 +18,15 @@
     "local_filename": null,
     "licensing": "All rights reserved; URL-only reference. No image downloaded, redistributed or used as texture.",
     "model_limits": "Bay spacing, compass-specific window omissions and connector extent estimated. Original four-floor registry retained; photograph shows three exposed levels at courtyard grade."
+  },
+  {
+    "building": "McTaggart-Cowan Hall",
+    "source_url": "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/mctaggart-cowan_hall/Mctaggart_Cowan_Hall_Floor_Plan.pdf",
+    "source": "SFU Residence and Housing public floor plan",
+    "reviewed": "2026-10-19",
+    "local_filename": null,
+    "observations": "PDF page2 visually inspected: level2, three staggered residential bars, two narrow joining/lobby zones; south labelled Facing the Field. Existing generic model doorway at center of western long bar is not one of these joining zones. Plan warns approximate/artistic interpretation. Does not provide surveyed grade or exterior stair geometry. Facilities key-plans link requires SFU login; not accessed.",
+    "licensing": "URL-only source record; temporary PDF render outside repo, no content shipped as game asset",
+    "confidence": "High building identity and broad plan; exact entrance/height unresolved"
   }
 ]
