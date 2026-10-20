@@ -1116,6 +1116,11 @@
       "passed": true
     },
     {
+      "check": "Mapped parking stair collision above underlying hillside",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Terrain mesh collision parity at route vertices",
       "evidence": "376/376",
       "passed": true

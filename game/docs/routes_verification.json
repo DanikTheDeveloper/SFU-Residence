@@ -59,6 +59,11 @@
       "check": "Walk loop [\"North gallery to Dining stair ascent and descent\"]",
       "evidence": "13/13 checkpoints",
       "passed": true
+    },
+    {
+      "check": "Walk loop [\"Mapped North parking stair descent and return\"]",
+      "evidence": "13/13 checkpoints",
+      "passed": true
     }
   ],
   "failures": 0

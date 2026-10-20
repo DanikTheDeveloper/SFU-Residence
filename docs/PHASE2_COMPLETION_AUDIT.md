@@ -13,7 +13,7 @@ Latest user instruction: work through all deferred remarks; preserve accepted ge
 | Beedie realism | Outline/infield/backstop first pass; sunken dugouts, benches/bleachers, bullpen, batting cage, fixture/track geometry | Partial |
 | North longitudinal gallery | Correct under long courtyard wing; repeat eye-level inside-wall/corner audit, no exposed building voids | Recheck |
 | North to Dining Commons | Two-flight stair added from Shadbolt gallery toward Dining west wall; ascent/descent13/13 passed. Dimensions estimated; exact upper door/landing tie-in pending | Verified first pass |
-| North gallery to parking | Separate connection still missing; do not confuse with Dining link or Shadbolt courtyard stair photo | Pending |
+| North gallery to parking | Mapped OSM1159793611 stair with rails/landings added; descent/return13/13 passed and eye-level reviewed. Width/count estimated; separate from Dining and courtyard photo | Verified first pass |
 | North surrounding details | Red service doors, roof/fins, curved beds, pavers, drains, stairs/rails, door/sign localization | Partial |
 | Courtyard east portico | Implemented and traversable; forecourt remains crude grassy slope | Partial |
 | Courtyard inner gallery | Lower court-facing recess, piers, soffit fins, closed rear glazing, grey pavers added; physical entry/crossing/exit passed. Dimensions estimated | Verified first pass |
@@ -29,7 +29,7 @@ Latest user instruction: work through all deferred remarks; preserve accepted ge
 | Dining architecture | Old/new distinct wings implemented; current as-built finish, roof steps/joint, screens/service doors need comparison | Partial |
 | Parking | Full preconstruction lot grade and CC0 cars implemented; verify curb/aisle/vegetation/perimeter realism | Partial |
 | General outdoor materials | Concrete/pavers/asphalt overrides implemented; drainage channels, retaining walls, transitions still incomplete | Partial |
-| Vegetation | Mapped sparse stylized plants; forest edges, species/form and material realism need improvement | Partial |
+| Vegetation | Added331 batched context trees in mapped sports woodland, field/path buffers, coarse distant foliage. Species/spacing estimated; realism still incomplete | Partial |
 | Performance | GTX1650 Compatibility runs; broad views slow, prior captures may share GPU with another game instance | Measure/optimize |
 
 Source audit: all docs/*.md searched for pending/remaining/unresolved/unknown/next markers; read latest HANDOFF plus SITE_WALK_CORRECTIONS, PHOTO_REFINEMENT_BACKLOG, NORTH_PLAN_AUDIT, LANDSCAPE_PHOTO_REVIEW, DINING_REVIEW and relevant runtime modules. Historical plans/floor-count conflicts remain uncertainties rather than authorization to replace approved models. No interiors, NPCs, online API or unrelated gameplay.

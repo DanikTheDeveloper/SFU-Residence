@@ -10,8 +10,9 @@ func check(label: String, success: bool, evidence: String="") -> void:
 func frames(count: int) -> void:
 	for i in count: await get_tree().physics_frame
 
-func ray(a: Vector3,b: Vector3) -> Dictionary:
+func ray(a: Vector3,b: Vector3,exclude: Array[RID]=[]) -> Dictionary:
 	var query := PhysicsRayQueryParameters3D.create(a,b,1)
+	query.exclude=exclude
 	return world.get_world_3d().direct_space_state.intersect_ray(query)
 
 func run() -> void:
@@ -236,12 +237,21 @@ func run() -> void:
 	await frames(3)
 	check("Fall recovery",player.position.distance_to(player.spawn)<2)
 	verify_families()
+	# Test terrain itself beneath the new mapped stair, not its raised treads.
+	# Actual stair traversal is independently covered by the ascent/descent route.
+	var stair_shapes: Array[RID]=[]
+	for body in world.get_node("NorthParkingStair").find_children("*","StaticBody3D",true,false): stair_shapes.append(body.get_rid())
+	var stair_start: Vector3=world.get_node("NorthParkingStair").get_meta("start")
+	var stair_u: Vector3=world.get_node("NorthParkingStair").get_meta("direction")
+	var stair_probe: Vector3=stair_start+stair_u*3
+	var stair_hit:=ray(stair_probe+Vector3.UP*2,stair_probe-Vector3.UP*4)
+	check("Mapped parking stair collision above underlying hillside",not stair_hit.is_empty() and stair_hit.position.y>Geo.elevation(stair_probe.x,stair_probe.z)+0.2)
 	var terrain_matches:=0
 	var terrain_samples:=0
 	for road in world.roads:
 		var p:=Geo.point(road.points[0])
 		if world.inside_building(Vector2(p.x,p.z),1): continue
-		var hit:=ray(p+Vector3.UP*0.5,p-Vector3.UP*0.5)
+		var hit:=ray(p+Vector3.UP*0.5,p-Vector3.UP*0.5,stair_shapes)
 		terrain_samples+=1
 		if not hit.is_empty() and absf(hit.position.y-p.y)<0.015: terrain_matches+=1
 	check("Terrain mesh collision parity at route vertices",terrain_samples==terrain_matches,"%d/%d"%[terrain_matches,terrain_samples])
@@ -353,6 +363,12 @@ func run_routes() -> void:
 		var p: Vector3=stair_start+stair_direction*distance
 		stair_points.append([p.x,p.z])
 	routes.append({"buildings":["North gallery to Dining stair ascent and descent"],"points":stair_points})
+	var parking_stair: Node3D=world.get_node("NorthParkingStair")
+	var parking_points: Array=[]
+	for distance in [-1.0,1.0,3.0,5.9,8.0,11.7,14.0,11.7,8.0,5.9,3.0,1.0,-1.0]:
+		var p: Vector3=parking_stair.get_meta("start")+parking_stair.get_meta("direction")*distance
+		parking_points.append([p.x,p.z])
+	routes.append({"buildings":["Mapped North parking stair descent and return"],"points":parking_points})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true

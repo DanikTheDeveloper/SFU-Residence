@@ -51,7 +51,12 @@ func _ready() -> void:
 	help.add_child(instructions)
 	help.visible=false
 
+var info_elapsed:=0.0
+
 func _process(_delta: float) -> void:
+	info_elapsed+=_delta
+	if info_elapsed<0.1: return
+	info_elapsed=0.0
 	if not world.player: return
 	var active_camera:=get_viewport().get_camera_3d()
 	var observer: Vector3=active_camera.global_position if active_camera else world.player.global_position

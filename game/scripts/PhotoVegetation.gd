@@ -24,23 +24,35 @@ static func leaf(st: SurfaceTool,p: Vector3,rng: RandomNumberGenerator,color: Co
 	triangle(st,p-direction,p+side,p+direction,color)
 	triangle(st,p-direction,p+direction,p-side,color)
 
-static func tree(pine: bool) -> ArrayMesh:
+static func tree(pine: bool,detail: float=1.0) -> ArrayMesh:
 	var st:=SurfaceTool.new()
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
 	var rng:=RandomNumberGenerator.new()
 	rng.seed=12311 if pine else 92403
 	branch(st,Vector3.ZERO,Vector3(0.12,6.7,0),0.19)
-	for i in (65 if pine else 42):
-		var y: float=2.0+float(i)/65.0*4.9 if pine else rng.randf_range(2.5,6.7)
+	var branch_count:=maxi(12,int((65 if pine else 42)*detail))
+	for i in branch_count:
+		var y: float=2.0+float(i)/float(branch_count)*4.9 if pine else rng.randf_range(2.5,6.7)
 		var angle:=rng.randf()*TAU
 		var radius: float=(7.7-y)*0.38 if pine else sqrt(maxf(0.0,1.0-pow((y-4.7)/2.6,2)))*2.15
 		var end:=Vector3(cos(angle)*radius,y+0.25,sin(angle)*radius)
 		branch(st,Vector3(0,y-0.7,0),end,0.045)
-		for j in 26:
+		if detail<0.5:
+			# Coarse solid needle/leaf clusters keep distant woods from becoming
+			# transparent skeletons after leaf-count reduction. Original mesh only.
+			var foliage:=Color("35583d") if pine else Color("49673b")
+			var radius_cluster: float=0.7 if pine else 0.9
+			var center: Vector3=end*Vector3(0.78,1,0.78)
+			for wedge in 6:
+				var r0:=Vector3(cos(wedge*TAU/6)*radius_cluster,0,sin(wedge*TAU/6)*radius_cluster)
+				var r1:=Vector3(cos((wedge+1)*TAU/6)*radius_cluster,0,sin((wedge+1)*TAU/6)*radius_cluster)
+				triangle(st,center+r0,center+Vector3.UP*0.75,center+r1,foliage*(0.85+0.04*wedge))
+				triangle(st,center+r1,center-Vector3.UP*0.45,center+r0,foliage*0.8)
+		for j in maxi(8,int(26*detail)):
 			var spread: float=0.48 if pine else 0.75
 			var p: Vector3=end+Vector3(rng.randf_range(-spread,spread),rng.randf_range(-0.4,0.6),rng.randf_range(-spread,spread))
 			var tone: float=rng.randf_range(0.75,1.15)
-			leaf(st,p,rng,(Color("3b6349") if pine else Color("527241"))*tone,0.24 if pine else 0.21)
+			leaf(st,p,rng,(Color("3b6349") if pine else Color("527241"))*tone,(0.24 if pine else 0.21)/sqrt(detail))
 	return st.commit()
 
 static func grass_mesh() -> ArrayMesh:
