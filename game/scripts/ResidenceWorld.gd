@@ -271,6 +271,11 @@ func capture_views() -> void:
 		var eye: Vector3=entry+normal*8
 		eye.y=Geo.elevation(eye.x,eye.z)+1.68
 		views.append([eye,entry+Vector3.UP*1.8])
+		if capture_kind=="shellmain":
+			var phone: Vector3=get_node("Props/ShellCourtyard/PhotoEmergencyPhone").global_position
+			var phone_eye: Vector3=phone+normal*5.0
+			phone_eye.y=Geo.elevation(phone_eye.x,phone_eye.z)+1.68
+			views.append([phone_eye,phone+Vector3.UP*0.5])
 	if "--capture-dining" in OS.get_cmdline_user_args():
 		views=[[Geo.point([171,11],1.68),Geo.point([186,17],5.0)],[Geo.point([216,-9],1.68),Geo.point([215,8],5.0)],[Geo.point([250,62],1.68),Geo.point([237,55],5.0)],[Geo.point([205,76],1.68),Geo.point([210,58],5.0)]]
 	if capture_kind=="mctaggart":

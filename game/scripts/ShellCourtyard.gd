@@ -54,6 +54,28 @@ static func build(world: Node3D) -> void:
 		p.y = Geo.elevation(p.x,p.z)
 		picnic_table(root,p,concrete)
 	root.set_meta("table_count",3)
+	# Shell.jpg: blue emergency-phone column in front of the north timber screen.
+	# Shape/color are observed; this placement is estimated, not a mapped survey node.
+	var phone: Vector3=start+tangent*26.0+outward*6.0
+	phone.y=Geo.elevation(phone.x,phone.z)
+	var blue:=Geo.material(Color("245b92"),0.7)
+	var grey:=Geo.material(Color("a0a8a3"),0.75)
+	var dark:=Geo.material(Color("293b45"),0.8)
+	var column:=Geo.box(root,phone+Vector3.UP*1.05,Vector3(0.28,2.1,0.27),blue)
+	column.rotation.y=yaw;column.name="PhotoEmergencyPhone"
+	var face:=Geo.box(root,phone+Vector3.UP*0.93+outward*0.145,Vector3(0.18,0.3,0.025),grey)
+	face.rotation.y=yaw
+	var button:=Geo.box(root,phone+Vector3.UP*0.89+outward*0.163,Vector3(0.055,0.055,0.018),dark)
+	button.rotation.y=yaw
+	var band:=Geo.box(root,phone+Vector3.UP*1.93,Vector3(0.29,0.09,0.28),Geo.material(Color("c38e36"),0.6))
+	band.rotation.y=yaw
+	var mast:=Geo.box(root,phone+Vector3.UP*2.6,Vector3(0.045,1.25,0.045),blue)
+	mast.name="PhotoPhoneLightMast"
+	var head:=Geo.box(root,phone+Vector3.UP*3.23+outward*0.1,Vector3(0.19,0.12,0.3),dark)
+	head.rotation.y=yaw
+	var lens:=Geo.box(root,phone+Vector3.UP*3.19+outward*0.15,Vector3(0.14,0.025,0.22),Geo.material(Color("e5dfc5"),0.5))
+	lens.rotation.y=yaw
+
 	preload("res://scripts/ShellAnnex.gd").build(world)
 	# Narrow concrete walk visible immediately outside the timber screen.
 	var walk:=PackedVector3Array()
