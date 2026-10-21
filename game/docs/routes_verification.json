@@ -84,6 +84,16 @@
       "check": "Walk loop [\"Shell exterior pergola walk and return\"]",
       "evidence": "11/11 checkpoints",
       "passed": true
+    },
+    {
+      "check": "Walk loop [\"East West court ramp picnic stair descent\"]",
+      "evidence": "16/16 checkpoints",
+      "passed": true
+    },
+    {
+      "check": "Walk loop [\"East West recreation ascent\"]",
+      "evidence": "16/16 checkpoints",
+      "passed": true
     }
   ],
   "failures": 0

@@ -22,7 +22,7 @@ Latest user instruction: work through all deferred remarks; preserve accepted ge
 | Shell surrounds | North timber screen/concrete tables retained; glazed annex/sloped roof/timber pergola added from Shell.jpg with11point walk test. Exact surrounding stairs/grade/trees still pending | Partial |
 | Shell grade/entry | Mapped main entry6925149272 implemented on long west frontage with asphalt approach;7point route passed. Four total vs three visible floors and corner screen remain unresolved | Partial |
 | McTaggart approach | User confirms Dining-facing approach. Current pad flattened the approach (~0.1m rise over28m); photo requires entry/grade correction before a plausible descending stair | Grade conflict; pending |
-| East/West site | Approved facades frozen. Official SFU welcome page corroborates court between towers near East multipurpose door; precise court visuals and stair finished levels remain unresolved | Pending |
+| East/West site | Approved facades frozen. Two adjacent hoops, three terraces, mapped switchback ramp/stairs, picnic tables and lower descent now implemented;279 physics/495 routes pass. Exact finishes, orientation and heights estimated; user topology confirmed | Verified provisional landscape |
 | Townhouse contact | Foundation/porch footings implemented; refine approach grades; preserve approved family | Partial |
 | Townhouse plan differences |11-house door mapping/common-room annex and laundry attachments not implemented; block identity needed | Deferred evidence |
 | Hamilton | Distinct model implemented; secondary east door, exact portico geometry and ground plan remain uncertain | Partial |

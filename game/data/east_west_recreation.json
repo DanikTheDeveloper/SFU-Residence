@@ -1,0 +1,118 @@
+{
+  "source": "User confirms two adjacent hoops facing the same direction and three descending levels with ramp, stairs and picnic seating; SFU official week-of-welcome confirms between East and West. Original OSM paths retain XZ.",
+  "confidence": "Placement between towers and topology confirmed; court outline, hoop orientation, finishes and all finished heights ESTIMATED, not surveyed.",
+  "center": [
+    104,
+    48
+  ],
+  "across": [
+    0.973475,
+    0.228793
+  ],
+  "court_width": 13.0,
+  "court_depth": 10.0,
+  "upper_y": 5.3,
+  "middle_y": 3.8,
+  "lower_y": 2.7,
+  "ramp": [
+    [
+      104.703,
+      57.377
+    ],
+    [
+      96.52,
+      55.486
+    ],
+    [
+      95.882,
+      57.999
+    ],
+    [
+      104.137,
+      59.99
+    ],
+    [
+      103.455,
+      62.881
+    ],
+    [
+      95.222,
+      60.946
+    ],
+    [
+      94.794,
+      62.792
+    ]
+  ],
+  "stairs_upper": [
+    [
+      94.729,
+      53.474
+    ],
+    [
+      93.764,
+      57.499
+    ],
+    [
+      92.625,
+      62.269
+    ]
+  ],
+  "stairs_lower": [
+    [
+      95.106,
+      70.131
+    ],
+    [
+      93.887,
+      75.39
+    ],
+    [
+      96.68,
+      76.002
+    ],
+    [
+      95.585,
+      80.75
+    ]
+  ],
+  "middle_polygon": [
+    [
+      96.789,
+      63.303
+    ],
+    [
+      104.8,
+      65.184
+    ],
+    [
+      102.95,
+      73.05
+    ],
+    [
+      95.106,
+      70.131
+    ]
+  ],
+  "court_source_url": "https://www.sfu.ca/students/residences/moving-in/week-of-welcome.html",
+  "ramp_source_url": "https://www.openstreetmap.org/way/1159756809",
+  "ramp_levels": [
+    5.3,
+    4.8,
+    4.8,
+    4.3,
+    4.3,
+    3.8,
+    3.8
+  ],
+  "west_access": [
+    [
+      93.2,
+      44
+    ],
+    [
+      97.4,
+      44
+    ]
+  ]
+}

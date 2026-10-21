@@ -22,6 +22,22 @@ func run() -> void:
 		return
 	await frames(5)
 	check("Pauline Jewett entrance label uses footprint not neighboring centroid",world.get_node("UI").nearest_building_name(Vector2(19.57,21.05))=="Pauline Jewett House")
+	var recreation: Node3D=world.get_node("Props/EastWestRecreation")
+	check("East West practice area has two adjacent hoops",recreation.get_meta("hoop_count")==2)
+	var court_u:=Vector3(0.973475,0,0.228793)
+	var court_v:=Vector3(-court_u.z,0,court_u.x)
+	for local in [Vector2(-5.5,-3),Vector2(5.5,-3),Vector2(-5.5,3),Vector2(5.5,3),Vector2.ZERO]:
+		var q: Vector3=Vector3(104,5.3,48)+court_u*local.x+court_v*local.y
+		var hit:=ray(q+Vector3.UP*0.4,q-Vector3.UP*0.4)
+		check("Practice court finished plane "+str(local),not hit.is_empty() and absf(hit.position.y-5.3)<0.015)
+	var d: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/east_west_recreation.json"))
+	var ramp_length:=0.0
+	for j in d.ramp.size()-1:ramp_length+=Vector2(d.ramp[j][0],d.ramp[j][1]).distance_to(Vector2(d.ramp[j+1][0],d.ramp[j+1][1]))
+	check("Switchback estimated average slope below 5 percent",(d.upper_y-d.middle_y)/ramp_length<0.05)
+	for j in d.ramp.size()-1:
+		var length:=Vector2(d.ramp[j][0],d.ramp[j][1]).distance_to(Vector2(d.ramp[j+1][0],d.ramp[j+1][1]))
+		check("Switchback run grade "+str(j),absf(d.ramp_levels[j]-d.ramp_levels[j+1])/length<=1.0/12.0)
+
 	var field_level: float=world.get_node("Props/BeedieField").get_meta("finished_level_estimate")
 	for p in [[89,140],[140,155],[110,170],[95,195]]:
 		check("Beedie level playing surface "+str(p),absf(Geo.elevation(p[0],p[1])-field_level)<0.02)
@@ -269,6 +285,7 @@ func run() -> void:
 	# Actual stair traversal is independently covered by the ascent/descent route.
 	var stair_shapes: Array[RID]=[]
 	for body in world.get_node("NorthParkingStair").find_children("*","StaticBody3D",true,false): stair_shapes.append(body.get_rid())
+	for body in world.get_node("Props/EastWestRecreation").find_children("*","StaticBody3D",true,false): stair_shapes.append(body.get_rid())
 	var stair_start: Vector3=world.get_node("NorthParkingStair").get_meta("start")
 	var stair_u: Vector3=world.get_node("NorthParkingStair").get_meta("direction")
 	var stair_probe: Vector3=stair_start+stair_u*3
@@ -419,6 +436,13 @@ func run_routes() -> void:
 		var p: Vector3=annex.get_meta("origin")+annex.get_meta("along")*distance+annex.get_meta("outward")*3.95
 		annex_points.append([p.x,p.z])
 	routes.append({"buildings":["Shell exterior pergola walk and return"],"points":annex_points})
+	var recreation_data: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/east_west_recreation.json"))
+	var recreation_points: Array=[[104,52],[104.703,57.377]]
+	for p in recreation_data.ramp:recreation_points.append(p)
+	recreation_points.append_array([[96.789,63.303],[96.2,67],[95.106,70.131],[93.887,75.39],[96.68,76.002],[95.585,80.75],[94.424,86.098]])
+	routes.append({"buildings":["East West court ramp picnic stair descent"],"points":recreation_points})
+	var recreation_reverse: Array=recreation_points.duplicate();recreation_reverse.reverse()
+	routes.append({"buildings":["East West recreation ascent"],"points":recreation_reverse})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true

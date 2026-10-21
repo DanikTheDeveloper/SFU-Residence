@@ -3,6 +3,21 @@ const Geo=preload("res://scripts/Geometry.gd")
 const Finish=preload("res://scripts/PavementMaterials.gd")
 const Pavers=preload("res://scripts/ResidencePavers.gd")
 
+static var grate: StandardMaterial3D
+
+static func drain_material() -> Material:
+	if grate:return grate
+	grate=Geo.material(Color.WHITE,0.75)
+	var pixels:=Image.create(64,64,false,Image.FORMAT_RGB8)
+	for y in 64:
+		for x in 64:
+			var bar: bool=y%12<3 or x<5 or x>58
+			pixels.set_pixel(x,y,Color("747a75") if bar else Color("202a27"))
+	pixels.generate_mipmaps()
+	grate.albedo_texture=ImageTexture.create_from_image(pixels)
+	grate.texture_filter=BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
+	return grate
+
 static func near_townhouse(point: Vector2,registry: Array) -> bool:
 	for building in registry:
 		if building.type!="townhouse": continue
@@ -70,6 +85,11 @@ static func build(world: Node3D,parent: Node3D) -> void:
 				var side:=Vector3(-tangent.z,0,tangent.x)
 				var center: Vector3=(a+b)*0.5
 				strip(parent,center-side*road.width*0.5,center+side*road.width*0.5,0.14,border,0.075)
+				# User PWL1023 shows a narrow dark grating inside a pale concrete
+				# band. Transfer to this identified entry walk; position estimated.
+				var drain: Vector3=a.lerp(b,0.25)
+				strip(parent,drain-side*road.width*0.5,drain+side*road.width*0.5,0.32,border,0.078)
+				strip(parent,drain-side*road.width*0.5,drain+side*road.width*0.5,0.13,drain_material(),0.085,0.32)
 			counts.east_pavers+=1
 		elif surface in ["asphalt","concrete","concrete:plates","paving_stones","dirt","ground","compacted"]:
 			var finish: Material

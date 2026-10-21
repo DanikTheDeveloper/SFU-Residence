@@ -6,6 +6,71 @@
       "passed": true
     },
     {
+      "check": "East West practice area has two adjacent hoops",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Practice court finished plane (-5.5, -3.0)",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Practice court finished plane (5.5, -3.0)",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Practice court finished plane (-5.5, 3.0)",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Practice court finished plane (5.5, 3.0)",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Practice court finished plane (0.0, 0.0)",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Switchback estimated average slope below 5 percent",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Switchback run grade 0",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Switchback run grade 1",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Switchback run grade 2",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Switchback run grade 3",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Switchback run grade 4",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Switchback run grade 5",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Beedie level playing surface [89, 140]",
       "evidence": "",
       "passed": true

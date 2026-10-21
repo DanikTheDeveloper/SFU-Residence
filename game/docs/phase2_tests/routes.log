@@ -21,4 +21,6 @@ PASS Walk loop ["Mapped North parking stair descent and return"] 13/13 checkpoin
 PASS Walk loop ["Courtyard eastern paved forecourt"] 9/9 checkpoints
 PASS Walk loop ["Shell mapped main entrance approach and return"] 7/7 checkpoints
 PASS Walk loop ["Shell exterior pergola walk and return"] 11/11 checkpoints
+PASS Walk loop ["East West court ramp picnic stair descent"] 16/16 checkpoints
+PASS Walk loop ["East West recreation ascent"] 16/16 checkpoints
 ROUTES_COMPLETE failures=0

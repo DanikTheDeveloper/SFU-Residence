@@ -6,6 +6,19 @@
     "observations": "Official residence event location states courts between East and West; East multipurpose room accessed via door near court. Confirms user description, but does not show exact outline/finish.",
     "identity_confidence": "High area identity; precise geometry unresolved",
     "licensing": "URL-only factual reference",
+    "reviewed": "2026-10-20",
+    "user_correction_2026_10_20": "Two adjacent hoops facing the same direction, not one or opposed hoops. Half the between-tower space is practice area, other half descends by stairs and accessible ramp to picnic tables, then further stairs; three levels. Exact dimensions, orientation and materials unconfirmed."
+  },
+  {
+    "building_or_area": "East/West south exterior and Field4 edge",
+    "source_url": "https://dialogdesign.ca/projects/simon-fraser-university-phase-1-student-residence/",
+    "image_url": "https://dialogdesign.ca/wp-content/uploads/projects/Exterior-view-of-both-residence-halls_hiresjpg-2600x1736.jpg",
+    "local_filename": null,
+    "photograph_date": "Unknown; completed modern residences",
+    "viewpoint": "From field looking north at modern towers",
+    "observations": "Visually inspected in browser: pale concrete stair flights, gray metal rails, tiered rough stone retaining walls, dark open-front field shelters. Court itself not readable; cannot infer its line paint or hoop pose from this photo.",
+    "identity_confidence": "High: architect identifies modern Phase1 pair; matches approved facades",
+    "licensing": "Copyright DIALOG/photographer. URL-only reference; pixels not downloaded/shipped.",
     "reviewed": "2026-10-20"
   }
 ]
