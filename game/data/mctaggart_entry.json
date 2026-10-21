@@ -1,0 +1,15 @@
+{
+  "entrance": [
+    146.458,
+    114.567
+  ],
+  "outward": [
+    0.228793,
+    -0.973475
+  ],
+  "top_height": 6.337,
+  "landing_height": 5.282,
+  "source_photo": "reference_photos/McTaggart_Cowan_Hall/1782503552135.jpg",
+  "source_plan": "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/mctaggart-cowan_hall/Mctaggart_Cowan_Hall_Floor_Plan.pdf",
+  "confidence": "User confirms Dining-facing WESTERN connector closer to East Tower. Door placement fitted to existing simplified footprint; dimensions estimated. Top height uses preserved licensed 2014 contour interpolation at149.5,101.7, not surveyed finished grade. Four-floor height unchanged; three-visible-floor discrepancy unresolved."
+}

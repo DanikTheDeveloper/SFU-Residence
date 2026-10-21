@@ -23,4 +23,5 @@ PASS Walk loop ["Shell mapped main entrance approach and return"] 7/7 checkpoint
 PASS Walk loop ["Shell exterior pergola walk and return"] 11/11 checkpoints
 PASS Walk loop ["East West court ramp picnic stair descent"] 16/16 checkpoints
 PASS Walk loop ["East West recreation ascent"] 16/16 checkpoints
+PASS Walk loop ["McTaggart west connector descent and return"] 11/11 checkpoints
 ROUTES_COMPLETE failures=0

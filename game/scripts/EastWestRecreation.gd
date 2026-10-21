@@ -17,7 +17,7 @@ static func path(root: Node3D,a: Vector3,b: Vector3,width: float,mat: Material,t
 	var side:=Vector3(-(b-a).z,0,(b-a).x).normalized()*width*0.5
 	slab(root,[a-side,b-side,b+side,a+side],mat,title)
 
-static func guarded_path(root: Node3D,kit: RefCounted,a: Vector3,b: Vector3,width: float,mat: Material,title: String,steps: bool=false) -> void:
+static func guarded_path(root: Node3D,kit: RefCounted,a: Vector3,b: Vector3,width: float,mat: Material,title: String,steps: bool=false,trim_turns: bool=true) -> void:
 	var u:=Vector3(b.x-a.x,0,b.z-a.z).normalized()
 	var v:=Vector3(-u.z,0,u.x)
 	path(root,a,b,width,mat,title)
@@ -39,7 +39,7 @@ static func guarded_path(root: Node3D,kit: RefCounted,a: Vector3,b: Vector3,widt
 		if not steps and horizontal_length<4.0 and title=="SwitchbackRamp":
 			var outside_sign: float=1.0 if ((a+b)*0.5).x<100 else -1.0
 			if sign_value!=outside_sign:continue
-		var inset: float=minf(width*0.5+0.12,horizontal_length*0.45)
+		var inset: float=minf(width*0.5+0.12,horizontal_length*0.45) if trim_turns else 0.1
 		if horizontal_length<4.0 and title=="SwitchbackRamp":inset=0.0
 		var s: Vector3=a.lerp(b,inset/horizontal_length)+v*sign_value*(width*0.5-0.05)
 		var e: Vector3=b.lerp(a,inset/horizontal_length)+v*sign_value*(width*0.5-0.05)

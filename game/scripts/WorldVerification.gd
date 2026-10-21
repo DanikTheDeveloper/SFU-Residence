@@ -22,6 +22,18 @@ func run() -> void:
 		return
 	await frames(5)
 	check("Pauline Jewett entrance label uses footprint not neighboring centroid",world.get_node("UI").nearest_building_name(Vector2(19.57,21.05))=="Pauline Jewett House")
+	var mch_entry: Node3D=world.get_node("Props/McTaggartApproach")
+	var mch_door: Vector3=mch_entry.get_meta("door")
+	var mch_n: Vector3=mch_entry.get_meta("normal")
+	var mch_top: Vector3=mch_entry.get_meta("top")
+	var mch_low: Vector3=mch_entry.get_meta("low")
+	check("McTaggart entry uses west connector near East Tower",mch_door.x>144 and mch_door.x<150 and mch_n.z< -0.9)
+	check("McTaggart entry stair descends toward door",mch_top.y-mch_low.y>1.0)
+	check("McTaggart photo door closes building",not ray(mch_door+mch_n+Vector3.UP*1.4,mch_door-mch_n+Vector3.UP*1.4).is_empty())
+	check("McTaggart entry canopy solid",not ray(mch_door+mch_n+Vector3.UP*1.68,mch_door+mch_n+Vector3.UP*3.4).is_empty())
+	var stair_mid: Vector3=mch_top.lerp(mch_low,0.5)
+	var mch_stair_hit:=ray(stair_mid+Vector3.UP*0.4,stair_mid-Vector3.UP*0.4)
+	check("McTaggart approach collision follows steps",not mch_stair_hit.is_empty() and absf(mch_stair_hit.position.y-stair_mid.y)<0.02)
 	var recreation: Node3D=world.get_node("Props/EastWestRecreation")
 	check("East West practice area has two adjacent hoops",recreation.get_meta("hoop_count")==2)
 	var court_u:=Vector3(0.973475,0,0.228793)
@@ -286,6 +298,7 @@ func run() -> void:
 	var stair_shapes: Array[RID]=[]
 	for body in world.get_node("NorthParkingStair").find_children("*","StaticBody3D",true,false): stair_shapes.append(body.get_rid())
 	for body in world.get_node("Props/EastWestRecreation").find_children("*","StaticBody3D",true,false): stair_shapes.append(body.get_rid())
+	for body in world.get_node("Props/McTaggartApproach").find_children("*","StaticBody3D",true,false): stair_shapes.append(body.get_rid())
 	var stair_start: Vector3=world.get_node("NorthParkingStair").get_meta("start")
 	var stair_u: Vector3=world.get_node("NorthParkingStair").get_meta("direction")
 	var stair_probe: Vector3=stair_start+stair_u*3
@@ -443,6 +456,14 @@ func run_routes() -> void:
 	routes.append({"buildings":["East West court ramp picnic stair descent"],"points":recreation_points})
 	var recreation_reverse: Array=recreation_points.duplicate();recreation_reverse.reverse()
 	routes.append({"buildings":["East West recreation ascent"],"points":recreation_reverse})
+	var mch_entry: Node3D=world.get_node("Props/McTaggartApproach")
+	var mch_points: Array=[]
+	var mch_door: Vector3=mch_entry.get_meta("door")
+	var mch_n: Vector3=mch_entry.get_meta("normal")
+	var mch_top: Vector3=mch_entry.get_meta("top")
+	var mch_low: Vector3=mch_entry.get_meta("low")
+	for q in [mch_entry.get_meta("approach"),mch_entry.get_meta("outer"),mch_top,mch_top.lerp(mch_low,0.5),mch_low,mch_door+mch_n*1.2,mch_low,mch_top.lerp(mch_low,0.5),mch_top,mch_entry.get_meta("outer"),mch_entry.get_meta("approach")]:mch_points.append([q.x,q.z])
+	routes.append({"buildings":["McTaggart west connector descent and return"],"points":mch_points})
 	var player: CharacterBody3D=world.player
 	player.test_input=true
 	player.enabled=true

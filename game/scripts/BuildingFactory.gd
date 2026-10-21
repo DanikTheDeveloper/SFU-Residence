@@ -130,7 +130,7 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	var normal := (anchor-door).normalized()
 	normal.y=0
 	var door_yaw := atan2(normal.x,normal.z)
-	if data.type not in ["townhouse","north_tower"] and data.id not in ["HAM","SHR","DC"]:
+	if data.type not in ["townhouse","north_tower"] and data.id not in ["HAM","SHR","DC","MCH"]:
 		var door_mesh := Geo.box(root,door+Vector3.UP*1.15+normal*0.15,Vector3(2.1,2.3,0.16),glass_mat)
 		door_mesh.rotation.y=door_yaw
 		var canopy := Geo.box(root,door+Vector3.UP*2.85+normal*0.9,Vector3(3.6,0.22,2.1),accent_mat,true)
@@ -144,6 +144,8 @@ static func build(parent: Node3D, data: Dictionary) -> Node3D:
 	label.modulate=Color("f4eee0")
 	root.add_child(label)
 	label.position=door+Vector3.UP*3.35+normal*0.27
+	if data.id=="MCH":
+		label.position=root.get_meta("photo_entrance")+Vector3.UP*3.35+root.get_meta("photo_entrance_normal")*1.0
 	if data.type=="north_tower":
 		# Dark lettering on a concrete sign band, as shown in the identified SBH photo.
 		# The registry entrance is retained until its exact photo position is mapped.

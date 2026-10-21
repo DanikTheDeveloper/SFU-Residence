@@ -94,6 +94,11 @@
       "check": "Walk loop [\"East West recreation ascent\"]",
       "evidence": "16/16 checkpoints",
       "passed": true
+    },
+    {
+      "check": "Walk loop [\"McTaggart west connector descent and return\"]",
+      "evidence": "11/11 checkpoints",
+      "passed": true
     }
   ],
   "failures": 0

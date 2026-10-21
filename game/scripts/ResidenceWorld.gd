@@ -47,6 +47,7 @@ func _ready() -> void:
 	preload("res://scripts/Field2.gd").build(self)
 	preload("res://scripts/SportsWoodland.gd").build(self)
 	preload("res://scripts/EastWestRecreation.gd").build(self)
+	preload("res://scripts/McTaggartApproach.gd").build(self)
 	player=PlayerScene.instantiate()
 	add_child(player)
 	player.spawn=Geo.point([35,80],0.25)
@@ -64,7 +65,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args() or "--capture-field2" in OS.get_cmdline_user_args() or "--capture-links" in OS.get_cmdline_user_args() or "--capture-gallery" in OS.get_cmdline_user_args() or "--capture-northparking" in OS.get_cmdline_user_args() or "--capture-woodland" in OS.get_cmdline_user_args() or "--capture-bridge" in OS.get_cmdline_user_args() or "--capture-forecourt" in OS.get_cmdline_user_args() or "--capture-passages" in OS.get_cmdline_user_args() or "--capture-shellmain" in OS.get_cmdline_user_args() or "--capture-shellannex" in OS.get_cmdline_user_args() or "--capture-joints" in OS.get_cmdline_user_args() or "--capture-recreation" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args() or "--capture-field2" in OS.get_cmdline_user_args() or "--capture-links" in OS.get_cmdline_user_args() or "--capture-gallery" in OS.get_cmdline_user_args() or "--capture-northparking" in OS.get_cmdline_user_args() or "--capture-woodland" in OS.get_cmdline_user_args() or "--capture-bridge" in OS.get_cmdline_user_args() or "--capture-forecourt" in OS.get_cmdline_user_args() or "--capture-passages" in OS.get_cmdline_user_args() or "--capture-shellmain" in OS.get_cmdline_user_args() or "--capture-shellannex" in OS.get_cmdline_user_args() or "--capture-joints" in OS.get_cmdline_user_args() or "--capture-recreation" in OS.get_cmdline_user_args() or "--capture-mchentry" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -205,7 +206,7 @@ func _process(_delta: float) -> void:
 
 func capture_views() -> void:
 	var capture_kind: String=""
-	for kind in ["recreation","joints","north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4","field2","links","gallery","northparking","woodland","bridge","forecourt","passages","shellmain","shellannex"]:
+	for kind in ["mchentry","recreation","joints","north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4","field2","links","gallery","northparking","woodland","bridge","forecourt","passages","shellmain","shellannex"]:
 		if ("--capture-"+kind) in OS.get_cmdline_user_args(): capture_kind=kind
 	DisplayServer.window_set_title("SFU automated screenshot capture - controls disabled")
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
@@ -318,6 +319,13 @@ func capture_views() -> void:
 		views=[[a-u*1.5+Vector3.UP*1.68,b+Vector3.UP*1.2],[b+u*1.5+Vector3.UP*1.68,a+Vector3.UP*1.2]]
 	if capture_kind=="woodland":
 		views=[[Geo.point([35,80],1.68),Geo.point([0,125],2.5)]]
+	if capture_kind=="mchentry":
+		var entry: Node3D=get_node("Props/McTaggartApproach")
+		var top: Vector3=entry.get_meta("top")
+		var low: Vector3=entry.get_meta("low")
+		var n: Vector3=entry.get_meta("normal")
+		var door: Vector3=entry.get_meta("door")
+		views=[[top+n*1.2+Vector3.UP*1.68,door+Vector3.UP*1.5],[low+Vector3.UP*1.68,top+Vector3.UP*0.7],[low+Vector3.UP*1.68,door+Vector3.UP*3.2]]
 	if capture_kind=="recreation":
 		views=[[Vector3(104,6.98,52),Vector3(104,7,44)],[Vector3(104.7,6.98,57.3),Vector3(98,4.9,63)],[Vector3(96.9,5.48,65),Vector3(101,4.5,69)],[Vector3(94.4,4.3,83),Vector3(96,5.2,67)]]
 	if capture_kind=="joints":

@@ -6,6 +6,31 @@
       "passed": true
     },
     {
+      "check": "McTaggart entry uses west connector near East Tower",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "McTaggart entry stair descends toward door",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "McTaggart photo door closes building",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "McTaggart entry canopy solid",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "McTaggart approach collision follows steps",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "East West practice area has two adjacent hoops",
       "evidence": "",
       "passed": true

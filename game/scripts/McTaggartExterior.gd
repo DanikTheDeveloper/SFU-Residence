@@ -27,6 +27,8 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 	root.set_meta("family_master",MASTER_ID)
 	root.set_meta("floor_count",data.floors)
 	root.set_meta("roof_world_y",base+height+0.20)
+	var entry_data: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/mctaggart_entry.json"))
+	var entry_xz: Array=entry_data.entrance
 	var kit:=Kit.new()
 	var story: float=height/int(data.floors)
 	for i in points.size():
@@ -44,9 +46,9 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 		var spacing:=length/bays
 		for bay in bays:
 			var mid:=a+tangent*((bay+0.5)*spacing)
-			# Reserve the mapped connector opening; avoid overlapping ordinary
+			# Reserve the user-identified connector frontage; avoid overlapping ordinary
 			# room windows with its wider glazing and the ground-level door.
-			if Vector2(mid.x,mid.z).distance_to(Vector2(data.entrance[0],data.entrance[1]))<2.8: continue
+			if Vector2(mid.x,mid.z).distance_to(Vector2(entry_xz[0],entry_xz[1]))<2.8: continue
 			for level in int(data.floors):
 				var center:=mid+Vector3.UP*((level+0.5)*story)
 				var width:=minf(1.38,spacing*0.48)
@@ -63,13 +65,18 @@ static func build(root: Node3D, data: Dictionary, points: Array, base: float, he
 		# Thin vertical envelope joints are visible between window columns.
 		for division in range(1,bays):
 			kit.part("joint",a+tangent*(division*spacing)+Vector3.UP*(height*0.5)+normal*0.012,Vector3(0.022,height-0.18,0.018),yaw)
-	# Retain mapped doorway. Upper connector rhythm is a provisional transfer
-	# from the verified entrance photo, not a surveyed reconstruction.
-	var door:=Vector3(data.entrance[0],base,data.entrance[1])
-	var normal:=Vector3(data.outdoor_anchor[0]-door.x,0,data.outdoor_anchor[1]-door.z).normalized()
+	# User identified the western connector. Preserve original registry/routes,
+	# but supersede the misplaced visual doorway on the plain room wing.
+	var door:=Vector3(entry_xz[0],base,entry_xz[1])
+	var normal:=Vector3(entry_data.outward[0],0,entry_data.outward[1]).normalized()
+	root.set_meta("photo_entrance",door)
+	root.set_meta("photo_entrance_normal",normal)
 	var tangent:=Vector3(normal.z,0,-normal.x)
 	var yaw:=atan2(normal.x,normal.z)
 	var entry:=door+Vector3.UP*1.23+normal*0.45
+	var canopy:=Geo.box(root,door+normal*1.1+Vector3.UP*2.85,Vector3(4.5,0.32,2.6),Geo.material(Color("aab0b5"),0.64),true)
+	canopy.rotation.y=yaw
+	canopy.name="PhotoEntryCanopy"
 	kit.part("glass",entry,Vector3(2.6,2.35,0.08),yaw)
 	for side in [-1,1]:
 		kit.part("white_frame",entry+tangent*side*1.3+normal*0.06,Vector3(0.09,2.45,0.12),yaw)

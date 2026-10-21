@@ -28,5 +28,16 @@
     "observations": "PDF page2 visually inspected: level2, three staggered residential bars, two narrow joining/lobby zones; south labelled Facing the Field. Existing generic model doorway at center of western long bar is not one of these joining zones. Plan warns approximate/artistic interpretation. Does not provide surveyed grade or exterior stair geometry. Facilities key-plans link requires SFU login; not accessed.",
     "licensing": "URL-only source record; temporary PDF render outside repo, no content shipped as game asset",
     "confidence": "High building identity and broad plan; exact entrance/height unresolved"
+  },
+  {
+    "building": "McTaggart-Cowan west connector entrance",
+    "source_url": "https://www.sfu.ca/content/dam/sfu/students/residences/clf3/PDFs/FloorPlans/mctaggart-cowan_hall/Mctaggart_Cowan_Hall_Floor_Plan.pdf",
+    "local_filename": null,
+    "photograph_date": null,
+    "viewpoint": "Public level2 diagram, north is opposite labelled Facing the Field (South)",
+    "observations": "Three staggered bars and two north-facing connector lobbies. User2026-10-21 identifies the photographed descending entry as the west connector nearer East Tower. Existing simplified OSM footprint fits glazed frontage to the west end of the middle bar. Exact dimensions and grade not surveyed.",
+    "licensing": "SFU reference-only public plan; no plan pixels included as game assets",
+    "identity_confidence": "High building and connector selection; approximate fit to footprint",
+    "reviewed": "2026-10-21"
   }
 ]
