@@ -63,7 +63,7 @@ func _ready() -> void:
 	hud.set_script(HudScript)
 	add_child(hud)
 	print("WORLD_READY buildings=",registry.size()," paths=",roads.size()," renderer=",RenderingServer.get_current_rendering_method())
-	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args() or "--capture-field2" in OS.get_cmdline_user_args() or "--capture-links" in OS.get_cmdline_user_args() or "--capture-gallery" in OS.get_cmdline_user_args() or "--capture-northparking" in OS.get_cmdline_user_args() or "--capture-woodland" in OS.get_cmdline_user_args() or "--capture-bridge" in OS.get_cmdline_user_args() or "--capture-forecourt" in OS.get_cmdline_user_args() or "--capture-passages" in OS.get_cmdline_user_args() or "--capture-shellmain" in OS.get_cmdline_user_args() or "--capture-shellannex" in OS.get_cmdline_user_args(): capture_views.call_deferred()
+	if "--capture" in OS.get_cmdline_user_args() or "--capture-north" in OS.get_cmdline_user_args() or "--capture-hamilton" in OS.get_cmdline_user_args() or "--capture-shell" in OS.get_cmdline_user_args() or "--capture-dining" in OS.get_cmdline_user_args() or "--capture-landscape" in OS.get_cmdline_user_args() or "--capture-mctaggart" in OS.get_cmdline_user_args() or "--capture-courtyard" in OS.get_cmdline_user_args() or "--capture-paving" in OS.get_cmdline_user_args() or "--capture-parking" in OS.get_cmdline_user_args() or "--capture-contact" in OS.get_cmdline_user_args() or "--capture-field" in OS.get_cmdline_user_args() or "--capture-field4" in OS.get_cmdline_user_args() or "--capture-field2" in OS.get_cmdline_user_args() or "--capture-links" in OS.get_cmdline_user_args() or "--capture-gallery" in OS.get_cmdline_user_args() or "--capture-northparking" in OS.get_cmdline_user_args() or "--capture-woodland" in OS.get_cmdline_user_args() or "--capture-bridge" in OS.get_cmdline_user_args() or "--capture-forecourt" in OS.get_cmdline_user_args() or "--capture-passages" in OS.get_cmdline_user_args() or "--capture-shellmain" in OS.get_cmdline_user_args() or "--capture-shellannex" in OS.get_cmdline_user_args() or "--capture-joints" in OS.get_cmdline_user_args(): capture_views.call_deferred()
 	if "--verify" in OS.get_cmdline_user_args(): get_node("UI").run_verification.call_deferred()
 	if "--pointer-qa" in OS.get_cmdline_user_args(): pointer_qa.call_deferred()
 
@@ -204,7 +204,7 @@ func _process(_delta: float) -> void:
 
 func capture_views() -> void:
 	var capture_kind: String=""
-	for kind in ["north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4","field2","links","gallery","northparking","woodland","bridge","forecourt","passages","shellmain","shellannex"]:
+	for kind in ["joints","north","hamilton","shell","dining","landscape","mctaggart","courtyard","paving","parking","contact","field","field4","field2","links","gallery","northparking","woodland","bridge","forecourt","passages","shellmain","shellannex"]:
 		if ("--capture-"+kind) in OS.get_cmdline_user_args(): capture_kind=kind
 	DisplayServer.window_set_title("SFU automated screenshot capture - controls disabled")
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
@@ -317,6 +317,18 @@ func capture_views() -> void:
 		views=[[a-u*1.5+Vector3.UP*1.68,b+Vector3.UP*1.2],[b+u*1.5+Vector3.UP*1.68,a+Vector3.UP*1.2]]
 	if capture_kind=="woodland":
 		views=[[Geo.point([35,80],1.68),Geo.point([0,125],2.5)]]
+	if capture_kind=="joints":
+		views=[]
+		for pair in [["PJH","BRH"],["BRH","SBH"]]:
+			var left: Dictionary=get_node("Buildings/"+pair[0]).get_meta("exterior_passage")
+			var right: Dictionary=get_node("Buildings/"+pair[1]).get_meta("exterior_passage")
+			for endpoint in [left.gallery_end,right.gallery_start]:
+				var eye: Vector3=endpoint-left.side*1.5
+				eye.y=Geo.elevation(eye.x,eye.z)+1.68
+				views.append([eye,eye+left.side*4+Vector3.UP*1.1])
+			var eye: Vector3=(left.gallery_end+right.gallery_start)*0.5-left.axis*5
+			eye.y=Geo.elevation(eye.x,eye.z)+1.68
+			views.append([eye,eye+left.axis*6+Vector3.UP*1.4])
 	if capture_kind=="passages":
 		views=[]
 		for id in ["PJH","BRH","SBH"]:

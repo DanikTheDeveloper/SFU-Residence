@@ -11,7 +11,7 @@ Latest user instruction: work through all deferred remarks; preserve accepted ge
 | Field4 realism | Sideline concrete, fence, light poles and shelters added in157317b. Seating, secondary markings, fixture precision and tree edge still incomplete | Partial |
 | Field2 realism | Mapped grass/H goals; strengthen photo match, surroundings and approaches; American-yard markings unconfirmed | Partial |
 | Beedie realism | Outline/infield/backstop first pass; sunken dugouts, benches/bleachers, bullpen, batting cage, fixture/track geometry | Partial |
-| North longitudinal gallery | Nine eye-level views inspected across all three galleries;24 additional rear-wall/soffit corner rays pass. No exposed void found in these views; finer photo detailing remains | Closure verified |
+| North longitudinal gallery | Closed connector prisms and grounded piers added;12 joint rays and six joint views supplement prior rear-wall checks.266 physics/463 routes pass. Exact connector architecture remains estimated; no residential void reproduced in inspected views | Supported continuous gallery; photo detail partial |
 | North to Dining Commons | Two-flight stair plus guarded upper turn now connects to mapped west door10785299803. Ascent/descent13/13 and landing turn11/11 passed; eye-level inspected. Dimensions/finish estimated | Verified first pass |
 | North gallery to parking | Mapped OSM1159793611 stair with rails/landings added; descent/return13/13 passed and eye-level reviewed. Width/count estimated; separate from Dining and courtyard photo | Verified first pass |
 | North surrounding details | Red service doors, roof/fins, curved beds, pavers, drains, stairs/rails, door/sign localization | Partial |

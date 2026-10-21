@@ -122,8 +122,41 @@ static func connect_row(world: Node3D) -> void:
 		var a: Vector3=left.gallery_end
 		var b: Vector3=right.gallery_start
 		pave(root,a-left.side*0.2,b+right.side*0.2,WIDTH,"ConnectingWalkway")
-		var direction: Vector3=(b-a).normalized()
-		var cross_axis:=Vector3(direction.z,0,-direction.x).normalized()
-		var canopy:=Geo.box(root,(a+b)*0.5+Vector3.UP*(CLEAR_HEIGHT+0.12),Vector3(a.distance_to(b)+0.4,0.24,WIDTH),preload("res://scripts/NorthTowerMaterials.gd").material("concrete"),true)
-		canopy.name="EstimatedGalleryConnectionCanopy"
-		canopy.basis=Basis(direction,cross_axis.cross(direction).normalized(),cross_axis)
+		# Join the two horizontal soffits with a closed prism. A rotated box had
+		# tilted end faces and could expose a wedge at each different-grade joint.
+		var concrete: Material=preload("res://scripts/NorthTowerMaterials.gd").material("concrete")
+		var l: Vector3=a-left.side*0.22
+		var r: Vector3=b+right.side*0.22
+		var corners: Array[Vector3]=[
+			l-left.axis*WIDTH*0.5+Vector3.UP*CLEAR_HEIGHT,
+			r-right.axis*WIDTH*0.5+Vector3.UP*CLEAR_HEIGHT,
+			r+right.axis*WIDTH*0.5+Vector3.UP*CLEAR_HEIGHT,
+			l+left.axis*WIDTH*0.5+Vector3.UP*CLEAR_HEIGHT]
+		closed_prism(root,corners,0.24,concrete,"GalleryConnectionSoffit")
+		# Supports are estimated, not surveyed. Keep all transverse paths and
+		# the parking-stair opening usable; do not fill the gap with room walls.
+		for fraction in [0.25,0.75]:
+			var center: Vector3=a.lerp(b,fraction)
+			var axis: Vector3=left.axis.lerp(right.axis,fraction).normalized()
+			for sign_value in [-1,1]:
+				var foot: Vector3=center+axis*sign_value*(WIDTH*0.5-0.14)
+				var ground: float=Geo.elevation(foot.x,foot.z)-0.08
+				var top: float=center.y+CLEAR_HEIGHT
+				var pier:=Geo.box(root,Vector3(foot.x,(ground+top)*0.5,foot.z),Vector3(0.28,top-ground,0.28),concrete,true)
+				pier.name="GalleryConnectionPier"
+				pier.rotation.y=-atan2(left.side.z,left.side.x)
+
+static func closed_prism(root: Node3D,corners: Array[Vector3],thickness: float,material: Material,title: String) -> void:
+	var points: Array[Vector3]=corners.duplicate()
+	for corner in corners: points.append(corner+Vector3.UP*thickness)
+	var center:=Vector3.ZERO
+	for point in points: center+=point/8.0
+	var vertices:=PackedVector3Array()
+	for face in [[0,1,2,3],[4,7,6,5],[0,4,5,1],[1,5,6,2],[2,6,7,3],[3,7,4,0]]:
+		for triangle in [[face[0],face[1],face[2]],[face[0],face[2],face[3]]]:
+			var a: Vector3=points[triangle[0]]
+			var b: Vector3=points[triangle[1]]
+			var c: Vector3=points[triangle[2]]
+			if (b-a).cross(c-a).dot((a+b+c)/3.0-center)<0: vertices.append_array([a,c,b])
+			else: vertices.append_array([a,b,c])
+	Geo.mesh_from_vertices(root,vertices,material,true).name=title

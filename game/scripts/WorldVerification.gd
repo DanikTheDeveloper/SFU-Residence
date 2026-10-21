@@ -155,6 +155,18 @@ func run() -> void:
 			await frames(int((passage.length+1.6)/4.5*60)+12)
 			Input.action_release("move_forward")
 			check(id+" longitudinal capsule traversal "+str(reverse),(player.position-origin).dot(direction)>passage.length+1.3 and player.is_on_floor(),str(player.position))
+	# At both different-grade joins, test the seam on the left, middle and right.
+	# Mid-gallery rays cannot detect small daylight slots at canopy interfaces.
+	for pair in [["PJH","BRH"],["BRH","SBH"]]:
+		var left: Dictionary=world.get_node("Buildings/"+pair[0]).get_meta("exterior_passage")
+		var right: Dictionary=world.get_node("Buildings/"+pair[1]).get_meta("exterior_passage")
+		for plan_and_end in [[left,left.gallery_end],[right,right.gallery_start]]:
+			var plan: Dictionary=plan_and_end[0]
+			var endpoint: Vector3=plan_and_end[1]
+			for offset in [-1.6,0.0,1.6]:
+				var eye: Vector3=endpoint+plan.axis*offset+Vector3.UP*1.68
+				var hit:=ray(eye,eye+Vector3.UP*1.6)
+				check(str(pair)+" canopy seam closed "+str(endpoint)+" offset "+str(offset),not hit.is_empty() and absf(hit.position.y-endpoint.y-2.9)<0.08)
 	# Walk continuously through all three buildings, including the graded links.
 	for ids in [["PJH","BRH","SBH"],["SBH","BRH","PJH"]]:
 		var reverse: bool=ids[0]=="SBH"

@@ -896,6 +896,66 @@
       "passed": true
     },
     {
+      "check": "[\"PJH\", \"BRH\"] canopy seam closed (29.2596, 2.36, 3.073859) offset -1.6",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"PJH\", \"BRH\"] canopy seam closed (29.2596, 2.36, 3.073859) offset 0.0",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"PJH\", \"BRH\"] canopy seam closed (29.2596, 2.36, 3.073859) offset 1.6",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"PJH\", \"BRH\"] canopy seam closed (44.90573, 5.836, 6.965816) offset -1.6",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"PJH\", \"BRH\"] canopy seam closed (44.90573, 5.836, 6.965816) offset 0.0",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"PJH\", \"BRH\"] canopy seam closed (44.90573, 5.836, 6.965816) offset 1.6",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"BRH\", \"SBH\"] canopy seam closed (101.4135, 5.836, 20.21918) offset -1.6",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"BRH\", \"SBH\"] canopy seam closed (101.4135, 5.836, 20.21918) offset 0.0",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"BRH\", \"SBH\"] canopy seam closed (101.4135, 5.836, 20.21918) offset 1.6",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"BRH\", \"SBH\"] canopy seam closed (116.8826, 6.374, 23.82481) offset -1.6",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"BRH\", \"SBH\"] canopy seam closed (116.8826, 6.374, 23.82481) offset 0.0",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "[\"BRH\", \"SBH\"] canopy seam closed (116.8826, 6.374, 23.82481) offset 1.6",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "Continuous North row false reaches PJH",
       "evidence": "(28.929, 2.628859, 2.997013)",
       "passed": true
