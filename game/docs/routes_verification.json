@@ -76,6 +76,11 @@
       "passed": true
     },
     {
+      "check": "Walk loop [\"Courtyard asphalt apron and service lane return\"]",
+      "evidence": "18/18 checkpoints",
+      "passed": true
+    },
+    {
       "check": "Walk loop [\"Shell mapped main entrance approach and return\"]",
       "evidence": "7/7 checkpoints",
       "passed": true

@@ -5,6 +5,16 @@ PHOTO_PLANTING broadleaf=25 conifers=72 grass_clumps=59
 SPORTS_WOODLAND trees=331 mapped woodland only; species/spacing estimated
 WORLD_READY buildings=19 paths=398 renderer=gl_compatibility
 PASS Pauline Jewett entrance label uses footprint not neighboring centroid 
+PASS Courtyard road apron terrain contact [354, 12] 
+PASS Courtyard road apron inside playable boundary [354, 12] 
+PASS Courtyard road apron terrain contact [357, 0] 
+PASS Courtyard road apron inside playable boundary [357, 0] 
+PASS Courtyard road apron terrain contact [354, -6] 
+PASS Courtyard road apron inside playable boundary [354, -6] 
+PASS Courtyard road apron terrain contact [356, -16] 
+PASS Courtyard road apron inside playable boundary [356, -16] 
+PASS Courtyard road apron terrain contact [358, -30] 
+PASS Courtyard road apron inside playable boundary [358, -30] 
 PASS McTaggart entry uses west connector near East Tower 
 PASS McTaggart entry stair descends toward door 
 PASS McTaggart photo door closes building 
@@ -289,4 +299,4 @@ PASS Courtyard preserves eleven-floor registry
 PASS Courtyard uses ribbed panels and recessed glazing 
 PASS Mapped parking stair collision above underlying hillside 
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=284 failures=0
+VERIFICATION_COMPLETE checks=294 failures=0

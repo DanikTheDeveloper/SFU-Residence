@@ -29,6 +29,7 @@ func _ready() -> void:
 	boundary=preload("res://scripts/BeedieField.gd").extend_boundary(boundary)
 	boundary=preload("res://scripts/Field4.gd").extend_boundary(boundary)
 	boundary=preload("res://scripts/Field2.gd").extend_boundary(boundary)
+	boundary=preload("res://scripts/CourtyardForecourt.gd").extend_boundary(boundary)
 	configure_inputs()
 	build_light()
 	build_ground()
@@ -354,7 +355,7 @@ func capture_views() -> void:
 				eye.y=Geo.elevation(eye.x,eye.z)+1.68
 				views.append([eye,eye+plan.axis*3+plan.side*(3 if fraction<0.5 else -3)+Vector3.UP*0.7])
 	if capture_kind=="forecourt":
-		views=[[Geo.point([350.3,9],1.68),Vector3(340,17,-12)],[Geo.point([352,-30],1.68),Vector3(345,13,5)]]
+		views=[[Geo.point([350.3,9],1.68),Vector3(340,17,-12)],[Geo.point([352,-30],1.68),Vector3(345,13,5)],[Geo.point([359,-12],1.68),Geo.point([346,-12],2.0)],[Geo.point([351,21],1.68),Geo.point([354,-10],1.0)]]
 	if capture_kind=="bridge":
 		views=[[Geo.point([350,24],1.68),Vector3(338,16,17)],[Geo.point([326,30],1.68),Vector3(338,16,16)]]
 	if capture_kind=="field2":

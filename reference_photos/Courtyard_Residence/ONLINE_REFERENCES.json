@@ -96,5 +96,14 @@
     "observations": "Main eastern atrium entrance between highrise and lowrise: dark projecting canopy, timber curtain wall behind pale piers, grey/tan pavers and low concrete planter edge. Internal stair is visible through glazing but remains outside implementation scope.",
     "licensing": "Copyright reference-only; no pixels redistributed",
     "confidence": "HIGH official specific project; viewed2026-10-18"
+  },
+  {
+    "building": "Courtyard Residence",
+    "source_url": "https://dialogdesign.ca/wp-content/uploads/projects//LAP0604_DialogSFUResidences_0058_largeimage.jpg",
+    "review_date": "2026-10-21",
+    "local_filename": null,
+    "observations": "Re-viewed at full browser size. Asphalt meets low pale curb directly; curb cut at forecourt, young trees in square openings, blue emergency phone and red pole screen near lowrise. No broad earthen bank between street and paving.",
+    "licensing": "URL-only copyrighted architect photo; no copied game textures",
+    "confidence": "High material adjacency, estimated XZ outline and finished grade; no surveyed elevations."
   }
 ]

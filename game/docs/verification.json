@@ -6,6 +6,56 @@
       "passed": true
     },
     {
+      "check": "Courtyard road apron terrain contact [354, 12]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard road apron inside playable boundary [354, 12]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard road apron terrain contact [357, 0]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard road apron inside playable boundary [357, 0]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard road apron terrain contact [354, -6]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard road apron inside playable boundary [354, -6]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard road apron terrain contact [356, -16]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard road apron inside playable boundary [356, -16]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard road apron terrain contact [358, -30]",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard road apron inside playable boundary [358, -30]",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "McTaggart entry uses west connector near East Tower",
       "evidence": "",
       "passed": true

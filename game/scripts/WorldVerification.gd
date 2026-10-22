@@ -22,6 +22,11 @@ func run() -> void:
 		return
 	await frames(5)
 	check("Pauline Jewett entrance label uses footprint not neighboring centroid",world.get_node("UI").nearest_building_name(Vector2(19.57,21.05))=="Pauline Jewett House")
+	for p in [[354,12],[357,0],[354,-6],[356,-16],[358,-30]]:
+		var ground:=Geo.point(p)
+		var hit:=ray(ground+Vector3.UP*0.5,ground-Vector3.UP*0.5)
+		check("Courtyard road apron terrain contact "+str(p),not hit.is_empty() and absf(hit.position.y-ground.y)<0.03)
+		check("Courtyard road apron inside playable boundary "+str(p),Geo.contains_point(Vector2(p[0],p[1]),world.boundary))
 	var mch_entry: Node3D=world.get_node("Props/McTaggartApproach")
 	var mch_door: Vector3=mch_entry.get_meta("door")
 	var mch_n: Vector3=mch_entry.get_meta("normal")
@@ -435,6 +440,7 @@ func run_routes() -> void:
 		parking_points.append([p.x,p.z])
 	routes.append({"buildings":["Mapped North parking stair descent and return"],"points":parking_points})
 	routes.append({"buildings":["Courtyard eastern paved forecourt"],"points":[[351,10],[352,-2],[347,-10],[348,-20],[352,-32],[348,-20],[347,-10],[352,-2],[351,10]]})
+	routes.append({"buildings":["Courtyard asphalt apron and service lane return"],"points":[[330,16],[340,19],[350,21],[354,12],[357,0],[354,-6],[356,-16],[358,-30],[352,-30],[348,-20],[350,-16],[354,-16],[354,-6],[357,0],[354,12],[350,21],[340,19],[330,16]]})
 	var shell: Node3D=world.get_node("Buildings/SHR")
 	var shell_door: Vector3=shell.get_meta("photo_main_entrance")
 	var shell_normal: Vector3=shell.get_meta("photo_main_normal")

@@ -3,8 +3,18 @@ extends RefCounted
 # Extents, tree spacing and finished levels estimated; source grid is unchanged.
 const Geo=preload("res://scripts/Geometry.gd")
 const Pavers=preload("res://scripts/ResidencePavers.gd")
+static func extend_boundary(original: PackedVector2Array) -> PackedVector2Array:
+	var d: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/courtyard_grade.json"))
+	var apron:=PackedVector2Array()
+	for p in d.asphalt_apron: apron.append(Vector2(p[0],p[1]))
+	var expanded:=Geometry2D.offset_polygon(apron,5.0)
+	var merged:=Geometry2D.merge_polygons(original,expanded[0])
+	assert(merged.size()==1,"Courtyard apron must connect to existing precinct")
+	return merged[0]
+
 static func build(root: Node3D) -> void:
 	var d: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/courtyard_grade.json"))
+	Geo.polygon(root,d.asphalt_apron,preload("res://scripts/PavementMaterials.gd").material("road"),0.025).name="PhotoAsphaltApron"
 	var surface: StandardMaterial3D=Pavers.material(true).duplicate()
 	# Photo0058 is mostly pale grey with restrained warm blocks, not saturated tan.
 	var pixels: Image=surface.albedo_texture.get_image()
