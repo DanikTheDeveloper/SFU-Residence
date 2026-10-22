@@ -104,6 +104,7 @@
     "local_filename": null,
     "observations": "Re-viewed at full browser size. Asphalt meets low pale curb directly; curb cut at forecourt, young trees in square openings, blue emergency phone and red pole screen near lowrise. No broad earthen bank between street and paving.",
     "licensing": "URL-only copyrighted architect photo; no copied game textures",
-    "confidence": "High material adjacency, estimated XZ outline and finished grade; no surveyed elevations."
+    "confidence": "High material adjacency, estimated XZ outline and finished grade; no surveyed elevations.",
+    "model_limits": "Asphalt outline/grade estimated, max +5.5985m above historical source; 24 red posts fitted outside lowrise north-east corner, minimum building separation1.89m. Height sequence1.35\u20132.40m and spacing0.45m estimated from photo, not a measured count."
   }
 ]

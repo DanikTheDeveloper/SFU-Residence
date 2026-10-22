@@ -1,0 +1,33 @@
+{
+  "device": "D3D12 (NVIDIA GeForce GTX 1650)",
+  "renderer": "gl_compatibility",
+  "resolution": [
+    1280.0,
+    720.0
+  ],
+  "samples": [
+    {
+      "camera_xyz": [
+        356.0,
+        13.730899810791,
+        -31.0
+      ],
+      "draw_calls": 489.0,
+      "eye_height_m": 1.68,
+      "fov": 72.0,
+      "fps_mean": 16.5344705129764,
+      "frame_ms_p95": 71.592,
+      "look_at": [
+        344.0,
+        13.0063600540161,
+        -37.4000015258789
+      ],
+      "view": 0,
+      "viewport_size": [
+        1280.0,
+        720.0
+      ]
+    }
+  ],
+  "tier": "medium"
+}

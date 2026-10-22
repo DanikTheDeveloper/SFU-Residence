@@ -4,225 +4,227 @@ PHOTO_PAVING { "mapped_surface": 95, "concrete": 110, "townhouse_grey": 102, "ea
 PHOTO_PLANTING broadleaf=25 conifers=72 grass_clumps=59
 SPORTS_WOODLAND trees=331 mapped woodland only; species/spacing estimated
 WORLD_READY buildings=19 paths=398 renderer=gl_compatibility
-PASS Pauline Jewett entrance label uses footprint not neighboring centroid 
-PASS Courtyard road apron terrain contact [354, 12] 
-PASS Courtyard road apron inside playable boundary [354, 12] 
-PASS Courtyard road apron terrain contact [357, 0] 
-PASS Courtyard road apron inside playable boundary [357, 0] 
-PASS Courtyard road apron terrain contact [354, -6] 
-PASS Courtyard road apron inside playable boundary [354, -6] 
-PASS Courtyard road apron terrain contact [356, -16] 
-PASS Courtyard road apron inside playable boundary [356, -16] 
-PASS Courtyard road apron terrain contact [358, -30] 
-PASS Courtyard road apron inside playable boundary [358, -30] 
-PASS McTaggart entry uses west connector near East Tower 
-PASS McTaggart entry stair descends toward door 
-PASS McTaggart photo door closes building 
-PASS McTaggart entry canopy solid 
-PASS McTaggart approach collision follows steps 
-PASS East West practice area has two adjacent hoops 
-PASS Practice court finished plane (-5.5, -3.0) 
-PASS Practice court finished plane (5.5, -3.0) 
-PASS Practice court finished plane (-5.5, 3.0) 
-PASS Practice court finished plane (5.5, 3.0) 
-PASS Practice court finished plane (0.0, 0.0) 
-PASS Switchback estimated average slope below 5 percent 
-PASS Switchback run grade 0 
-PASS Switchback run grade 1 
-PASS Switchback run grade 2 
-PASS Switchback run grade 3 
-PASS Switchback run grade 4 
-PASS Switchback run grade 5 
-PASS Beedie level playing surface [89, 140] 
-PASS Beedie level playing surface [140, 155] 
-PASS Beedie level playing surface [110, 170] 
-PASS Beedie level playing surface [95, 195] 
-PASS Beedie outfield inside expanded study boundary 
-PASS Field4 dark shelter has open front 
-PASS Field4 shelter closed rear 
-PASS Field4 shelter solid roof 
-PASS Field4 level surface [-35, 90] 
-PASS Field4 terrain collision [-35, 90] 
-PASS Field4 level surface [0, 110] 
-PASS Field4 terrain collision [0, 110] 
-PASS Field4 level surface [50, 120] 
-PASS Field4 terrain collision [50, 120] 
-PASS Field4 level surface [20, 140] 
-PASS Field4 terrain collision [20, 140] 
-PASS Field2 level surface [170, 190] 
-PASS Field2 extended terrain collision [170, 190] 
-PASS Field2 point inside study boundary [170, 190] 
-PASS Field2 level surface [200, 220] 
-PASS Field2 extended terrain collision [200, 220] 
-PASS Field2 point inside study boundary [200, 220] 
-PASS Field2 level surface [220, 239] 
-PASS Field2 extended terrain collision [220, 239] 
-PASS Field2 point inside study boundary [220, 239] 
-PASS Field2 level surface [220, 241] 
-PASS Field2 extended terrain collision [220, 241] 
-PASS Field2 point inside study boundary [220, 241] 
-PASS Field2 level surface [240, 250] 
-PASS Field2 extended terrain collision [240, 250] 
-PASS Field2 point inside study boundary [240, 250] 
-PASS Field2 no old grid seam step 
-PASS 19 scene buildings 
-PASS Compatibility selected 
-PASS Interior boundary ray degeneracy regression 
-PASS Exterior remains outside boundary 
-PASS PJH anchor outside 
-PASS PJH ground 
-PASS PJH stable player 
+PASS Pauline Jewett entrance label uses footprint not neighboring centroid
+PASS Courtyard road apron terrain contact [354, 12]
+PASS Courtyard road apron inside playable boundary [354, 12]
+PASS Courtyard road apron terrain contact [357, 0]
+PASS Courtyard road apron inside playable boundary [357, 0]
+PASS Courtyard road apron terrain contact [354, -6]
+PASS Courtyard road apron inside playable boundary [354, -6]
+PASS Courtyard road apron terrain contact [356, -16]
+PASS Courtyard road apron inside playable boundary [356, -16]
+PASS Courtyard road apron terrain contact [358, -30]
+PASS Courtyard road apron inside playable boundary [358, -30]
+PASS Beedie spectator seat collision
+PASS Courtyard red photo screen collision
+PASS McTaggart entry uses west connector near East Tower
+PASS McTaggart entry stair descends toward door
+PASS McTaggart photo door closes building
+PASS McTaggart entry canopy solid
+PASS McTaggart approach collision follows steps
+PASS East West practice area has two adjacent hoops
+PASS Practice court finished plane (-5.5, -3.0)
+PASS Practice court finished plane (5.5, -3.0)
+PASS Practice court finished plane (-5.5, 3.0)
+PASS Practice court finished plane (5.5, 3.0)
+PASS Practice court finished plane (0.0, 0.0)
+PASS Switchback estimated average slope below 5 percent
+PASS Switchback run grade 0
+PASS Switchback run grade 1
+PASS Switchback run grade 2
+PASS Switchback run grade 3
+PASS Switchback run grade 4
+PASS Switchback run grade 5
+PASS Beedie level playing surface [89, 140]
+PASS Beedie level playing surface [140, 155]
+PASS Beedie level playing surface [110, 170]
+PASS Beedie level playing surface [95, 195]
+PASS Beedie outfield inside expanded study boundary
+PASS Field4 dark shelter has open front
+PASS Field4 shelter closed rear
+PASS Field4 shelter solid roof
+PASS Field4 level surface [-35, 90]
+PASS Field4 terrain collision [-35, 90]
+PASS Field4 level surface [0, 110]
+PASS Field4 terrain collision [0, 110]
+PASS Field4 level surface [50, 120]
+PASS Field4 terrain collision [50, 120]
+PASS Field4 level surface [20, 140]
+PASS Field4 terrain collision [20, 140]
+PASS Field2 level surface [170, 190]
+PASS Field2 extended terrain collision [170, 190]
+PASS Field2 point inside study boundary [170, 190]
+PASS Field2 level surface [200, 220]
+PASS Field2 extended terrain collision [200, 220]
+PASS Field2 point inside study boundary [200, 220]
+PASS Field2 level surface [220, 239]
+PASS Field2 extended terrain collision [220, 239]
+PASS Field2 point inside study boundary [220, 239]
+PASS Field2 level surface [220, 241]
+PASS Field2 extended terrain collision [220, 241]
+PASS Field2 point inside study boundary [220, 241]
+PASS Field2 level surface [240, 250]
+PASS Field2 extended terrain collision [240, 250]
+PASS Field2 point inside study boundary [240, 250]
+PASS Field2 no old grid seam step
+PASS 19 scene buildings
+PASS Compatibility selected
+PASS Interior boundary ray degeneracy regression
+PASS Exterior remains outside boundary
+PASS PJH anchor outside
+PASS PJH ground
+PASS PJH stable player
 PASS PJH solid facade edges 25/25
-PASS BRH anchor outside 
-PASS BRH ground 
-PASS BRH stable player 
+PASS BRH anchor outside
+PASS BRH ground
+PASS BRH stable player
 PASS BRH solid facade edges 27/27
-PASS SBH anchor outside 
-PASS SBH ground 
-PASS SBH stable player 
+PASS SBH anchor outside
+PASS SBH ground
+PASS SBH stable player
 PASS SBH solid facade edges 27/27
-PASS EAT anchor outside 
-PASS EAT ground 
-PASS EAT stable player 
+PASS EAT anchor outside
+PASS EAT ground
+PASS EAT stable player
 PASS EAT solid facade edges 17/17
-PASS WET anchor outside 
-PASS WET ground 
-PASS WET stable player 
+PASS WET anchor outside
+PASS WET ground
+PASS WET stable player
 PASS WET solid facade edges 17/17
-PASS CYR anchor outside 
-PASS CYR ground 
-PASS CYR stable player 
+PASS CYR anchor outside
+PASS CYR ground
+PASS CYR stable player
 PASS CYR solid facade edges 14/14
-PASS MCH anchor outside 
-PASS MCH ground 
-PASS MCH stable player 
+PASS MCH anchor outside
+PASS MCH ground
+PASS MCH stable player
 PASS MCH solid facade edges 20/20
-PASS HAM anchor outside 
-PASS HAM ground 
-PASS HAM stable player 
+PASS HAM anchor outside
+PASS HAM ground
+PASS HAM stable player
 PASS HAM solid facade edges 8/8
-PASS SHR anchor outside 
-PASS SHR ground 
-PASS SHR stable player 
+PASS SHR anchor outside
+PASS SHR ground
+PASS SHR stable player
 PASS SHR solid facade edges 9/9
-PASS DC anchor outside 
-PASS DC ground 
-PASS DC stable player 
+PASS DC anchor outside
+PASS DC ground
+PASS DC stable player
 PASS DC solid facade edges 22/22
-PASS COW anchor outside 
-PASS COW ground 
-PASS COW stable player 
+PASS COW anchor outside
+PASS COW ground
+PASS COW stable player
 PASS COW solid facade edges 13/13
-PASS CHI anchor outside 
-PASS CHI ground 
-PASS CHI stable player 
+PASS CHI anchor outside
+PASS CHI ground
+PASS CHI stable player
 PASS CHI solid facade edges 13/13
-PASS KEL anchor outside 
-PASS KEL ground 
-PASS KEL stable player 
+PASS KEL anchor outside
+PASS KEL ground
+PASS KEL stable player
 PASS KEL solid facade edges 13/13
-PASS KIM anchor outside 
-PASS KIM ground 
-PASS KIM stable player 
+PASS KIM anchor outside
+PASS KIM ground
+PASS KIM stable player
 PASS KIM solid facade edges 13/13
-PASS KIT anchor outside 
-PASS KIT ground 
-PASS KIT stable player 
+PASS KIT anchor outside
+PASS KIT ground
+PASS KIT stable player
 PASS KIT solid facade edges 13/13
-PASS PEN anchor outside 
-PASS PEN ground 
-PASS PEN stable player 
+PASS PEN anchor outside
+PASS PEN ground
+PASS PEN stable player
 PASS PEN solid facade edges 13/13
-PASS QUA anchor outside 
-PASS QUA ground 
-PASS QUA stable player 
+PASS QUA anchor outside
+PASS QUA ground
+PASS QUA stable player
 PASS QUA solid facade edges 13/13
-PASS QUE anchor outside 
-PASS QUE ground 
-PASS QUE stable player 
+PASS QUE anchor outside
+PASS QUE ground
+PASS QUE stable player
 PASS QUE solid facade edges 13/13
-PASS SQU anchor outside 
-PASS SQU ground 
-PASS SQU stable player 
+PASS SQU anchor outside
+PASS SQU ground
+PASS SQU stable player
 PASS SQU solid facade edges 13/13
-PASS Courtyard eastern exterior recess open 
-PASS Courtyard portico rear remains closed 
-PASS Courtyard portico soffit collision 
+PASS Courtyard eastern exterior recess open
+PASS Courtyard portico rear remains closed
+PASS Courtyard portico soffit collision
 PASS Courtyard Lowrise roof matches configured zone height (320.0, 22.893, -31.0)
 PASS Courtyard Highrise roof matches configured zone height (320.0, 46.193, -2.0)
 PASS Courtyard Atrium roof matches configured zone height (335.0, 20.09299, -15.0)
-PASS Courtyard inner gallery front open 
-PASS Courtyard inner gallery rear closed 
-PASS Courtyard inner gallery overhead solid 
-PASS Courtyard link faces south to mapped West Mall parkade 
-PASS Courtyard link deck collision 
-PASS Courtyard link closed roof 
-PASS Dining retains distinct old and new exterior zones 
-PASS Dining three-level registry retained 
-PASS Shell concrete tabletop solid at seating area 
-PASS Shell timber screen blocks capsule-height crossing 
-PASS Shell has distinct photo-based master 
-PASS Shell official total four levels preserved 
-PASS Shell annex front glazing closes residential space 
-PASS Shell annex sloped roof collidable 
-PASS Hamilton primary portico faces north 
-PASS Hamilton exterior entry remains closed 
-PASS Hamilton portico overhead solid 
-PASS Hamilton separate four-floor master 
-PASS PJH longitudinal gallery clear at eye level 
-PASS PJH courtyard column solid 
-PASS PJH rear residential boundary closed 
-PASS PJH gallery overhead collision 
-PASS PJH gallery rear closure 0.03 
-PASS PJH gallery soffit closure 0.03 
-PASS PJH gallery rear closure 0.25 
-PASS PJH gallery soffit closure 0.25 
-PASS PJH gallery rear closure 0.75 
-PASS PJH gallery soffit closure 0.75 
-PASS PJH gallery rear closure 0.97 
-PASS PJH gallery soffit closure 0.97 
+PASS Courtyard inner gallery front open
+PASS Courtyard inner gallery rear closed
+PASS Courtyard inner gallery overhead solid
+PASS Courtyard link faces south to mapped West Mall parkade
+PASS Courtyard link deck collision
+PASS Courtyard link closed roof
+PASS Dining retains distinct old and new exterior zones
+PASS Dining three-level registry retained
+PASS Shell concrete tabletop solid at seating area
+PASS Shell timber screen blocks capsule-height crossing
+PASS Shell has distinct photo-based master
+PASS Shell official total four levels preserved
+PASS Shell annex front glazing closes residential space
+PASS Shell annex sloped roof collidable
+PASS Hamilton primary portico faces north
+PASS Hamilton exterior entry remains closed
+PASS Hamilton portico overhead solid
+PASS Hamilton separate four-floor master
+PASS PJH longitudinal gallery clear at eye level
+PASS PJH courtyard column solid
+PASS PJH rear residential boundary closed
+PASS PJH gallery overhead collision
+PASS PJH gallery rear closure 0.03
+PASS PJH gallery soffit closure 0.03
+PASS PJH gallery rear closure 0.25
+PASS PJH gallery soffit closure 0.25
+PASS PJH gallery rear closure 0.75
+PASS PJH gallery soffit closure 0.75
+PASS PJH gallery rear closure 0.97
+PASS PJH gallery soffit closure 0.97
 PASS PJH longitudinal capsule traversal false (30.43146, 2.877042, 3.418323)
 PASS PJH longitudinal capsule traversal true (-28.45385, 2.604148, -10.55847)
-PASS BRH longitudinal gallery clear at eye level 
-PASS BRH courtyard column solid 
-PASS BRH rear residential boundary closed 
-PASS BRH gallery overhead collision 
-PASS BRH gallery rear closure 0.03 
-PASS BRH gallery soffit closure 0.03 
-PASS BRH gallery rear closure 0.25 
-PASS BRH gallery soffit closure 0.25 
-PASS BRH gallery rear closure 0.75 
-PASS BRH gallery soffit closure 0.75 
-PASS BRH gallery rear closure 0.97 
-PASS BRH gallery soffit closure 0.97 
+PASS BRH longitudinal gallery clear at eye level
+PASS BRH courtyard column solid
+PASS BRH rear residential boundary closed
+PASS BRH gallery overhead collision
+PASS BRH gallery rear closure 0.03
+PASS BRH gallery soffit closure 0.03
+PASS BRH gallery rear closure 0.25
+PASS BRH gallery soffit closure 0.25
+PASS BRH gallery rear closure 0.75
+PASS BRH gallery soffit closure 0.75
+PASS BRH gallery rear closure 0.97
+PASS BRH gallery soffit closure 0.97
 PASS BRH longitudinal capsule traversal false (102.6654, 6.030081, 20.58107)
 PASS BRH longitudinal capsule traversal true (43.61161, 5.580753, 6.59403)
-PASS SBH longitudinal gallery clear at eye level 
-PASS SBH courtyard column solid 
-PASS SBH rear residential boundary closed 
-PASS SBH gallery overhead collision 
-PASS SBH gallery rear closure 0.03 
-PASS SBH gallery soffit closure 0.03 
-PASS SBH gallery rear closure 0.25 
-PASS SBH gallery soffit closure 0.25 
-PASS SBH gallery rear closure 0.75 
-PASS SBH gallery soffit closure 0.75 
-PASS SBH gallery rear closure 0.97 
-PASS SBH gallery soffit closure 0.97 
+PASS SBH longitudinal gallery clear at eye level
+PASS SBH courtyard column solid
+PASS SBH rear residential boundary closed
+PASS SBH gallery overhead collision
+PASS SBH gallery rear closure 0.03
+PASS SBH gallery soffit closure 0.03
+PASS SBH gallery rear closure 0.25
+PASS SBH gallery soffit closure 0.25
+PASS SBH gallery rear closure 0.75
+PASS SBH gallery soffit closure 0.75
+PASS SBH gallery rear closure 0.97
+PASS SBH gallery soffit closure 0.97
 PASS SBH longitudinal capsule traversal false (174.0312, 7.587184, 37.3271)
 PASS SBH longitudinal capsule traversal true (115.623, 6.456107, 23.46055)
-PASS ["PJH", "BRH"] canopy seam closed (29.2596, 2.36, 3.073859) offset -1.6 
-PASS ["PJH", "BRH"] canopy seam closed (29.2596, 2.36, 3.073859) offset 0.0 
-PASS ["PJH", "BRH"] canopy seam closed (29.2596, 2.36, 3.073859) offset 1.6 
-PASS ["PJH", "BRH"] canopy seam closed (44.90573, 5.836, 6.965816) offset -1.6 
-PASS ["PJH", "BRH"] canopy seam closed (44.90573, 5.836, 6.965816) offset 0.0 
-PASS ["PJH", "BRH"] canopy seam closed (44.90573, 5.836, 6.965816) offset 1.6 
-PASS ["BRH", "SBH"] canopy seam closed (101.4135, 5.836, 20.21918) offset -1.6 
-PASS ["BRH", "SBH"] canopy seam closed (101.4135, 5.836, 20.21918) offset 0.0 
-PASS ["BRH", "SBH"] canopy seam closed (101.4135, 5.836, 20.21918) offset 1.6 
-PASS ["BRH", "SBH"] canopy seam closed (116.8826, 6.374, 23.82481) offset -1.6 
-PASS ["BRH", "SBH"] canopy seam closed (116.8826, 6.374, 23.82481) offset 0.0 
-PASS ["BRH", "SBH"] canopy seam closed (116.8826, 6.374, 23.82481) offset 1.6 
+PASS ["PJH", "BRH"] canopy seam closed (29.2596, 2.36, 3.073859) offset -1.6
+PASS ["PJH", "BRH"] canopy seam closed (29.2596, 2.36, 3.073859) offset 0.0
+PASS ["PJH", "BRH"] canopy seam closed (29.2596, 2.36, 3.073859) offset 1.6
+PASS ["PJH", "BRH"] canopy seam closed (44.90573, 5.836, 6.965816) offset -1.6
+PASS ["PJH", "BRH"] canopy seam closed (44.90573, 5.836, 6.965816) offset 0.0
+PASS ["PJH", "BRH"] canopy seam closed (44.90573, 5.836, 6.965816) offset 1.6
+PASS ["BRH", "SBH"] canopy seam closed (101.4135, 5.836, 20.21918) offset -1.6
+PASS ["BRH", "SBH"] canopy seam closed (101.4135, 5.836, 20.21918) offset 0.0
+PASS ["BRH", "SBH"] canopy seam closed (101.4135, 5.836, 20.21918) offset 1.6
+PASS ["BRH", "SBH"] canopy seam closed (116.8826, 6.374, 23.82481) offset -1.6
+PASS ["BRH", "SBH"] canopy seam closed (116.8826, 6.374, 23.82481) offset 0.0
+PASS ["BRH", "SBH"] canopy seam closed (116.8826, 6.374, 23.82481) offset 1.6
 PASS Continuous North row false reaches PJH (28.929, 2.628859, 2.997013)
 PASS Continuous North row false reaches BRH (101.1323, 5.971788, 20.15246)
 PASS Continuous North row false reaches SBH (173.0465, 6.964576, 37.02594)
@@ -230,73 +232,73 @@ PASS Continuous North row true reaches SBH (117.1695, 6.467773, 23.89188)
 PASS Continuous North row true reaches BRH (45.23849, 5.819801, 7.043757)
 PASS Continuous North row true reaches PJH (-26.93178, 2.511894, -10.13177)
 PASS W movement metres=4.131790
-PASS Sprint faster 
-PASS Jump rises 
-PASS Jump lands 
-PASS Mouse look 
-PASS Mouse input crosses 360 degrees through dispatcher 
-PASS Mouse turns 360 degrees in reverse 
-PASS Pitch remains bounded without restricting yaw 
-PASS Pitch extremes preserve upright camera during full turns 
-PASS Character blocked by facade 
-PASS First person fixed eye height 
-PASS First person camera centered in collider 
+PASS Sprint faster
+PASS Jump rises
+PASS Jump lands
+PASS Mouse look
+PASS Mouse input crosses 360 degrees through dispatcher
+PASS Mouse turns 360 degrees in reverse
+PASS Pitch remains bounded without restricting yaw
+PASS Pitch extremes preserve upright camera during full turns
+PASS Character blocked by facade
+PASS First person fixed eye height
+PASS First person camera centered in collider
 PLAYER_RESET reason=fall position=(30.92525, -50.0, 42.3527)
-PASS Fall recovery 
-PASS EAT shared modern master 
-PASS EAT independent floors 
+PASS Fall recovery
+PASS EAT shared modern master
+PASS EAT independent floors
 PASS EAT shared master edit propagates [518, 364]
-PASS WET shared modern master 
-PASS WET independent floors 
+PASS WET shared modern master
+PASS WET independent floors
 PASS WET shared master edit propagates [576, 424]
-PASS PJH distinct North master 
-PASS PJH eight floors 
+PASS PJH distinct North master
+PASS PJH eight floors
 PASS PJH North master edit propagates [359, 282]
-PASS BRH distinct North master 
-PASS BRH eight floors 
+PASS BRH distinct North master
+PASS BRH eight floors
 PASS BRH North master edit propagates [352, 282]
-PASS SBH distinct North master 
-PASS SBH eight floors 
+PASS SBH distinct North master
+PASS SBH eight floors
 PASS SBH North master edit propagates [352, 282]
-PASS Main parking level [10, -40] 
-PASS Main parking level [60, -30] 
-PASS Main parking level [110, -20] 
-PASS Main parking level [165, 0] 
+PASS Main parking level [10, -40]
+PASS Main parking level [60, -30]
+PASS Main parking level [110, -20]
+PASS Main parking level [165, 0]
 PASS Parking stalls arranged in mapped polygons 196
-PASS COW shared townhouse master 
-PASS COW pitched roof generated 
+PASS COW shared townhouse master
+PASS COW pitched roof generated
 PASS COW townhouse master edit propagates [102, 72]
-PASS CHI shared townhouse master 
-PASS CHI pitched roof generated 
+PASS CHI shared townhouse master
+PASS CHI pitched roof generated
 PASS CHI townhouse master edit propagates [102, 72]
-PASS KEL shared townhouse master 
-PASS KEL pitched roof generated 
+PASS KEL shared townhouse master
+PASS KEL pitched roof generated
 PASS KEL townhouse master edit propagates [102, 72]
-PASS KIM shared townhouse master 
-PASS KIM pitched roof generated 
+PASS KIM shared townhouse master
+PASS KIM pitched roof generated
 PASS KIM townhouse master edit propagates [102, 72]
-PASS KIT shared townhouse master 
-PASS KIT pitched roof generated 
+PASS KIT shared townhouse master
+PASS KIT pitched roof generated
 PASS KIT townhouse master edit propagates [102, 72]
-PASS PEN shared townhouse master 
-PASS PEN pitched roof generated 
+PASS PEN shared townhouse master
+PASS PEN pitched roof generated
 PASS PEN townhouse master edit propagates [102, 72]
-PASS QUA shared townhouse master 
-PASS QUA pitched roof generated 
+PASS QUA shared townhouse master
+PASS QUA pitched roof generated
 PASS QUA townhouse master edit propagates [102, 72]
-PASS QUE shared townhouse master 
-PASS QUE pitched roof generated 
+PASS QUE shared townhouse master
+PASS QUE pitched roof generated
 PASS QUE townhouse master edit propagates [102, 72]
-PASS SQU shared townhouse master 
-PASS SQU pitched roof generated 
+PASS SQU shared townhouse master
+PASS SQU pitched roof generated
 PASS SQU townhouse master edit propagates [102, 72]
-PASS Exactly nine original townhouse blocks 
-PASS McTaggart uses distinct renewed-envelope master 
-PASS McTaggart retains four-floor registry 
-PASS McTaggart facade batching 
-PASS Courtyard uses distinct precast master 
-PASS Courtyard preserves eleven-floor registry 
-PASS Courtyard uses ribbed panels and recessed glazing 
-PASS Mapped parking stair collision above underlying hillside 
+PASS Exactly nine original townhouse blocks
+PASS McTaggart uses distinct renewed-envelope master
+PASS McTaggart retains four-floor registry
+PASS McTaggart facade batching
+PASS Courtyard uses distinct precast master
+PASS Courtyard preserves eleven-floor registry
+PASS Courtyard uses ribbed panels and recessed glazing
+PASS Mapped parking stair collision above underlying hillside
 PASS Terrain mesh collision parity at route vertices 376/376
-VERIFICATION_COMPLETE checks=294 failures=0
+VERIFICATION_COMPLETE checks=296 failures=0

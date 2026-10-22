@@ -84,6 +84,7 @@ static func build(world: Node3D) -> void:
 	# Open-sided roofed team shelters; no residential interior or gameplay.
 	dugout(root,kit,Vector3(111,level,134.7),first)
 	dugout(root,kit,Vector3(76,level,158),third)
+	bleachers(root,kit,Geo.point([94,124]),first,third)
 	var score:=Geo.point([103,205])
 	kit.part("score",score+Vector3.UP*3.8,Vector3(6,2.6,0.15),0)
 	for side in [-1,1]: kit.part("steel",score+Vector3(side*2.5,2,0),Vector3(0.15,4,0.15),0)
@@ -132,3 +133,33 @@ static func dugout(root: Node3D,kit: RefCounted,p: Vector3,axis: Vector3) -> voi
 	preload("res://scripts/ShellCourtyard.gd").collision_box(root,p+normal*0.85+Vector3.UP*0.45,Vector3(14.3,0.10,0.4),yaw)
 
 
+
+# Small metal spectator section visible behind the backstop in SFU TWO.jpg.
+# Placement, three-row count and dimensions are estimated, not a current survey.
+static func bleachers(root: Node3D,kit: RefCounted,p: Vector3,axis: Vector3,facing: Vector3) -> void:
+	var yaw: float=-atan2(axis.z,axis.x)
+	var base: float=p.y
+	for side in [-4.0,4.0]:
+		for depth in [-1.7,0.3]:
+			var q: Vector3=p+axis*side+facing*depth
+			base=maxf(base,Geo.elevation(q.x,q.z))
+	p.y=base+0.08
+	for row in 3:
+		var center: Vector3=p-facing*row*0.72
+		var seat: Vector3=center+Vector3.UP*(0.45+row*0.28)
+		kit.part("roof",seat,Vector3(8,0.065,0.3),yaw)
+		var board: Vector3=center+facing*0.32+Vector3.UP*(0.12+row*0.28)
+		kit.part("roof",board,Vector3(8,0.055,0.38),yaw)
+		preload("res://scripts/ShellCourtyard.gd").collision_box(root,seat,Vector3(8,0.065,0.3),yaw)
+		preload("res://scripts/ShellCourtyard.gd").collision_box(root,board,Vector3(8,0.055,0.38),yaw)
+		for along in [-3.8,-1.25,1.25,3.8]:
+			var foot: Vector3=center+axis*along
+			var ground: float=Geo.elevation(foot.x,foot.z)-0.04
+			kit.part("steel",Vector3(foot.x,(ground+seat.y)*0.5,foot.z),Vector3(0.055,seat.y-ground,0.055),yaw)
+			kit.part("concrete",Vector3(foot.x,ground+0.04,foot.z),Vector3(0.28,0.1,0.28),yaw)
+	var back: Vector3=p-facing*1.72
+	for along in [-4.0,0,4.0]:
+		kit.part("steel",back+axis*along+Vector3.UP*0.85,Vector3(0.045,1.7,0.045),yaw)
+	for height in [1.15,1.68]:
+		bar(kit,"steel",back-axis*4+Vector3.UP*height,back+axis*4+Vector3.UP*height,0.045,0.045)
+	root.set_meta("spectator_seat_probe",p+Vector3.UP*0.45)

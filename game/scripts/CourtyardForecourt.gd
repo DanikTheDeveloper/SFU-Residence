@@ -49,3 +49,25 @@ static func build(root: Node3D) -> void:
 	leaves.vertex_color_use_as_albedo=true
 	leaves.cull_mode=BaseMaterial3D.CULL_DISABLED
 	Geo.instances(root,trees,leaves,preload("res://scripts/PhotoVegetation.gd").tree(false),180).name="ForecourtYoungTrees"
+
+	# DIALOG0058: irregular-height red round posts at the lowrise north-east corner.
+	# Photo-supported form/material; this short outside-footprint run is estimated.
+	var post_mesh:=CylinderMesh.new();post_mesh.top_radius=0.055;post_mesh.bottom_radius=0.055
+	post_mesh.height=1.0;post_mesh.radial_segments=8
+	var post_transforms: Array[Transform3D]=[]
+	var control: Array[Vector2]=[Vector2(349,-36),Vector2(344,-37.4),Vector2(339,-38.7)]
+	var first_probe:=Vector3.ZERO
+	for segment in 2:
+		var a: Vector2=control[segment];var b: Vector2=control[segment+1]
+		var count:=int(ceil(a.distance_to(b)/0.45))
+		for i in count:
+			var q: Vector2=a.lerp(b,float(i)/count)
+			var height: float=1.35+float((i*7+segment*3)%11)*0.105
+			var center:=Geo.point([q.x,q.y],height*0.5-0.04)
+			post_transforms.append(Geo.transform(center,Vector3(1,height,1)))
+			var body:=StaticBody3D.new();var shape:=CollisionShape3D.new()
+			var cylinder:=CylinderShape3D.new();cylinder.radius=0.055;cylinder.height=height
+			shape.shape=cylinder;body.add_child(shape);root.add_child(body);body.position=center
+			if first_probe==Vector3.ZERO:first_probe=center
+	Geo.instances(root,post_transforms,Geo.material(Color("a72f42"),0.72),post_mesh,130).name="PhotoRedPoleScreen"
+	root.set_meta("red_screen_probe",first_probe)

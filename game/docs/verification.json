@@ -56,6 +56,16 @@
       "passed": true
     },
     {
+      "check": "Beedie spectator seat collision",
+      "evidence": "",
+      "passed": true
+    },
+    {
+      "check": "Courtyard red photo screen collision",
+      "evidence": "",
+      "passed": true
+    },
+    {
       "check": "McTaggart entry uses west connector near East Tower",
       "evidence": "",
       "passed": true

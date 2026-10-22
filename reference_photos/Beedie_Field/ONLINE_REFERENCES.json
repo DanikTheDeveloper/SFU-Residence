@@ -20,5 +20,17 @@
     "observations": "Visually inspected October18. Grass outfield, ochre infield, red warning track, dark blue outfield windscreen with yellow top rail, tall backstop grid, six pole lights, pale roofed dugouts and red scoreboard. Specific fixture coordinates estimated from this view and OSM outline, not surveyed.",
     "licensing": "Copyright; URL-only reference, no image pixels redistributed.",
     "confidence": "HIGH identity from official Beedie facility page; historic rather than current photo"
+  },
+  {
+    "building": "Beedie softball field",
+    "source_url": "https://athletics.sfu.ca/images/2012/9/3/TWO.jpg",
+    "source": "SFU Athletics, Jasper Chan photograph",
+    "review_date": "2026-10-21",
+    "photograph_date": "2012 upload; actual capture date unknown",
+    "viewpoint": "Elevated third-base side, backstop and team shelters visible",
+    "observations": "Light metal spectator bench tiers behind the home-plate backstop. Three-row model and fitted location are estimates; historical photo does not verify current exact layout.",
+    "local_filename": null,
+    "licensing": "URL-only copyrighted reference, not shipped as texture",
+    "identity_confidence": "High official named facility"
   }
 ]
